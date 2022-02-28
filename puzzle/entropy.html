@@ -1,0 +1,499 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Entropy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+<a href="../round/night-vision-goggles.html" class="btn" title="Night Vision Goggles">
+    <img src="../static/images/night-vision-gogglesiconchonky.97b0fd827da1.png" style="height: 2em; filter: invert(1); mix-blend-mode: color-dodge; vertical-align: bottom;">
+</a>
+
+
+
+
+
+<a href="../post-hunt-solve/entropy.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/entropy" class="btn">View solution</a>
+<a href="../stats/entropy.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Entropy
+    
+    
+</h1>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+<style>
+.entropy {
+    white-space: pre;
+}
+.extropy tr:first-child td {
+    font-size: 200%;
+}
+.extropy td {
+    border: 0;
+    margin: 0;
+    padding: 0.1em;
+    text-align: center;
+}
+</style>
+<p class="flavor">I like to pay tribute to famous poets within the text of my poetry.</p>
+
+<p class="entropy blanks">Generalizing on deduction, let us study the induction,
+This trick needs no introduction, quoth our teacher Theodore.
+Take a horse, a black equine, monochrome so we define,
+A base case for our logic line, learn this well or out the door.
+A base case guaranteeing claims each follow from the one before.
+            Thusly argued Theodore.</p>
+
+<p class="entropy blanks">Groups of horses we combine, from two to three or eight to nine.
+Even thousands pose no sign of trouble for our metaphor.
+This leads us to epiphany: every horse is ebony.
+To contradict is felony, remarked our teacher Theodore.
+At this absurdity we quaked, in unison we did implore:
+            Teach induction nevermore!</p>
+
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_</td><td>_</td><td>_</td></tr>
+<tr><td>  </td><td>10</td><td>  </td><td>  </td><td></td><td></td></tr>
+</table>
+
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>  </td><td>1 </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">Newton Newton, mind so bright,
+Did you exclaim with delight?
+When of our Earth you made a find,
+Exploiting nature’s symmetry?</p>
+
+<p class="entropy blanks">When apple tumbled from the tree,
+Acted upon by gravity,
+Was it then that you declared:
+“It grows as inverse distance squared?”</p>
+
+<p class="entropy blanks">Knowing of this holy grail,
+Did you compose your wile mail,
+Addressed to a society,
+Of royals, with sobriety?</p>
+
+<p class="entropy blanks">Of Earth and objects spherical,
+You verified numerical,
+Wrote your proof that will not shake,
+Or have me balk for rigor’s sake.</p>
+
+<p class="entropy blanks">Such objects summon as much force,
+As if all squeezed down to the source.
+By calculus, these vectors joint,
+Can be reduced to but a point!</p>
+
+<p class="entropy blanks">Newton Newton, mind so bright,
+Did you exclaim with delight?
+When of our Earth you made a find,
+Exploiting nature’s symmetry?</p>
+
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>9 </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>4 </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">Go outward! And onward! Let our universe expand;
+We put our footprints on the Moon, on Mars we soon will land;
+Our race for space grows feverish; the trendline cannot bubble;
+For humankind, the trophy lies - in the seeing glass of Hubble;
+      But the crunch! crunch! crunch!
+            The footsteps conjure sweat;
+                  Our crew rows on, at low morale,
+                        For fear our course is set.</p>
+
+<p class="entropy blanks">Go outward! And onward! March forth, accelerate,
+Compute our new trajectory, defiant to our fate;
+Ever since the dawn of time, not a day has passed,
+That celestial bodies at horizon, have not sailed out, full mast;
+      The crunching noises grow persistent,
+            I blink - try to forget,
+                  The nightmare of our ship collapsed,
+                        For fear our course is set.</p>
+
+<p class="entropy blanks">Though our compass points us outward, it may yet turn back inward,
+We have no choice but wait and see, jostled, carried windward;
+Mass begets us gravitation – mass begets us life,
+But mass in excess pulls the cosmos, to a point of strife;
+      Ignore the crunch, believe my hunch!
+            Let warm hint our fears abet,
+                  For fear the Gates of Heav’n are closed,
+                        For fear our course is set.</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>15</td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>13</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">In a state of low entropy, sitting,
+All by yourself on the wall,
+Rotund and smooth-skinned.
+Of high status and
+Listed as endangered by
+The Federal Government. Preciously precarious,
+Like a ship with an ivy sail.
+Going to fall,
+O high-sitter, my little oval.</p>
+
+<p class="entropy blanks">Not what you used to be.
+Like autumn leaves.
+All over the place.
+In the hooves of eighty horses,
+In the hands of eighty soldiers,
+No shape to do anything, ever.
+The reason paramedics are running their nth lap in panic.
+In our memories, forever.
+A new state, with high entropy.</p>
+
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>8 </td><td>  </td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>3 </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">i look at the sky with you(i look at your
+sky)you point at a cloud and tell me
+it looks like a butterfly(it looks like an
+awarded trophy)ask me anything sweetie
+                                i hear
+mommy(yes sweetie)the sky is the same color as water why?
+is it showing us the ocean like the magic wall in the
+bedroom(like a mirror)but then how does it turn off at
+night;when the moon comes up and the stars</p>
+
+<p class="entropy blanks">here is secret of how light works;it has all the colors(of the
+rainbow)blue is at the bottom of the rainbow because
+it’s bendier(colors that bend bounce everywhere
+like a manic smug)so we see it greatly(by a polynomial of degree 4)</p>
+
+<p class="entropy blanks">i look at the sky with you(i look at your sky)</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>5 </td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>6 </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">O woe is me, for though my eyes alight
+To see thy face and be entranced once more,
+I’ve no recourse to now abate this blight
+For I am kept apart from thee by force.
+I ease my heart with verse at long distance.
+My life revolves around thine in two ways.
+Each iamb will your praises sing in trance,
+Yet as I garner speed, my mind is dazed,
+For only farther does our distance grow
+Like droplets slipping down a beaker’s shape.
+My flaming thoughts have naught a place to go,
+Conserved they smolder me from heel to nape.
+Some future generation sure will tell:
+My cupid crieth, “Takest thee an L.”</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>7 </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>14</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+
+<p class="entropy blanks">We paid no heed to Mother Earth –
+So she paid none to us,
+Environmentalists excepted –
+They may lie and fuss.</p>
+
+<p class="entropy blanks">A generation gains great riches –
+A generation grieves -
+Blighted by the festering scars –
+Our inaction leaves.</p>
+
+<p class="entropy blanks">We once looked forward to the rain –
+That blessing from the sky,
+Yet now it stings and smells like sulfur –
+We sow - we reap - we cry.</p>
+
+<p class="entropy blanks">Our school has chosen to give students –
+An extra hole on shirts,
+Their long exposure to pollutants –
+Fashion sense subverts.</p>
+
+<p class="entropy blanks">As Mother Earth runs out of water –
+Our tugboats spin in dock –
+Attempting to scoop up the oil –
+Spilled at two o’clock.</p>
+
+<p class="entropy blanks">If we had stopped once to consider –
+Our fragile land of birth –
+Perhaps today we might have hope –
+To rectify our Earth.</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>18</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>  </td><td>11</td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">A festiful announcement rings
+On the warge Twolympic stage,
+“Alice you’ve seen many-a-things
+But none like these, I’d wage.”</p>
+
+<p class="entropy blanks">The skencers spin, make feints, take flight,
+As blades colleen and clash,
+A quick fliposte and now the fight
+Is winished in a flash.</p>
+
+<p class="entropy blanks">The swaulters run with springboards raised,
+Jump up, dive down, their dorstures prim,
+As the wise ol’ saying phrased:
+“Slink before you swim!”</p>
+
+<p class="entropy blanks">On the slopes of baskiball
+You’d miss the action if you’d blunk!
+An ace converts a fast free-fall
+Into a ten-point dunk.</p>
+
+<p class="entropy blanks">One, two! One, two! In a canoe
+A rally reaches brantic states,
+A second serve stirs hullabaloo,
+A sudden swerve seals fates.</p>
+
+<p class="entropy blanks">Here a local specialist,
+Can records break for global fame,
+That young junastics medalist
+From Twossachusetts came.</p>
+
+<p class="entropy blanks">The rings of these Twolympic Games
+Half a score, are here to stay,
+The caroller who holds these flames
+Will sing ‘til Neptuday.</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>2 </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>16</td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<p class="entropy blanks">See
+the way we
+      are encircled by the stars at night
+      could be seen as sign of might.
+            But I claim we are merely an</p>
+
+<p class="entropy blanks">ec-
+centric speck
+      orbiting our heliocenter.
+      To any dissenter
+            I assure you that even so we</p>
+
+<p class="entropy blanks">can
+remain man
+      with a different revolution path:
+      our evolution math
+           will still compute without us as</p>
+
+<p class="entropy blanks">com-
+mon denom-
+      inators. Thus cease your phony woes
+      like Act Five Romeos,
+           for even if you question the</p>
+
+<p class="entropy blanks">sky,
+its reply
+      to your ego’s long-held convictions
+      marred by my predictions
+           is a frigid and singular</p>
+
+<p class="entropy blanks">thought:
+Dot. Dot. Dot.
+      With indifferent attitude the world
+      ignores damnations hurled-
+           only abiding by its own</p>
+
+<p class="entropy blanks">laws.
+Hence my cause
+      is to realign your Book’s canon
+      and catch Satan’s plan in
+           advance, else my name is not</p>
+
+<p class="entropy blanks">Nick.
+Take your pick.
+      History oft has two sides, one right.
+      Will you have the foresight
+           to admit truth — not persecute?</p>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>  </td><td>  </td><td>12</td><td>  </td></tr>
+</table>
+<table class="extropy">
+<tr><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td><td>_ </td></tr>
+<tr><td>17</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td></tr>
+</table>
+
+<button class="btn clipboard-button"></button>
+
+
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

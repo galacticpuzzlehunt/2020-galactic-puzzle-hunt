@@ -1,0 +1,679 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Periscope</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../puzzles.html" class="btn">All puzzles</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+
+<h1><img src="../static/images/periscopeicon.73c9592f170c.png" class="header-icon" /><span style="vertical-align: middle">Periscope</span></h1>
+
+
+
+
+
+
+<style>
+.header-icon {
+    width: 120px;
+    height: 120px;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+}
+
+.periscope-control-panel {
+    max-width: 60%;
+    margin: 64px auto;
+}
+
+.reset-button-row, .activate-button-row {
+    text-align: center;
+}
+
+.periscope-graphic {
+    position: relative;
+    margin-top: -70px;
+    margin-bottom: -110px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 800px;
+    transform: scale(0.75);
+}
+
+.periscope-pipe {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-image: url(../static/images/periscopepipe.0e50650810e0.png);
+    background-size: 100%;
+}
+
+.periscope-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(../static/images/periscopeboxdark.db3693e41167.png);
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    cursor: default;
+    pointer-events: none;
+}
+
+a:hover .periscope-box {
+    filter: brightness(1.5);
+}
+
+.periscope-box-puzzle-title {
+  display: none;
+}
+
+.laser-red .periscope-box-puzzle-title {
+    text-align: center;
+    color: #111;
+    display: inline;
+}
+
+.laser-green .periscope-box-puzzle-title {
+    text-align: center;
+    color: #111;
+    display: inline;
+}
+
+.laser-blue .periscope-box-puzzle-title {
+    text-align: center;
+    color: #111;
+    display: inline;
+}
+
+a:hover .laser-red .periscope-box-puzzle-title. {
+    color: black;
+}
+
+a:hover .laser-green .periscope-box-puzzle-title. {
+    color: black;
+}
+
+a:hover .laser-blue .periscope-box-puzzle-title. {
+    color: black;
+}
+
+.periscope-laser-pointer {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-image: url(../static/images/periscopelaserpointer.4990cb424e45.png);
+    background-size: 100%;
+    transform: rotate(270deg);
+}
+
+.periscope-laser {
+    position: absolute;
+    width: 19px;
+    height: 64px;
+    background-size: 130px;
+    background-position: center;
+    transform: rotate(270deg);
+}
+
+.periscope-laser.laser-red {
+  background-image: url(../static/images/periscopelaserred.fc882c18a01c.png);
+}
+
+.periscope-laser.laser-green {
+    background-image: url(../static/images/periscopelasergreen.f002952d8c95.png);
+}
+
+.periscope-laser.laser-blue {
+    background-image: url(../static/images/periscopelaserblue.f2b2dccc91fb.png);
+}
+
+.laser-vert {
+    transform: rotate(0deg);
+}
+
+.periscope-box.laser-red {
+    background-image: url(../static/images/periscopeboxred.67375054be22.png);
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.periscope-box.laser-green {
+    background-image: url(../static/images/periscopeboxgreen.0713f8d9d51a.png);
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.periscope-box.laser-blue {
+    background-image: url(../static/images/periscopeboxblue.70205e2ef5ba.png);
+    cursor: pointer;
+    pointer-events: all;
+}
+</style>
+
+<div class="periscope-graphic">
+    <div class="periscope-laser laser-red" style="top: 207px; left: 664px"></div>
+    <div class="periscope-laser laser-green" style="top: 371px; left: 664px"></div>
+    <div class="periscope-laser laser-blue" style="top: 535px; left: 664px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-0" style="top: 91px; left: 552px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-1" style="top: 91px; left: 391px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-2" style="top: 91px; left: 230px"></div>
+    <div class="periscope-laser puzzle-box-3" style="top: 207px; left: 117px"></div>
+    <div class="periscope-laser puzzle-box-4" style="top: 371px; left: 117px"></div>
+    <div class="periscope-laser puzzle-box-5" style="top: 535px; left: 117px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-6" style="top: 646px; left: 230px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-7" style="top: 646px; left: 391px"></div>
+    <div class="periscope-laser laser-vert puzzle-box-8" style="top: 646px; left: 552px"></div>
+    <div class="periscope-pipe" style="top: 151px; left: 154px"></div>
+    <div class="periscope-pipe" style="top: 151px; left: 315px"></div>
+    <div class="periscope-pipe" style="top: 151px; left: 476px"></div>
+    <div class="periscope-pipe" style="top: 315px; left: 154px"></div>
+    <div class="periscope-pipe" style="top: 315px; left: 315px"></div>
+    <div class="periscope-pipe" style="top: 315px; left: 476px"></div>
+    <div class="periscope-pipe" style="top: 479px; left: 154px"></div>
+    <div class="periscope-pipe" style="top: 479px; left: 315px"></div>
+    <div class="periscope-pipe" style="top: 479px; left: 476px"></div>
+    <a href="../puzzle/mr-worldwide.html">
+      <div class="periscope-box puzzle-box-0" style="top: -21px; left: 501px">
+        <div class="periscope-box-puzzle-title">Mr. Worldwide</div>
+      </div>
+    </a>
+    <a href="../puzzle/letter-boxing.html">
+      <div class="periscope-box puzzle-box-1" style="top: -21px; left: 340px">
+        <div class="periscope-box-puzzle-title">Letter Boxing</div>
+      </div>
+    </a>
+    <a href="../puzzle/the-first-annual-blaseball-puzzle.html">
+      <div class="periscope-box puzzle-box-2" style="top: -21px; left: 179px">
+        <div class="periscope-box-puzzle-title">The First Annual Blaseball Puzzle</div>
+      </div>
+    </a>
+    <a href="../puzzle/divide-and-conquer.html">
+      <div class="periscope-box puzzle-box-3" style="top: 177px; left: -20px">
+        <div class="periscope-box-puzzle-title">Divide and Conquer</div>
+      </div>
+    </a>
+    <a href="../puzzle/the-seasons-change.html">
+      <div class="periscope-box puzzle-box-4" style="top: 341px; left: -20px">
+        <div class="periscope-box-puzzle-title">The Seasons Change</div>
+      </div>
+    </a>
+    <a href="../puzzle/thrifty-thrifty.html">
+      <div class="periscope-box puzzle-box-5" style="top: 505px; left: -20px">
+        <div class="periscope-box-puzzle-title">Thrifty​/​Thrifty</div>
+      </div>
+    </a>
+    <a href="../puzzle/board-games-with-shrek.html">
+      <div class="periscope-box puzzle-box-6" style="top: 703px; left: 179px">
+        <div class="periscope-box-puzzle-title">Board Games with Shrek</div>
+      </div>
+    </a>
+    <a href="../puzzle/crosswerd.html">
+      <div class="periscope-box puzzle-box-7" style="top: 703px; left: 340px">
+        <div class="periscope-box-puzzle-title">Crosswerd</div>
+      </div>
+    </a>
+    <a href="../puzzle/mixed-message.html">
+      <div class="periscope-box puzzle-box-8" style="top: 703px; left: 501px">
+        <div class="periscope-box-puzzle-title">Mixed Message</div>
+      </div>
+    </a>
+    <a href="../puzzle/periscope.html">
+      <div class="periscope-box meta-box-0" style="top: 177px; left: 704px">
+        <div class="periscope-box-puzzle-title">Periscope</div>
+      </div>
+    </a>
+    <a href="../puzzle/periscope.html">
+      <div class="periscope-box meta-box-1" style="top: 341px; left: 704px">
+        <div class="periscope-box-puzzle-title">Periscope</div>
+      </div>
+    </a>
+    <a href="../puzzle/periscope.html">
+      <div class="periscope-box meta-box-2" style="top: 505px; left: 704px">
+        <div class="periscope-box-puzzle-title">Periscope</div>
+      </div>
+    </a>
+
+    <div class="periscope-laser-pointer" style="top: 172px; left: 595px"></div>
+    <div class="periscope-laser-pointer" style="top: 336px; left: 595px"></div>
+    <div class="periscope-laser-pointer" style="top: 500px; left: 595px"></div>
+</div>
+
+<div class="periscope-control-panel">
+    <h4>Periscope Control Panel</h4>
+
+    <div class="reset-button-row">
+      <button class="reset-periscope-btn btn">Reset Periscope</button>
+    </div>
+
+    <div class="activate-button-row">
+      <button class="activate-btn btn puzzle-btn-0" data-puzzle="0">Mr. Worldwide</button>
+      <button class="activate-btn btn puzzle-btn-1" data-puzzle="1">Letter Boxing</button>
+      <button class="activate-btn btn puzzle-btn-2" data-puzzle="2">The First Annual Blaseball Puzzle</button>
+      <button class="activate-btn btn puzzle-btn-3" data-puzzle="3">Divide and Conquer</button>
+      <button class="activate-btn btn puzzle-btn-4" data-puzzle="4">The Seasons Change</button>
+      <button class="activate-btn btn puzzle-btn-5" data-puzzle="5">Thrifty​/​Thrifty</button>
+      <button class="activate-btn btn puzzle-btn-6" data-puzzle="6">Board Games with Shrek</button>
+      <button class="activate-btn btn puzzle-btn-7" data-puzzle="7">Crosswerd</button>
+      <button class="activate-btn btn puzzle-btn-8" data-puzzle="8">Mixed Message</button>
+    </div>
+</div>
+
+
+<script src="../static/puzzle_resources/periscope/periscope.c0dd60c3a121.js"></script>
+
+<script>
+$(() => {
+    for (const btn of $('.activate-btn')) {
+        $(btn).click(() => {
+          submit(btn.getAttribute('data-puzzle'));
+        });
+    }
+
+    $('.reset-periscope-btn').click(() => {
+        reset()
+    });
+});
+</script>
+
+
+<div class="puzzles-list">
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/mr-worldwide.html">
+            <b >Mr. Worldwide</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/mr-worldwide">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/mr-worldwide.html">
+            
+            <b>208</b> solves
+            | <b>662</b> guesses
+            
+            | <b>222</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/letter-boxing.html">
+            <b >Letter Boxing</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/letter-boxing">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/letter-boxing.html">
+            
+            <b>241</b> solves
+            | <b>384</b> guesses
+            
+            | <b>252</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/the-first-annual-blaseball-puzzle.html">
+            <b style="font-size: 82%">The First Annual Blaseball Puzzle</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/the-first-annual-blaseball-puzzle">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/the-first-annual-blaseball-puzzle.html">
+            
+            <b>104</b> solves
+            | <b>373</b> guesses
+            
+            | <b>111</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/divide-and-conquer.html">
+            <b >Divide and Conquer</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/divide-and-conquer">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/divide-and-conquer.html">
+            
+            <b>122</b> solves
+            | <b>737</b> guesses
+            
+            | <b>126</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/the-seasons-change.html">
+            <b >The Seasons Change</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/the-seasons-change">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/the-seasons-change.html">
+            
+            <b>158</b> solves
+            | <b>263</b> guesses
+            
+            | <b>160</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/thrifty-thrifty.html">
+            <b >Thrifty​/​Thrifty</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/thrifty-thrifty">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/thrifty-thrifty.html">
+            
+            <b>143</b> solves
+            | <b>381</b> guesses
+            
+            | <b>149</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/board-games-with-shrek.html">
+            <b >Board Games with Shrek</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/board-games-with-shrek">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/board-games-with-shrek.html">
+            
+            <b>121</b> solves
+            | <b>915</b> guesses
+            
+            | <b>144</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/crosswerd.html">
+            <b >Crosswerd</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/crosswerd">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/crosswerd.html">
+            
+            <b>161</b> solves
+            | <b>416</b> guesses
+            
+            | <b>174</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/mixed-message.html">
+            <b >Mixed Message</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/mixed-message">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/mixed-message.html">
+            
+            <b>138</b> solves
+            | <b>321</b> guesses
+            
+            | <b>147</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry puzzles-meta">
+        <a class="puzzles-link" href="../puzzle/periscope.html">
+            <b >Periscope</b>
+        </a>
+        
+        <div class="puzzles-new">meta</div>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/periscope">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/periscope.html">
+            
+            <b>92</b> solves
+            | <b>224</b> guesses
+            
+            | <b>97</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-spacer"></div>
+    <div class="puzzles-spacer"></div>
+</div>
+
+
+
+    </div>
+</body>
+</html>

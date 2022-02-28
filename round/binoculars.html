@@ -1,0 +1,445 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Binoculars</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../puzzles.html" class="btn">All puzzles</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+
+<img src="../static/images/binocularsicon.8b1485086b2a.png" class="binoculars-header-icon" />
+
+
+
+
+
+<style>
+.binoculars-header-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -50px;
+    width: 120px;
+    height: 120px;
+}
+
+.bionicle {
+    display: flex;
+    margin: 60px 0;
+}
+
+.monocle {
+    width: 58.5%;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: -15%;
+    background-image: url(../static/images/circleforbinoculars.23e88fc61053.png);
+    background-size: 100%;
+}
+
+.monocle-spacer {
+    padding-top: 100%;
+}
+
+.monocle-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+
+<div class="bionicle">
+    <div class="monocle">
+        <div class="monocle-spacer"></div>
+        <div class="monocle-content">
+            <h1>Binoculars</h1>
+            
+            <p>
+                <a href="../puzzle/symbols.html#left">Symbols</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/friendly-neighbors.html#left">Friendly Neighbors</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/so-you-think-you-can-spell.html#left">So You Think You Can Spell</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/intersections.html#left">Intersections</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/this-puzzle-intentionally-left-blank.html#left">This Puzzle Intentionally Left Blank</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/fridge-magnets.html#left">Fridge Magnets</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/binoculars.html#left">Binoculars</a>
+            </p>
+            
+        </div>
+    </div>
+
+    <div class="monocle">
+        <div class="monocle-spacer"></div>
+        <div class="monocle-content">
+            <h1>Binoculars</h1>
+            
+            <p>
+                <a href="../puzzle/symbols.html#right">Symbols</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/friendly-neighbors.html#right">Friendly Neighbors</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/so-you-think-you-can-spell.html#right">So You Think You Can Spell</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/intersections.html#right">Intersections</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/this-puzzle-intentionally-left-blank.html#right">This Puzzle Intentionally Left Blank</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/fridge-magnets.html#right">Fridge Magnets</a>
+            </p>
+            
+            <p>
+                <a href="../puzzle/binoculars.html#right">Binoculars</a>
+            </p>
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="puzzles-list">
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/symbols.html">
+            <b >Symbols</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/symbols">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/symbols.html">
+            
+            <b>198</b> solves
+            | <b>404</b> guesses
+            
+            | <b>200</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/friendly-neighbors.html">
+            <b >Friendly Neighbors</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/friendly-neighbors">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/friendly-neighbors.html">
+            
+            <b>99</b> solves
+            | <b>573</b> guesses
+            
+            | <b>118</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/so-you-think-you-can-spell.html">
+            <b >So You Think You Can Spell</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/so-you-think-you-can-spell">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/so-you-think-you-can-spell.html">
+            
+            <b>285</b> solves
+            | <b>520</b> guesses
+            
+            | <b>311</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/intersections.html">
+            <b >Intersections</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/intersections">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/intersections.html">
+            
+            <b>173</b> solves
+            | <b>464</b> guesses
+            
+            | <b>189</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/this-puzzle-intentionally-left-blank.html">
+            <b style="font-size: 82%">This Puzzle Intentionally Left Blank</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/this-puzzle-intentionally-left-blank">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/this-puzzle-intentionally-left-blank.html">
+            
+            <b>119</b> solves
+            | <b>517</b> guesses
+            
+            | <b>135</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/fridge-magnets.html">
+            <b >Fridge Magnets</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/fridge-magnets">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/fridge-magnets.html">
+            
+            <b>210</b> solves
+            | <b>1205</b> guesses
+            
+            | <b>224</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry puzzles-meta">
+        <a class="puzzles-link" href="../puzzle/binoculars.html">
+            <b >Binoculars</b>
+        </a>
+        
+        <div class="puzzles-new">meta</div>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/binoculars">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/binoculars.html">
+            
+            <b>117</b> solves
+            | <b>333</b> guesses
+            
+            | <b>122</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-spacer"></div>
+    <div class="puzzles-spacer"></div>
+</div>
+
+
+
+    </div>
+</body>
+</html>

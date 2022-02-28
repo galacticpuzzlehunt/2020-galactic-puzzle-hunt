@@ -1,0 +1,518 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Night Vision Goggles</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../puzzles.html" class="btn">All puzzles</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+
+<h1><img src="../static/images/nightvisioniconatnight.51ca80f8b8c0.png" class="header-icon" /> <span style="vertical-align: middle">Night Vision Goggles</span></h1>
+
+
+
+
+
+<style>
+.header-icon {
+    width: 120px;
+    height: 120px;
+    vertical-align: middle;
+    position: relative;
+}
+
+html {
+    background-color: #141814;
+}
+
+body {
+    color: #7b7;
+}
+
+h1 {
+    color: #7b7;
+    text-shadow: 0 0 6px rgba(20, 100, 20, 0.5);
+}
+
+.puzzles-entry {
+    color: #c0ffc0;
+    border-color: #7b7;
+}
+
+a {
+    color: #7b7;
+}
+
+a:hover {
+    color: #c0ffc0;
+}
+
+a.btn {
+    filter: hue-rotate(240deg) saturate(0.5) brightness(1.2);
+}
+
+.puzzles-link, .puzzles-new, .puzzles-answer, .puzzles-solution {
+    background-color: #141616;
+    color: #9d9;
+}
+
+.night-vision-graphic {
+}
+
+.night-vision-bg {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../static/images/nightvisionouterring.3d61f6b287fe.png);
+    background-size: 100%;
+    width: 600px;
+    height: 600px;
+}
+
+.night-vision-link {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../static/images/nightvisiondot.53cac44bfd43.png);
+    background-size: 100%;
+    
+}
+
+a.night-vision-link:hover {
+    filter: brightness(1.4);
+}
+
+.night-vision-meta-link {
+    position: absolute;
+    display: block;
+    top: 154px;
+    left: 160px;
+}
+
+.night-vision-center-table {
+    position: absolute;
+    font-size: 14px;
+    table-layout: fixed;
+    width: 289px;
+    height: 289px;
+    border: 1px solid #7b7;
+}
+
+.night-vision-center-table td {
+    border: 1px solid #7b7;
+    padding: 2px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 0.9;
+    height: 43px;
+}
+</style>
+
+<div class="night-vision-graphic">
+    <div class="night-vision-bg">
+         <a href="../puzzle/make-your-own-math-quiz.html" class="night-vision-link" style="top: 46px; left: 165px"></a>
+        <a href="../puzzle/virtual-family.html" class="night-vision-link" style="top: 45.5px; left: 381px"></a>
+        <a href="../puzzle/entropy.html" class="night-vision-link" style="top: 216px; left: 512px"></a>
+        <a href="../puzzle/action-adventure.html" class="night-vision-link" style="top: 423.5px; left: 468px"></a>
+        <a href="../puzzle/word-salad.html" class="night-vision-link" style="top: 513px; left: 274px"></a>
+        <a href="../puzzle/not-to-scale.html" class="night-vision-link" style="top: 423px; left: 79px"></a>
+        <a href="../puzzle/dropcrypt.html" class="night-vision-link" style="top: 216px; left: 31px"></a>
+        <a href="../puzzle/night-vision-goggles.html" class="night-vision-meta-link">
+        <table class="night-vision-center-table">
+        <tr>
+        <td></td>
+        <td>8</td>
+        <td>Brand</td>
+        <td style="font-size: 10px">Scratched</td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td></td>
+        <td>Drug</td>
+        <td>7</td>
+        <td></td>
+        <td>5</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>4</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>Oaf</td>
+        <td></td>
+        <td></td>
+        <td style="font-size: 8px">Basketballer</td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>Poet</td>
+        <td>1</td>
+        <td>9</td>
+        <td style="font-size: 10px">Currency</td>
+        <td>6</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td>11</td>
+        <td></td>
+        <td></td>
+        <td>10</td>
+        </tr>
+        </table>
+        </a>
+    </div>
+</div>
+
+
+<div class="puzzles-list">
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/dropcrypt.html">
+            <b >Dropcrypt</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/dropcrypt">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/dropcrypt.html">
+            
+            <b>214</b> solves
+            | <b>335</b> guesses
+            
+            | <b>219</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/entropy.html">
+            <b >Entropy</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/entropy">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/entropy.html">
+            
+            <b>178</b> solves
+            | <b>460</b> guesses
+            
+            | <b>183</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/not-to-scale.html">
+            <b >Not to Scale</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/not-to-scale">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/not-to-scale.html">
+            
+            <b>125</b> solves
+            | <b>546</b> guesses
+            
+            | <b>134</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/word-salad.html">
+            <b >Word Salad</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/word-salad">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/word-salad.html">
+            
+            <b>127</b> solves
+            | <b>374</b> guesses
+            
+            | <b>136</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/action-adventure.html">
+            <b >Action Adventure</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/action-adventure">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/action-adventure.html">
+            
+            <b>125</b> solves
+            | <b>493</b> guesses
+            
+            | <b>150</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/make-your-own-math-quiz.html">
+            <b >Make Your Own Math Quiz</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/make-your-own-math-quiz">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/make-your-own-math-quiz.html">
+            
+            <b>211</b> solves
+            | <b>869</b> guesses
+            
+            | <b>222</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/virtual-family.html">
+            <b >Virtual Family</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/virtual-family">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/virtual-family.html">
+            
+            <b>153</b> solves
+            | <b>484</b> guesses
+            
+            | <b>158</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry puzzles-meta">
+        <a class="puzzles-link" href="../puzzle/night-vision-goggles.html">
+            <b >Night Vision Goggles</b>
+        </a>
+        
+        <div class="puzzles-new">meta</div>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/night-vision-goggles">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/night-vision-goggles.html">
+            
+            <b>101</b> solves
+            | <b>240</b> guesses
+            
+            | <b>107</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-spacer"></div>
+    <div class="puzzles-spacer"></div>
+</div>
+
+
+
+    </div>
+</body>
+</html>

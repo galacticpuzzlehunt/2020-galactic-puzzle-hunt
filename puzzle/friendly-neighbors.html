@@ -1,0 +1,529 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Friendly Neighbors</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+<a href="../round/binoculars.html" class="btn" title="Binoculars">
+    <img src="../static/images/binocularsiconchonky.0fee86a04cc2.png" style="height: 2em; filter: invert(1); mix-blend-mode: color-dodge; vertical-align: bottom;">
+</a>
+
+
+
+
+
+<a href="../post-hunt-solve/friendly-neighbors.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/friendly-neighbors" class="btn">View solution</a>
+<a href="../stats/friendly-neighbors.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Friendly Neighbors
+    
+    
+</h1>
+
+<style>
+#left-btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#right-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#left-btn, #right-btn {
+    opacity: 0.5;
+}
+
+[data-version=left] #left-btn, [data-version=right] #right-btn {
+    opacity: 1;
+}
+
+#left-puz, #right-puz {
+    display: none;
+}
+
+[data-version=left] ~ * #left-puz, [data-version=right] ~ * #right-puz {
+    display: block;
+}
+</style>
+
+<div class="toggle-wrapper">
+    <div class="toggle-container">
+        <button class="btn" id="left-btn">Left</button>
+        <button class="btn" id="right-btn">Right</button>
+    </div>
+</div>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+
+    <div id="left-puz" class="clipboard-container">
+
+<style>
+    .audio-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .audio-container p {
+        align-self: flex-start;
+    }
+
+    audio {
+        display: block;
+        margin-bottom: 4px;
+    }
+</style>
+
+<p>You’re visiting a new neighborhood, where the locals are very friendly!
+    
+    Amber, Diana, Emma, and Gina are female, while Bill, Chris, and Fred are
+    male.
+    
+    
+    Four of the locals gave you interesting gifts when you talked to
+    them - an artist’s palette, some binoculars, a compass, and a phone
+    book, though all the gifts seemed a little strange. You recorded what
+    they said, but you can’t quite remember who’s who or who gave you which
+    gift… But you do remember that the neighborhood was colorful - each
+    person lived in their own houses, which were blue, gray, green, orange,
+    purple, red, and yellow. Your house is on the opposite side of the city,
+    so you’ll have plenty of time to sort this out on the way home.</p>
+
+<div class="audio-container">
+    
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/1.6f98d672bd7f.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/2.cb70fad6cf76.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/3.30ad3bb83aa4.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/4.095eb2d5c9f4.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/5.23aac1123063.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/6.bbf9c714a716.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/7.a5d5ef8a285e.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/8.11c259a2d5a8.mp3" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/9.8def8f4e07f0.m4a" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/10.c7bfc9639db6.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/11.cffb5a5035dc.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/12.c7363563228f.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/13.2b3c977e7691.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/14.1bf999c1db43.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/15.532352366d6e.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/16.b32dec892e88.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/17.cc4a29ad6aab.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/18.c2f854b1c99e.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/19.d373a3800353.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/20.63c42f415ec6.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/21.e4285cd2390c.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/22.6a72f6f419d9.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/23.ee1eae8b5f06.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/24.3383c606ee21.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/25.449f5405062c.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/26.7b8f59d1a1ef.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/27.3984aeb64a33.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/28.1e21c472f910.mp3" type="audio/mpeg" />
+    </audio>
+    
+    
+</div>
+
+<p>Everyone also mentioned what they did yesterday.</p>
+
+<div class="audio-container">
+    
+
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/29.b5bf76073413.m4a" type="audio/mp4" />
+    </audio>
+
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/30.4e4abcd25689.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/31.65428ae48609.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/left/32.71c0d77f9a14.mp3" type="audio/mpeg" />
+    </audio>
+
+    <p>A <a href="../static/puzzle_resources/friendly-neighbors/left/transcriptLeft.413d20ff94c2.txt">transcript</a> is available.</p>
+    
+
+    
+</div>
+
+</div>
+    <div id="right-puz" class="clipboard-container">
+
+<style>
+    .audio-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .audio-container p {
+        align-self: flex-start;
+    }
+
+    audio {
+        display: block;
+        margin-bottom: 4px;
+    }
+</style>
+
+<p>You’re visiting a new neighborhood, where the locals are very friendly!
+    
+    
+    Joanne, Melanie, and Nancy are female, while Harold, Ivan, Keith, and Larry
+    are male.
+    
+    Four of the locals gave you interesting gifts when you talked to
+    them - an artist’s palette, some binoculars, a compass, and a phone
+    book, though all the gifts seemed a little strange. You recorded what
+    they said, but you can’t quite remember who’s who or who gave you which
+    gift… But you do remember that the neighborhood was colorful - each
+    person lived in their own houses, which were blue, gray, green, orange,
+    purple, red, and yellow. Your house is on the opposite side of the city,
+    so you’ll have plenty of time to sort this out on the way home.</p>
+
+<div class="audio-container">
+    
+    
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/1.c09438c14162.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/2.64d53232788e.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/3.6aa15a56627f.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/4.8f0687626bb6.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/5.a384e01c3a77.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/6.ffbf2770af4f.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/7.7d81c75ff8a9.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/8.aa15cb41a88d.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/9.7928a569edbb.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/10.06d5c938b40c.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/11.9239ddc81d59.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/12.14ce9dfaf8e3.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/13.d4af18d523c1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/14.b4729ef78478.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/15.ac1b4b8e9797.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/16.58374fc682a9.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/17.8c25caa203cc.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/18.bc7be469d2d7.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/19.6b0a86d0381b.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/20.d77ab9cee0af.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/21.b1a413fb1d6f.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/22.9c3f2b2a8a66.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/23.f0667d4232d5.m4a" type="audio/mp4" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/24.ddcce1b159f9.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/25.3323b63996bf.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/26.75511daee90a.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/27.49e6189250ee.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/28.3ffee04f6ace.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/29.b820a3d4fb42.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/30.53c20c4d0002.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/31.2d49a418c69b.mp3" type="audio/mpeg" />
+    </audio>
+    
+</div>
+
+<p>Everyone also mentioned what they did yesterday.</p>
+
+<div class="audio-container">
+    
+
+    
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/32.16012a97b9d2.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/33.22efe2af363a.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/34.65c3bfc356d7.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls>
+        <source src="../static/puzzle_resources/friendly-neighbors/right/35.3fdc67eec0e7.mp3" type="audio/mpeg" />
+    </audio>
+
+    <p>A <a href="../static/puzzle_resources/friendly-neighbors/right/transcriptRight.88b5594c4bf0.txt">transcript</a> is available.</p>
+
+
+</div>
+
+</div>
+    <script>
+        function setVersion(version) {
+            $('.toggle-wrapper').attr('data-version', version);
+            history.replaceState(null, '', '#' + version);
+            for (const player of document.querySelectorAll('main audio, main video'))
+                player.pause();
+        }
+        $('#left-btn').click(() => setVersion('left'));
+        $('#right-btn').click(() => setVersion('right'));
+        if (location.hash)
+            setVersion(location.hash.replace(/^#/, ''));
+    </script>
+
+
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

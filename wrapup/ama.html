@@ -1,0 +1,477 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Galactic Puzzle Hunt</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a class="selected-tab" href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../wrapup.html" class="btn">Back to wrap-up</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<style>
+
+  .todo {
+      color: red;
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  aside {
+    display: none;
+  }
+
+  @media screen and (min-width: 961px) {
+    aside {
+      display: block;
+      position: fixed;
+      width: 240px;
+      top: 120px;
+      left: 0;
+    }
+
+    aside div {
+      color: #ae4160;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    aside :hover {
+      text-decoration: underline;
+    }
+
+    aside .highlight {
+      font-weight: bold;
+    }
+
+    .content {
+      margin-left: calc(240px - 10vw);
+    }
+  }
+
+</style>
+
+<h1>Ask Us Anything</h1>
+
+<main>
+    <i>Questions have been edited slightly for clarity.</i>
+
+    <h2>Writing Puzzles</h2>
+
+    <p><strong>How does ✈✈✈ Galactic Trendsetters ✈✈✈ approach puzzle topic distribution?  As in, there are plenty of game/internet culture puzzles and hyper-minimalist puzzles (that don’t feel underclued!). Do you have to consciously try to write puzzles outside of certain niches?</strong></p>
+
+    <p>
+    It’s broadly first-come-first-serve. After Virtual Family was underway, we told another author not to write a Hololive puzzle. We also sometimes discussed “do we have enough word puzzles / logic puzzles?” in our regular meetings, which would often prompt people to brainstorm and write such puzzles shortly after (to some extent, this is the origin story of ✅).
+    </p>
+
+    <p><strong>How do you write some of these puzzles like Divide and Conquer, or Mr. Worldwide, or the Periscope meta...? Mindblowingly good stuff, and some of them just feel so hard to write.</strong></p>
+
+	<p>
+	Pretty much all puzzles start with some base idea (e.g. for Divide and Conquer, it was “solving an interactive logic puzzle by deducing the rules yourself”). Then, for longer and bigger puzzles, it often takes a lot of iteration and brainstorming on top of the initial idea to refine the details. It often helps to work in small groups - talking with others can be a great source of inspiration, and for especially large puzzles, splitting up the work makes things manageable. Testsolving, as always, is invaluable. But overall, a lot of it really is just putting in the time and effort to refine the idea until it becomes what you see in front of you during the hunt.
+	</p>
+
+	<p><strong>
+	As someone who already writes puzzles, how do I write harder puzzles that are still fair? All my puzzles end up being really trivial and I want to know how to write a puzzle that can hold a team’s attention for several hours rather than being torn apart in like 40 minutes.
+	</strong></p>
+
+	<p>
+	This is a really tough question to answer! Some scattered thoughts:
+	<ul>
+        <li>When you have a puzzle idea, there are a lot of directions you can take it, or variations or twists you can put on it. This can greatly affect the difficulty and length, so it’s worth spending time brainstorming the possibilities to figure out what feels best (also see the above answer).</li>
+        <li>Even after you have a concrete idea, the length of the puzzle can vary wildly depending on implementation (e.g. the number of columns in Dropcrypt or the number of clips in Intersections are very flexible). There is often a difficult balancing act in deciding on these paremeters, and testsolving is very important for seeing how fun or how long it is. You mentioned a puzzle being “torn apart in 40 minutes”, but 40 minutes can feel very different depending on the puzzle: maybe testers speed through it and wish it were longer (in which case you could extend it), but also maybe testers feel satisfied with the length and making it longer would just be more sloggy or unfun.</li>
+        <li>One concrete suggestion for making longer puzzles is to think about puzzly things are naturally fun (e.g. solving crosswords or other wordplay puzzles, finding patterns or connections) and base your idea on that; ideally, the fun thing is fun enough to last several hours. Keep in mind that a longer puzzle doesn’t have to be difficult in terms of aha—one extreme end is a puzzle like <a target=_blank href="https://2017.galacticpuzzlehunt.com/puzzle/5/1.html">dʒʌmbəl</a> which has basically no aha moments but consists of a fun puzzly thing (rearranging sounds to make words) extended to potentially last an hour or more.</li>
+		<li>There’s nothing inherently “better” about longer puzzles: sometimes a puzzle idea naturally “wants” to be easy and will make for a great shorter puzzle, while making it harder could be worse. Over the course of a puzzlehunt, it’s good to have a variety of lengths and difficulties.</li>
+		<li>Is the triviality of these puzzles actually borne out by testsolving? It’s extremely easy to think your puzzle is simple, but not everyone thinks the same way; we thought some of our puzzles were fairly straightforward and they turned out to be quite challenging anyway.</li>
+    </ul>
+	</p>
+
+	<p><strong>
+	What’s the ratio of puzzle ideas to actual puzzles? Are there certain types of puzzles that take longer or shorter to create?
+	</strong></p>
+
+	<p>
+	There are currently 96 entries on Puzzlord and we only had 36 + 7 meta puzzles in the hunt. A lot of puzzles were killed during our hiatus.
+	</p>
+
+	<p><strong>
+	What was the hardest puzzle to design?
+	</strong></p>
+
+	<p>
+	There could be many possible answers depending on your definition of “hardest”, but one potential candidate is Telescope, due to the large number of moving parts. Choosing the optimal starting configuration for the Periscope round was also a bit of a challenge, as explained in the <a target=_blank href="https://2020.galacticpuzzlehunt.com/solution/periscope#authors-notes">Author’s Notes</a>.
+	</p>
+
+    <h2>Hunt Overall</h2>
+
+	<p><strong>Was any of this content originally written for the MIT Mystery Hunt but then cut or repurposed for GPH? Conversely, did anything that was going to be in this hunt get repurposed for the MIT Mystery Hunt?
+	</strong></p>
+
+	<p>
+		At the start of Mystery Hunt planning we decided we weren’t going to take any of the metas we’d written for GPH, but some individual puzzle ideas made it over (e.g. When All Is Lost). We also had some finished backup puzzles left over from Mystery Hunt in case we ran short on GPH ideas, but we ended up not having to use them in either hunt. Divide and Conquer in particular was always about determining a set of logic puzzle rules through trial and error, but evolved quite a bit from the original conception by way of incorporating a similar unused idea from Mystery Hunt.
+	</p>
+
+	<p><strong>What was the order that you designed the metas and metametas in?
+	</strong></p>
+
+	<p>First we wrote the Four Sights, then the four main round metas, then Telescope was adapted from an unused idea for
+	another main round meta.
+	</p>
+
+	<p><strong>Did you have any specific goals in tuning the difficulty of this hunt?
+	</strong></p>
+
+	<p>
+	A vague goal was “make the hunt easier than 2019”. A specific goal was for the first team to finish between 24 and 48 hours into the hunt.
+	We didn’t set any goals about the number of teams to finish the hunt/the intro meta/one puzzle, but maybe we should have.
+	</p>
+
+	<p><strong>What do you think about the concept of power creep with regards to puzzling? What are your opinions on the “arms race” between solvers and writers?
+	</strong></p>
+
+	<p>
+		By power creep, we assume you’re referring to the idea that “puzzles are harder than they were in the past, but solvers are
+		better too”. Solvers probably aren’t significantly better at getting a-has than they were 10 years ago, but there are certain
+		types of puzzles that technology helps solve.
+		Also, some community norms have gained traction which help people solve puzzles adhering to those norms:
+		no unclued anagrams;
+		if a list is alphabetized, you may need to re-sort it (and the inverse);
+		every step of the puzzle should be reasonably natural.
+	</p>
+
+  <p>One of the consequences of this is that it’s increasingly challenging to design a hunt that can be enjoyed by both experienced and novice teams. We’ve tried our best to make the opening round of our hunt accessible to solvers of all experience levels, but it’s undoubtedly true that certain teams cannot expect to complete our entire hunt even with hints. One thing that has changed over the years is that there are now <a target=_blank href="http://puzzlehuntcalendar.com/">a lot more</a> other online hunts available, many of which target an easier difficulty level. If you were frustrated by this hunt’s difficulty, we encourage you to check out these hunts!</p>
+
+	<p><strong>Do you have any stories about testsolving and how puzzles changed in editing?
+	</strong></p>
+
+	<p>
+		There were lots of instances where a puzzle was way harder than the authors initially expected. For example,
+		Where to Next was extremely difficult on the first version, the first iteration of Word Salad only provided the 8 extraction blocks of text, and Mixed Message was originally a GIF.
+	</p>
+	<p>On the first test of Make Your Own Math Quiz, the code defined the
+		English language to contain exactly 3 words: BUZZ, BUD, and DUB.
+	</p>
+	<p>
+		Some of the author’s notes on the individual solution pages have more stories along these lines!
+	</p>
+
+	<p><strong>What was the hardest meta to create (whether it was creating the puzzle itself or just coming up with working answers)?
+	</strong></p>
+
+	<p>Likely Telescope, because we were revising it several days before the hunt (see the author’s notes for more details). Getting 100 subscribers to our Youtube
+	account was also highly difficult.
+	</p>
+
+	<p>Coming up with working answers for Periscope was also a bit of a challenge, which you might expect from looking at the answers in the round. We looked at lots of potential configurations (e.g. clockwise vs counterclockwise) and ended up choosing this one as having the least bad answers.</p>
+
+	<p><strong>Did you watch the progress of people who were close to finishing? We got stuck for soooo long on the last Meta, asked three incredibly stupid hints, and made jokes to each other that y’all were watching and laughing (in a good way).
+	</strong></p>
+
+	<p>We love spectating teams as they solve the hunt :). Getting stuck is completely normal, literally every team gets stuck on something.
+	</p>
+
+	<p><strong>If you could add one more round themed around an optical device, what optical device would it be?
+	</strong></p>
+
+	<p>
+		Some unused suggestions include 3-D glasses, diving mask, rose-colored glasses, and beer goggles.
+	</p>
+
+	<p>
+		In brainstorming, one potential round idea was a VR headset which would use augmented reality in some way. We never developed it further, but something along those lines seems interesting.
+	</p>
+
+	<p><strong>Is next year’s hunt going to be 2021 or 2022?
+	</strong></p>
+
+	<p>
+	Maybe.
+	</p>
+
+    <h2>Technical</h2>
+
+	<p><strong>What is your process for developing a hunt website and setting up all the cool interactive stuff?
+	</strong></p>
+
+	<p>The open-source <a target=_blank href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a> repository has most of the base code, but each year we have a bunch of specialized code for different puzzles and gimmicks like Periscope. It’s up to puzzle authors to implement their own interactive puzzles.
+	</p>
+
+	<p><strong>We would love info on how you did the interactive puzzles, especially the synced ones! They always look super impressive.
+	</strong></p>
+
+	<p>For puzzles that don’t sync information between teammates, the puzzle page makes POST requests to the server, which responds with a status or more content. The puzzle state is generally stored in <a target=_blank href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">local storage</a>, and client-side javascript is used to manipulate the puzzle page itself. We generally try to avoid including any secret information or validation in the client so that solvers are forced to actually solve the puzzle. Thrifty/Thrifty, Letter Boxing, Make Your Own Math Quiz, Action Adventure, and So You Think You Can Spell? all follow this model.</p>
+
+  <p>Things get more complicated when you want to share state between teammates. The puzzle state now needs to live in a server-side database (gph-site uses SQLite). The Meta Meta Meta … Puzzle and Word Salad store correct submissions/translations in a database; Word Salad autofetches new translations every 10 seconds via POST request (using the code we wrote last year). Periscope uses <a target=_blank href="https://github.com/galacticpuzzlehunt/gph-site/blob/master/puzzles/messaging.py">web sockets</a> to send down updates to clients so that you see state changes faster.
+	</p>
+
+    <h2>Specific Puzzles</h2>
+
+	<p><strong>What’s your single favourite Olympic mascot?
+	</strong></p>
+
+	<p>Mukmuk.
+	</p>
+
+	<p><strong>Favorite sub (or sub-sub-...) answer from The Meta Meta Meta ... Puzzle?
+	</strong></p>
+
+	<p>
+        NATIONALIZATION
+	</p>
+
+	<p><strong>Is there actually an end to The Meta Meta Meta ... puzzle?
+	</strong></p>
+
+	<p>
+		Yes, see the <a target=_blank href="https://2020.galacticpuzzlehunt.com/solution/the-meta-meta-meta-puzzle#authors-notes">Author’s Notes</a>.
+	</p>
+
+	<p><strong>Hooz torcherd mmind meid asu soulve kroswrd?
+	</strong></p>
+
+	<p>Teh idee wuz frum a postt DD mayed in da #bad-ideas chunnel ni hour Disqord sevrer. Jokab creaded a prof ov concep dat sum peopz playd and indjuyed. 3-2 itarations laiter, tw’as a pooz.
+	</p>
+
+	<p><strong>What are the Puflantu curse words?
+	</strong></p>
+
+	<p>
+    We <a target=_blank href="https://2019.galacticpuzzlehunt.com/wrapup/ama.html#puflantu">answered this last year</a>.
+    But, as our understanding of the language has changed, so has our answer.
+	</p>
+
+    <p>
+    In the languages we know of profanity generally comes from things that are visceral or blasphemous, but we haven’t really fleshed out the details of the alien anatomy or culture, other than that their eyes are roughly tablespoon-sized and they have between 1 and 6 of them.
+    I suppose there are slurs, which are not so much curse words as words that are insulting due to context. I expect by now the aliens have come up with something for humans; perhaps “bellless” is something like 'qeyuna' with the two bells in the word to drive the point home, and also with its base meaning of “lacking”.
+    Then there are the curse words in the arcane sense, but I’d rather not spoil too much about those.
+    </p>
+
+	<p><strong>Favorite Vtuber?
+	</strong></p>
+
+	<p>
+		<ul><li>Nekomata Okayu</li><li>Slitherlink</li></ul>
+	</p>
+
+	<p><strong>What were the exact probabilities for each gacha in Thrifty/Thrifty?
+	</strong></p>
+
+	<p>They’re in the <a target=_blank href="https://2020.galacticpuzzlehunt.com/solution/thrifty-thrifty#appendix">Appendix</a>.
+	</p>
+
+	<p><strong>Favorite drawing on r/place’s final canvas?
+	</strong></p>
+
+	<p>Rainbow Road! I’m also partial to the tiny <a target=_blank href="https://draemm.li/various/place-atlas/?id=1088">MIT</a> logo.</p>
+
+	<p><strong>Does the Intersections singer have a Spotify we can follow?
+	</strong></p>
+
+	<p>No :( Though I am soooort of considering starting a SoundCloud&hellip;
+	</p>
+
+	<p><strong>How many people did your Tinder account match!??!
+	</strong></p>
+
+	<p>
+    10
+	</p>
+
+    <h2>Random</h2>
+
+	<p><strong>How bad is your collective eyesight?
+	</strong></p>
+
+	<p>Collectively we spend a lot of time in front of the computer. It’s quite bad.
+	</p>
+
+	<p><strong>What is your favorite line of the Eye Chart?
+	</strong></p>
+
+	<p>HTISA8 speaks to me.
+	</p>
+
+	<p><strong>You described the 2019 hunt as “last year” in the survey—was it just puzzle theming or have you actually forgotten what year it is?
+	</strong></p>
+
+    <p>…yes? cf. <a target=_blank href="https://whatdayofmarch2020.com/">What day of March 2020 is it?</a>
+	</p>
+
+	<p><strong>What is your favourite letter of the alphabet?
+	</strong></p>
+
+	<p>
+    <ul>
+        <li>T</li>
+        <li>Q</li>
+        <li>J</li>
+    </ul>
+	</p>
+
+	<p><strong>What’s your favourite letter of the Greek alphabet?
+	</strong></p>
+
+	<p>β
+	</p>
+
+    <p><strong>Surely you don’t have a favourite letter of the alphabet but use Egyptian Hieroglyphs like in <em>Only Connect</em>?
+	</strong></p>
+
+	<p>Two reeds.
+	</p>
+
+	<p><strong>Thoughts on the letters E and C? (Preferably in that order)
+	</strong></p>
+
+	<p>Best MIT dorm. (For context, Galactic Trendsetters has its origins in a certain hall in an MIT dorm whose initials are EC.)
+	</p>
+
+	<p><strong>Noticing the large number of Pokémon references, what are your favourite Pokémon (from any generation)?
+	</strong></p>
+
+	<p>
+    <ul><li>For sentimental reasons, Turtwig.</li><li>Grovyle</li><li>Lugia or Umbreon</li><li>Mudkip</li></ul>
+	</p>
+
+	<p><strong>If you were an unmarked crate in a warehouse full of other identical unmarked crates, what would you contain?
+	</strong></p>
+
+	<p>Two warehouses full of other identical unmarked crates.
+	</p>
+
+
+</main>
+
+<aside>
+  <script>
+    const heads = [...$('h2,h3,h4,h5,h6')].map(head => [head, $('<div>')
+      .text(head.textContent)
+      .css('padding-left', head.tagName.substr(1) + 'em')
+      .click(() => head.scrollIntoView())
+      .appendTo('aside')]);
+    function highlight() {
+      const rects = heads.map(([head]) => head.getBoundingClientRect());
+      heads.forEach(([head, link], i) => link.toggleClass('highlight',
+        (!rects[i + 1] || rects[i + 1].top > 0) && rects[i].top < innerHeight));
+    }
+    document.addEventListener('scroll', highlight, { passive: true });
+    highlight();
+  </script>
+</aside>
+
+
+    </div>
+</body>
+</html>

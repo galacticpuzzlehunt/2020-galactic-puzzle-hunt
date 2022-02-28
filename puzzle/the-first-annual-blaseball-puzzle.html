@@ -1,0 +1,309 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>The First Annual Blaseball Puzzle</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+<a href="../round/periscope.html" class="btn" title="Periscope">
+    <img src="../static/images/periscopeiconchonky.46316fd62782.png" style="height: 2em; filter: invert(1); mix-blend-mode: color-dodge; vertical-align: bottom;">
+</a>
+
+
+
+
+
+<a href="../post-hunt-solve/the-first-annual-blaseball-puzzle.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/the-first-annual-blaseball-puzzle" class="btn">View solution</a>
+<a href="../stats/the-first-annual-blaseball-puzzle.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    The First Annual Blaseball Puzzle
+    
+    
+</h1>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+<style type="text/css">
+html {
+	background-color: black;
+}
+body, h1, h2, a { color: white; }
+.blaseball {
+	color: white;
+	font-family: "Cambria", serif;
+	text-align: center;
+}
+
+h2::after { background: none; }
+
+ul > li {
+	color: white;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.marquee {
+	height: 30px;
+	overflow: hidden;
+	position: relative;
+	background-color: rgba(30, 30, 30, 0.64);
+	color: #fff;
+	border: 1px solid rgba(30, 30, 30, 0.64);
+	margin-top:20px;
+}
+
+/* marquee animation */
+
+.marquee p {
+	font-family: "Lucida Sans", sans-serif;
+	position: absolute;
+	height: 100%;
+	margin: 0;
+	line-height: 30px;
+	text-align: left;
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	-moz-animation: scroll-left 2s linear infinite;
+	-webkit-animation: scroll-left 2s linear infinite;
+	animation: scroll-left 40s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+	0% {
+		-moz-transform: translateX(100%);
+	}
+	100% {
+		-moz-transform: translateX(-100%);
+	}
+}
+
+@-webkit-keyframes scroll-left {
+	0% {
+		-webkit-transform: translateX(100%);
+	}
+	100% {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes scroll-left {
+	0% {
+		-moz-transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		transform: translateX(35%);
+	}
+	100% {
+		-moz-transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-70%);
+	}
+}
+
+div.center {
+	margin:auto;
+	width:50%;
+	text-align:center;
+}
+
+.ticker1 { margin-right:150px; }
+.ticker2 { margin-right:10px; }
+</style>
+
+<div class="blaseball">
+<div class="copy-only">
+A 4.77 (8🔼)<br/>
+G 7.78 (8🔼) E<br/>
+H 15.13 (5🔼) S<br/>
+L 7.44 (6🔽) A<br/>
+M 13.78 (2🔽)<br/>
+R 11.8 (4🔽) T<br/>
+S 6.18 (6🔽) A<br/>
+S 5.78 (4🔼) E<br/>
+T 11.26 (10🔼)<br/>
+</div>
+<div class="marquee no-copy">
+	<p style="width: 340%;">
+	<span class="ticker1">A 4.77 (8🔼)</span>
+	<span class="ticker1">G 7.78 (8🔼) E</span>
+	<span class="ticker1">H 15.13 (5🔼) S</span>
+	<span class="ticker1">L 7.44 (6🔽) A</span>
+	<span class="ticker1">M 13.78 (2🔽)</span>
+	<span class="ticker1">R 11.8 (4🔽) T</span>
+	<span class="ticker1">S 6.18 (6🔽) A</span>
+	<span class="ticker1">S 5.78 (4🔼) E</span>
+	<span class="ticker1">T 11.26 (10🔼)</span>
+	</p>
+</div>
+	<h2>Plays</h2>
+	<ul>
+		<li>🐌1B</li>
+		<li>🚤BB🌮</li>
+		<li>🚤BB🌮</li>
+		<li>🌮BB🐅</li>
+		<li>🍬GO🥩</li>
+		<li>🥩HR</li>
+		<li>🦀OBS📱</li>
+		<li>🌮SB</li>
+		<li>🚤SO🐅</li>
+	</ul>
+	<h2>Lineup</h2>
+	<p class="blanks"><span class="ticker2">_ _ _ _</span> &nbsp; <span class="ticker2">_ _ _ _</span> &nbsp; <span class="ticker2">_ _ _</span></p>
+	<h2>Wrap-Up</h2>
+	<ul>
+		<li>2nd, 5th (8)</li>
+		<li>7th (8)</li>
+		<li>8th (1)</li>
+		<li>2nd, 7th (3)</li>
+		<li>1st (9)</li>
+		<li>4th, 8th (8)</li>
+		<li>6th (4)</li>
+		<li>2nd (10)</li>
+	</ul>
+</div>
+
+<button class="btn clipboard-button"></button>
+
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,487 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Word Salad</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+<a href="../round/night-vision-goggles.html" class="btn" title="Night Vision Goggles">
+    <img src="../static/images/night-vision-gogglesiconchonky.97b0fd827da1.png" style="height: 2em; filter: invert(1); mix-blend-mode: color-dodge; vertical-align: bottom;">
+</a>
+
+
+
+
+
+<a href="../post-hunt-solve/word-salad.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/word-salad" class="btn">View solution</a>
+<a href="../stats/word-salad.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Word Salad
+    
+    
+</h1>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    <div class="puzzle-erratum">
+        
+        On <time datetime="2021-07-24T10:15:00+00:00" data-format="%A, %B %-d at %-I:%M %p %Z">Saturday, July 24 at 6:15 AM EDT</time>,
+        the given definition for “wndwyolak” was corrected from “they-refer-to-that” to “we-refer-to-that”.
+    </div>
+    
+    
+    
+    
+
+    
+    
+    
+<link rel="stylesheet" href="../static/puzzle_resources/word-salad/dictionary.081e20578457.css">
+<script type="text/javascript" src="../static/puzzle_resources/word-salad/default_translations2.e16f9de75708.js"></script>
+<script type="text/javascript" src="../static/puzzle_resources/word-salad/fuse.min.c164b99a6359.js"></script>
+<script type="text/javascript" src="../static/puzzle_resources/word-salad/word-salad.878bc031ab9b.js"></script>
+<script type="text/javascript" src="../static/puzzle_resources/word-salad/dictionary.d222140e5bc3.js"></script>
+<style>
+.ws-highlight {
+  background: #ffff88;
+}
+</style>
+
+<p class="flavor">
+    Forgot your Puflantu? Brush up with our <a href="word-salad/crash-course.html">crash course</a>.
+</p>
+
+<p class="flavor">
+    Remember your Puflantu? Brush up with our crash course anyway.
+</p>
+
+<table id="word-salad-grid">
+    <colgroup>
+        <col style="width: 25%">
+        <col style="width: 75%">
+    </colgroup>
+    <tbody>
+<tr>
+  <td><p><span class="puflantu">amwen</span></p></td>
+  <td><p><span class="puflantu">
+    Albwr swma, rai swma amwaten-kas, utaru swma feru-ro axwe benwe amqos zatif-li, feru
+    utaru henqos zatif.
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(1, document.getElementById('guess1').value);">
+      <input type="text" id="guess1" oninput="document.getElementById('response1').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response1"></div>
+    <td><p><span class="puflantu">
+      Ita ajorgia hengoro zat. Orvwe hiwe fwmta wladeyoc, aldul eta fel wladoc. Ogwris
+      saqvurwe-fo jalwe-fo pahilamwe jok sivoteg. Rato nagta "qovo fasiba" jogwuntu henqos
+      veaton. Ogviqwe nagutaqwe, rato natho aqes henfadaz. <span class="ws-highlight">Rato nagta karkas henfwyaz-dis,
+      albwr cwyotub-kas, rato ityeri utarus wndwyak.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">besolafe</span></p></td>
+  <td><p><span class="puflantu">
+    Uta besolafe, pelipa zoves tacalwl-ka hie zat. Edo Xiranu-li Teilo Swifu-li Sa-naseksu,
+    oghiwe lahrogbwe besolafwe zad.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">casu</span></p></td>
+  <td><p><span class="puflantu">
+    Albwr swma, ageywe viqwe eg mohotur-li losmotod-kas, iqwe viqwe "casu" zad. Tizov casu
+    rizwe tamwe-tis fel jatif, mida fel merizeyin.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">dare</span></p></td>
+  <td><p><span class="puflantu">
+    Uta dare, wrisa swma zat. Lahrogbi-tis, colbawe pahilamwe ogwris qadun, alzov utqunxe-ro
+    ittiha wlatoc. Wrifuli fe'avugia henhiaden-li e'avuli amhiaden. Ratwe darvaxwe-cws
+    enxura ratiq.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">eyozzove</span></p></td>
+  <td><p><span class="puflantu">
+    Locho-ro eyozzove, zove motap, albwr eqa locho wlotoc-kas. Zalma-vo twipe-vo zamkuraxwe
+    ogwris piodwv, tizov eyozzovwe omafadodil-kas.
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;&nbsp;&nbsp;&emsp;_&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(2, document.getElementById('guess2').value);">
+      <input type="text" id="guess2" oninput="document.getElementById('response2').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response2"></div>
+    <td><p><span class="puflantu">
+      Swtrabxi ityurerqeyuni kaxro zat. Sarrwe zamkuraxwe-li realwmi darrwe zamkuraxwe,
+      vaxtipu jok piadotwv. Tizov zixo zat-kas, zalmeri fewlifugia-wli ji'satag. Alzov uta
+      ovekqu zovgire sivega henqos piotwv, e'adendi amjuyuna ywrmidi eg. Furansetu henqos, rato
+      nagta gevaxe os etalaz-ka pelipa e'anxagia eji wndatak.
+      <span class="ws-highlight">Eqa e'anxagia eji karkas wndwyak-dis, "sazwmswe vak vorulfolob"-ka jok sinqwyoter.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td>
+      <p>_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;&nbsp;&nbsp;&emsp;_&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(3, document.getElementById('guess3').value);">
+      <input type="text" id="guess3" oninput="document.getElementById('response3').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response3"></div>
+    <td><p><span class="puflantu">
+      Tizov ita lwgoro enxotal-li palriso-fws kotar-kas, eqra palriso zampaliso eg vokarotur.
+      Rato casu-vo velbenatipu radokoda orvwe twipelamwe urmatodez. Enxura henqos, ita-li
+      zalmeri fewlifugia, zalmeri gevaxegia-li zezwe qaduk. Rato casu, zalma eji jok zoxuras
+      vokanotwj. Ogviqwe nagutaqwe, pelipa gomu-vo gomu qawhi-cws nagtadotal. <span class="ws-highlight">Iqa wndwyolak-ka
+      gomu, rato eyozzove tizov nagtotal.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">hengoro</span></p></td>
+  <td><p><span class="puflantu">
+    Swma-ro "hengoro", hanu-fo bwri-fo rai zat, utaru swma ol-cws capatil-ka.
+    Puflantu-ro hengoro 13202 pazulu-li 13203 pazulliqexu zat.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">ityerqeyuni</span></p></td>
+  <td><p><span class="puflantu">
+    Swma "ityerqeyuni" zat, tidul ityeri qateyun-kas (r.c. ityeri qeyuna zat). Swtabxaywe
+    swmwe, "apo"-fo "wre" jok gamas ogviqes sinqwyoder.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">jwntatimoru</span></p></td>
+  <td><p><span class="puflantu">
+    Swma rato "jwntatimoru" atimator, rai hanu-fo rai bwri henqos. Albwr swmw jwntu henqos
+    jabif, ab urarai-ro "jwntatimorw" zab (r.c. jwntw atimorw zab).
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">kaxo</span></p></td>
+  <td><p><span class="puflantu">
+    Swma "kaxo" zat, tidul rato velbena binpateyan (r.c. radokodqeyuna zat) -li ovekqus
+    esator-kas. Albwr orvuro kaxro-bes tacwywl-kas, "r" feru awbe defiqos kwyar.
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(4, document.getElementById('guess4').value);">
+      <input type="text" id="guess4" oninput="document.getElementById('response4').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response4"></div>
+    <td><p><span class="puflantu">
+      Locho dubqajena eji, alhan malo orvwe lochwe amwatoden-ka, ita zat. Iqa malo, bedfi-li
+      vaxfi-tis zatif. Tidul malo orvwe benwe-tis fel jatif-kas, iqa locho ihex fel qawhatil
+      na? Oghie ji'sagtacwla yirwhanu zat. Ita locho eji, tizov ovekqipiwvu zat-kas, uta lahrogbi
+      espuyi im somatotun. Ogwe lahrogbwe nagutaqwe, eqa espuyi-ro usonba-cws, eta nagtadotal.
+      <span class="ws-highlight">Rwyo ot-ziyu natho, "uta ogwri malo-cws qukwmi velbena" onamgenas veaton.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">kombwqa</span></p></td>
+  <td><p><span class="puflantu">
+    Ita sazixro teri riqhuro zat. Twripe teri-li sazwmswe-li laksalfa rulfoba-cws qotuk.
+    (Zikpe: Tizov nihogotu tacwlafe eta-bes fel tizwk-kas, agodrelesa riqhuro ez-fws et
+    patog.)
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(5, document.getElementById('guess5').value);">
+      <input type="text" id="guess5" oninput="document.getElementById('response5').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response5"></div>
+    <td><p><span class="puflantu">
+      Uta besola-ro yirwhanu zad. Tizov gatoz: rato besolafe liqexa-ti zatif-li axwe atimorwe
+      ofrwdwe qadun-li orvo-ro oniglame vaxuso-fws ratek. Uta oghie wabu balotno henqos,
+      "Jwnterokafu Eqmeyossa" nagtoryal-ka rolwlwe tafatodit-dis "Nagtice Jalqunu" nagtalwmi
+      rolwlwe vak tafotit. Orvwe iglextwe rojdwe henqo rato natho, rai rolwla wndatak-dis, uta
+      qawhi henqos qawhadeyil. Agi' urarai dokfe odelesa, uta rolwla agwe mwnwe qatun-li rai
+      qateyodun-ka zat. <span class="ws-highlight">Iqa ot-ziyu puflantu natho, etwe ajorwe viqwe jadeyif-ka wndatak.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">lwgoro</span></p></td>
+  <td><p><span class="puflantu">
+    Uta lwgoro swma eji zat. Rawe ot-cws qukwmi aza meradin. Nagtice-li enxura-li alvite, lwgorwe zad.
+    Gica-li hie-li zagtivo, lwgorwe zadey.
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(6, document.getElementById('guess6').value);">
+      <input type="text" id="guess6" oninput="document.getElementById('response6').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response6"></div>
+    <td><p><span class="puflantu">
+      Albwr oku kasava darvaxe-cws qotuk-kas, ita lwgoro, fevi qukoda zat. Utra oghurie riqhuro,
+      eywe eta-cws qukwmi rwtxovurwe, teri henqos enxatodaq-li, palriso-vo gomu zoxuras kodar.
+      Rato nagta twpikwaranitu nathwe-cws capatil, "topexwmi"-li "mohuroda" vearyon-ka.
+      <span class="ws-highlight">Wndwyotak tizov: rato wrifenxagia eji (twipe zatey) -li rato enxalwmi radokoda, toka
+        hompaliso-ro jwntatimoru gagalaz-ka.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">mapoca</span></p></td>
+  <td><p><span class="puflantu">
+    Rizo tixmapafe fwmta tihan mwizen. Rizo ajore-ro bedfis zifa ogfatel-li uta-li saqe
+    dokfe tamwe qatun. (Tidul lahrogbi hie ziz, fe quna ogfatel.)
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">nagtice</span></p></td>
+  <td><p><span class="puflantu">
+    Nagtice, pahilame lwgoro zat, nathwe ol-bedfis ajena merizin-ka. Ogwe nagticwe jiay xifwmi
+    aza meradin, kude eg.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">ogerok</span></p></td>
+  <td><p><span class="puflantu">
+    Albwr swma ogerotok-kas, ogwe viqwe etataz. Zampaliso-li nagtice ogerokwmi aza meradin.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">ogviqe</span></p></td>
+  <td><p><span class="puflantu">
+    Swma-ro "ogviqe", rato agi' viqe zat. Iqa natho, uta tola zove karkas nagtatal, orvwe
+    amrwtiwe piadolwv-ka.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">ovekqipiwvu</span></p></td>
+  <td><p><span class="puflantu">
+    Albwr piotwv-kas, ovekqipiwvu swma, ovekqipiwvayu swma jifated-sos, uyi'fi bahu jifated.
+    Albwr hie forovwe dokfe natib-kas, qacepo ovekqipiwvu'fi zat, zagtivo zat-sos.
+  </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(7, document.getElementById('guess7').value);">
+      <input type="text" id="guess7" oninput="document.getElementById('response7').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response7"></div>
+    <td><p><span class="puflantu">
+      Ogerokwmi-vo orbilis kepzitwmi, at fwmtwe jufodwe twlatix. At uta gaga satwlixafe ogwris
+      gatam, jeyoluf-ka zwmsi-wlis wloloc-ka. Rato nihogotu natho, eqa satwlixafe-ro no
+      jwntatimoru zat-ka veaton. Orvwe italianatwe rojdwe henqos, rato natho "vole ipro"
+      onamgenas veaton. <span class="ws-highlight">Rato eyozzove-li zal-ka dare viqe tizov nagtwyotal.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td>
+    <p>_&nbsp;_&nbsp;_&nbsp;<span class="special">[_]</span>&nbsp;_&nbsp;_</p>
+    <form onsubmit="event.preventDefault(); make_guess(8, document.getElementById('guess8').value);">
+      <input type="text" id="guess8" oninput="document.getElementById('response8').innerHTML=''">
+      <input type="submit" value="Submit guess">
+    </form>
+    <div id="response8"></div>
+    <td><p><span class="puflantu">
+      Ita lwgoro, ogrwe oghuriwe lahrurogbwe riqhurwe henqos jatif. Iqrwe riqhurwe, zumuza
+      orcala-vo mapoca dwhoka tadeyag. At rai lwgoro gagataz, rotwipe ukge-ro yuriqo aza
+      palem-ka. Axwe lahrogbwe nagutaqwe henqos, eqa losmodwmi qovwe-cws qukrwmi riqhuro-cws
+      nagtotal. <span class="ws-highlight">Rato puflantu nagta, lahrogbwe nagutaqwe-ro nagtwe-ro radokodwe gagataz-dis,
+      eqra safasibwmwe darwe pahilamwe-cws qukrwmi riqhuro natho gamas piwywv.</span>
+    </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">twipelame</span></p></td>
+  <td><p><span class="puflantu">
+    Ogwe hiwe somalodun-ka twipe locho eji zat. Ogwe twipelamwe, rotwipe-vo gomu eyozzove
+    mwadoten.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">vaxtipu</span></p></td>
+  <td><p><span class="puflantu">
+    Onamgenas, "vaxtipu" atipu eji zat, ol zoan niba agovekqayu zat. Vaxtipu, exuri'fwe swmwe
+    vaxfis zatif. Cobargenes, ot bedfis, rawe swmwe amrodad.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">yirwhanu</span></p></td>
+  <td><p><span class="puflantu">
+    Uta yirwhanu, yirwho wndatolak-ka swma zat. (Iqa yirwho eqa yirwhanu-bes zat.) Yirwhanu
+    karkas zat, lifanice-tis ol-bes yizel-ka-fos kudwe ol-bes nagodut-kas.
+  </span></p></td>
+</tr>
+<tr>
+  <td><p><span class="puflantu">zovgire</span></p></td>
+  <td><p><span class="puflantu">
+    Zovgire, puflantu lifwyan-ka durema zove zat. Zovgire-li mwbwe swmwe yada dokfe odelesa,
+    im moryid-ka swmwe-bes naguta zat. Amjuyunwe karkas zoxuras qatuk.
+  </span></p></td>
+</tr>
+    </tbody>
+</table>
+
+<div id="dictionary" class="no-copy">
+    <input class="fuzzy-search" type='text' placeholder="Search" style="width:30%"/>
+    <table class="gph-list-table dictionary-table">
+        <colgroup>
+            <col style="width: 20vw">
+            <col style="width: 80vw">
+        </colgroup>
+        <thead>
+            <th>Word</th>
+            <th>Translation</th>
+        </thead>
+        <tbody class="list">
+        </tbody>
+    </table>
+</div>
+
+<button class="btn clipboard-button"></button>
+
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

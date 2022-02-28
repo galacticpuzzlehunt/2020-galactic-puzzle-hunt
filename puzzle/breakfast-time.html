@@ -1,0 +1,666 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Breakfast Time!</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+
+
+
+
+<a href="../post-hunt-solve/breakfast-time.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/breakfast-time" class="btn">View solution</a>
+<a href="../stats/breakfast-time.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Breakfast Time!
+    
+    
+</h1>
+
+<style>
+#blurry-btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#clear-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#blurry-btn, #clear-btn {
+    opacity: 0.5;
+}
+
+[data-version=blurry] #blurry-btn, [data-version=clear] #clear-btn {
+    opacity: 1;
+}
+
+#blurry-puz, #clear-puz {
+    display: none;
+}
+
+[data-version=blurry] ~ * #blurry-puz, [data-version=clear] ~ * #clear-puz {
+    display: block;
+}
+</style>
+
+<div class="toggle-wrapper" data-version="blurry">
+    <div class="toggle-container">
+        <button class="btn" id="blurry-btn">Blurry</button>
+        <button class="btn" id="clear-btn">Clear</button>
+        <div class="toggle-tooltip">
+            You&rsquo;re having some trouble reading this puzzle! Your eyes will
+            probably take about an hour to adjust after you unlock the puzzle.
+            <br><br>
+            (Both versions are the same puzzle except that the clear version is
+            easier to solve. Which parts are blurred is not relevant for solving
+            this or any other puzzle.)
+        </div>
+    </div>
+</div>
+
+
+<main class="clipboard-container">
+    
+    
+    <div class="puzzle-erratum">
+        
+        On <time datetime="2021-07-24T02:00:00+00:00" data-format="%A, %B %-d at %-I:%M %p %Z">Friday, July 23 at 10:00 PM EDT</time>,
+        the ordering of the menu sections was changed.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+
+    <div id="blurry-puz" class="clipboard-container">
+<style>
+    @media only screen and (max-width: 1100px) {
+        main {
+            margin-top: 50px;
+            z-index: -1;
+        }
+        
+    }
+    .outer {
+        margin-top: 4em;
+        position: relative;
+    }
+
+    .toastfood {
+        /*.toast is taken by "toast"s*/
+        transform: rotate(-8deg);
+        width: 400px;
+        top: -150px;
+    }
+
+    .waffle {
+        top: 420px;
+        left: 390px;
+        width: 680px;
+    }
+
+    .pancakes {
+        width: 400px;
+        left: 610px;
+        top: -70px;
+        transform: rotate(-25deg);
+    }
+
+    .fries {
+        top: 480px;
+        left: -47px;
+        transform: rotate(-7deg);
+    }
+
+    .breakfast {
+        max-width: 700px;
+        position: absolute;
+    }
+
+    .eggs {
+        top: 210px;
+        left: -90px;
+        transform: rotate(17deg);
+        width: 570px;
+    }
+
+    .menu {
+        width: 330px;
+        height: 550px;
+        background: rgb(255, 230, 189);
+        border-radius: 50px;
+        border: #0aa 20px solid;
+        top: -20px;
+        left: 350px;
+        transform: rotate(-14deg);
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+    }
+
+    .menu .header {
+        font-size: x-large;
+        color: white;
+        background: rgb(216, 38, 68);
+        transform: rotate(45deg);
+        width: 60px;
+        height: 60px;
+        margin: 20px 20px 0 0;
+        border-radius: 6px;
+    }
+
+    .menu .header .inner {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 15px;
+        left: 1px;
+    }
+
+    /* Glyph, by Harry Roberts */
+    .menu hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    margin: 20px 10px 0;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+.menu b {
+    display: inline-block;
+    position: relative;
+    top: -1em;
+    left: 30px;
+    font-size: 1em;
+    padding: 0 0.25em;
+    background: rgb(255, 230, 189); 
+    color: rgb(228, 40, 72);
+}
+.item span {
+    font-size: 8pt;
+    line-height: 10pt;
+    margin: -10px 6px 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+</style>
+<div class="outer">
+
+    <div class="menu breakfast">
+        <div class="header">
+            <div class="inner">Menu</div>
+        </div>
+        <div class="item">
+            <br>
+            
+            <span class="blurry">░░░ ░░ ░░ ░░░░ ░░, ░ ░░░ ░ ░░ ░░░ ░░░░░.</span>
+            
+            </div>
+            <div class="item">
+            <hr><b>Toast</b>
+            
+            <span class="blurry">░░ ░░ ░ ░░░░░░ ░░░ ░░░░ ░ ░░ ░░░. ░'░ ░░░ ░ ░░ ░ ░░░ ░░░░░░░░ ░░ ░ ░░░ ░░░ ░ ░░ ░░░ ░░░░░░ ░░
+                ░░░░░░░░.</span>
+            
+        </div>
+            <div class="item">
+                <hr><b>Eggs</b>
+                
+                <span class="blurry">░░░ ░░░░░ ░░░░ ░░░░░ ░░░░░ ░░░░░░ ░░░░░ ░░ ░░░░░░░░░
+                    ░░░░░░.</span>
+                
+        </div>
+        <div class="item">
+            <hr><b>Pancakes</b>
+            
+            <span class="blurry">░░░ ░░░░░ ░ ░░░░░░ ░░░░░ ░░░░ ░░ ░░░░░░░░░ ░░░░░░ ░░░░░ ░░░░ ░ ░░░░░░
+                ░░░░░ ░░ ░░░░░░ ░░░░░.</span>
+            
+        </div>
+        <div class="item">
+            <hr><b>Waffle</b>
+            
+            <span class="blurry">░░░ ░░░░░ ░░░░ ░░░░░░ ░░░░░░░░░░ ░░░░░░░░░ ░░░░░░ ░░░░░░░ ░░░░░ ░░ ░░░░░░░░░ ░░░░░░░
+                ░░░░░░
+                ░░░░░░ ░░░░░ ░░
+                ░░░░░░░░░░ ░░░░░░░░ ░░░░░░░ ░░░░░ ░░ ░░░░░░ ░░░ ░░ ░░░░░░░░░░ ░░░ ░░ ░░░░░░ ░░░░░.</span>
+            
+            </div>
+        <div class="item">
+            <hr><b>Fries</b>
+            
+            <span class="blurry">░░░ ░░░░░ ░░ ░░░░░░░░ ░░ ░░ ░░░░░░░░ ░░ ░░░░░░░░ ░░ ░░░░ ░░ ░░░░░░░░ ░░ ░░░░░░░░ ░░ ░░░░░░░░░
+                ░░░░░
+                ░░░░░!</span>
+            
+        </div>
+        </div>
+        <img src="../static/puzzle_resources/breakfast-time/fries.c363e90299db.png" class="fries breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/pancakes.521b58d2938b.png" class="pancakes breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/waffle.3a38aa87b802.png" class="waffle breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/eggs.dd7cffb87ed2.png" class="eggs breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/toast.ce52fbf81ef3.png" class="toastfood breakfast">
+        </div>
+
+<div class="copy-only blanks" style="white-space: pre;">
+Like some rock
+Drink at an Indian restaurant
+Pack animal
+?
+
+Grates on
+Multiple choice option usually last
+Common word
+?
+
+Like paisley, often
+Let down, in a rock gym
+Be in the red
+?
+
+Hogwash
+Home _____ (movie franchise)
+Horror star Chaney
+?
+
+"That was close!"
+Game franchise since 2001
+He sang about a pickle
+Breakfast, e.g.
+
+Punch sound
+Loser of a famous race
+"The first lady of song"
+Shepherd's product
+
+1 1 0 0 1 3 3 1
+2 1 0 0 2 3 3 2
+2 2 1 1 2 3 3 2
+2 2 2 1 1 3 3 1
+2 2 2 2 1 2 1 1
+2 2 2 2 3 1 3 2
+2 2 2 2 2 3 1 3
+2 2 2 2 1 1 2 1
+</div>
+<button class="btn clipboard-button"></button>
+
+</div>
+    <div id="clear-puz" class="clipboard-container">
+<style>
+    @media only screen and (max-width: 1100px) {
+        main {
+            margin-top: 50px;
+            z-index: -1;
+        }
+        
+    }
+    .outer {
+        margin-top: 4em;
+        position: relative;
+    }
+
+    .toastfood {
+        /*.toast is taken by "toast"s*/
+        transform: rotate(-8deg);
+        width: 400px;
+        top: -150px;
+    }
+
+    .waffle {
+        top: 420px;
+        left: 390px;
+        width: 680px;
+    }
+
+    .pancakes {
+        width: 400px;
+        left: 610px;
+        top: -70px;
+        transform: rotate(-25deg);
+    }
+
+    .fries {
+        top: 480px;
+        left: -47px;
+        transform: rotate(-7deg);
+    }
+
+    .breakfast {
+        max-width: 700px;
+        position: absolute;
+    }
+
+    .eggs {
+        top: 210px;
+        left: -90px;
+        transform: rotate(17deg);
+        width: 570px;
+    }
+
+    .menu {
+        width: 330px;
+        height: 550px;
+        background: rgb(255, 230, 189);
+        border-radius: 50px;
+        border: #0aa 20px solid;
+        top: -20px;
+        left: 350px;
+        transform: rotate(-14deg);
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+    }
+
+    .menu .header {
+        font-size: x-large;
+        color: white;
+        background: rgb(216, 38, 68);
+        transform: rotate(45deg);
+        width: 60px;
+        height: 60px;
+        margin: 20px 20px 0 0;
+        border-radius: 6px;
+    }
+
+    .menu .header .inner {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 15px;
+        left: 1px;
+    }
+
+    /* Glyph, by Harry Roberts */
+    .menu hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    margin: 20px 10px 0;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+.menu b {
+    display: inline-block;
+    position: relative;
+    top: -1em;
+    left: 30px;
+    font-size: 1em;
+    padding: 0 0.25em;
+    background: rgb(255, 230, 189); 
+    color: rgb(228, 40, 72);
+}
+.item span {
+    font-size: 8pt;
+    line-height: 10pt;
+    margin: -10px 6px 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+</style>
+<div class="outer">
+
+    <div class="menu breakfast">
+        <div class="header">
+            <div class="inner">Menu</div>
+        </div>
+        <div class="item">
+            <br>
+            <span>
+                Here at the Galactic Diner, we offer a full English breakfast.
+            </span>
+            </div>
+            <div class="item">
+            <hr><b>Toast</b>
+            <span>
+                Our toast is excellent though burnt in select spots. We're trying to tell the toaster manufacturer about the
+                burn issue, but they keep ignoring our telegraphs.</span>
+            
+        </div>
+            <div class="item">
+                <hr><b>Eggs</b>
+                <span>
+                    From the outside all the way to the yolk in the middle, our eggs have a different taste at every layer.
+                </span>
+        </div>
+        <div class="item">
+            <hr><b>Pancakes</b>
+            <span>
+                We had two chefs working on the pancakes. Unfortunately, the second chef seems to have a habit of forgetting an
+                ingredient. Our sincerest apologies.
+            </span>
+        </div>
+        <div class="item">
+            <hr><b>Waffle</b>
+            <span>
+                The waffle decorator seems to have been playing minesweeper rather than pouring syrup on your waffle, but
+                you
+                should
+                know if you try to decorate it yourself that he's careful not to pour the syrup diagonally when he
+                decorates,
+                and to
+                keep the syrup from spilling over between the four quadrants of the waffle. </span>
+            </div>
+        <div class="item">
+            <hr><b>Fries</b>
+            <span>
+                Across the board, our fry cook has been down to innovate in the world of fries. We think once you've figured out
+                what to
+                fill into each of the 16 spots in the fry, you'll be diagonally excited!
+            </span>
+        </div>
+        </div>
+        <img src="../static/puzzle_resources/breakfast-time/fries.c363e90299db.png" class="fries breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/pancakes.521b58d2938b.png" class="pancakes breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/waffle.3a38aa87b802.png" class="waffle breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/eggs.dd7cffb87ed2.png" class="eggs breakfast">
+        <img src="../static/puzzle_resources/breakfast-time/toast.ce52fbf81ef3.png" class="toastfood breakfast">
+        </div>
+
+<div class="copy-only blanks" style="white-space: pre;">
+Like some rock
+Drink at an Indian restaurant
+Pack animal
+?
+
+Grates on
+Multiple choice option usually last
+Common word
+?
+
+Like paisley, often
+Let down, in a rock gym
+Be in the red
+?
+
+Hogwash
+Home _____ (movie franchise)
+Horror star Chaney
+?
+
+"That was close!"
+Game franchise since 2001
+He sang about a pickle
+Breakfast, e.g.
+
+Punch sound
+Loser of a famous race
+"The first lady of song"
+Shepherd's product
+
+1 1 0 0 1 3 3 1
+2 1 0 0 2 3 3 2
+2 2 1 1 2 3 3 2
+2 2 2 1 1 3 3 1
+2 2 2 2 1 2 1 1
+2 2 2 2 3 1 3 2
+2 2 2 2 2 3 1 3
+2 2 2 2 1 1 2 1
+</div>
+<button class="btn clipboard-button"></button>
+
+</div>
+    <script>
+        function setVersion(version) {
+            if ($('.toggle-wrapper').attr('data-version') == version) return;
+            $('.toggle-wrapper').attr('data-version', version);
+            history.replaceState(null, '', '#' + version);
+            for (const player of document.querySelectorAll('main audio, main video'))
+                player.pause();
+            if (window['handle' + version]) window['handle' + version]();
+        }
+        $('#blurry-btn').click(() => setVersion('blurry'));
+        $('#clear-btn').click(() => setVersion('clear'));
+        if (location.hash)
+            setVersion(location.hash.replace(/^#/, ''));
+    </script>
+
+
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

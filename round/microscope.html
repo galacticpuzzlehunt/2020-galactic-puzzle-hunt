@@ -1,0 +1,511 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Microscope</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../puzzles.html" class="btn">All puzzles</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+
+<h1><img src="../static/images/microscopeicon.903ee2ac1671.png" class="header-icon" /><span style="vertical-align: middle">Microscope</span></h1>
+
+
+
+
+
+<style>
+.header-icon {
+    width: 120px;
+    height: 120px;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+}
+
+#macroscope {
+    padding-bottom: calc(100% + 40px);
+    margin: 0 -20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#microscope {
+    background-color: lightgray;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    background-image: url(microscope/image);
+    background-size: 100%;
+}
+</style>
+
+<div id="macroscope">
+    <canvas width="1000" height="1000" id="microscope"></canvas>
+</div>
+<p style="font-size: smaller; text-align: center">
+    If you don&rsquo;t see an image above, let us know. This note is not a puzzle.
+</p>
+
+<script>
+const wrapper = document.getElementById('macroscope');
+const canvas = document.getElementById('microscope');
+const context = canvas.getContext('2d');
+
+let uVersion = localStorage.microscopeVersion;
+const uSaved = localStorage.microscopeSaved;
+const uStart = (uVersion && +localStorage.microscopeStart) || 0;
+
+const data = new Array(1000 * 1000);
+let trueScale = 0, scale = 1, translateX = 0, translateY = 0, speedX = 0, speedY = 0, mouse = 'no';
+
+if (uStart && uSaved && uSaved.length == 4 * data.length)
+    for (let i = 0; i < data.length; ++i)
+        data[i] = uSaved.substr(4 * i, 4);
+else
+    for (let i = 0; i < data.length; ++i)
+        data[i] = '\0\0\0\0';
+
+wrapper.addEventListener('wheel', evt => {
+    const x = (evt.offsetX / wrapper.offsetWidth - 0.5) / scale - translateX;
+    const y = (evt.offsetY / wrapper.offsetHeight - 0.5) / scale - translateY;
+    trueScale = Math.min(8, Math.max(0, trueScale - Math.sign(evt.deltaY)));
+    scale = Math.pow(2, trueScale / 4);
+    translateX = (evt.offsetX / wrapper.offsetWidth - 0.5) / scale - x;
+    translateY = (evt.offsetY / wrapper.offsetHeight - 0.5) / scale - y;
+    transform();
+    evt.preventDefault();
+});
+wrapper.addEventListener('mousedown', evt => {
+    if (evt.button) return;
+    speedX = 0;
+    speedY = 0;
+    mouse = 'maybe';
+    evt.preventDefault();
+});
+window.addEventListener('mouseup', evt => {
+    if (evt.button) return;
+    if (mouse == 'maybe')
+        canvas.toBlob(blob => window.open(URL.createObjectURL(blob), '_blank'));
+    mouse = 'no';
+    evt.preventDefault();
+});
+window.addEventListener('mousemove', evt => {
+    if (mouse == 'no') return;
+    speedX = evt.movementX / wrapper.offsetWidth / devicePixelRatio / scale;
+    speedY = evt.movementY / wrapper.offsetHeight / devicePixelRatio / scale;
+    translateX += speedX;
+    translateY += speedY;
+    transform();
+    mouse = 'yes';
+});
+function transform() {
+    const cap = (1 - 1 / scale) / 2;
+    let x = translateX, y = translateY;
+    if (translateX < -cap) x = -cap - Math.atan((-cap - translateX) * 10) / 10;
+    if (translateY < -cap) y = -cap - Math.atan((-cap - translateY) * 10) / 10;
+    if (translateX > cap) x = cap - Math.atan((cap - translateX) * 10) / 10;
+    if (translateY > cap) y = cap - Math.atan((cap - translateY) * 10) / 10;
+    canvas.style.transform = `scale(${scale}) translate(${x * 100}%, ${y * 100}%)`;
+}
+function momentum() {
+    if (mouse == 'no') {
+        const cap = (1 - 1 / scale) / 2;
+        let x = 0, y = 0;
+        if (translateX < -cap) x = (-cap - translateX);
+        if (translateY < -cap) y = (-cap - translateY);
+        if (translateX > cap) x = (cap - translateX);
+        if (translateY > cap) y = (cap - translateY);
+        speedX = Math.sign(speedX) * Math.max(0, Math.abs(speedX) - 0.0005 - Math.abs(x) * 0.05);
+        speedY = Math.sign(speedY) * Math.max(0, Math.abs(speedY) - 0.0005 - Math.abs(y) * 0.05);
+        if (x || y || speedX || speedY) {
+            translateX += speedX + x * 0.5;
+            translateY += speedY + y * 0.5;
+            transform();
+        }
+    }
+    requestAnimationFrame(momentum);
+}
+momentum();
+
+const send = openSocket('/ws/round/microscope', msg => {
+    const {version, type, end, pixels, preload} = JSON.parse(msg);
+    if (!uVersion)
+        uVersion = localStorage.microscopeVersion = version;
+    else if (uVersion != version) {
+        delete localStorage.microscopeVersion;
+        location.reload();
+    }
+    for (const [x, y, enc] of pixels)
+        data[y * 1000 + x] = atob(enc) + '\xff';
+    switch (type) {
+        case 'init':
+            request(end);
+            init();
+            break;
+        case 'update':
+            if (pixels.length)
+                update(end, Date.now(), preload, 0, pixels);
+            else
+                setTimeout(() => request(end), preload * 1000);
+            break;
+    }
+});
+
+send(JSON.stringify({type: 'init', start: uStart}));
+
+
+function request(start) {
+    localStorage.microscopeStart = start;
+    localStorage.microscopeSaved = data.join('');
+
+    send(JSON.stringify({type: 'update', start: start}));
+
+}
+
+function init() {
+    const image = new ImageData(1000, 1000);
+    for (let i = 0; i < image.data.length; ++i)
+        image.data[i] = data[i / 4 | 0].charCodeAt(i % 4);
+    context.putImageData(image, 0, 0);
+}
+
+function update(start, time, duration, last, pixels) {
+    const progress = (Date.now() - time) / (duration * 1000);
+    const next = Math.min(1, progress) * pixels.length | 0;
+    for (let i = last; i < next; ++i) {
+        const [x, y] = pixels[i];
+        const index = y * 1000 + x;
+        const pixel = [
+            data[index].charCodeAt(0),
+            data[index].charCodeAt(1),
+            data[index].charCodeAt(2),
+        ];
+        context.fillStyle = 'rgb(' + pixel + ')';
+        context.fillRect(x, y, 1, 1);
+    }
+    if (next == pixels.length)
+        request(start);
+    else
+        requestAnimationFrame(() => update(start, time, duration, next, pixels));
+}
+</script>
+
+
+<div class="puzzles-list">
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/charts.html">
+            <b >Charts</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/charts">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/charts.html">
+            
+            <b>111</b> solves
+            | <b>693</b> guesses
+            
+            | <b>123</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/count-the-solutions-to-this-nurikabe.html">
+            <b style="font-size: 82%">Count the Solutions to This Nurikabe</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/count-the-solutions-to-this-nurikabe">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/count-the-solutions-to-this-nurikabe.html">
+            
+            <b>152</b> solves
+            | <b>352</b> guesses
+            
+            | <b>159</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/false-flags.html">
+            <b >False Flags</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/false-flags">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/false-flags.html">
+            
+            <b>159</b> solves
+            | <b>391</b> guesses
+            
+            | <b>162</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/links-interconnect.html">
+            <b >Links Interconnect</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/links-interconnect">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/links-interconnect.html">
+            
+            <b>119</b> solves
+            | <b>187</b> guesses
+            
+            | <b>123</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/patterns.html">
+            <b >Patterns</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/patterns">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/patterns.html">
+            
+            <b>114</b> solves
+            | <b>859</b> guesses
+            
+            | <b>125</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry">
+        <a class="puzzles-link" href="../puzzle/reencode.html">
+            <b >Reencode</b>
+        </a>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/reencode">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/reencode.html">
+            
+            <b>115</b> solves
+            | <b>319</b> guesses
+            
+            | <b>118</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-entry puzzles-meta">
+        <a class="puzzles-link" href="../puzzle/microscope.html">
+            <b >Microscope</b>
+        </a>
+        
+        <div class="puzzles-new">meta</div>
+        
+        
+        
+        <div class="puzzles-answer">
+            <a href="https://2020.galacticpuzzlehunt.com/solution/microscope">Solution</a>
+        </div>
+        
+        
+        <div class="puzzles-inner">
+            
+            <a href="../stats/microscope.html">
+            
+            <b>101</b> solves
+            | <b>541</b> guesses
+            
+            | <b>105</b> teams
+            </a>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="puzzles-spacer"></div>
+    <div class="puzzles-spacer"></div>
+</div>
+
+
+
+    </div>
+</body>
+</html>

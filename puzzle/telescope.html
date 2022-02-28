@@ -1,0 +1,462 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Telescope</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+
+
+
+
+<a href="../post-hunt-solve/telescope.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/telescope" class="btn">View solution</a>
+<a href="../stats/telescope.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Telescope
+    
+    
+</h1>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+<style>
+  .svg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  text {
+    display: none;
+  }
+  .small {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-top: 10px;
+  }
+</style>
+
+<script>
+  function click(e) {
+    const text = event.target.nextElementSibling;
+    if (text.style.display == "block") {
+      text.style.display = "none";
+    } else {
+      text.style.display = "block";
+    }
+  }
+</script>
+
+<p>You assemble your telescope and point it into space. You peer in and this is what you see:</p>
+
+<svg viewBox="-2 -3 12 8" width="780px" height="520px" class="svg">
+  <defs>
+    <marker id="red" markerWidth="6.9" markerHeight="7"
+    refX="6" refY="3.5" orient="auto" fill="rgb(252, 0, 0)">
+      <polygon points="0 0, 6.9 3.5, 0 7"/>
+    </marker>
+    <marker id="blue" markerWidth="6.9" markerHeight="7"
+    refX="6" refY="3.5" orient="auto" fill="rgb(0, 0, 252)">
+      <polygon points="0 0, 6.9 3.5, 0 7"/>
+    </marker>
+    <marker id="green" markerWidth="6.9" markerHeight="7"
+    refX="6" refY="3.5" orient="auto" fill="rgb(0, 252, 0)">
+      <polygon points="0 0, 6.9 3.5, 0 7"/>
+    </marker>
+    <marker id="purple" markerWidth="6.9" markerHeight="7"
+    refX="6" refY="3.5" orient="auto" fill="rgb(105, 0, 147)">
+      <polygon points="0 0, 6.9 3.5, 0 7"/>
+    </marker>
+  </defs>
+
+<g transform="translate(-0.4365641251,0.2182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Make dog ears in a book, perhaps (4 5)</text>
+</g>
+<g transform="translate(0.7761140001,-0.6546536707)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">"I'll give you that dock if this coin comes up heads", e.g. (4 3)</text>
+</g>
+<g transform="translate(0.8246211251,-1.745743122)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">What you might use to un-tenderize some young beef (4 9)</text>
+</g>
+<g transform="translate(0.9701425001,-0.2182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Certain vessel that's completely devoid of oolong or matcha (3 6)</text>
+</g>
+<g transform="translate(1.164171,-2.182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Bit of acne on the back of one's neck (4 6)</text>
+</g>
+<g transform="translate(1.3581995,-1.745743122)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Where people research Big Macs (5)</text>
+</g>
+<g transform="translate(1.600735125,-0)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Shopping binges by some bovines (4 6)</text>
+</g>
+<g transform="translate(1.794763625,0.4364357805)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">What particularly sneaky beavers might build (7 4)</text>
+</g>
+<g transform="translate(1.940285,-2.836832573)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Fake imitation of a sharp difference (6 8)</text>
+</g>
+<g transform="translate(2.376849125,-0.6546536707)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">What the word "hmmmmmmmmmmmmmmmmm" has (7 1'1)</text>
+</g>
+<g transform="translate(3.492513001,-1.745743122)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">A gift of meat in exchange for protection (5 7)</text>
+</g>
+<g transform="translate(3.589527251,-1.527525232)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.1" font-size="0.2" text-anchor="end">The "3" in "<3", e.g. (5 5)</text>
+</g>
+<g transform="translate(3.929077126,-1.963961012)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">A single nunchuck, perhaps (5 5)</text>
+</g>
+<g transform="translate(4.123105626,-1.527525232)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.3" font-size="0.2" text-anchor="middle">Poetry, General Nonfiction, or Drama, but not Feature Photography, Editorial Writing, or Music (3 8)</text>
+</g>
+<g transform="translate(4.365641251,0.2182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">One holding a Granny Smith for ransom, say (5-6)</text>
+</g>
+
+<path d="M 6.5 2.5 h 2 v 2 h -2 v -2" stroke-width="0.02" fill="transparent" stroke="black" stroke-dasharray="1%"/>
+
+<g transform="translate(-1.55,7.15)">
+<g transform="translate(8.488746876,-4.309307341)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+</g>
+<g transform="translate(8.537254001,-3)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+</g>
+<g transform="translate(8.682775376,-3.8728715609)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+</g>
+<g transform="translate(9.652917876,-4.091089451)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+</g>
+
+<path d="M 8.682775376 -3.8728715609 L 8.488746876 -4.309307341" stroke-width="0.02" stroke="rgb(252, 0, 0)" marker-end="url(#red)"/>
+<path d="M 8.682775376 -3.8728715609 L 9.652917876 -4.091089451" stroke-width="0.02" stroke="rgb(0, 252, 0)" marker-end="url(#green)"/>
+<path d="M 8.682775376 -3.8728715609 L 8.537254001 -3" stroke-width="0.02" stroke="rgb(0, 0, 252)" marker-end="url(#blue)"/>
+
+</g>
+<g transform="translate(4.753698251,-1.309307341)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.1" font-size="0.2" text-anchor="end">The most liked microblog posts that I wrote (2 3 6)</text>
+</g>
+<g transform="translate(5.772347876,-0.2182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.1" font-size="0.2" text-anchor="end">More unusual auction units (5 4)</text>
+</g>
+<g transform="translate(6.111897751,-0.6546536707)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.1" font-size="0.2" text-anchor="end">Result of inserting helium into a whale's prey (9 5)</text>
+</g>
+<g transform="translate(6.888011751,-1.309307341)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.1" font-size="0.2" text-anchor="end">Break room for cheerleaders (3 6)</text>
+</g>
+
+<g transform="translate(-0.7276068751,1.963961012)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">What a topiary company may hire a graphic designer to make (5 4)</text>
+</g>
+<g transform="translate(-0.242535625,0.6546536707)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Scam in a satisfying manner (3 9)</text>
+</g>
+<g transform="translate(0,2.400396793)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Incredibly large intoxicated fish (8 7 4)</text>
+</g>
+<g transform="translate(0.242535625,4.146139914)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Musical pitch made by part of the stratosphere (5 4)</text>
+</g>
+<g transform="translate(0.3880570001,0.8728715609)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Epipen or air purifier (7 3)</text>
+</g>
+<g transform="translate(0.5335783751,2.400396793)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Unhappy underling (3 6)</text>
+</g>
+<g transform="translate(0.5820855001,1.309307341)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Spin that woman around so she can escape (5 3 4)</text>
+</g>
+<g transform="translate(1.406706625,1.963961012)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Superhero with the ability to annul things (4 3)</text>
+</g>
+<g transform="translate(1.7462565,1.527525232)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">It comes before Judgement XX (3 3 3)</text>
+</g>
+<g transform="translate(2.1343135,2.400396793)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">"Everyone must eat tofu!" and "Edamame is the best!", e.g. (3 7)</text>
+</g>
+<g transform="translate(2.570877625,2.182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Yurt for geckos and crocodiles (7 3)</text>
+</g>
+<g transform="translate(2.61938475,1.091089451)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">What Shrek wears when eating a lobster in his home (6 3)</text>
+</g>
+<g transform="translate(2.764906125,2.618614683)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Dip or spread that accompanies Middle Eastern poultry (3 6)</text>
+</g>
+<g transform="translate(3.055948875,0.8728715609)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Someone who chops up shaving cream for you at a supermarket (4 7)</text>
+</g>
+<g transform="translate(3.249977375,1.309307341)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Choice between the Devil and yours truly (9 2 2)</text>
+</g>
+<g transform="translate(4.899219626,2.618614683)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="-0.1" y="0.2" font-size="0.2" text-anchor="end">How to address a T. rex or stegosaurus after he's married (2. 4)</text>
+</g>
+<g transform="translate(5.238769501,2.182178902)">
+  <ellipse rx="0.06" ry="0.06" onclick="click()"></ellipse>
+  <text x="0.1" y="0.1" font-size="0.2">Ointment used by the church, vis-à-vis sunscreen (6 3)</text>
+</g>
+
+</svg>
+
+<div class="small">You can click on the points to toggle additional information.</div>
+
+<svg viewBox="6.5 2.5 4 4" width="800px" height="800px" class="svg">
+<path d="M 7 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 7.5 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 8 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 3 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 7.5 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 8 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 3.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 7.5 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="transparent" stroke-width="0.01"/>
+<path d="M 8 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 4 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 7.5 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 4.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 7.5 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 7.5 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 8.5 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+<path d="M 9.5 5.5 h 0.5 v 0.5 h -0.5 v -0.5" stroke="black" fill="lightgray" stroke-width="0.01"/>
+
+<path d="M 7 3 h 1 v 1.5 h -1 v -1.5" stroke="black" fill="transparent" stroke-width="0.02"/>
+
+<path d="M 7 6.02 h 3" stroke="rgb(252, 0, 0)" stroke-width="0.03" marker-end="url(#red)"/>
+<path d="M 6.98 6 v -3" stroke="rgb(0, 0, 252)" stroke-width="0.03" marker-end="url(#blue)"/>
+<ellipse cx="6.98" cy="6.02" rx="0.08" ry="0.08" fill="rgb(0,252,0)"></ellipse>
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" x="7.55" y="3.05" width="0.4" height="0.4" viewBox="0 0 40 40"></metadata><path d="m25 17c0 2.8-2.2 5-5 5s-5-2.2-5-5c0-2.8 2.2-5 5-5s5 2.2 5 5zm15-0.75s-7.1 14-20 14c-12 0-20-14-20-14s7.4-13 20-13c13 0 20 13 20 13zm-12 0.75c0-4.6-3.7-8.3-8.3-8.3s-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3 8.3-3.7 8.3-8.3z" stroke-width="1.7"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" x="7.05" y="3.55" width="0.4" height="0.4" viewBox="0 0 40 40"></metadata><path d="m25 17c0 2.8-2.2 5-5 5s-5-2.2-5-5c0-2.8 2.2-5 5-5s5 2.2 5 5zm15-0.75s-7.1 14-20 14c-12 0-20-14-20-14s7.4-13 20-13c13 0 20 13 20 13zm-12 0.75c0-4.6-3.7-8.3-8.3-8.3s-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3 8.3-3.7 8.3-8.3z" stroke-width="1.7"/></svg>
+
+<path d="M 7.03 3.45 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.035 0 h 0.04 m 0.01 0 h 0.04 m 0.035 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+<path d="M 7.63 3.45 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+<path d="M 7.055 3.95 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+<path d="M 7.5175 3.95 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.035 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+<path d="M 7.0425 4.45 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.035 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+<path d="M 7.53 4.45 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04 m 0.01 0 h 0.04" stroke="black" stroke-width="0.01"/>
+
+</svg>
+
+<svg viewBox="-0.5 -3.5 4 4" width="800px" height="800px" class="svg">
+<path d="M 0 0 h 1.75" stroke="rgb(252, 0, 0)" stroke-width="0.03" marker-end="url(#red)"/>
+<path d="M 0 0 h 1.25" stroke="rgb(0, 0, 252)" stroke-width="0.03" marker-end="url(#blue)"stroke-dasharray="2.5%"/>
+<path d="M 0 0 v -3" stroke="rgb(0, 252, 0)" stroke-width="0.03" marker-end="url(#green)"/>
+</svg>
+
+
+
+
+
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

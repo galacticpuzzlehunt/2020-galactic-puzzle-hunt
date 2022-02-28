@@ -1,0 +1,461 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Where To Next?</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+
+
+
+
+<a href="../post-hunt-solve/where-to-next.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/where-to-next" class="btn">View solution</a>
+<a href="../stats/where-to-next.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Where To Next?
+    
+    
+</h1>
+
+<style>
+#blurry-btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#clear-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#blurry-btn, #clear-btn {
+    opacity: 0.5;
+}
+
+[data-version=blurry] #blurry-btn, [data-version=clear] #clear-btn {
+    opacity: 1;
+}
+
+#blurry-puz, #clear-puz {
+    display: none;
+}
+
+[data-version=blurry] ~ * #blurry-puz, [data-version=clear] ~ * #clear-puz {
+    display: block;
+}
+</style>
+
+<div class="toggle-wrapper" data-version="blurry">
+    <div class="toggle-container">
+        <button class="btn" id="blurry-btn">Blurry</button>
+        <button class="btn" id="clear-btn">Clear</button>
+        <div class="toggle-tooltip">
+            You&rsquo;re having some trouble reading this puzzle! Your eyes will
+            probably take about an hour to adjust after you unlock the puzzle.
+            <br><br>
+            (Both versions are the same puzzle except that the clear version is
+            easier to solve. Which parts are blurred is not relevant for solving
+            this or any other puzzle.)
+        </div>
+    </div>
+</div>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    <div class="puzzle-erratum">
+        
+        On <time datetime="2021-07-24T06:00:00+00:00" data-format="%A, %B %-d at %-I:%M %p %Z">Saturday, July 24 at 2:00 AM EDT</time>,
+        the fifth view was changed.
+    </div>
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+
+    <div id="blurry-puz" class="clipboard-container">
+
+<style>
+    #photosphere-blurry {
+      width: 100%;
+      height: 60vh;
+      margin: auto;
+      border: 5px solid #333;
+    }
+
+    .fyb-buttons {
+        text-align: center;
+    }
+
+    .fyb-buttons button {
+        margin: 0px 10px;
+        padding: 0px 12px;
+        height: auto;
+        font-size: 2rem;
+    }
+
+    button.fyb-selected {
+        background: #354584;
+        color: white;
+    }
+
+    .psv-custom-button img {
+        width: 100%;
+    }
+</style>
+
+<link rel="stylesheet" href="../static/puzzle_resources/where-to-next/photo-sphere-viewer.min.6c48647392f4.css"></link>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uevent@2.0.1/browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js"></script>
+<script src="../static/puzzle_resources/where-to-next/js/photo-sphere-viewer.min.aca9a1073545.js"></script>
+
+<p class="flavor">I’m always looking toward my next destination!</p>
+<p class="fyb-buttons" id="fyb-buttons-blurry"></p>
+
+<div id="photosphere-blurry"></div>
+
+<script>
+(function() {
+    var imagePaths = [
+        
+        '/static/puzzle_resources/where-to-next/1.d2db863c5298.jpg',
+        '/static/puzzle_resources/where-to-next/2.e652fd8dde1d.jpg',
+        '/static/puzzle_resources/where-to-next/3.bc876424047d.jpg',
+        '/static/puzzle_resources/where-to-next/4.206b38081a96.jpg',
+        '/static/puzzle_resources/where-to-next/5.435340b03800.jpg',
+        '/static/puzzle_resources/where-to-next/6.d16fd48ac3d6.jpg',
+        '/static/puzzle_resources/where-to-next/7.b814a34d5d1c.jpg',
+        '/static/puzzle_resources/where-to-next/8.6f7cb9190d4d.jpg',
+        '/static/puzzle_resources/where-to-next/9.d34d1815298e.jpg',
+        
+        
+    ];
+
+    var startPositions = [
+        144.15, 65.35, 343.09, 107.96, 3.62, 218.08, 82.12, 180.99, 353.57
+    ];
+
+    var offsets = [
+        0.00, 19.96, 49.48, 285.00, 230.00, 68.62, 176.57, 270.00, 47.00
+    ];
+
+    var PSV = null;
+
+    function changePanorama(index) {
+        if (PSV != null) {
+            PSV.destroy();
+        }
+        PSV = new PhotoSphereViewer({
+            container: 'photosphere-blurry',
+            panorama: imagePaths[index - 1],
+            default_long: startPositions[index - 1] * 0.0174532,
+            default_lat: (index == 1 ? 1.57079 : 0),
+            time_anim: false,
+            navbar: [
+                'zoom',
+                'fullscreen',
+                {
+                    id: 'compass',
+                    content: '<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/compass_1f9ed.png"></img>',
+                },
+            ],
+        });
+
+        PSV.on('position-updated', (e, position) => {
+            $('.psv-button.psv-custom-button').css('transform', `rotate(${-position.longitude -0.7854 - offsets[index - 1] * 0.01745}rad)`);
+        });
+
+        for (let i = 1; i <= 9; ++i) {
+            let el = $("#fyb-buttons-blurry button:nth-child(" + i + ")");
+            if (i == index) {
+                el.addClass("fyb-selected");
+            } else {
+                el.removeClass("fyb-selected");
+            }
+            $("#fyb-buttons-blurry button:nth-child(" + i + ")")
+        }
+    }
+
+
+    for (let i = 1; i <= 9; ++i)
+        $('<button>').click(() => changePanorama(i)).text(i).appendTo('#fyb-buttons-blurry');
+
+    setTimeout(() => { changePanorama(1); }, 100)
+
+    // please spare me your scorn
+    window.handleblurry = () => setTimeout(() => { changePanorama(1); }, 100);
+})();
+</script>
+
+</div>
+    <div id="clear-puz" class="clipboard-container">
+
+<style>
+    #photosphere-clear {
+      width: 100%;
+      height: 60vh;
+      margin: auto;
+      border: 5px solid #333;
+    }
+
+    .fyb-buttons {
+        text-align: center;
+    }
+
+    .fyb-buttons button {
+        margin: 0px 10px;
+        padding: 0px 12px;
+        height: auto;
+        font-size: 2rem;
+    }
+
+    button.fyb-selected {
+        background: #354584;
+        color: white;
+    }
+
+    .psv-custom-button img {
+        width: 100%;
+    }
+</style>
+
+<link rel="stylesheet" href="../static/puzzle_resources/where-to-next/photo-sphere-viewer.min.6c48647392f4.css"></link>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uevent@2.0.1/browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js"></script>
+<script src="../static/puzzle_resources/where-to-next/js/photo-sphere-viewer.min.aca9a1073545.js"></script>
+
+<p class="flavor">I’m always looking toward my next destination!</p>
+<p class="fyb-buttons" id="fyb-buttons-clear"></p>
+
+<div id="photosphere-clear"></div>
+
+<script>
+(function() {
+    var imagePaths = [
+        
+        
+        '/static/puzzle_resources/where-to-next/1_ZYDROE8Z7WYBWZAK.a3eb824d93c7.jpg',
+        '/static/puzzle_resources/where-to-next/2_PIHU5TUUUBTXCFA5.3f2db94cfaea.jpg',
+        '/static/puzzle_resources/where-to-next/3_LRVA5MN6GN0UFGLZ.27d289c56269.jpg',
+        '/static/puzzle_resources/where-to-next/4_1P91K17HPANI1GIO.4fb6d90c2cbe.jpg',
+        '/static/puzzle_resources/where-to-next/5_EPFCXWXXYEQO58TT.02ec5bdcf076.jpg',
+        '/static/puzzle_resources/where-to-next/6_FW2TCPD9JR52IGAK.a2bdacc95b64.jpg',
+        '/static/puzzle_resources/where-to-next/7_KQG9QCDWM8GL109H.165fb69b8567.jpg',
+        '/static/puzzle_resources/where-to-next/8_8N5MOIQ6G95F009P.ea21443ce6ef.jpg',
+        '/static/puzzle_resources/where-to-next/9_W01U1QMGVS8VLWS8.4d4b3ed1aa78.jpg',
+        
+    ];
+
+    var startPositions = [
+        144.15, 65.35, 343.09, 107.96, 3.62, 218.08, 82.12, 180.99, 353.57
+    ];
+
+    var offsets = [
+        0.00, 19.96, 49.48, 285.00, 230.00, 68.62, 176.57, 270.00, 47.00
+    ];
+
+    var PSV = null;
+
+    function changePanorama(index) {
+        if (PSV != null) {
+            PSV.destroy();
+        }
+        PSV = new PhotoSphereViewer({
+            container: 'photosphere-clear',
+            panorama: imagePaths[index - 1],
+            default_long: startPositions[index - 1] * 0.0174532,
+            default_lat: (index == 1 ? 1.57079 : 0),
+            time_anim: false,
+            navbar: [
+                'zoom',
+                'fullscreen',
+                {
+                    id: 'compass',
+                    content: '<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/compass_1f9ed.png"></img>',
+                },
+            ],
+        });
+
+        PSV.on('position-updated', (e, position) => {
+            $('.psv-button.psv-custom-button').css('transform', `rotate(${-position.longitude -0.7854 - offsets[index - 1] * 0.01745}rad)`);
+        });
+
+        for (let i = 1; i <= 9; ++i) {
+            let el = $("#fyb-buttons-clear button:nth-child(" + i + ")");
+            if (i == index) {
+                el.addClass("fyb-selected");
+            } else {
+                el.removeClass("fyb-selected");
+            }
+            $("#fyb-buttons-clear button:nth-child(" + i + ")")
+        }
+    }
+
+
+    for (let i = 1; i <= 9; ++i)
+        $('<button>').click(() => changePanorama(i)).text(i).appendTo('#fyb-buttons-clear');
+
+    setTimeout(() => { changePanorama(1); }, 100)
+
+    // please spare me your scorn
+    window.handleclear = () => setTimeout(() => { changePanorama(1); }, 100);
+})();
+</script>
+
+</div>
+    <script>
+        function setVersion(version) {
+            if ($('.toggle-wrapper').attr('data-version') == version) return;
+            $('.toggle-wrapper').attr('data-version', version);
+            history.replaceState(null, '', '#' + version);
+            for (const player of document.querySelectorAll('main audio, main video'))
+                player.pause();
+            if (window['handle' + version]) window['handle' + version]();
+        }
+        $('#blurry-btn').click(() => setVersion('blurry'));
+        $('#clear-btn').click(() => setVersion('clear'));
+        if (location.hash)
+            setVersion(location.hash.replace(/^#/, ''));
+    </script>
+
+
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

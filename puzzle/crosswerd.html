@@ -1,0 +1,568 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Crosswerd</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+<a href="../round/periscope.html" class="btn" title="Periscope">
+    <img src="../static/images/periscopeiconchonky.46316fd62782.png" style="height: 2em; filter: invert(1); mix-blend-mode: color-dodge; vertical-align: bottom;">
+</a>
+
+
+
+
+
+<a href="../post-hunt-solve/crosswerd.html" class="btn">Check your answer spoiler-free</a>
+
+
+
+<a href="https://2020.galacticpuzzlehunt.com/solution/crosswerd" class="btn">View solution</a>
+<a href="../stats/crosswerd.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<h1>
+    
+    Crosswerd
+    
+    
+</h1>
+
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+<style>
+    .crosswerd-img {
+        width: 96%;
+        margin: 2%;
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .crosswerd-grid {
+        width: 96%;
+        margin: 2%;
+        margin-bottom: 40px;
+    }
+
+    .crosswerd-grid td {
+        padding: 0;
+        border: 1px solid #000 !important;
+    }
+
+    .crosswerd-grid td.black {
+        background: #000;
+    }
+
+    .crosswerd-table {
+        column-width: 430px;
+        padding: 5px;
+    }
+
+    .bigger {
+        font-size: larger;
+    }
+</style>
+
+<div class="crosswerd-table">
+    <table cellspacing="0" class="crosswerd-grid copy-only">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td class="black"></td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>15</td>
+                <td></td>
+                <td></td>
+                <td>16</td>
+                <td class="black"></td>
+                <td>17</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>19</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>20</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>22</td>
+                <td></td>
+                <td>23</td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>24</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td>25</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>26</td>
+                <td class="black"></td>
+                <td>27</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>28</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>30</td>
+                <td></td>
+                <td class="black"></td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td>32</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td class="black"></td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td></td>
+                <td></td>
+                <td>34</td>
+                <td class="black"></td>
+                <td>35</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>36</td>
+                <td></td>
+                <td></td>
+                <td>37</td>
+                <td>38</td>
+                <td>39</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>41</td>
+                <td class="black"></td>
+                <td>42</td>
+                <td></td>
+                <td></td>
+                <td>43</td>
+                <td class="black"></td>
+                <td>44</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>46</td>
+                <td class="black"></td>
+                <td>47</td>
+                <td></td>
+                <td></td>
+                <td>48</td>
+                <td class="black"></td>
+                <td>49</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td>50</td>
+                <td></td>
+                <td></td>
+                <td>51</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>52</td>
+                <td class="black"></td>
+                <td>53</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>55</td>
+                <td>56</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>57</td>
+                <td></td>
+                <td></td>
+                <td>58</td>
+                <td></td>
+                <td class="black"></td>
+                <td class="black"></td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>60</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>61</td>
+                <td class="black"></td>
+                <td>62</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>63</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td></td>
+                <td></td>
+                <td>66</td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>67</td>
+                <td></td>
+                <td>68</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>70</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>71</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td class="black"></td>
+                <td>73</td>
+                <td></td>
+                <td></td>
+                <td class="black"></td>
+                <td>74</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <img src="../static/puzzle_resources/crosswerd.1f51156d6012.png" class="crosswerd-img no-copy">
+    <h4>Across</h4>
+    <ol>
+        <li value="1">Frost might be found therr on a snowy evening</li>
+        <li value="5">Site of a majer summer festival</li>
+        <li value="8">One of 204 in this grid</li>
+        <li value="14">Certain ol boat</li>
+        <li value="15">There's a formula for it involving eight</li>
+        <li value="17">It can be used to make an ebrasive powder</li>
+        <li value="18">Heating ergs is usually done with these metal implements</li>
+        <li value="20">Mood sometimes confused with the impeative</li>
+        <li value="21">Some jines</li>
+        <li value="22">None or the other</li>
+        <li value="24">___ off (started to colf)</li>
+        <li value="25">Where awl animals live</li>
+        <li value="27">Something to measure before a weeding</li>
+        <li value="29">___ Koch</li>
+        <li value="31">Its a brand of athletic wear and basketball shoes</li>
+        <li value="33">8-Across before high</li>
+        <li value="35">Gas that gloze red-orange</li>
+        <li value="36">Moves with stelf</li>
+        <li value="40">People sometimes remember their first ones, but almost never remember their last ones</li>
+        <li value="42">___-boded</li>
+        <li value="44">Stooped, in a way</li>
+        <li value="45">Mawaki athlete</li>
+        <li value="47">What one might do on a beak</li>
+        <li value="49">Make a mean phase (at)</li>
+        <li value="50">When compressed in an engine, this agricultural produce ignites</li>
+        <li value="53">Open sauce inventory management and accounting suite</li>
+        <li value="54">You have to be bad at it to solve this crosswerd</li>
+        <li value="57">___ de leach</li>
+        <li value="59">Word before creme or box</li>
+        <li value="60">Where a Roman might socialeyes</li>
+        <li value="62">Clime near the ground</li>
+        <li value="65">Relating to the sekind-deepest parts of the ocean</li>
+        <li value="67">Salad that is usually made with ballger and herbs</li>
+        <li value="69">Emit chloroflourocarbons, perhaps</li>
+        <li value="70">Shopping or crime even</li>
+        <li value="71">Elephant ___ (circus trets)</li>
+        <li value="72">Hero drest in red and blue, familiarly</li>
+        <li value="73">Play in many different sitees</li>
+        <li value="74">Eye problem that's usually a staff infection</li>
+    </ol>
+    <h4>Down</h4>
+    <ol>
+        <li value="1">Breakfast food that's also inaction</li>
+        <li value="2">All-time great Bobbie</li>
+        <li value="3">You go here before you eat inn your car</li>
+        <li value="4">Icelandic go yurt product</li>
+        <li value="5">Lable on a picture</li>
+        <li value="6">Word after common or push</li>
+        <li value="7">The cell with this number in it is an E</li>
+        <li value="8">Some tails</li>
+        <li value="9">Vitamin supplement that supposedly helps with a could</li>
+        <li value="10">Gopher's supply</li>
+        <li value="11">One of nine or so at versi, e.g.</li>
+        <li value="12">Where I cycles form</li>
+        <li value="13">Oboe, egg</li>
+        <li value="16">Pictures appear in this signs with rather complex math</li>
+        <li value="19">Mononymous singer in Eurovision 2019</li>
+        <li value="23">He/___ pronouns</li>
+        <li value="26">Like a coast town</li>
+        <li value="28">Make a certain sudden loud nose from one's nose</li>
+        <li value="29">Smear, as width cream</li>
+        <li value="30">Blood of the goods</li>
+        <li value="32">Physical places four construction or virtual places with postings</li>
+        <li value="34">Pot off food?</li>
+        <li value="37">Went further than houlding hands out in public, maybe</li>
+        <li value="38">Let balk on</li>
+        <li value="39">Scatter abowt disorganizedly</li>
+        <li value="41">Vessel in a ricotta</li>
+        <li value="43">Without knowledge of one's vocation</li>
+        <li value="46">In the manner of kings and quenes</li>
+        <li value="48">Beat with a beat, or defeat</li>
+        <li value="51">By ___ of (on a count of)</li>
+        <li value="52">___ go bee (vegetarian entree)</li>
+        <li value="54">Leeks, perhaps very slowly</li>
+        <li value="55">Cowboy named for a johnra of music</li>
+        <li value="56">Without much difficalltea</li>
+        <li value="58">Approximately half of them are down</li>
+        <li value="61">Heated with electromagentic radiation, familiarly</li>
+        <li value="63">(The same as 26-Don)</li>
+        <li value="64">Born to the ground</li>
+        <li value="66">Legal case, or, metonymically, layer</li>
+        <li value="68">Something made by a 46-Across</li>
+    </ol>
+</div><br>
+<div class="flavor bigger"># &lt; # &lt; # &lt; # &lt; # &lt; # &lt; # &lt; #</div>
+
+<button class="btn clipboard-button"></button>
+
+
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+
+    </div>
+</body>
+</html>

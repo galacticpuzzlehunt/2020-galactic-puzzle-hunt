@@ -1,0 +1,355 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Galactic Puzzle Hunt</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a class="selected-tab" href="index.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="rules.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="story.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a href="puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="teams.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="faq.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="errata.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+
+<style>
+@media print {
+    a {
+        text-decoration: none;
+    }
+
+    p a {
+        color: inherit;
+    }
+
+    .feedback, .register {
+        display: none;
+    }
+
+    .whoosh {
+        white-space: nowrap;
+    }
+
+    .print-register {
+        font-weight: bold;
+        margin: 20px 0 40px;
+    }
+
+    .four:nth-child(1) {
+        width: 30%;
+        margin-right: 4%;
+    }
+
+    .four:nth-child(2) {
+        width: 26%;
+    }
+
+    .four:nth-child(3) {
+        width: 35%;
+        margin-left: 4%;
+    }
+}
+
+@media screen {
+    .print-register {
+        display: none;
+    }
+
+    .feedback, .register {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .register .btn {
+        height: 46px;
+        line-height: 46px;
+        font-size: 2rem;
+    }
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+}
+
+h3 img {
+    height: 100px;
+}
+
+#hero {
+    margin: 28px auto;
+    left: -3px;
+}
+
+#hero, #hero img, #wrap {
+    position: relative;
+    width: 600px;
+    max-width: 80vw;
+}
+
+#lens {
+    position: absolute;
+    z-index: 1;
+}
+
+#inner {
+    position: absolute;
+    height: 65%;
+    width: 40%;
+    top: 11%;
+    left: 31%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f9f8f5;
+}
+
+#inner div {
+    transform: translate(-28%, -5%);
+}
+
+#inner-image {
+
+}
+</style>
+
+
+<h1 id="hero-header">
+<div id="hero">
+    <div id="lens">
+        <div id="inner">
+            <div id="wrap">
+                <img id="image" src="static/images/hero_layers_inside_text_and_eye.sm.min.e3abfa6131c5.png" alt="">
+            </div>
+        </div>
+        <img src="static/images/hero_layers_frame.sm.min.612467049836.png" alt="">
+    </div>
+    
+    <img src="static/images/hero_layers_outside_text.sm.min.2487bc244b3d.png" alt="Galactic Puzzle Hunt: 20/20 Vision">
+</div>
+</h1>
+
+
+<div class="feedback">
+
+The Galactic Puzzle Hunt has now come to a close. We hope to see you again!
+
+<br>
+Please fill out our <a href="https://forms.gle/VJTSwAqQqwAXjDXSA">feedback form</a>
+
+and check out our <a href="wrapup.html">wrap-up</a>!
+
+<br>
+<b>If you&rsquo;d like to hear from us about future events, please join our
+<a href="https://eepurl.com/dyo0sj">interest list</a>.</b>
+</div>
+
+
+<div class="row">
+    <div class="four columns">
+        <h3>
+            <img alt="What" src="static/images/big_icon_what.min.5b88e7769a6e.png">
+        </h3>
+        <p>
+            Oh no! The Galactic Puzzle Hunt is coming up soon, but you've
+            misplaced your glasses and might not be able to participate. If you
+            can find them again, you’ll receive a spectacular prize<sup>*</sup>!
+        </p>
+        <p><small><sup>*</sup>the ability to see clearly</small></p>
+    </div>
+    <div class="four columns">
+        <h3>
+            <img alt="When" src="static/images/big_icon_when.min.f07eddf4f14a.png">
+        </h3>
+        <p>
+            The hunt began on
+            <time datetime="2021-07-23T19:22:00-04:00" data-format="%B %-d, %Y at %-I:%M %p %Z">July 23, 2021 at 7:22 PM EDT</time>,
+            and ended
+            9.5 days later on
+            <time datetime="2021-08-02T07:22:00-04:00" data-format="%B %-d, %Y at %-I:%M %p %Z">August 2, 2021 at 7:22 AM EDT</time>.
+        </p>
+    </div>
+    <div class="four columns">
+        <h3>
+            <img alt="Who" src="static/images/big_icon_who.min.06f49a5daada.png">
+        </h3>
+        <p>
+            This was a puzzlehunt run by
+            <span class="whoosh">✈&#xfeff;✈&#xfeff;✈ Galactic Trendsetters ✈&#xfeff;✈&#xfeff;✈</span>,
+            the follow-up to the previous <a href="https://galacticpuzzlehunt.com/archive">Galactic Puzzle Hunts</a>.
+            
+        </p>
+    </div>
+</div>
+
+
+
+</div>
+
+<script>
+var heroHeader = document.getElementById('hero-header');
+var hero = document.getElementById('hero');
+var lens = document.getElementById('lens');
+var inner = document.getElementById('inner');
+var image = document.getElementById('image');
+
+const setImagePositionsByTranslation = (tx, ty) => {
+    tx *= 1.4;
+    ty *= 1.4;
+    lens.style.transform = 'translate(' + tx + '%, ' + ty + '%)';
+    image.style.transform = 'translate(' + (-tx / 1.3 - 2.9) + '%, ' + (-ty / 1.3 - 5.7) + '%)';
+}
+
+let mouseTx = 0;
+let mouseTy = 0;
+let currentTx = 0;
+let currentTy = 0;
+let lerpI = 0;
+let isMouseOverHero = false;
+
+const move = (evt) => {
+    var touch = evt.touches && evt.touches[0] ? evt.touches[0] : evt;
+    var box = hero.getBoundingClientRect();
+
+    if (heroHeader.contains(touch.target)) {
+        var x = box.left + inner.offsetLeft + inner.offsetWidth / 2;
+        var y = box.top + inner.offsetTop + inner.offsetHeight / 2;
+        var dx = (touch.clientX - x) / box.width;
+        var dy = (touch.clientY - y) / box.height;
+        var d = Math.pow(dx * dx + dy * dy, 0.25) / 10;
+        mouseTx = d ? dx / d : 0;
+        mouseTy = d ? dy / d : 0;
+        isMouseOverHero = true;
+    } else {
+        isMouseOverHero = false;
+    }
+};
+
+const update = () => {
+    let targetLerpI;
+    if (isMouseOverHero) {
+        targetLerpI = 1;
+    } else {
+        targetLerpI = 0;
+    }
+    lerpI = lerpI + 0.06 * (targetLerpI - lerpI);
+    // linear interpolate between (mouseTx, mouseTy) and (0, 0)
+    let tx = lerpI * mouseTx;
+    let ty = lerpI * mouseTy;
+    setImagePositionsByTranslation(tx, ty);
+    window.requestAnimationFrame(update);
+}
+
+window.addEventListener('mousemove', move, {passive: true});
+window.addEventListener('touchmove', move, {passive: true});
+
+window.requestAnimationFrame(update);
+</script>
+
+
+    </div>
+</body>
+</html>

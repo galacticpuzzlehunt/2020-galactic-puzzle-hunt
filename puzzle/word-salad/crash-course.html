@@ -1,0 +1,563 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Galactic Puzzle Hunt</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../../static/js/tray.ac18af883297.js"></script>
+    <script src="../../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+                
+                <a href="../../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+                
+                <a href="../../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+                
+                <a href="../../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+                
+                
+                <a href="../../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+                
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../word-salad.html" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <script>
+    
+    
+    </script>
+    <div class="content">
+        
+<style>
+
+table.pronoun-table tr:first-child td { border-top-width: 3px; }
+table.pronoun-table tr:last-child td { border-bottom-width: 3px; }
+table.pronoun-table tr td:first-child { border-left-width: 3px; }
+table.pronoun-table tr td:last-child { border-right-width: 3px; }
+
+.crash-list {
+    margin-top: 0;
+}
+.inner {
+    margin-bottom: 0;
+}
+.crash-list > li {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.colorized {
+    color: #6161FF;
+    font-weight: bold;
+ }
+.puflantu {
+  font-family: monospace, monospace;
+}
+</style>
+
+<h1>Puflantu Crash Course</h1>
+
+<main>
+    <div class="no-break">
+        <h4>Who Speaks This Anyway?</h4>
+        <ul class="crash-list">
+          <li>
+            Six-fingered aliens that we communicated with in <a href="https://2019.galacticpuzzlehunt.com/story.html">2019</a>, after the discovery of an Antarctic Artifact.
+          </li>
+          <li>
+            You will not need any resources from our first contact for this
+            puzzle, other than what is directly linked in the body of this
+            document. For completeness there are existing guides on
+            <a href="https://2019.galacticpuzzlehunt.com/puflantu-guide.html">the GPH website</a>
+            and
+            <a href="https://github.com/galacticpuzzlehunt/puflantu/tree/master/doc">the Github</a>.
+            In a couple places, older information may slightly disagree with
+            this document; in those cases, the more modern understanding is
+            correct.
+          </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Sounds</h4>
+        <ul class="crash-list">
+            <li>Every syllable is (C)V(C) (exactly one vowel with up to one consonant on each side).
+            <ul class="inner crash-list"><li>Therefore three-consonant clusters never occur.</li></ul>
+            </li>
+            <li>A pronunciation guide is <a href="https://github.com/galacticpuzzlehunt/puflantu/blob/master/doc/phonetics.org">here</a>. (It's pretty different from English in several places.) Major notes:</li>
+            <ul class="inner crash-list">
+              <li><span class="puflantu">c</span> is /ʒ/ ("zh" in lei<strong>s</strong>ure)</li>
+              <li><span class="puflantu">g</span> is /ŋ/ ("ng" in bri<strong>ng</strong>)</li>
+              <li><span class="puflantu">q</span> is /tʃ/ ("ch" in <strong>ch</strong>ime)</li>
+              <li><span class="puflantu">u</span> is /ə/ ("uh" in penc<strong>i</strong>l)</li>
+              <li><span class="puflantu">w</span> is /u/ ("oo" in b<strong>oo</strong>t)</li>
+              <li><span class="puflantu">x</span> is /ʃ/ ("sh" in pu<strong>sh</strong>)</li>
+              <li><span class="puflantu">y</span> is /ɲ/ ("ñ" in mi<strong>gn</strong>on)</li>
+              <li><span class="puflantu">'</span> is /🔔/ ("🔔" in <a href="https://www.youtube.com/watch?v=SrDSqODtEFM">🔔<strong>🔔</strong>🔔</a>)</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Nouns and Adjectives</h4>
+        <ul class="crash-list">
+            <li>Always end in a vowel.</li>
+            <li>Singular things almost never end in <span class="puflantu">-w</span> or <span class="puflantu">-we</span>.</li>
+            <li>Part of speech is left to context, e.g. <span class="puflantu">twipe</span> works just as well meaning "sugar" or "sweet (sugary)".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>ag-</h5>
+        <ul class="crash-list">
+          <li>
+            Indicates that a thing is larger or otherwise more intense than its
+            base form, e.g. <span class="puflantu"><strong>ag</strong>twipe</span> "very sweet".
+          </li>
+          <li>
+            May apply before or after noun class infixes depending on whether "a
+            big/very X" or something semantically distinct is intended, e.g.
+            <span class="puflantu">agtw<strong>r</strong>ipe</span> "very sweet (liquid)" vs <span class="puflantu">agt<strong>ur</strong>wipe</span> "cloying".
+          </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>sa-</h5>
+        <ul class="crash-list">
+          <li>
+            Indicates that a thing is smaller or otherwise less intense than its
+            base form, e.g. <span class="puflantu"><strong>sa</strong>ityeri</span> "tint".
+          </li>
+          <li>
+            May apply before or after noun class infixes depending on whether "a
+            small/slightly X" or something semantically distinct is intended, e.g.
+            <span class="puflantu">sa<strong>it</strong>tiha</span> "small light" (LED?) vs <span class="puflantu"><strong>at</strong>satiha</span>
+            "dimmed".
+          </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-r- / -ur-</h5>
+        <ul class="crash-list">
+            <li>Indicates that a noun is a fluid.</li>
+            <li>Infix <span class="puflantu">-r-</span> before the word's second vowel, e.g. <span class="puflantu">twipe</span> &rarr; <span class="puflantu">tw<strong>r</strong>ipe</span>.
+                <ul class="inner crash-list">
+                    <li>Use <span class="puflantu">-ur-</span> instead if using <span class="puflantu">-r-</span> alone would cause a three-consonant cluster, e.g. <span class="puflantu">enxa</span> &rarr; <span class="puflantu">enx<strong>ur</strong>a</span>, not <span class="puflantu">enx<strong>r</strong>a</span>.</li>
+                </ul>
+            <li>All simple (non-clause) descriptors on a fluid noun also take this transformation.
+              <ul class="inner crash-list">
+                <li>"tw<strong>r</strong>ipe enx<strong>ur</strong>a" "sugar water" because the water is a fluid.</li>
+                <li><span class="puflantu">enxa uxfaplo</span> "water bottle" because the bottle is not a fluid.</li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>Vt-</h5>
+        <ul class="crash-list">
+            <li>Indicates that a noun is a light source.</li>
+            <li>Prepend a copy of the noun's first vowel + <span class="puflantu">t</span>, e.g. <span class="puflantu">erqoye</span> → <span class="puflantu"><strong>et</strong>erqoye</span> "moon".</li>
+            <li>All simple (non-clause) descriptors on a light-emitting noun also take this transformation.
+              <ul class="inner crash-list">
+                <li><span class="puflantu"><strong>ot</strong>ombu <strong>et</strong>erqoye</span> "full moon" because the moon is a light source.</li>
+                <li><span class="puflantu">erqoye twipe</span> "moon sugar" because the sugar is not a light source.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-Cw-</h5>
+        <ul class="crash-list">
+            <li>Indicates that a noun is an action defined by physical activity.
+                <ul class="inner crash-list"><li>"jump", "stand", "fight"</li>
+                    <li>not "raise", "cook", "write"</li>
+                    <li>depending on context, "lift", "spin", "sing"</li>
+                </ul></li>
+                <li>Duplicate the final consonant cluster and put a <span class="puflantu">-w-</span> between them, e.g. <span class="puflantu">tanuva</span> → <span class="puflantu">tanu<strong>vw</strong>va</span>.</li>
+            <li>All simple (non-clause) descriptors on a physical activity noun also take this transformation.
+              <ul class="inner crash-list">
+                <li><span class="puflantu">anu<strong>vw</strong>va tanu<strong>vw</strong>va</span> "high jump" because the jump is a physical activity.</li>
+                <li><span class="puflantu">tanuva tahlo</span> "sauté pan" because a pan is not a physical activity.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-ay-</h5>
+        <ul class="crash-list">
+            <li>Infix <span class="puflantu">-ay-</span> before the final vowel to negate a thing, e.g. <span class="puflantu">twip<strong>ay</strong>e</span> for "not sweet".
+                <ul class="inner crash-list"><li>The resulting word always has adjectival sense.</li></ul>
+            </li>
+            <li>This transformation applies after noun class transformations.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-w</h5>
+        <ul class="crash-list">
+            <li>Replace the final vowel with <span class="puflantu">-w</span> to indicate the dual number, e.g. <span class="puflantu">twip<strong>w</strong></span> "two sugars".</li>
+            <li>All simple (non-clause) descriptors on a plural noun also take this formation, e.g. "twip<strong>w</strong> loch<strong>w</strong>" "two sweet foods".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-we</h5>
+        <ul class="crash-list">
+            <li>Replace the final vowel with <span class="puflantu">-we</span> to pluralize, e.g. <span class="puflantu">twip<strong>we</strong></span> for "sugars" or "sweet things".</li>
+            <li>This transformation applies after negation, e.g. <span class="puflantu">twip<strong>aywe</strong></span>, not <span class="puflantu">twip<strong>waye</strong></span>.</li>
+            <li>All simple (non-clause) descriptors on a plural noun also take this formation, e.g. "twip<strong>we</strong> loch<strong>we</strong>" "sweet foods".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-s</h5>
+        <ul class="crash-list">
+            <li>Adverbializes an adjective, e.g. <span class="puflantu">erida</span> "fast" → <span class="puflantu">erida<strong>s</strong></span> "quickly".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-l</h5>
+        <ul class="crash-list">
+            <li>Verbifies a noun or adjective, e.g. <span class="puflantu">twipe</span> "sugar" → <span class="puflantu">twipe<strong>l</strong></span> "to sweeten".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-'fi / -'</h5>
+        <ul class="crash-list">
+            <li>Makes an adjective comparative or superlative respectively, e.g. <span class="puflantu">twipe<strong>'fi</strong></span> "sweeter" and <span class="puflantu">twipe<strong>'</strong></span> "sweetest".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-ro</h5>
+        <ul class="crash-list">
+            <li>Proclitic indicating possession, e.g. <span class="puflantu">Baba<strong>-ro</strong> toreli</span> "Baba's cookie".</li>
+            <li>When applied to a personal or relative pronoun, the pronoun gets infixed instead, e.g. <span class="puflantu">at</span> "it" → <span class="puflantu">r<strong>at</strong>o</span> "its"; <span class="puflantu">ory</span> "those described things'" → <span class="puflantu">roryo</span>.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Pronouns</h4>
+        <ul class="crash-list">
+          <li>Pronouns can appear on their own but most often occur infixed into verbs (see Verbs).</li>
+        </ul>
+        <table class="pronoun-table">
+            <tr><td></td><td colspan="2">Singular</td><td colspan="2">Dual</td><td colspan="2">Plural</td></tr>
+            <tr><td></td><td>Subject</td><td>Object</td><td>Subject</td><td>Object</td><td>Subject</td><td>Object</td></tr>
+            <tr><td>1st person</td><td><span class="puflantu">wm</span></td><td><span class="puflantu">um</span></td><td><span class="puflantu">wn</span></td><td><span class="puflantu">un</span></td><td><span class="puflantu">wy</span></td><td><span class="puflantu">uy</span></td></tr>
+            <tr><td>2nd person</td><td><span class="puflantu">iz</span></td><td><span class="puflantu">ez</span></td><td><span class="puflantu">ij</span></td><td><span class="puflantu">ej</span></td><td><span class="puflantu">ix</span></td><td><span class="puflantu">ex</span></td></tr>
+            <tr><td>3rd person</td><td><span class="puflantu">at</span></td><td><span class="puflantu">ot</span></td><td><span class="puflantu">ab</span></td><td><span class="puflantu">ob</span></td><td><span class="puflantu">ad</span></td><td><span class="puflantu">od</span></td></tr>
+            <tr><td>"This"</td><td><span class="puflantu">ita</span></td><td><span class="puflantu">eta</span></td><td><span class="puflantu">itw</span></td><td><span class="puflantu">etw</span></td><td><span class="puflantu">itwe</span></td><td><span class="puflantu">etwe</span></td></tr>
+            <tr><td>"That"<sup>1</sup></td><td><span class="puflantu">iqa</span></td><td><span class="puflantu">eqa</span></td><td><span class="puflantu">iqw</span></td><td><span class="puflantu">eqw</span></td><td><span class="puflantu">iqwe</span></td><td><span class="puflantu">eqwe</span></td></tr>
+            <tr><td>Relative<sup>2</sup></td><td><span class="puflantu">al</span></td><td><span class="puflantu">ol</span></td><td><span class="puflantu">an</span></td><td><span class="puflantu">on</span></td><td><span class="puflantu">ary<sup>3</sup></span></td><td><span class="puflantu">ory<sup>3</sup></span></td></tr>
+        </table>
+        <ol class="crash-list">
+          <li>"That" also gets used at the determiner "the".</li>
+          <li>
+            These appear in subordinate clauses to indicate the role of the
+            thing being described by the clause, where appropriate; e.g.
+            <span class="puflantu">wlwm<strong>ol</strong>oc-ka locho</span> "the food <strong>that</strong> I ate".
+          </li>
+          <li>
+            When these appear alone they are written <span class="puflantu">arye</span> and <span class="puflantu">orye</span>.
+          </li>
+        </ol>
+
+    </div>
+
+    <div class="no-break">
+        <h4>Conjunctions</h4>
+        <ul class="crash-list">
+            <li>Attached as enclitics to the preceding item, e.g. <span class="puflantu">Alisa<strong>-li</strong> Bobu</span> "Alice and Bob"."</li>
+            <li>Take the -s suffix when linking verbs or adverbs, e.g. <span class="puflantu">wlatoc-lis zumatuz</span> "it eats and it sleeps".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Verbs</h4>
+        <ul class="crash-list">
+            <li>Verbs end in consonants and have a root form that is never used on its own.</li>
+            <li>Verbs take pronoun infixes indicating subject and object before their final vowel, e.g. <span class="puflantu">wloc</span> "to eat" → <span class="puflantu">wl<strong>wm</strong>oc</span> "I eat"; <span class="puflantu">wl<strong>izot</strong>oc</span> "you eat it"
+              <ul class="inner crash-list"><li>The "this" and "that" "pronouns" aren't used like this, they just stand alone, i.e. <span class="puflantu">eta-ro</span> "that( thing)'s", not <span class="puflantu">retao</span></li></ul>
+            </li>
+            <li>In the active voice, the subject infix always appears; the object infix only appears sometimes, especially when it is useful to disambiguate subject from object.</li>
+            <li>In the passive voice, the object infix appears alone, e.g. <span class="puflantu">wl<strong>ot</strong>oc</span> "It is eaten".</li>
+            <li><span class="puflantu">az</span> "to be" is the only irregular verb and takes its infixes as suffixes after <span class="puflantu">z</span>, e.g. <span class="puflantu">zwm</span> "I am".</li>
+            <li>If a small word appears immediately before a verb, it could be a pronoun, a <a href="https://github.com/galacticpuzzlehunt/puflantu/blob/master/doc/main.org#indefinite-pronouns">tense/aspect</a> modifier, or a postposition.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>ag-</h5>
+        <ul class="crash-list">
+            <li>Indicates that an action is done very much, intensely, or overly so, e.g. <span class="puflantu"><strong>ag</strong>wloc</span> "overeat".</li>
+            <li>Applies after pronoun infixing but some <span class="puflantu">ag-</span> verbs are considered standalone words.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>sa-</h5>
+        <ul class="crash-list">
+            <li>Indicates that an action is done only a little, slightly, or underdone, e.g. <span class="puflantu"><strong>sa</strong>erok</span> "scratch".</li>
+            <li>Applies after pronoun infixing but some <span class="puflantu">sa-</span> verbs are considered standalone words.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>vo-</h5>
+        <ul class="crash-list">
+            <li>Indicates that an action is reversed, e.g. <span class="puflantu">horod</span> "to remember" → <span class="puflantu"><strong>vo</strong>horod</span> "to forget".</li>
+            <li>Applies after pronoun infixing; ordering with other two prefixes depends on context.</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-ey-</h5>
+        <ul class="crash-list">
+            <li>Indicates that an action is not done, e.g. <span class="puflantu">wlwm<strong>ey</strong>oc</span> "I do not eat".</li>
+            <li>Goes after the subject pronoun infix and before the object pronoun infix, e.g. <span class="puflantu">wl<strong>ateyod</strong>oc</span> "it does not eat them".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-a</h5>
+        <ul class="crash-list"><li>Indicates the action of the verb, as a gerund, infinitive, or present participle, e.g. <span class="puflantu">erok<strong>a</strong></span> "cutting" or "to cut".
+        </li></ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-afe</h5>
+        <ul class="crash-list"><li>Indicates the performer of a verb or something capable of performing the verb, e.g. <span class="puflantu">wloc<strong>afe</strong></span> "eater".</li></ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-who</h5>
+        <ul class="crash-list"><li>Indicates the recipient of a verb or something that can be acted upon by the verb, e.g. <span class="puflantu">kar<strong>who</strong></span> "addend".</li></ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-wmi</h5>
+        <ul class="crash-list"><li>Indicates a thing that has already been acted upon by the verb, e.g. <span class="puflantu">kar<strong>wmi</strong></span> "added".</li>
+            <li>In cases where more details are needed, a dependent clause may be used instead, e.g. <span class="puflantu">axwroqas kolar-ka</span> "daily added".</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-aqo</h5>
+        <ul class="crash-list">
+            <li>Indicates a thing used to perform the verb, e.g. <span class="puflantu">wloc<strong>aqo</strong></span> "utensil"</li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-ice</h5>
+        <ul class="crash-list">
+            <li>Indicates a place where the verb is performed, e.g. <span class="puflantu">wloc<strong>ice</strong> veonxi</span> "eat-hosting building" (diner, restaurant).
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-ede</h5>
+        <ul class="crash-list">
+            <li>Indicates a thing that causes the verb to happen, e.g. <span class="puflantu">horod<strong>ede</strong> kude</span> "notebook"
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h5>-oda</h5>
+        <ul class="crash-list">
+            <li>Indicates the result of an action, e.g. <span class="puflantu">real<strong>oda</strong></span> "mixture"
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-break">
+        <h4>Clauses</h4>
+        <ul class="crash-list">
+      <li>General sentence order is subject-object-verb.<br>
+<pre>
+Qarzu    dax<span class="colorized">aqo</span>            nag<span class="colorized">at</span>ut.
+Charles  teach-<span class="colorized">instrument</span>  <span class="colorized">it</span>-writes.
+Charles writes a guide ("an instructive").
+</pre>
+            </li>
+      <li>Things generally go before the things they modify.
+<pre>
+Iqa   daxede  og<span class="colorized">we</span>   nath<span class="colorized">we</span>  q<span class="colorized">at</span>un.
+That  guide   many<span class="colorized">s</span>  word<span class="colorized">s</span>   <span class="colorized">it</span>-has.
+The guide has many words.
+</pre>
+      </li>
+      <li>The object of a <strike>pre</strike><strong>ad</strong>position modifies it, and the adpositional phrase modifies something else.
+<pre>
+<span class="colorized">Ot  henqwe</span>          sivegwe,   pazulu  zadey.
+<span class="colorized">It  within(-plural)</span> showings,  puzzle  they-are-not.
+(The) examples <span class="colorized">in it</span> are not a puzzle.
+</pre>
+</li>
+      <li>Two independent clauses can be linked by attaching an adverbial conjuction to the first clause's verb.
+<pre>
+Yokuxa  zat<span class="colorized">-dis</span>    yokuxa<span class="colorized">'fi</span>  az<span class="colorized">a</span>    fel             zat.
+Long    it-is-<span class="colorized">but</span>  long<span class="colorized">er</span>     be<span class="colorized">ing</span>  [hypothetical]  it-can.
+It is long but it could be longer.
+</pre>
+      </li>
+      <li>Dependent clauses have -ka(s) attached to the verb and are generally positioned the same as the part of speech the clause assumes.
+<pre>
+Qarzu    lavwe       rojdwe    swgatodor<span class="colorized">-ka</span>         ocratal.
+Charles  previouses  versions  <span class="colorized">that</span>-it-agrees-them  it-hopes.
+Charles hopes (that) it agrees with previous versions.
+</pre>
+      </li>
+      <li>If the dependent clause modifies a noun, a relative pronoun might be used to indicate the role of the modified noun in the clause.
+<pre>
+Os            nagat<span class="colorized">ol</span>ut-ka    neru   zat.
+[perfective]  it-writes-<span class="colorized">that</span>  fifth  it-is.
+It is the fifth (one that) he has written.
+</pre>
+<pre>
+Uta  laves       nag<span class="colorized">ol</span>ut-ka       rojde    <a href="https://github.com/galacticpuzzlehunt/puflantu/tree/master/doc">tihan</a>  jatif.
+One  previously  <span class="colorized">that</span>-is-written  version  <a href="https://github.com/galacticpuzzlehunt/puflantu/tree/master/doc">here</a>   it-exists.
+A previously written version is <a href="https://github.com/galacticpuzzlehunt/puflantu/tree/master/doc">here</a>.
+</pre>
+      </li>
+      <li>Clauses with other semantic roles are introduced with a <a href="https://2019.galacticpuzzlehunt.com/artifact/textbook.html">ti- or al- word</a>.
+<pre>
+Izwfwe  g<span class="colorized">ot</span>ena       zalova,   <span class="colorized">tidul</span>        fel
+Old(s)  reading-<span class="colorized">them</span> needing,  <span class="colorized">this-reason</span>  [hyp.]
+
+orcizeyin-kas   exizeyin.
+you-don't-want  you-should-not.
+
+You should not need to read the old ones if you don't want (to).
+</pre>
+<pre>
+Uta  cuafi  rojde    <span class="colorized">albwr</span>      Qarzu    giravroxotel-kas
+One  new    version  <span class="colorized">that-time</span>  Charles  it-is-confused
+
+jifoted.
+it-is-created.
+
+A new version is created whenever Charles is confused.
+</pre>
+      </li>
+      <li>If dependent clauses get long enough to interfere with the flow of the sentence, they may be moved after the verb.
+<pre>
+Podhe  rojde    henqos      dwtdwt  et        mwyizid,
+Next   version  interiorly  again   [future]  we-see-you
+
+eta   13210  henqos      et      qwy<span class="colorized">ol</span>uk-ka
+that  2022   interiorly  [fut.]  we-make-<span class="colorized">that</span>
+
+pazulliqexu   ziy  et      nag<span class="colorized">ol</span>ut-ka.
+puzzleparty  for  [fut.]  <span class="colorized">that</span>-is-written.
+
+We will see you again in the next version, which will be
+written for the puzzlehunt that we will make in 2022.
+</pre>
+      </li>
+        </ul>
+    </div>
+</main>
+
+
+    </div>
+</body>
+</html>
