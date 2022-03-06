@@ -158,7 +158,7 @@
     }
 
     function normalize_puzzle_answer(answer) {
-      return answer.toUpperCase().replace(/[^A-Z]/g, '')
+      return answer.toUpperCase().replace(/[^A-Z0-9]/g, '')
     }
   </script>
 <form class="call-in-answer-panel">

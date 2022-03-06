@@ -1,8 +1,8 @@
 import os
 import argparse
 
-text = '''answer == right_answer'''
-replacement = '''answer == normalize_puzzle_answer(right_answer)'''
+text = '''return answer.toUpperCase().replace(/[^A-Z]/g, '')'''
+replacement = '''return answer.toUpperCase().replace(/[^A-Z0-9]/g, '')'''
 
 
 
