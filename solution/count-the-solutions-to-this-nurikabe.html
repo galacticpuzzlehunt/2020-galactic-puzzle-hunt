@@ -1,0 +1,212 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Count the Solutions to This Nurikabe</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/count-the-solutions-to-this-nurikabe" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Count the Solutions to This Nurikabe
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">PAPER PLANE</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Josh Alman and Mitchell Lee
+
+    </h2>
+
+
+    <p>As the title suggests, we have to count the solutions to the Nurikabe. After initial easy deductions (mostly filling in cells between two numbers, which cannot be unshaded because each region can contain at most one number, shading all cells around 1-regions, and then ensuring that these shaded cells can escape), we get something like this:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/1.png" /></p>
+<p>It should be clear that the four regions do not interact with each other, so if we can compute the number of ways to resolve each region, we can multiply them together in order to get the total number of solutions to the puzzle.</p>
+<p>For ease of viewing, we’ll also rotate the sections, which does not affect the number of solutions in each region (but does swap the terminology between rows and columns).</p>
+<p>From left to right:</p>
+<h4>Region 1</h4>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/2.png" /></p>
+<p>Notice that these two shaded parts are initially separated. Since there is only one unshaded island to consider, we can shade the entire perimeter. This is because if there is an unshaded cell along the perimeter, it must belong to this island. But then connecting both these two cells as well as the two shaded parts would then become impossible. So now we have the following:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/3.png" /></p>
+<p>The remaining region is of size 1 + 2 × 74 = 149. As the island is of size 126, we must shade 23 additional cells. What constraints do we have for shading these cells?</p>
+<p>In each column, we can shade at most one of two cells; if we shade both cells then the left side becomes disconnected from the right. Moreover, for two adjacent columns, we cannot shade a cell in both columns &mdash; if they are both on the top or on the bottom, this results in a 2×2 shaded region. If one is on the top and one is on the bottom, then this disconnects the left from the right. There are no other constraints.</p>
+<p>We can use a method similar to <a href="https://en.wikipedia.org/wiki/Stars_and_bars_%28combinatorics%29">stars and bars</a> in order to compute the number of positions for the shaded columns. There are 74 total columns, and 23 shaded columns. Since each space between shaded columns (including before the leftmost and after the rightmost) must be empty, we may contract these, giving us a problem of instead selecting 23 shaded columns from 74 − 24 = 50 columns. Then, we can insert an unshaded column between each shaded column as well as at the ends. Therefore there are (50 choose 23) ways to choose the shaded columns.</p>
+<p>Once we have the shaded columns, we have two ways to shade each of them &mdash; either taking the top or bottom cell. This region has (50 choose 23) × 2<sup>23</sup> = <strong>906332499528699084800</strong> solutions.</p>
+<h4>Region 2</h4>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/4.png" /></p>
+<p>The island is of size 1348, and we are given a region of size 18 × 75 = 1350. This means that we can only shade two cells in this region. Note that, by the shaded 2×2 rule, the two corners in the top left and bottom left are unshaded. There are two general ways that we can do this:</p>
+<ol>
+<li>We can shade a cell along the perimeter, and then shade another cell “inward”. There are 74 + 16 + 74 = 164 places to shade the first cell and always one way to shade the second cell.</li>
+<li>We can shade two cells along the perimeter. There would be (164 choose 2) ways to do this, but not all of these are valid. In particular, if the two cells are on the same side and adjacent, then this results in a shaded 2×2. Additionally, if the two cells are adjacent to the corner, then this also fails, as that would isolate the corner from the rest of the region. So, we are overcounting by 73 + 15 + 73 + 2 = 163.</li>
+</ol>
+<p>Therefore, there are 164 + (164 choose 2) − 163 = <strong>13367</strong> solutions in this region.</p>
+<h4>Region 3</h4>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/5.png" /></p>
+<p>In between the 3 and 4 clues, there are 24 2×2 regions, outlined in red below.</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/6.png" /></p>
+<p>First, we claim that at most two cells in each region are unshaded. Note that at most one of the two cells on the bottom side can be unshaded, or else two clues would be in the same island. So the only way we can have three unshaded cells is through something like this:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/7.png" /></p>
+<p>However, this forces the same pattern until it blocks the 3 clue, like this:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/8.png" /></p>
+<p>which is problematic. The other direction chains similarly.</p>
+<p>Through counting, the two cells in each region constraint is, in fact, exact &mdash; each clue can shade the cell above it, leaving exactly 48 cells left to shade. Starting from the leftmost 3 clue, it must shade 1 cell to the region to its right, meaning the 4 clue next to it must shade 1 cell in its neighboring regions, and so on. So there are two ways to resolve each region:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/9.png" /></p>
+<p>These colorings are independent of each other, so there are 2<sup>24</sup> = <strong>16777216</strong> ways to color this part.</p>
+<h4>Region 4</h4>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/10.png" /></p>
+<p>Notice that the cell in R2C2 must be unshaded due to the 2×2 shaded rule. Which island does it belong to? Either it belongs to the clue below it, or the clue to the right of it. Both ways complete the island, as follows:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/11.png" /></p>
+<p>If it goes down, then we have reduced the configuration to a strip with one fewer clue. (Horizontally flipped, but this doesn’t affect the number of solutions.)</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/12.png" /></p>
+<p>If it goes right, then the 3-clue in the bottom left must go right. So we get this:</p>
+<p><img alt="" src="count-the-solutions-to-this-nurikabe/13.png" /></p>
+<p>Now, R2C6 must be unshaded and must belong to the clue below or right &mdash; either way, the cell in R3C5 must be shaded. Thus, we have reduced the configuration to a strip with two fewer clues.</p>
+<p>Therefore, the number of ways to resolve the configuration can be represented by the recurrence F(n) = F(n − 1) + F(n − 2), which is the Fibonacci recurrence. We can verify that there is 1 way to solve the 1 clue configuration, and 2 ways to solve the 2 clue configuration, which are the 2nd and 3rd Fibonacci number, respectively.</p>
+<p>As there are 38 clues, the number of ways to resolve this region is the 39th Fibonacci number, which is <strong>63245986</strong>.</p>
+<h4>Putting it all together</h4>
+<p>Multiplying the subpuzzle answers together, we get 906332499528699084800 × 13367 × 16777216 × 63245986 = 12855067603505401884018131616935811481600. This has the same number of digits as there are blanks, so we may fill in the blanks with this number.</p>
+<style>
+td.extract {
+    text-align: center;
+    background-color: #fed;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+}
+</style>
+<table class="very-small"><tr><td>1</td><td>2</td><td>8</td><td>5</td><td>5</td><td>0</td><td>6</td><td>7</td><td>6</td><td>0</td><td>3</td><td>5</td><td>0</td><td>5</td><td>4</td><td>0</td><td>1</td><td>8</td><td>8</td><td>4</td><td>0</td><td>1</td><td>8</td><td>1</td><td>3</td><td>1</td><td>6</td><td>1</td><td>6</td><td>9</td><td>3</td><td>5</td><td>8</td><td>1</td><td>1</td><td>4</td><td>8</td><td>1</td><td>6</td><td>0</td><td>0</td></tr><tr><td colspan="2" class="extract">7</td><td></td><td class="extract">4</td><td colspan="7"></td><td class="extract">10</td><td colspan="4"></td><td colspan="2" class="extract">5</td><td colspan="3"></td><td class="extract">8</td><td></td><td class="extract">2</td><td></td><td colspan="2" class="extract">1</td><td colspan="2" class="extract">3</td><td colspan="5"></td><td colspan="2" class="extract">9</td><td></td><td colspan="2" class="extract">6</td><td colspan="2"></td></tr><tr><td colspan="2" class="extract">L</td><td></td><td class="extract">E</td><td colspan="7"></td><td class="extract">E</td><td colspan="4"></td><td colspan="2" class="extract">R</td><td colspan="3"></td><td class="extract">A</td><td></td><td class="extract">A</td><td></td><td colspan="2" class="extract">P</td><td colspan="2" class="extract">P</td><td colspan="5"></td><td colspan="2" class="extract">N</td><td></td><td colspan="2" class="extract">P</td><td colspan="2"></td></tr></table>
+
+<p>Reading off the digits in order of the labels and converting using A1Z26 gives us the answer <strong>PAPER PLANE</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>We wanted to make a puzzle that showcases the interesting structures and counting problems which can arise in Nurikabes. Toward this goal, we made the somewhat controversial (especially for a GPH) decision not to have much of an "aha" in this puzzle. We gave clear instructions in the title so that solvers wouldn't get confused about what to do, and could focus on the (hopefully fun but challenging) task of counting solutions. Especially in the Microscope round, with many "aha-based puzzles", we thought a puzzle with clear instructions would be a welcome departure from the norm.</p>
+<p>A natural "aha" idea would have been to make solvers figure out on their own that they need to count the number of solutions. However, we wanted to avoid this since it is similar to the "aha" from the puzzle <span class="spoiler"><a href="https://perpendicular.institute/puzzle/fun-with-sudoku/">Fun With Sudoku</a> that we recently wrote for the Mystery Hunt</span>, and we didn't want solvers who had seen that puzzle to have an advantage.</p>
+<p>We had a few ideas for mechanisms to let solvers confirm answers to subpuzzles, but none of them were very satisfying. We decided instead to make sure none of the subpuzzles were too difficult. That said, we hope the blanks and indices for extraction could help at least a little bit with error correction.</p>
+<p>When brainstorming subpuzzles, we had a few ideas that were quite challenging, and needed much more advanced combinatorial arguments combined with more intricate Nurikabe logic. We decided that these require too much experience with combinatorics to include them in the GPH, but we hope to use them in another puzzle some day.</p>
+<p>Thanks to Brian Chen, Lennart Jansson, and Lewis Chen for helping with graphics and solution writing!</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

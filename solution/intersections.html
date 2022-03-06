@@ -1,0 +1,211 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Intersections</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/intersections" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Intersections
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TRIAD</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Brian Chen
+
+    </h2>
+
+
+    <style>
+.intersection-outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+table.intersection {
+    margin: 1em;
+    flex: auto;
+    flex-grow: 0;
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+table.intersection td {
+    border-width: 0;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1;
+    text-align: center;
+    padding: 0;
+}
+table.intersection td.cell {
+    border: 1px solid black;
+}
+</style>
+
+<p>Each clip is a made-up counterpoint to a famous pop song. The clip’s lyrics retell the events of the start of the famous song from the perspective of a different participant, and the entire clip can be overlaid onto that same part of the famous song to match harmonically, and mostly rhythmically as well.</p>
+<p>In addition, each clips contains a half-spoken number at some point. If the clips are overlaid onto the original song as above, the spoken number matches a word in the original song reasonably precisely in time and duration. The number can be indexed into that word:</p>
+<table><tr><th>Song</th><th>Original Song</th><th>Spoken Number</th><th>Word</th><th>Index</th></tr><tr><td>1</td><td>Africa (Toto)</td><td>2</td><td>quiet</td><td>U</td></tr><tr><td>2</td><td>All Star (Smash Mouth)</td><td>3</td><td>finger</td><td>N</td></tr><tr><td>3</td><td>Blank Space (Taylor Swift)</td><td>4</td><td>magic</td><td>I</td></tr><tr><td>4</td><td>Hey Jude (The Beatles)</td><td>1</td><td>sad</td><td>S</td></tr><tr><td>5</td><td>Never Gonna Give You Up (Rick Astley)</td><td>2</td><td>so</td><td>O</td></tr><tr><td>6</td><td>Toxic (Britney Spears)</td><td>6</td><td>calling</td><td>N</td></tr><tr><td>7</td><td>YMCA (Village People)</td><td>1</td><td>said</td><td>S</td></tr></table>
+
+<p>Indexing produces the word UNISONS, a clue to the next step. When the two songs are overlaid, there is exactly one word that the two main melodic lines sing in unison (modulo octaves).</p>
+<table><tr><th>Song</th><th>Original Song</th><th>Song Lyric</th><th>Clip Lyric</th></tr><tr><td>1</td><td>Africa (Toto)</td><td>the stars that <strong>guide</strong> me towards salvation</td><td>twinkling in the <strong>night</strong> lead him higher</td></tr><tr><td>2</td><td>All Star (Smash Mouth)</td><td>I ain't the <strong>sharpest</strong> tool in the shed</td><td>might be a <strong>hammer</strong> and not an axe</td></tr><tr><td>3</td><td>Blank Space (Taylor Swift)</td><td>I can show you <strong>incredible</strong> things</td><td>I'm ready to see <strong>astonishing</strong> sights</td></tr><tr><td>4</td><td>Hey Jude (The Beatles)</td><td>take a <strong>sad</strong> song and make it better</td><td>I'll <strong>change</strong> this tune to improve it</td></tr><tr><td>5</td><td>Never Gonna Give You Up (Rick Astley)</td><td>you couldn't get this <strong>from</strong> any other guy</td><td>nobody else <strong>could</strong> give me more</td></tr><tr><td>6</td><td>Toxic (Britney Spears)</td><td>it's <strong>dangerous</strong> / I'm falling</td><td>you're <strong>dangling</strong> / by just a hair</td></tr><tr><td>7</td><td>YMCA (Village People)</td><td>there's no need to be <strong>unhappy</strong></td><td>tell me where to find <strong>enjoyment</strong></td></tr></table>
+
+<p>Each pair of words fits into a criss-cross, with the original song going horizontally and this puzzle’s song going vertically.</p>
+<p>Left:</p>
+<div class="intersection-outer"><table class="intersection"><tr><td rowspan="2" colspan="2"></td><td class="cell">D</td><td rowspan="2" colspan="6"></td></tr><tr><td class="cell">A</td></tr><tr><td class="cell">D</td><td class="cell">A</td><td class="cell">N</td><td class="cell">G</td><td class="cell">E</td><td class="cell"><sup>3</sup>R</td><td class="cell"><sup>7</sup>O</td><td class="cell">U</td><td class="cell">S</td></tr><tr><td rowspan="5" colspan="2"></td><td class="cell">G</td><td rowspan="5" colspan="6"></td></tr><tr><td class="cell">L</td></tr><tr><td class="cell">I</td></tr><tr><td class="cell"><sup>6</sup>N</td></tr><tr><td class="cell">G</td></tr></table><table class="intersection"><tr><td rowspan="1" colspan="2"></td><td class="cell"><sup>10</sup>C</td><td rowspan="1" colspan="1"></td></tr><tr><td class="cell">F</td><td class="cell"><sup>3</sup>R</td><td class="cell">O</td><td class="cell">M</td></tr><tr><td rowspan="3" colspan="2"></td><td class="cell">U</td><td rowspan="3" colspan="1"></td></tr><tr><td class="cell"><sup>4</sup>L</td></tr><tr><td class="cell">D</td></tr></table><table class="intersection"><tr><td rowspan="1" colspan="2"></td><td class="cell">N</td><td rowspan="1" colspan="2"></td></tr><tr><td class="cell">G</td><td class="cell">U</td><td class="cell">I</td><td class="cell">D</td><td class="cell"><sup>4</sup>E</td></tr><tr><td rowspan="3" colspan="2"></td><td class="cell"><sup>1</sup>G</td><td rowspan="3" colspan="2"></td></tr><tr><td class="cell">H</td></tr><tr><td class="cell"><sup>1</sup>T</td></tr></table><table class="intersection"><tr><td rowspan="5" colspan="6"></td><td class="cell">A</td><td rowspan="5" colspan="3"></td></tr><tr><td class="cell">S</td></tr><tr><td class="cell">T</td></tr><tr><td class="cell"><sup>12</sup>O</td></tr><tr><td class="cell">N</td></tr><tr><td class="cell"><sup>5</sup>I</td><td class="cell">N</td><td class="cell">C</td><td class="cell">R</td><td class="cell"><sup>5</sup>E</td><td class="cell">D</td><td class="cell">I</td><td class="cell">B</td><td class="cell">L</td><td class="cell">E</td></tr><tr><td rowspan="5" colspan="6"></td><td class="cell">S</td><td rowspan="5" colspan="3"></td></tr><tr><td class="cell">H</td></tr><tr><td class="cell">I</td></tr><tr><td class="cell">N</td></tr><tr><td class="cell">G</td></tr></table><table class="intersection"><tr><td rowspan="7" colspan="1"></td><td class="cell">E</td><td rowspan="7" colspan="5"></td></tr><tr><td class="cell">N</td></tr><tr><td class="cell">J</td></tr><tr><td class="cell">O</td></tr><tr><td class="cell">Y</td></tr><tr><td class="cell">M</td></tr><tr><td class="cell">E</td></tr><tr><td class="cell">U</td><td class="cell">N</td><td class="cell"><sup>2</sup>H</td><td class="cell">A</td><td class="cell">P</td><td class="cell">P</td><td class="cell">Y</td></tr><tr><td rowspan="1" colspan="1"></td><td class="cell"><sup>8</sup>T</td><td rowspan="1" colspan="5"></td></tr></table><table class="intersection"><tr><td rowspan="2" colspan="1"></td><td class="cell"><sup>6</sup>C</td><td rowspan="2" colspan="1"></td></tr><tr><td class="cell"><sup>11</sup>H</td></tr><tr><td class="cell">S</td><td class="cell">A</td><td class="cell"><sup>14</sup>D</td></tr><tr><td rowspan="3" colspan="1"></td><td class="cell">N</td><td rowspan="3" colspan="1"></td></tr><tr><td class="cell">G</td></tr><tr><td class="cell">E</td></tr></table><table class="intersection"><tr><td class="cell">S</td><td class="cell">H</td><td class="cell"><sup>2</sup>A</td><td class="cell"><sup>13</sup>R</td><td class="cell">P</td><td class="cell">E</td><td class="cell">S</td><td class="cell">T</td></tr><tr><td rowspan="5" colspan="1"></td><td class="cell">A</td><td rowspan="5" colspan="6"></td></tr><tr><td class="cell">M</td></tr><tr><td class="cell">M</td></tr><tr><td class="cell"><sup>9</sup>E</td></tr><tr><td class="cell">R</td></tr></table></div>
+
+<p>Right:</p>
+<div class="intersection-outer"><table class="intersection"><tr><td rowspan="2" colspan="2"></td><td class="cell">D</td><td rowspan="2" colspan="6"></td></tr><tr><td class="cell">A</td></tr><tr><td class="cell">D</td><td class="cell">A</td><td class="cell">N</td><td class="cell">G</td><td class="cell">E</td><td class="cell">R</td><td class="cell"><sup>7</sup>O</td><td class="cell"><sup>5</sup>U</td><td class="cell">S</td></tr><tr><td rowspan="5" colspan="2"></td><td class="cell">G</td><td rowspan="5" colspan="6"></td></tr><tr><td class="cell">L</td></tr><tr><td class="cell"><sup>2</sup>I</td></tr><tr><td class="cell"><sup>6</sup>N</td></tr><tr><td class="cell">G</td></tr></table><table class="intersection"><tr><td rowspan="1" colspan="2"></td><td class="cell"><sup>10</sup>C</td><td rowspan="1" colspan="1"></td></tr><tr><td class="cell">F</td><td class="cell"><sup>3</sup>R</td><td class="cell">O</td><td class="cell">M</td></tr><tr><td rowspan="3" colspan="2"></td><td class="cell">U</td><td rowspan="3" colspan="1"></td></tr><tr><td class="cell">L</td></tr><tr><td class="cell"><sup>1</sup>D</td></tr></table><table class="intersection"><tr><td rowspan="1" colspan="2"></td><td class="cell">N</td><td rowspan="1" colspan="2"></td></tr><tr><td class="cell"><sup>4</sup>G</td><td class="cell">U</td><td class="cell">I</td><td class="cell">D</td><td class="cell"><sup>4</sup>E</td></tr><tr><td rowspan="3" colspan="2"></td><td class="cell">G</td><td rowspan="3" colspan="2"></td></tr><tr><td class="cell">H</td></tr><tr><td class="cell"><sup>1</sup>T</td></tr></table><table class="intersection"><tr><td rowspan="5" colspan="6"></td><td class="cell">A</td><td rowspan="5" colspan="3"></td></tr><tr><td class="cell">S</td></tr><tr><td class="cell">T</td></tr><tr><td class="cell"><sup>12</sup>O</td></tr><tr><td class="cell">N</td></tr><tr><td class="cell">I</td><td class="cell">N</td><td class="cell">C</td><td class="cell">R</td><td class="cell"><sup>5</sup>E</td><td class="cell">D</td><td class="cell">I</td><td class="cell">B</td><td class="cell">L</td><td class="cell">E</td></tr><tr><td rowspan="5" colspan="6"></td><td class="cell">S</td><td rowspan="5" colspan="3"></td></tr><tr><td class="cell">H</td></tr><tr><td class="cell"><sup>6</sup>I</td></tr><tr><td class="cell">N</td></tr><tr><td class="cell">G</td></tr></table><table class="intersection"><tr><td rowspan="7" colspan="1"></td><td class="cell"><sup>8</sup>E</td><td rowspan="7" colspan="5"></td></tr><tr><td class="cell">N</td></tr><tr><td class="cell">J</td></tr><tr><td class="cell">O</td></tr><tr><td class="cell">Y</td></tr><tr><td class="cell">M</td></tr><tr><td class="cell">E</td></tr><tr><td class="cell">U</td><td class="cell">N</td><td class="cell"><sup>2</sup>H</td><td class="cell">A</td><td class="cell">P</td><td class="cell">P</td><td class="cell">Y</td></tr><tr><td rowspan="1" colspan="1"></td><td class="cell"><sup>8</sup>T</td><td rowspan="1" colspan="5"></td></tr></table><table class="intersection"><tr><td rowspan="2" colspan="1"></td><td class="cell">C</td><td rowspan="2" colspan="1"></td></tr><tr><td class="cell"><sup>11</sup>H</td></tr><tr><td class="cell"><sup>3</sup>S</td><td class="cell">A</td><td class="cell"><sup>14</sup>D</td></tr><tr><td rowspan="3" colspan="1"></td><td class="cell">N</td><td rowspan="3" colspan="1"></td></tr><tr><td class="cell">G</td></tr><tr><td class="cell">E</td></tr></table><table class="intersection"><tr><td class="cell">S</td><td class="cell">H</td><td class="cell">A</td><td class="cell"><sup>13</sup>R</td><td class="cell">P</td><td class="cell">E</td><td class="cell"><sup>7</sup>S</td><td class="cell">T</td></tr><tr><td rowspan="5" colspan="1"></td><td class="cell">A</td><td rowspan="5" colspan="6"></td></tr><tr><td class="cell">M</td></tr><tr><td class="cell">M</td></tr><tr><td class="cell"><sup>9</sup>E</td></tr><tr><td class="cell">R</td></tr></table></div>
+
+<p>Reading off the letters with the numbers that are the same on both sides produces the cluephrase, THREE-NOTE CHORD, for the answer <strong>TRIAD</strong>.</p>
+<p>Reading off the letters with the numbers that are only on one side or only on the other produces the left/right answers, <strong>GARLIC</strong> and <strong>DISGUISE</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>The idea of “a puzzle that’s also a piece of original music” has been on my to-do list for a long, long time. I remember <a href="https://web.mit.edu/puzzle/www/2019/puzzle/playing_a_round.html">Playing a Round</a> from MITMH 2019, which is a really impressive piece of music, but also a really difficult puzzle that sort of demanded domain-specific knowledge I didn’t have. So I wanted to make something that would hopefully be more approachable. Also, I picked up FL Studio as a reward for myself after ✈✈✈ Galactic Trendsetters ✈✈✈ finished running Mystery Hunt and succumbed to the occupational hazard of wanting to incorporate every possible hobby into a puzzlehunt puzzle. Testsolvers quickly disabused me of the notion that finding the unique words in which two clips were in unison was actually that approachable of a step, but I hope that musically inclined solvers enjoyed the chance to use a skill that rarely comes up in puzzlehunts.</p>
+<p>The idea for the particular angle I settled on here, of made-up counterpoints to songs, came from a lot of sources. In some ways I think it’s pretty natural thing to want to do — I remember an old comedy sketch I saw on YouTube in which a person responded to Adele’s “Hello”, and was informed by testsolvers that making up songs that respond to pop songs has been a trend on TikTok, which I was totally unaware of but also not surprised by. I was further drawn to this angle when I realized it would let me incorporate a music recognition step that solvers couldn’t just solve by mechanically applying Shazam, which I think is often an uninteresting step in music puzzles, and also worry a lot less about copyright. But the most specific inspiration I can point to was a particular puzzle in the Anthro New England 2020 Minecraft server escape room (which I won't spoil beyond this note for now, because they vaguely teased that they have plans for it), which informed the meme song choice.</p>
+<p>Forcing almost all of the melodies' notes to be different from the original song's melody while still being harmonically reasonable was a tight enough constraint that I didn't have to make that many arbitrary compositional decisions and worry about tradeoffs between those and introducing red herrings.</p>
+<p>My earliest plans for this puzzle were to do 14 songs, extract one letter from each, and not clue the UNISONS step at all and just force solvers to think of it themselves. To check if this was reasonable, I made a prototype version with just seven songs and asked for a "pre-testsolve". Here's one early clip:</p>
+<p><audio controls src="intersections/prototype.mp3"></audio></p>
+<p>(For whatever reason, I chose to deviate from All Star's rhythm a lot more, but all my other clips followed the original tracks a lot more, so All Star's countermelody became the odd one out and I was convinced by a later testsolve to scrap and redo it. Also, I was very lazy with autotune and I think the artifacts are pretty obvious.)</p>
+<p>The early testsolve didn't go very well, so I added the UNISONS step and basically locked the puzzle down to its current size, which was probably just as well because each song took me hours to make and the next seven songs I added to the puzzle would certainly be less recognizable than the ones I already had. Still, the testsolve stalled out after getting that phrase, and I was ready to abandon the puzzle idea; I commented:</p>
+<blockquote>
+<p>If this doesn't get testsolved probably just kill it. Maybe unless the solvers have an idea for a better second step idk</p>
+</blockquote>
+<p>Fortunately, the next two testsolves went much better. Even though multiple testsolvers did mention the idea of looking for unisons, and I know that several teams skipped that message as well, it seemed to be so technically difficult to execute for many other testsolvers that they were deterred from trying it without explicit instructions to do so, so I kept the phrase in the puzzle.</p>
+<p>Unfortunately the final extraction for this puzzle and the way it uses the binoculars L/R difference are both rather uninteresting. Originally, we placed this puzzle in the binoculars round partly because of the thematic answer, but partly because it seemed like it could be cool to do something with the L/R channels of the clips on the two sides. However, when I tried some L/R channel shenanigans in an early draft, our first testsolvers spent longer than I wanted analyzing differences between the two music clips and their channels, so I abandoned that idea.</p>
+<p>Here are the clips overlaid onto the original tracks, exactly as I lined them up in FL Studio:</p>
+<p><audio controls src="intersections/1.mp3"></audio><br><audio controls src="intersections/2.mp3"></audio><br><audio controls src="intersections/3.mp3"></audio><br><audio controls src="intersections/4.mp3"></audio><br><audio controls src="intersections/5.mp3"></audio><br><audio controls src="intersections/6.mp3"></audio><br><audio controls src="intersections/7.mp3"></audio></p>
+<p>Incidentally, some testsolvers took issue with the loose definition of "unisons" I used, suggesting that taking everything modulo octaves might be less acceptable when applied to two of the "same instrument", such as two vocal lines. It would be nice to match the original singers' octaves, but my usable vocal range is much too narrow and I didn't think it was practical to get (or hire?) another vocalist and get them to record until my bizarre puzzle-demanded precisions were satisfied. I considered just doing it anyway by pitch-shifting, which was one knob tweak away, but I don't think the results were compelling. You can decide for yourself:</p>
+<p><audio controls src="intersections/high-toxic.mp3"></audio><br/><audio controls src="intersections/high-blank-space.mp3"></audio></p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

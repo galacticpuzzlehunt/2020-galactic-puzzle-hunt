@@ -1,0 +1,454 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Mixed Message</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/mixed-message" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="k8HlVsKmJJiozYDoo8f7e9qWv5kCAbkBK317Z0C58e3tmKaJR3sq1NEEUHUqggKe">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="mixed-message" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Mixed Message
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TODDLERS</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Chris Jones
+
+    </h2>
+
+
+    <p>The puzzle presents us with a 3x3 grid of overlapping letters which we can traverse forwards
+or backwards via the arrow keys.
+Some experimenting reveals that if you refresh the page, the middle cell of the grid always starts on the same
+pair of overlapping letters, U and w, and the middle cell repeats every 29 frames.
+If we write down and disentangle these 29 frames, we can recover a pair of "mixed-up messages"</p>
+<p><code>Uncleartextfillsthispuzzlebut / weclearlyneedonecharactereach</code></p>
+<p>The font makes some of the letters tricky: o from "one" and l from "fills" look like b when they overlap,
+and n from "one" and l from "fills" look like h. Notably, "clear" overlaps from both parts of this message.
+If we start to disentangle the other eight cells, there are two observations to make:</p>
+<ol><li> Each of the cells is the result of overlapping two books, read letter-by-letter without punctuation or spaces.</li><li> Furthermore, each book has had one character's name completely erased. This might be discovered by chance while transcribing
+        some of the texts, or it is hinted by the central message, which suggests looking for additional non-overlapped letters in other cells.
+    This observation might also be made by turning on autoplay, watching the text go by for awhile, and noticing
+    clear runs of letters that stand out.</li></ol>
+
+<p>The character is often the main protagonist of the book. There is also a message at the start of each book saying who has
+been erased, in case curious solvers navigate there. The easiest method to check who has been erased is to autoplay the
+letters and look for clear runs, and then use the jump button to finish off the books that haven't been determined yet.</p>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Book</th>
+<th>Character</th>
+<th>Overlap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upper left</td>
+<td>Les Misérables</td>
+<td>Jean Valjean</td>
+<td></td>
+</tr>
+<tr>
+<td>upper left</td>
+<td>Oliver Twist</td>
+<td>Oliver Twist</td>
+<td>l/T = T</td>
+</tr>
+<tr>
+<td>upper middle</td>
+<td>To Kill a Mockingbird</td>
+<td>Atticus Finch</td>
+<td></td>
+</tr>
+<tr>
+<td>upper middle</td>
+<td>The Lord of the Rings (all books)</td>
+<td>Frodo Baggins</td>
+<td>c/o = o</td>
+</tr>
+<tr>
+<td>upper right</td>
+<td>A Doll's House</td>
+<td>Nora Helmer</td>
+<td></td>
+</tr>
+<tr>
+<td>upper right</td>
+<td>Siddhartha</td>
+<td>Siddhartha</td>
+<td>r/d = d</td>
+</tr>
+<tr>
+<td>middle right</td>
+<td>Everything I Never Told You</td>
+<td>Lydia Lee</td>
+<td></td>
+</tr>
+<tr>
+<td>middle right</td>
+<td>Animal Farm</td>
+<td>Snowball</td>
+<td>d/o = d</td>
+</tr>
+<tr>
+<td>lower right</td>
+<td>Beowulf</td>
+<td>Beowulf</td>
+<td></td>
+</tr>
+<tr>
+<td>lower right</td>
+<td>A Midsummer Night's Dream</td>
+<td>Titania</td>
+<td>l/i = l</td>
+</tr>
+<tr>
+<td>lower middle</td>
+<td>Do Androids Dream of Electric Sheep?</td>
+<td>Rick Deckard</td>
+<td></td>
+</tr>
+<tr>
+<td>lower middle</td>
+<td>The Sun Also Rises</td>
+<td>Brett Ashley</td>
+<td>c/e = e</td>
+</tr>
+<tr>
+<td>lower left</td>
+<td>Anne of Green Gables</td>
+<td>Anne Shirley</td>
+<td></td>
+</tr>
+<tr>
+<td>lower left</td>
+<td>The Fountainhead</td>
+<td>Howard Roark</td>
+<td>i/R = R</td>
+</tr>
+<tr>
+<td>middle left</td>
+<td>The Metamorphosis</td>
+<td>Gregor Samsa</td>
+<td></td>
+</tr>
+<tr>
+<td>middle left</td>
+<td>Of Mice and Men</td>
+<td>Lennie Small</td>
+<td>S/S = S</td>
+</tr>
+</tbody>
+</table>
+<p>The central message is a figurative "mixed message" in the sense that it also tells us we need to extract one
+character from each pair of books. Each pair of literary characters has the same length (using their full name,
+disregarding any titles, removing spaces as in the book). If we write their names over one another (using standard capitalization, as in the book)
+there is exactly one letter in each pair that cleanly overlaps to make a new letter.
+For example, overlapping "JeanValjean" and "OliverTwist", the only
+clean overlap is l/T = T.
+Reading clockwise from the upper left corner spells out the answer to the puzzle, <strong>TODDLERS</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>In the original version of the puzzle, you could not pause the letter streams
+(with the intent that you would have to do bigram disambiguation on-the-fly; ouch):</p>
+<div style="text-align:center"><img src="mixed-message/mixed-msg.gif" width="300px"></div>
+
+<p>but testsolvers <em>hated</em> this; they recorded a video and stepped through the video.
+Interestingly, they didn't have trouble noticing that character names
+were erased in this format!</p>
+<p>Even in its current form, this puzzle is certainly a grind to solve. Is it fun? Reception was mixed.
+If you made it through the puzzle, congrats!
+I probably wouldn't write the puzzle this way again. During writing, I had a distinct moment
+of decision where I likely went the wrong way. I knew that
+I wanted to overlay two books on top of each other, but I needed some way to
+connect each pair of books to extract the answer. They could either be connected
+in a "syntactic" way, e.g. the current puzzle, or in a "semantic" way, e.g. both books are a modern retelling
+of <em>Romeo and Juliet</em>, say.
+The semantic way would likely have replaced some of the grind with a small a-ha, and who among us
+does not love a small a-ha?</p>
+<p>We heard of several teams using various technical exploits to do data collection.
+In the data file sent to your computer, the book text is permuted by sending the character at position <em>i</em> to position <i>i*k</i> (mod length) for
+some obfuscated number <em>k</em>
+(along with some other obfuscation).
+The URL (which allows teammates to share progress/state) is a <a href="https://en.wikipedia.org/wiki/Base64">base-64</a> encoding
+of the current indices into the obfuscated texts.
+Prior to the hunt I was under the impression that the most you could do with this is
+figure out the numbers <em>k</em> and do some <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">modular arithmetic</a>
+to un-permute the novels (a nontrivial amount of work, which some teams bravely did).
+But since 0 is a fixed point of the permutation, some teams randomly tried "0,0,0,&hellip;" and jumped to the
+start of the novel&#151;where the message "JealValjeanwasclearedfromthisbook" appears.
+In a sense the messages at the start of the book were doing their job of telling
+what was going on to solvers who navigated there, but this was an easier-than-intended way
+to find them (vs using the jump button).</p>
+<p>Several teams also sent us this <a href="https://2020.galacticpuzzlehunt.com/puzzle/mixed-message?m=MTE0MDk3MiwzOTgzMjQsNzQ4MzMsNjc3MzEyLDEwMTEwMiw2OTA5NSw4MjQ2MSwxMzA1NywwLDAsMTQ5NzM3LDExODY3NCwyMDUzODgsNDQzOTYsNzIzNDMsNTMzODgsMTg3MzIsMTc1NTI=">completely blank</a> page.
+An impressive find! Another masochistic thing to do is find a page that clearly spells out some 8-letter word. </p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

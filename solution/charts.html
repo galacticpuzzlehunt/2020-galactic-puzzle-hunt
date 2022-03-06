@@ -1,0 +1,420 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Charts</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/charts" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="eKlUATQ2yExED4p3vEkn85Bg3n554s6LEFFGErILX9iJqQWoYzxGVJPYsZFTKxwo">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="charts" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Charts
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">MUSTARD</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Jakob Weisblat and Lennart Jansson
+
+    </h2>
+
+
+    <p>This is a puzzle about the elevation profiles of various routes or paths
+somewhere in the world. Each of the seven icons close to the bottom left is a
+hint to a kind of route or geographical feature, and each corresponds to a line
+chart that depicts one of the most famous examples of that kind of feature.</p>
+<p>The first step is to realize that the charts depict elevation profiles, as
+opposed to any other sort of data. One big clue is the colored bars on each X
+and Y axis. The legend on the left side shows that the various colored bars can
+be equated in value to each other by factors of 10 (e.g. one blue bar indicates
+the same quantity as 10 purple bars), so it&rsquo;s a reasonable assumption that all
+of the colored bars describe the same physical dimension. We would now guess
+that every chart is probably plotting distance vs. distance (rather than time
+vs. time etc.) because the seven icons all have a geographical flavor and each
+depict things that can travel a nontrivial distance.</p>
+<p>If one has seen elevation profiles before, from studying science or geography,
+or from using apps like Strava to view running or cycling routes, the shapes of
+some of the charts should seem very plausibly like elevation profiles.</p>
+<p>We now attempt to identify the seven icons and what kind of route they might
+clue:</p>
+<p><img style="max-width: 100%" src="charts/iconanswers.png" /></p>
+<p>Knowing the seven path types or modes of transportation (and the constraints
+they impose on their elevation profiles), we can attempt to identify which
+specific route is depicted in each chart and pair them up. Once we have an
+educated guess for a specific route that possibly matches a chart, we can spot
+check certain points along the route and compare relative elevations to make
+sure it matches.</p>
+<p>We look first at the leftmost chart in the second row. At this point, we don&rsquo;t
+know the absolute scale of the colored bars, but we do know that in relative
+terms, the purple bar is the shortest and orange bar the longest, so given the Y
+axis here, this chart has the most modest elevation gain/loss. Its X axis is
+labeled with a teal bar, which is also much shorter than many of the other
+charts. We notice it has 26 evenly spaced markers along the path, then extends
+just a hair past the 26th marker. If we have the insight that these 26 points
+may be <em>mile markers</em>, then we can identify this as a marathon route, 26.2 miles
+long. A particularly famous marathon route known for its hills is the Boston
+Marathon, and we realize the gray bars under the X axis represent the different
+towns the route passes through, which we can now label:</p>
+<p><img style="max-width: 100%" src="charts/bostonmarathonanswer.png" /></p>
+<p>By comparing the relative length of the teal bar with the X axis of the marathon
+chart, we can figure out that the teal bar represents 10 km. Thus, the blue bar
+represents 1 km, the purple bar 100 m, the yellow bar 100 km, and the orange bar
+1,000 km.</p>
+<p>Rivers may only flow downhill, so a river&rsquo;s elevation profile must be monotonic.
+There is exactly one chart with this property, which has a number of other
+features that support this pairing: it has two branches on the left that join in
+the middle, which can represent two tributaries meeting at a confluence, and
+there are a number of sudden drops in elevation at the marked waypoints, which
+we suspect represent dams. By looking at the length of the X scale relative to
+the given orange bar, we know the river in question must be over 5,500 km. There
+is one famous river that matches these criteria: the Nile river, with the
+shorter upper branch being the Blue Nile and the longer branch the White Nile.
+We can then label the various markers, which do indeed correspond to dams on the
+Nile:</p>
+<p><img style="max-width: 100%" src="charts/nileanswer.png" /></p>
+<p>It&rsquo;s easy to figure out which chart denotes the bobsled track&mdash;it must be the
+second chart in the second row, as all of the other charts show paths that are
+way too long. In addition, its gentle downward slope with smooth gradations and
+upwards turn at the end are all highly plausible for bobsled. We would suspect
+that the gray regions marked under the chart show the corners or turns in the
+track, which are sometimes given names. By the scale markers, we&rsquo;re looking for
+a bobsled track around 1720 m long and with around 130 m max elevation
+difference, and the gray bars suggest it should have at least 15 named corners.
+The St. Moritz Olympia Bob Run in Switzerland fits these criteria, and thus we
+can label the turns with their names:</p>
+<p><img style="max-width: 100%" src="charts/bobrunanswer.png" /></p>
+<p>Another chart with distinctive features is the first chart in the top row, which
+has many sudden jumps up and down, as well as many stretches that appear flat
+with no significant elevation gain or loss. A land route would be unlikely to
+have so many flat portions, so we suspect therefore this is a shipping canal
+with many boat locks that show up as discontinuities on the elevation profile.
+By the scale markers, we&rsquo;re looking for a canal around 580 km in length and with
+a max elevation difference of around 175 m. The Erie Canal in New York
+(specifically the 20th century-constructed Barge Canal) is a famous canal that
+fits these criteria, running from Buffalo on the higher-elevation western side
+to the Hudson River in the east. The dots correspond in position to major cities
+in New York, which we can label:</p>
+<p><img style="max-width: 100%" src="charts/eriecanalanswer.png" /></p>
+<p>Two more of the routes don&rsquo;t have any qualitative features that are quite as
+distinct, but can still be identified by sheer length. The bottommost chart
+features extremely steep (but not purely vertical) climbs and drops. One can
+estimate the maximum grade from the elevation profile, but that&rsquo;s not even
+necessary to determine that it&rsquo;s too steep to possibly be the train/railroad or
+the car/road, which implies this is a hiking trail. By the scale markers, the
+path is a whopping 4200 km long. There is one famous hiking trail with this
+approximate length as well as some very dramatic elevation gain/loss: the
+Pacific Crest Trail. This is supported by the three gray regions below the chart
+which indicate US state boundaries (and indeed the highest points on the trail
+are in the Sierra Nevada in California). No points on the chart are marked
+beside the red arrow, but we can pick out a few notable features nonetheless:</p>
+<p><img style="max-width: 100%" src="charts/pctanswer.png" /></p>
+<p>The chart labeled with an orange bar also appears to be staggeringly long; as
+the orange bar represents 1,000 km, this path must be around 9,400 km long.
+There are few places in the world that can support a reasonably direct land
+route with this length&mdash;we suspect it must be a trans-continental route of
+some sort. Some guessing may be required here, but a particularly famous example
+is the Trans-Siberian Railway that stretches across Russia. Once we have that
+guess, it&rsquo;s easily confirmed by the fact that the Trans-Siberian Railway has 18
+stops from Moscow to Vladivostok, which matches the 18 markers on the elevation
+profile route, and the fact that highest elevation points on the chart
+correspond to the South Siberian mountains close to Ulan-Ude and Chita, while
+the lowest elevation point is in the far east, namely Vladivostok, which is on
+the Pacific. The railway stops can then be labeled:</p>
+<p><img style="max-width: 100%" src="charts/tsranswer.png" /></p>
+<p>By process of elimination, we are left with trying to find a famous car road
+around 3800 km in length, starting from an elevation minimum, with mountainous
+high points on the left and flatter terrain on the right, and passing through 8
+regions (gray bars). One insight we may have is that the elevation profile is
+consistent with the topography of the Western half of the United States. One
+famous roadway on this route is the Historic Route 66, which passes through 8 US
+states between Santa Monica, CA and Chicago, IL. The markers on the chart can
+then be seen to match major US cities:</p>
+<p><img style="max-width: 100%" src="charts/r66answer.png" /></p>
+<p>One named marker or region we&rsquo;ve identified in each chart is colored red and has
+an arrow pointing to it. We take the names of each of these and order them by
+the seven icons:</p>
+<p><img style="max-width: 100%" src="charts/extraction.png" /></p>
+<p>The first letters of these spell out <strong>MUSTARD</strong>, the answer.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This puzzle came about when we decided we wanted to have some sort of geographical microscope puzzle. We tossed various ideas, such as unlabelled maps with interesting features, before eventually deciding on this concept of elevation profiles of famous routes.</p>
+<h4>Gathering the Data</h4>
+<p>Gathering the data for all of these routes was quite an undertaking. We were able to find preexisting accurate elevation profiles of the Boston Marathon and the Erie Canal without much trouble, but the others all created various difficulties. We wrote a Mathematica script that would take in a GeoJSON file of coordinates (and optionally a series of additional points or cities to label) and produce an elevation-vs-distance-travelled graph, and then we attempted to gather accurate location information for each of the routes. </p>
+<p>We ended up generating our own graph for the Erie Canal anyway using coordinates from a Google MyMap we found online, because none of the elevation profiles we found were both accurate to the 1918 Barge Canal and precise enough to properly locate the cities we needed and produce a map of sufficient resolution.</p>
+<p>For the Trans-Siberian Railway and Route 66, we were able to find routes on OpenStreetMap, export them and clean them up a bit in Google Earth and with a Python script before running them through Mathematica. For the St. Moritz bobsled route, we manually drew a geographic map based on satellite imagery and published maps, before running it through Mathematica.</p>
+<p>For the Nile River, we found some accurate data on OpenStreetMap, but it oversimplified the White Nile’s route and especially the Victoria Nile and Kagera/Alexandra Nile’s routes - we manually corrected the geographic data some, and then we manually corrected the generated elevation graph to have the appropriate lengths of river between each lake in the While Nile system, and to have each lake at the appropriate height up to Lake Rweru. We wanted to include the whole “Nile River” up to its furthest source in Burundi, but accurate location data for the southernmost parts of the river does not exist - it turns out that when geographers and encyclopedias say “the Nile River is 7,088 km long,” they conceal a great deal of complexity and unknownness that maps strive to paper over on a macro-scale. We ended up compromising and choosing to end our graph at Lake Rweru, thus including all the rivers with “Nile” in their name.</p>
+<p>In testsolving (and from what we could see, in the hunt itself as well) a lot of people expected to just find existing elevation profiles online and compare them to our graphs. We saw testsolvers successfully find such graphs for the Nile and Route 66 (in addition to the two we had found), but we hope that many solvers were able to find the routes based on their geographic characteristics and have fun doing so.</p>
+<h4>Omitted Routes</h4>
+<p>Some routes we wanted to but were unable to include include:</p>
+<ul>
+<li>A New York City subway train (in particular, we wanted to use the M) &mdash; the MTA denied our FOIA request for elevation data, citing safety and terrorism concerns, and we could not find elevation data for anything in the system except the original 1904 subway line and one of the tunnels into Brooklyn.</li>
+<li>A funicular &mdash; we had a version of this puzzle with the Carmelit in Haifa, but no testsolvers were able to identify that it was a funicular.</li>
+<li>A cable car in the San Francisco cable car system &mdash; unfortunately the one with the most interesting elevation profile, the Powell-Hyde line, did not include a stop with the letters we wanted for extraction.</li>
+<li>One of the famous Grand Tours in cycle racing, which we deemed unsuitable since they have routes that differ significantly from year to year.</li>
+</ul>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

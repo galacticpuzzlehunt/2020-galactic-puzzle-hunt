@@ -1,0 +1,171 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: False Flags</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/false-flags" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: False Flags
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">SKULL AND CROSSBONES</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Rahul Sridhar
+
+    </h2>
+
+
+    <p>Each “flag” is composed of multiple stripes of flags from real countries (some vertical, some horizontal) plus a silhouette of a symbol. Each stripe corresponds to a substring of the letters of the country it is from, and all the stripes of a country together in order spell the full country’s name.</p>
+<p>Concatenating the letters of the stripes of the new flags produces a word or phrase that is represented by the symbol on it.</p>
+<p>In order the symbols are:</p>
+<table><tr><th>Symbol/“Flag”</th><th>Meaning</th></tr><tr><td><img src="false-flags/flag-1-e3moqo.png"      ></td><td>AN A CO NDA   </td></tr><tr><td><img src="false-flags/flag-2-ahp6vx.png"      ></td><td>B A B A Y A GA</td></tr><tr><td><img src="false-flags/flag-3-xyh23t.png"      ></td><td>CA K E        </td></tr><tr><td><img src="false-flags/flag-4-pz93g5.png"      ></td><td>CH AO S       </td></tr><tr><td><img src="false-flags/flag-5-amrx7h.png"      ></td><td>D IVI DE      </td></tr><tr><td><img src="false-flags/flag-6-7s3iuv.png"      ></td><td>GAM MA        </td></tr><tr><td><img src="false-flags/flag-7-ytbs2o.png"      ></td><td>HE I R        </td></tr><tr><td><img src="false-flags/flag-8-1j28i5.png"      ></td><td>LI MO         </td></tr><tr><td><img src="false-flags/flag-9-6kzz8b.png"      ></td><td>ON WA RD      </td></tr><tr><td><img src="false-flags/flag-10-0k7la3.png"     ></td><td>PE N NY       </td></tr><tr><td><img src="false-flags/flag-11-xkoqoa.png"     ></td><td>T IA R A      </td></tr><tr><td><img src="false-flags/flag-12-8zf3qf.png"     ></td><td>VE RI TA S    </td></tr><tr><td><img src="false-flags/flag-final-1-7dyb03.png"></td><td>JO L LY       </td></tr><tr><td><img src="false-flags/flag-final-2-s82vsn.png"></td><td>RO GER        </td></tr><tr><td><img src="false-flags/flag-final-3-1jafcn.png"></td><td>SY M BOL      </td></tr></table>
+
+<p>The countries represented in the puzzle are:</p>
+<ul>
+<li>BOL IVI A</li>
+<li>CA PE VE R DE</li>
+<li>CH A D</li>
+<li>CO MO RO S</li>
+<li>GA B ON</li>
+<li>GER MA NY</li>
+<li>I TA LY</li>
+<li>JO RD AN</li>
+<li>K E N Y A </li>
+<li>L AO S</li>
+<li>M A LI</li>
+<li>R WA NDA</li>
+<li>SY RI A</li>
+<li>T HE GAM B IA</li>
+</ul>
+<p>The three flags at the bottom are the words JOLLY ROGER SYMBOL in order. The symbol on the <a href="https://en.wikipedia.org/wiki/Jolly_Roger">Jolly Roger</a> flag is the <strong>SKULL AND CROSSBONES</strong>, which is the answer to the puzzle.</p>
+
+
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

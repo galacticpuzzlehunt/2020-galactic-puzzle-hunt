@@ -1,0 +1,184 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Reencode</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/reencode" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Reencode
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TULIP</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Ben Yang
+
+    </h2>
+
+
+    <p>The puzzle as given is five columns, each with several groups of letters in formation. The title is meant to be read as an instruction. While many puzzles require solvers to decode non-letters into letters, this puzzle instead has us reencode letters into non-letters.</p>
+<p>Trying out common puzzlehunt encodings, we find that semaphore gives promising results with the placement of the letters. Each given grouping of letters in the puzzle, when replaced with its flag semaphore representation, draws out a letter. For example, the two side-by-side U’s (fittingly) form a W.</p>
+<figure><img src="reencode/double-uniform.svg" style="max-width: 100%"><figcaption>Images taken from <a href="https://en.wikipedia.org/wiki/Flag_semaphore">https://en.wikipedia.org/wiki/Flag_semaphore</a></figcaption></figure>
+
+<p>The resulting columns are:</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABCEH</td>
+<td>TUV</td>
+<td>ADGHI</td>
+<td>WZ</td>
+<td>JKMNP</td>
+</tr>
+</tbody>
+</table>
+<p>The next step is more complicated, as it is not a direct substitution with symbols. We notice that these sets of letters are alphabetical, and seem to come from segments of the alphabet (with the ~A to ~I segment repeated). Again considering common puzzlehunt encodings, we find that these segements match nicely with the way that the pigpen cipher splits the alphabet into A–I, J–R, S–V, and W–Z.</p>
+<figure><img src="reencode/pigpen.png" style="max-width: 100%"><figcaption>Image taken from
+<a href="https://en.wikipedia.org/wiki/Pigpen_cipher">https://en.wikipedia.org/wiki/Pigpen_cipher</a></figcaption></figure>
+
+<p>We need to utilize the derivation of the pigpen cipher, rather than just the resulting symbols. For each of the letter sequences, we choose the corresponding piece of the pigpen cipher, and shade in the letters that exist in the sequence. We get the following:</p>
+<p><img src="reencode/reencode.png" style="max-width: 100%"></p>
+<p>Reading out the letters we see here gives us <strong>TULIP</strong>, our final answer.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This was an idea that first debuted at the internal GPH “puzzle potluck” in 2019. The puzzle was written in January of 2020, then shelved (due to Mystery Hunt 2021) until now.</p>
+<p>The inspiration behind this puzzle was the idea of "going too far". Specifically, we imagine the given puzzle to be the result of an overzealous fellow solver continuing to decode past the correct conclusion. Thus, it is up to us to reencode back to the answer.</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

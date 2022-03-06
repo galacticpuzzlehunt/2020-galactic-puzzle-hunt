@@ -1,8 +1,22 @@
 import os
 import argparse
 
-text = '''return answer.toUpperCase().replace(/[^A-Z]/g, '')'''
-replacement = '''return answer.toUpperCase().replace(/[^A-Z0-9]/g, '')'''
+text = '''        <div class="top-right-actions">
+
+
+            <a class="team-name" href="/team/fortenforge">fortenforge</a>
+
+
+
+
+
+            <label for="shortcuts" title="Admin toolbox">Shortcuts</label>
+
+
+            <a href="/logout" class="btn">Logout</a>
+
+        </div>'''
+replacement = '''<div class="top-right-actions"></div>'''
 
 
 
