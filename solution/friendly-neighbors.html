@@ -1,0 +1,923 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Friendly Neighbors</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/friendly-neighbors" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Friendly Neighbors
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">EXPRESS</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Seth Mulhall and Danny Bulmash
+
+    </h2>
+
+
+
+<style>
+    .friendly-img {
+        display: block;
+        max-width: 100%;
+    }
+
+    .friendly-table {
+        width: 100%;
+    }
+
+    .friendly-table td {
+        width: 25%;
+        border-color: gray;
+    }
+
+    .friendly-table td:not(:last-child) {
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+</style>
+<p>This looks like a conventional Einstein puzzle/zebra puzzle, which is a
+    standard logic puzzle type. So we just have to figure out where each person
+    lives, what color their house is, and what gift they gave you (if any).
+    However, this puzzle has some very strange features. Some clues blatantly
+    contradict each other, e.g. (left version):</p>
+<ul>
+    <li>Believe me, the red house is in the row six to the north of the phone
+        book gifter's house.</li>
+    <li>There are no houses south of the red house.</li>
+</ul>
+<p>Also, unlike most Einstein puzzles, the clues are spoken by characters
+    appearing
+    in the puzzle, which can be seen from some of the self-referential clues,
+    e.g.
+    (right version):</p>
+<ul>
+    <li>I live in a house that is neither yellow nor gray.</li>
+</ul>
+<p>Due to this, there is an implicit logic that speakers never refer to
+    themselves in the third person.</p>
+<p>Finally, the characters' gifts are suspiciously related to things that appear
+    in
+    the clues - the compass is related to directions in the neighborhood, the
+    artist's palette is related to house colors, the phone book is related to
+    character names, and binoculars have two lenses and are related to numbers.
+</p>
+
+<p>These features suggest that all of the gift-givers are giving you incorrect
+    information in a way which is related to their gift:</p>
+<ul>
+    <li>The person who gives you the compass inverts directions; north and south
+        are
+        exchanged in their clues, as are east and west.</li>
+    <li>The person who gives you the artist's palette inverts colors on the
+        color wheel;
+        their clues exchange red and green, blue and orange, and purple and
+        yellow. Gray
+        is unchanged.</li>
+    <li>The person who gives you the phone book inverts the alphabetical order
+        of the
+        characters' names, i.e., the pairs (Amber, Gina), (Bill, Fred), (Chris,
+        Emma)
+        are switched in the left version, and the pairs (Harold, Nancy), (Ivan,
+        Melanie), (Joanna, Larry) are switched in the right version. The middle
+        name on
+        the list, i.e. Diana (left) and Keith (right) is unchanged.</li>
+    <li>The person who gives you binoculars is seeing double - they double all
+        numbers
+        appearing in their clues.</li>
+</ul>
+<p>These mechanics can be confirmed from “opposite” appearing in the flavor text
+    (for everything except the binoculars) and from the fact that one character
+    uses
+    only even numbers in their clues (and thus gave you the binoculars).</p>
+
+<p>The gifts can then be assigned to speakers in a way which resolves the
+    various
+    contradictions in the clues.</p>
+
+<h4>Left Gift Assignment</h4>
+<p>Clue numbers used here reference the clues in the left version of the
+    puzzle. Please see the transcript for numbers.</p>
+<p>The speaker of clue 11 gave you the phone book, so we can immediately correct
+    all of their clues. Hence Fred gave you the binoculars (4). The speaker of
+    clue 13 did not give you the phone book, so he gets names right and is
+    actually Bill. Then Fred, the binoculars gifter, must be the other male
+    speaker (of clue 1). This leaves the speaker of clue 2 to have gifted the
+    artist’s palette.</p>
+
+<p>Since people do not refer to themselves in the third person, the only person
+    that can have given you the compass is Amber (10, 14, 32), and the only
+    person that could give you the phone book is Diana (2, 7, 22).</p>
+
+<p>The speakers and gifts, in order of the last four clues, are:
+<ul>
+    <li>Diana: Phone Book</li>
+    <li>Bill: Artist's Palette</li>
+    <li>Fred: Binoculars</li>
+    <li>Amber: Compass</li>
+</ul>
+
+<h4>Right Gift Assignment</h4>
+<p>Clue numbers used here reference the clues in the right version of the
+    puzzle. Please see the transcript for numbers.</p>
+<p>Taking the clues at face value, we know Keith didn't give you the artist's
+    palette (13), Ivan gave you the binoculars (20), and Joanne gave you the
+    compass (23, 27). Therefore, Keith gave you the phone book. Correcting
+    Keith's clues shows that Melanie actually gave you the binoculars (20).</p>
+<p>We also now know that Larry lives in the gray house (18). Thus, Larry did not
+    give you the compass, and must have given you the artist's palette.</p>
+
+<p>Due to speakers never referring to themselves in the third person, we can
+    infer that the second female speaker is not Melanie (33), so the first
+    female speaker must be Melanie. We also know that the second female speaker
+    is not Joanne (25), which is a contradiction. After correcting Larry's
+    clues, however, we see now that the person in the orange house was the one
+    that gave the compass (27), so we can determine that the second female
+    speaker is Nancy and gave you the compass.</p>
+
+<p>The speakers and gifts, in order of the last four clues, are:
+<ul>
+    <li>Melanie: Binoculars</li>
+    <li>Nancy: Compass</li>
+    <li>Larry: Artist's Palette</li>
+    <li>Keith: Phone Book</li>
+</ul>
+</p>
+
+<p>At this point, the puzzle can be solved as a
+    standard Einstein puzzle.</p>
+
+<p>A few comments on the solutions:</p>
+<ul>
+    <li>It turns out that in both versions, the person who gives you the phone
+        book gets
+        their own name right and the person who gives you the artist's palette
+        gets
+        their own house color right, but this information is not needed to solve
+        the
+        puzzle.</li>
+    <li>After understanding how to correct the given information, neither
+        version
+        requires every clue to solve, nor does it require the information about
+        the
+        speakers' genders. The additional information is present to confirm the
+        solver's
+        understanding of the misinformation.</li>
+    <li>In both versions of the puzzle, the person that gave you the binoculars
+        says that the neighborhood is an eight by eight grid. Once corrected, we
+        discover that the neighborhood is a much smaller four by four grid.</li>
+</ul>
+<p>
+    After solving the Einstein puzzle (see the end of the solution), we can use
+    the
+    final four clues for each side, where the speaker says what they did
+    yesterday.
+    Each speaker is traveling a path around the neighborhood which spells out a
+    letter:
+</p>
+
+<h4>Left Letters</h4>
+<img class="friendly-img" src="friendly-neighbors/extract_left.png">
+<h4>Right Letters</h4>
+<img class="friendly-img" src="friendly-neighbors/extract_right.png">
+
+<p>The left side extracts to PONY, and the right side extracts to MAIL. The word
+    that fits to the right of PONY and to the left of MAIL is the answer,
+    <strong>EXPRESS</strong>.
+</p>
+
+<h4>Binoculars Extraction</h4>
+<p>The fact that one of the gifts is a pair of binoculars is highly suspicious,
+    as is the fact that the person who gives you the binoculars has very strange
+    lead-ins to clues. Each of their clues has a single number in it; correcting
+    the information (i.e. halving the number) and indexing into the clue in the
+    (alphabetical by clue) order given produces the left/right answers
+    <strong>GLORIFY</strong> (left) and <strong>AIR PURIFIER</strong> (right).
+</p>
+
+<h4>Left Logic</h4>
+<p>Here are the corrected clues.</p>
+<ol>
+    <li>A guy named Chris lives in the row two to the north of Gina.</li>
+    <li>Gina did not give you a gift.</li>
+    <li>Believe me, the red house is in the row three to the north of the phone
+        book gifter's house.</li>
+    <li>Fred gave you the binoculars.</li>
+    <li>Bill lives two blocks due south of the yellow house.</li>
+    <li>Diana lives in the green house.</li>
+    <li>Exactly two people who gave you gifts live south of Amber.</li>
+    <li>Fred lives east of the yellow house.</li>
+    <li>Bill's house is west of the orange house.</li>
+    <li>Gina lives somewhere south and east of the yellow house.</li>
+    <li>I gave you the phone book and I live in a row south of the person who
+        gave you the binoculars.</li>
+    <li>I know that the neighborhood is a square grid with four lots on a side.
+    </li>
+    <li>My name is Bill and I did not give you the phone book.</li>
+    <li>My name is not Emma.</li>
+    <li>Remember that Bill's house is adjacent (counting diagonally) to exactly
+        one other house.</li>
+    <li>Sitting in the second column from the west end of the neighborhood is
+        the purple house.</li>
+    <li>The orange house is in a row at least two blocks south of the green
+        house.</li>
+    <li>The blue house is somewhere east of the red house.</li>
+    <li>The orange house is not in the second row from the south end of the
+        neighborhood.</li>
+    <li>The blue house is on the eastern end of the neighborhood.</li>
+    <li>The person who gave you binoculars lives in the northernmost row of the
+        neighborhood.</li>
+    <li>The person who gave you the compass lives west of Chris.</li>
+    <li>The phone book came from someone who lives in a column at least two
+        blocks west of the blue house.</li>
+    <li>The purple house is orthogonally adjacent to Emma's house.</li>
+    <li>There are no houses north of the red house.</li>
+    <li>There is exactly one house in the row containing the yellow house.</li>
+    <li>Unfortunately I forget which ones, but exactly three houses are west of
+        Chris's house.</li>
+    <li>You will find exactly one house in the southwestern quadrant of the
+        neighborhood.</li>
+</ol>
+<p>The initial strategy is to use the phone book gifter's house to constrain the
+    bottom few rows.</p>
+
+<p>The phone book gifter must be in the southernmost row (3), i.e., row 4, and
+    the western half of the grid (23). Since there is only one house in the
+    southwestern quadrant (28), it must be that of the phone book gifter, and
+    also the western half of row 3 must be empty. Bill lives in the southern
+    half of the grid, west of a house, and is not the phone book gifter (5, 9,
+    13), so Bill must live in the southern half of column 3. Gina lives in the
+    southern half of the grid and did not give you a gift (1, 2), so she lives
+    in the southeastern quadrant.
+</p>
+
+<table class="friendly-table">
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>Bill? Gina?</td>
+        <td>Gina?</td>
+    </tr>
+    <tr>
+        <td>Phone book?</td>
+        <td>Phone book?</td>
+        <td>Bill? Gina?</td>
+        <td>Gina?</td>
+    </tr>
+</table>
+
+<p>Now we can resolve the phone book gifter's house. Bill's house is adjacent to
+    only one other (15), and no matter where we place Bill or Gina's houses,
+    their houses are adjacent. Therefore, Bill cannot be adjacent to the phone
+    book gifter, which forces the latter into row 4, column 1. Also, the yellow
+    house is two blocks due north of Bill (5), so it is in row 1 or 2, column 3.
+    Gina's house is east (and south) of the yellow house (10), so she must live
+    in column 4.</p>
+<table class="friendly-table">
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Yellow?</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Yellow?</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>Bill?</td>
+        <td>Gina?</td>
+    </tr>
+    <tr>
+        <td>Phone Book</td>
+        <td>X</td>
+        <td>Bill?</td>
+        <td>Gina?</td>
+    </tr>
+</table>
+
+<p>Next we place the orange house. The orange house is east of Bill (9), and
+    thus in column 4, and in row 4 (17 and 19; note that by clue 3 the red house
+    is in row 1 and thus clue 19 is not redundant here). It therefore is
+    adjacent to Bill's house. Since we previously established that Bill's house
+    is adjacent to Gina's house, Gina's house must be orange.</p>
+
+<table class="friendly-table">
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Yellow?</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Yellow?</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>Bill?</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>Phone Book</td>
+        <td>X</td>
+        <td>Bill?</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+
+<p>Now we can place Bill's house and the yellow house. Chris lives two rows
+    north of Gina, so he lives in row 2 (1). Three houses are west of Chris', so
+    he cannot live in column 1; therefore, his house is adjacent to row 3,
+    column 3. But, again, Bill has only one house adjacent to his (15), which we
+    know is GIna's, so Bill cannot live in row 3, column 3. The only remaining
+    possibility is that Bill lives in row 4, column 3, and row 3 is completely
+    empty. This places the yellow house in row 2, column 3 (5).</p>
+<table class="friendly-table">
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Yellow</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>Phone Book</td>
+        <td>X</td>
+        <td>Bill</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+<p>The next goal is to identify the colors of the houses in the southern row.
+    The red house is in row 1 (3). The blue house is in column 4 (20) and the
+    purple house is in column 2, so both must be in rows 1 or 2, and we have
+    already placed the yellow and orange houses. Therefore, the phone book
+    gifter and Bill's houses must be the green and gray ones, in some order. But
+    the green house is Diana's (6), and in particular not Bill's. So Diana must
+    have given you the phone book and lives in the green house, while Bill's
+    house must be gray. (Incidentally this means that row 2, column 1 is empty
+    since there are no colors left.)</p>
+<table class="friendly-table">
+    <tr>
+        <td>red?</td>
+        <td>red? puple?</td>
+        <td>red?</td>
+        <td>red? blue?</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>purple?</td>
+        <td>Yellow</td>
+        <td>blue?</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>Diana, green, phone book</td>
+        <td>X</td>
+        <td>Bill, gray</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+<p>The yellow house is the only one in its row (26), which places the blue and
+    purple houses in row 1. The only house which can be adjacent to row 1,
+    column 2 is the red one, which must therefore be Emma’s house. Fred must
+    live in column 4 (8), so he lives in the blue house..</p>
+<table class="friendly-table">
+    <tr>
+        <td>(Emma, red)?</td>
+        <td>Purple</td>
+        <td>(Emma, red)?</td>
+        <td>Fred, blue</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>Yellow</td>
+        <td>Fred, blue</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>Diana, green, phone book</td>
+        <td>X</td>
+        <td>Bill, gray</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+<p>We can now place Chris and Amber. Exactly three houses are west of Chris’
+    house (27), so he cannot live in the purple house since it has at most two
+    houses west of it. The only possibility is that Chris lives in the yellow
+    house, and that Emma’s red house is west of it and therefore in row 1,
+    column 1. This leaves Amber in the only currently-unclaimed house, which is
+    the purple one.</p>
+<table class="friendly-table">
+    <tr>
+        <td>Emma, red</td>
+        <td>Amber, purple</td>
+        <td>X</td>
+        <td>Fred, blue</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>Chris, yellow</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+    </tr>
+    <tr>
+        <td>Diana, green, phone book</td>
+        <td>X</td>
+        <td>Bill, gray</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+<p>What remains is to determine who gave you the remaining gifts. Fred gave you
+    the binoculars (4). The speaker of clue 14 inverts directions and therefore
+    gave you the compass; she is female, and is not named Emma (14), and cannot
+    be Gina (2), so she is Amber. Finally, Bill is a speaker (13), so he got you
+    the only currently-unassigned gift which is the artist’s palette.
+    (Alternatively, we can use the fact that this speaker inverts colors, which
+    corresponds to the artist’s palette.)</p>
+
+<p>The final configuration of the neighborhood looks as follows:</p>
+<table class="friendly-table">
+    <tr>
+        <td>Emma, red</td>
+        <td>Amber, purple, compass</td>
+        <td>&nbsp;</td>
+        <td>Fred, blue, binoculars</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Chris, yellow</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Diana, green, phone book</td>
+        <td>&nbsp;</td>
+        <td>Bill, gray, artist's palette</td>
+        <td>Gina, orange</td>
+    </tr>
+</table>
+
+<h4>Right Logic</h4>
+<p>Here are the corrected clues.</p>
+<ol>
+    <li>An orange house is exactly one lot southeast of the green house.</li>
+    <li>And in case you forgot, the neighborhood is a square with four lots on
+        each side.</li>
+    <li>Broadly speaking, the green house is in the second column.</li>
+    <li>By process of elimination, there are three houses in the southernmost
+        row.</li>
+    <li>Currently, two of the people who gave you gifts live in the same row or
+        column as Ivan.</li>
+    <li>Far as I know, there are two groups of contiguous houses, counting both
+        orthogonal and diagonal adjacency as “contiguous”.</li>
+    <li>Fill the southwestern quadrant with two houses.</li>
+    <li>For the record, exactly one house is not on the edge of the
+        neighborhood.</li>
+    <li>Four houses, including mine, are to the east of Harold's house.</li>
+    <li>Nancy and Larry live orthogonally adjacent to each other.</li>
+    <li>Nancy lives in the orange house.</li>
+    <li>Hi, I'm Larry, and I live orthogonally adjacent to Nancy.</li>
+    <li>I didn't give you the artist's palette.</li>
+    <li>I live diagonally adjacent to the green house.</li>
+    <li>I live in a house that is neither yellow nor gray.</li>
+    <li>If you look at the corner lots, exactly one does not have a house.</li>
+    <li>Melanie lives somewhere to the south of me.</li>
+    <li>Larry lives in the gray house.</li>
+    <li>Keith lives somewhere to the west of Harold.</li>
+    <li>My friend Melanie gave you the binoculars.</li>
+    <li>My name is Keith, and I live in the opposite corner from the gray house.
+    </li>
+    <li>Remember, two gifts come from the people living to the west of Harold.
+    </li>
+    <li>Right, Joanne's blue house is adjacent (counting diagonally) to exactly
+        one house.</li>
+    <li>The blue house is somewhere to the south of the red house.</li>
+    <li>The gray house and Joanne's house are on the eastern edge of the
+        neighborhood.</li>
+    <li>The blue house is due north of the gray house.</li>
+    <li>The person who gave you the compass lives in an orange house.</li>
+    <li>The purple house is to the east of Harold's house.</li>
+    <li>The green house is immediately to the northeast of Melanie's house.</li>
+    <li>The same number of houses are to the north of Harold's house as are to
+        the south.</li>
+    <li>There are exactly two houses due east of the yellow house.</li>
+</ol>
+<p>Larry lives in the gray house (18), and lives on the eastern edge of the
+    neighborhood, south of someone, and in the opposite corner from Keith (21,
+    25, 26). Larry lives in the southeastern corner of the neighborhood, and
+    Keith lives in the northwest.</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phonebook</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+<p>We can now place the green house.</p>
+
+<p>We know that the green house has a house to its immediate southwest and
+    southeast (1, 29), and we know that it is in the second column (3). Thus, we
+    cannot place the green house in the fourth row.</p>
+
+<p>If we were to place the green house in the first row, we will be unable to
+    satisfy clue 7, since Joanne's house would need to be in column 4 still
+    (25). Similarly, if we place the green house in the second row, we will be
+    unable to satisfy clue 6, since no matter where we place the second house in
+    the southwestern quadrant (7), there can be no more than two contiguous
+    groups of houses.</p>
+
+<p>Therefore, the green house must be in the third row, and we can fill in the
+    two houses that come with it.
+</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phone book</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, binoculars</td>
+        <td>&nbsp;</td>
+        <td>orange</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+<p>Nancy lives in the orange house (11).</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phone book</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, binoculars</td>
+        <td>&nbsp;</td>
+        <td>Nancy, orange, compass</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+<p>Harold must be in the green house (30). If he were in either of the unplaced
+    houses, he would have 0 above, at most 2 above and 4 below, or at most 2
+    above and 3 below (depending on the row of the unplaced houses). This also
+    means that no more houses are in the third row.</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phone book</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>Harold, green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, binoculars</td>
+        <td>&nbsp;</td>
+        <td>Nancy, orange, compass</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+<p>Joanne's blue house must be in the second row on the eastern edge, as the
+    upper right corner is empty. (16, 25)</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phone book</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Joanne, blue</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>Harold, green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, binoculars</td>
+        <td>&nbsp;</td>
+        <td>Nancy, orange, compass</td>
+        <td>Larry, gray, artist’s palette</td>
+    </tr>
+</table>
+<p>Melanie's house is yellow, since this is now the only house with two houses
+    due east of it (31).</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, phone book</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Joanne, blue</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>Harold, green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, yellow, binoculars</td>
+        <td>&nbsp;</td>
+        <td>Nancy, orange, compass</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+<p> We now place Ivan. Ivan must be in the same row and column as two gifts (5),
+    so he can either be in the first row, third column, or in the second row,
+    first column. However, because Joanne still doesn't have a neighbor (23),
+    Ivan must be in the first row, third column. His house is purple (28),
+    leaving Keith with the red house. The neighborhood looks like this.</p>
+<table class="friendly-table">
+    <tr>
+        <td>Keith, red, phone book</td>
+        <td>&nbsp;</td>
+        <td>Ivan, purple</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Joanne, blue</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>Harold, green</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Melanie, yellow, binoculars</td>
+        <td>&nbsp;</td>
+        <td>Nancy, orange, compass</td>
+        <td>Larry, gray, artist's palette</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

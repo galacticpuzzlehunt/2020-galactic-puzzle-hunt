@@ -1,0 +1,235 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Telescope</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/telescope" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Telescope
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">WAKE UP</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Jon Schneider (additional contributions by Brian Chen, Colin Lu, Rahul Sridhar, Anderson Wang)
+
+    </h2>
+
+
+    <style>
+table.ts-grid td {
+    padding: 0.5em;
+    border: 1px solid black;
+}
+.hl { background-color: yellow; }</style>
+
+<p>By solving some of the easier clues on the points, and observing that there are 36 points and 36 non-meta puzzles in the hunt, we can realize that the answer to each clue is an anagram of a puzzle answer plus a single letter (or a spelled-out digit). Each of the 26 letters and 10 digits from ZERO to NINE are used exactly once.</p>
+<table><tr><th>Clue</th><th>Clue answer</th><th>Puzzle answer</th><th>Added letter(s)</th></tr><tr><td>Choice between the Devil and yours truly (9 2 2)</td><td>BEELZEBUB OR ME</td><td>BUMBLEBEE</td><td>ZERO</td></tr><tr><td>Shopping binges by some bovines (4 6)</td><td>OXEN SPREES</td><td>EXPRESS</td><td>ONE</td></tr><tr><td>The most liked microblog posts that I wrote (2 3 6)</td><td>MY TOP TWEETS</td><td>EMPTY SET</td><td>TWO</td></tr><tr><td>Yurt for geckos and crocodiles (7 3)</td><td>REPTILE HUT</td><td>TULIP</td><td>THREE</td></tr><tr><td>Someone who chops up shaving cream for you at a supermarket (4 7)</td><td>FOAM BUTCHER</td><td>MACBETH</td><td>FOUR</td></tr><tr><td>What particularly sneaky beavers might build (7 4)</td><td>FURTIVE DAMS</td><td>MUSTARD</td><td>FIVE</td></tr><tr><td>It comes before Judgement XX (3 3 3)</td><td>THE SUN XIX</td><td>HEX NUT</td><td>SIX</td></tr><tr><td>What you might use to un-tenderize some young beef (4 9)</td><td>VEAL STIFFENER</td><td>LIFE RAFT</td><td>SEVEN</td></tr><tr><td>The "3" in "&lt;3", e.g. (5 5)</td><td>HEART DIGIT</td><td>TRIAD</td><td>EIGHT</td></tr><tr><td>Dip or spread that accompanies Middle Eastern poultry (3 6)</td><td>HEN TAHINI</td><td>HI HAT</td><td>NINE</td></tr><tr><td>Incredibly large intoxicated fish (8 7 4)</td><td>COLOSSAL DRUNKEN BASS</td><td>SKULL AND CROSSBONES</td><td>A</td></tr><tr><td>Where people research Big Macs (5)</td><td>MCLAB</td><td>CALM</td><td>B</td></tr><tr><td>What the word "hmmmmmmmmmmmmmmmmm" has (7 1'1)</td><td>COPIOUS M'S</td><td>MISO SOUP</td><td>C</td></tr><tr><td>How to address a T. rex or stegosaurus after he's married (2. 4)</td><td>MR DINO</td><td>MINOR</td><td>D</td></tr><tr><td>Everyone must eat tofu! and "Edamame is the best!", e.g. (3 7)</td><td>SOY DECREES</td><td>CROSS EYED</td><td>E</td></tr><tr><td>Fake imitation of a sharp difference (6 8)</td><td>FORGED CONTRAST</td><td>DOCTOR STRANGE</td><td>F</td></tr><tr><td>Break room for cheerleaders (3 6)</td><td>PEP LOUNGE</td><td>UNPEOPLE</td><td>G</td></tr><tr><td>A gift of meat in exchange for protection (5 7)</td><td>FLESH TRIBUTE</td><td>BUTTERFLIES</td><td>H</td></tr><tr><td>Poetry, General Nonfiction, or Drama, but not Feature Photography, Editorial Writing, or Music (3 8)</td><td>LIT PULITZER</td><td>TRIPLE LUTZ</td><td>I</td></tr><tr><td>A single nunchuck, perhaps (5 5)</td><td>NINJA STICK</td><td>SAINT NICK</td><td>J</td></tr><tr><td>Result of inserting helium into a whale's prey (9 5)</td><td>BALLOONED KRILL</td><td>ONE DOLLAR BILL</td><td>K</td></tr><tr><td>What a topiary company may hire a graphic designer to make (5 4)</td><td>SHRUB LOGO (or BRUSH LOGO)</td><td>BOROUGHS</td><td>L</td></tr><tr><td>Bit of acne on the back of one's neck (4 6)</td><td>NAPE PIMPLE</td><td>PINEAPPLE</td><td>M</td></tr><tr><td>Make dog ears in a book, perhaps (4 5)</td><td>BEND PAGES</td><td>SPEED BAG</td><td>N</td></tr><tr><td>More unusual auction units (5 4)</td><td>ODDER LOTS</td><td>TODDLERS</td><td>O</td></tr><tr><td>One holding a Granny Smith for ransom, say (5-6)</td><td>APPLE-NAPPER</td><td>PAPER PLANE</td><td>P</td></tr><tr><td>I'll give you that dock if this coin comes up heads, e.g. (4 3)</td><td>QUAY BET</td><td>BEAUTY</td><td>Q</td></tr><tr><td>Spin that woman around so she can escape (5 3 4)</td><td>SWIRL HER FREE</td><td>FERRIS WHEEL</td><td>R</td></tr><tr><td>Unhappy underling (3 6)</td><td>SAD STOOGE</td><td>GOOD EATS</td><td>S</td></tr><tr><td>Scam in a satisfying manner (3 9)</td><td>CON CONTENTLY</td><td>ONLY CONNECT</td><td>T</td></tr><tr><td>Ointment used by the church, vis-à-vis sunscreen (6 3)</td><td>HOLIER RUB</td><td>HORRIBLE</td><td>U</td></tr><tr><td>Superhero with the ability to annul things (4 3)</td><td>VOID MAN</td><td>DOMAIN</td><td>V</td></tr><tr><td>What Shrek wears when eating a lobster in his home (6 3)</td><td>SWAMPY BIB</td><td>BABY IMPS</td><td>W</td></tr><tr><td>Epipen or air purifier (7 3)</td><td>ALLERGY FIX</td><td>GALLIFREY</td><td>X</td></tr><tr><td>Certain vessel that's completely devoid of oolong or matcha (3 6)</td><td>DRY TEAPOT</td><td>TOP-RATED</td><td>Y</td></tr><tr><td>Musical pitch made by part of the stratosphere (5 4)</td><td>OZONE NOTE (or OZONE TONE)</td><td>ONE TO ONE</td><td>Z</td></tr></table>
+
+<p>At the same time, the red/green/blue arrows combined with the flavortext of looking into “space” suggests that these 36 points are all located somewhere in 3-dimensional space with the axes given by the red, green, and blue arrows in the dashed box. In particular, the fact that there are many pairs of points that can be connected using exactly the red arrow suggests that they are all located at integer combinations of the red, green, and blue vectors. We can verify this by connecting all the points using copies of these three arrows, as seen below:</p>
+<p><img src="telescope/telescope.png" alt="The dots connected with copies of the red, blue, and green arrows" style="max-width: 100%"></p>
+<p>We can now assign integer (r, g, b) coordinates to all these points. For example, if we assign (0, 0, 0) to the point labeled Y, then the point labeled Q would have the coordinates (1, 0, 0) (because the red arrow points upwards) and the point labeled 5 would have the coordinates (0, 1, 1). Here are all the answer + letter/digit pairs and their corresponding coordinates:</p>
+<table><tr><th>Answer</th><th>Letter/digit</th><th>Red</th><th>Green</th><th>Blue</th></tr><tr><td>TOP-RATED</td><td>Y</td><td>0</td><td>0</td><td>0</td></tr><tr><td>BEAUTY</td><td>Q</td><td>1</td><td>0</td><td>0</td></tr><tr><td>BUTTERFLIES</td><td>H</td><td>2</td><td>3</td><td>0</td></tr><tr><td>CALM</td><td>B</td><td>3</td><td>1</td><td>0</td></tr><tr><td>PINEAPPLE</td><td>M</td><td>4</td><td>1</td><td>0</td></tr><tr><td>DOCTOR STRANGE</td><td>F</td><td>5</td><td>2</td><td>0</td></tr><tr><td>MUSTARD</td><td>FIVE</td><td>0</td><td>1</td><td>1</td></tr><tr><td>EXPRESS</td><td>ONE</td><td>1</td><td>1</td><td>1</td></tr><tr><td>MISO SOUP</td><td>C</td><td>2</td><td>2</td><td>1</td></tr><tr><td>TRIPLE LUTZ</td><td>I</td><td>3</td><td>4</td><td>1</td></tr><tr><td>SAINT NICK</td><td>J</td><td>4</td><td>4</td><td>1</td></tr><tr><td>LIFE RAFT</td><td>SEVEN</td><td>5</td><td>1</td><td>1</td></tr><tr><td>BABY IMPS</td><td>W</td><td>0</td><td>2</td><td>2</td></tr><tr><td>PAPER PLANE</td><td>P</td><td>1</td><td>4</td><td>2</td></tr><tr><td>ONE DOLLAR BILL</td><td>K</td><td>2</td><td>6</td><td>2</td></tr><tr><td>UNPEOPLE</td><td>G</td><td>3</td><td>7</td><td>2</td></tr><tr><td>EMPTY SET</td><td>TWO</td><td>4</td><td>5</td><td>2</td></tr><tr><td>TRIAD</td><td>EIGHT</td><td>5</td><td>4</td><td>2</td></tr><tr><td>GOOD EATS</td><td>S</td><td>0</td><td>0</td><td>3</td></tr><tr><td>BUMBLEBEE</td><td>ZERO</td><td>1</td><td>3</td><td>3</td></tr><tr><td>MACBETH</td><td>FOUR</td><td>2</td><td>3</td><td>3</td></tr><tr><td>TODDLERS</td><td>O</td><td>3</td><td>6</td><td>3</td></tr><tr><td>ONLY CONNECT</td><td>T</td><td>4</td><td>0</td><td>3</td></tr><tr><td>SPEED BAG</td><td>N</td><td>5</td><td>0</td><td>3</td></tr><tr><td>HORRIBLE</td><td>U</td><td>0</td><td>5</td><td>4</td></tr><tr><td>CROSS EYED</td><td>E</td><td>1</td><td>2</td><td>4</td></tr><tr><td>SKULL AND CROSSBONES</td><td>A</td><td>2</td><td>0</td><td>4</td></tr><tr><td>HEX NUT</td><td>SIX</td><td>3</td><td>2</td><td>4</td></tr><tr><td>FERRIS WHEEL</td><td>R</td><td>4</td><td>1</td><td>4</td></tr><tr><td>GALLIFREY</td><td>X</td><td>5</td><td>1</td><td>4</td></tr><tr><td>ONE TO ONE</td><td>Z</td><td>0</td><td>0</td><td>5</td></tr><tr><td>MINOR</td><td>D</td><td>1</td><td>5</td><td>5</td></tr><tr><td>HI HAT</td><td>NINE</td><td>2</td><td>3</td><td>5</td></tr><tr><td>TULIP</td><td>THREE</td><td>3</td><td>3</td><td>5</td></tr><tr><td>DOMAIN</td><td>V</td><td>4</td><td>2</td><td>5</td></tr><tr><td>BOROUGHS</td><td>L</td><td>5</td><td>0</td><td>5</td></tr></table>
+
+<p>Note that these values can all be shifted since the origin could be anywhere — for convenience, we assigned (0, 0, 0) to TOP-RATED/Y so that all numbers would be non-negative.</p>
+<p>Now, the red and blue axes on the 6×6 grid below the points suggest looking at these 36 points from that perspective, so that the green axis points directly towards the viewer and the red and blue axes are at a 90 degree angle. Promisingly, the red and blue coordinates of each point range from 0 to 5, and each of the 6×6=36 possible pairs appears exactly once, meaning that we can assign a point to each of the squares in the 6×6 grid. Using the axes, we see that (0, 0), or TOP-RATED/Y, should be in the bottom-left corner, and the red and blue coordinates increase rightwards and upwards, respectively.</p>
+<table class="ts-grid"><tr><td>ONE TO ONE/Z</td><td>MINOR/D</td><td>HI HAT/NINE</td><td>TULIP/THREE</td><td>DOMAIN/V</td><td>BOROUGHS/L</td></tr><tr><td>HORRIBLE/U</td><td>CROSS EYED/E</td><td>SKULL AND CROSSBONES/A</td><td>HEX NUT/SIX</td><td>FERRIS WHEEL/R</td><td>GALLIFREY/X</td></tr><tr><td>GOOD EATS/S</td><td>BUMBLEBEE/ZERO</td><td>MACBETH/FOUR</td><td>TODDLERS/O</td><td>ONLY CONNECT/T</td><td>SPEED BAG/N</td></tr><tr><td>BABY IMPS/W</td><td>PAPER PLANE/P</td><td>ONE DOLLAR BILL/K</td><td>UNPEOPLE/G</td><td>EMPTY SET/TWO</td><td>TRIAD/EIGHT</td></tr><tr><td>MUSTARD/FIVE</td><td>EXPRESS/ONE</td><td>MISO SOUP/C</td><td>TRIPLE LUTZ/I</td><td>SAINT NICK/J</td><td>LIFE RAFT/SEVEN</td></tr><tr><td>TOP-RATED/Y</td><td>BEAUTY/Q</td><td>BUTTERFLIES/H</td><td>CALM/B</td><td>PINEAPPLE/M</td><td>DOCTOR STRANGE/F</td></tr></table>
+
+<p>The sets of blanks provided in the 6×6 grid match with the six answers in their corresponding positions (for example, ONE TO ONE is in the top-left corner and the corresponding blanks are in groups of 3, 2, and 3). This acts as confirmation and implies that we want to write the answers in the grid.</p>
+<p>The eye symbols, combined with the fact that the outlined 2×3 square makes the letter “I” in Braille, slightly clues the letter I. Indeed, in the given 6 squares, the eyes appear above the two answers that have “I”s in them (MINOR and HORRIBLE) and do not appear above the other four (ONE TO ONE, CROSS EYED, GOOD EATS, BUMBLEBEE). We can therefore get Braille letters from the remainder of the 6×6 grid by looking at the answers with “I”s:</p>
+<table class="ts-grid"><tr><td>ONE TO ONE/Z</td><td class="hl">MINOR/D</td><td class="hl">HI HAT/NINE</td><td class="hl">TULIP/THREE</td><td class="hl">DOMAIN/V</td><td>BOROUGHS/L</td></tr><tr><td class="hl">HORRIBLE/U</td><td>CROSS EYED/E</td><td>SKULL AND CROSSBONES/A</td><td>HEX NUT/SIX</td><td class="hl">FERRIS WHEEL/R</td><td class="hl">GALLIFREY/X</td></tr><tr><td>GOOD EATS/S</td><td>BUMBLEBEE/ZERO</td><td>MACBETH/FOUR</td><td>TODDLERS/O</td><td>ONLY CONNECT/T</td><td>SPEED BAG/N</td></tr><tr><td class="hl">BABY IMPS/W</td><td>PAPER PLANE/P</td><td class="hl">ONE DOLLAR BILL/K</td><td>UNPEOPLE/G</td><td>EMPTY SET/TWO</td><td class="hl">TRIAD/EIGHT</td></tr><tr><td>MUSTARD/FIVE</td><td>EXPRESS/ONE</td><td class="hl">MISO SOUP/C</td><td class="hl">TRIPLE LUTZ/I</td><td class="hl">SAINT NICK/J</td><td class="hl">LIFE RAFT/SEVEN</td></tr><tr><td>TOP-RATED/Y</td><td>BEAUTY/Q</td><td class="hl">BUTTERFLIES/H</td><td>CALM/B</td><td class="hl">PINEAPPLE/M</td><td>DOCTOR STRANGE/F</td></tr></table>
+
+<p>This spells out ICHART, or “eye chart” using the I=eye correspondence.</p>
+<p>At the same time, we can look at the 36 points using the second set of axes, so that green is vertical and a combination of red and blue is horizontal. This is a little trickier because we can’t use the coordinates as is, but we can still view it by either:</p>
+<ul>
+<li>Combining the red and blue coordinates and plotting that in 2D against the green coordinates. The exact ratio turns out to be 7/12×red + 5/12×blue (in the image, the red arrow is 7/12 the length of the green arrow and the blue arrow is 5/12 the length), but any combination where red is slightly more than blue should be sufficient.</li>
+<li>Plotting the points in some 3D visualization software (Blender, Geogebra, Minecraft, etc.) and rotating it to match the axes. (It's not possible to get an exact match because the axes lengths' in this projection violate the Pythagorean theorem — (5/12)<sup>2</sup> + (7/12)<sup>2</sup> &ne; 1 — but again any close-enough combination should be sufficient.)</li>
+</ul>
+<p>The resulting points make the shape of a triangle, with 8 points in the bottom row all the way to 1 point at the top (we might expect this from the fact that 8 points have green coordinate 0, 7 have green coordinate 1, etc.). Here are the rough locations of the points:</p>
+<style>
+table.telescope-triangle { margin: 2em auto; table-layout: fixed; }
+table.telescope-triangle td { border-width: 0; width: 2.5rem; height: 3.8rem; padding: 0; text-align: center; }
+</style>
+<table class="telescope-triangle"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>G</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>K</td><td></td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>U</td><td></td><td>D</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>P</td><td></td><td>I</td><td></td><td>J</td><td></td><td>8</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>H</td><td></td><td>0</td><td></td><td>4</td><td></td><td>9</td><td></td><td>3</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>W</td><td></td><td>C</td><td></td><td>E</td><td></td><td>F</td><td></td><td>6</td><td></td><td>V</td><td></td><td></td></tr><tr><td></td><td>5</td><td></td><td>1</td><td></td><td>B</td><td></td><td>M</td><td></td><td>7</td><td></td><td>R</td><td></td><td>X</td><td></td></tr><tr><td>Y</td><td></td><td>Q</td><td></td><td>S</td><td></td><td>Z</td><td></td><td>A</td><td></td><td>T</td><td></td><td>N</td><td></td><td>L</td></tr></table>
+
+<p>Additionally, here is a GIF showing how the 36 points in space look from the two perspectives (coincidentally including the colored axes):</p>
+<p><img src="telescope/telescope.gif" alt="Animation of rotating the points in space from the square to the triangle" style="max-width: 100%"></p>
+<p>(You can play around with the model yourself at <a href="https://www.geogebra.org/calculator/ch2gcswk">this Geogebra link</a>)</p>
+<p>The fact that we have a triangle with every letter and digit appearing once might remind us of the <a href="/puzzle/eye-chart">Eye Chart meta</a> from earlier in the hunt, which also contains such a triangle. This is also confirmed/hinted at by the “I CHART” message we got earlier.</p>
+<p>Here is the eye chart from the Eye Chart meta:</p>
+<style>
+table.eye-chart { margin: 2em auto; table-layout: fixed; }
+table.eye-chart td { border-width: 0; width: 2.5rem; height: 3.8rem; padding: 0; text-align: center; }
+table.eye-chart tr:nth-child(1) td { font-size: 171%; }
+table.eye-chart tr:nth-child(2) td { font-size: 155%; }
+table.eye-chart tr:nth-child(3) td { font-size: 140%; }
+table.eye-chart tr:nth-child(4) td { font-size: 128%; }
+table.eye-chart tr:nth-child(5) td { font-size: 116%; }
+table.eye-chart tr:nth-child(6) td { font-size: 106%; }
+table.eye-chart tr:nth-child(7) td { font-size: 96%; }
+table.eye-chart tr:nth-child(8) td { font-size: 87%; }
+</style>
+<table class="eye-chart"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td>Q</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>J</td><td></td><td>M</td><td></td><td>7</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>4</td><td></td><td>E</td><td></td><td>U</td><td></td><td>V</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>W</td><td></td><td>R</td><td></td><td>P</td><td></td><td>K</td><td></td><td>1</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>H</td><td></td><td>T</td><td></td><td>I</td><td></td><td>S</td><td></td><td>A</td><td></td><td>8</td><td></td><td></td></tr><tr><td></td><td>G</td><td></td><td>3</td><td></td><td>X</td><td></td><td>D</td><td></td><td>2</td><td></td><td>0</td><td></td><td>B</td><td></td></tr><tr><td>N</td><td></td><td>O</td><td></td><td>F</td><td></td><td>L</td><td></td><td>6</td><td></td><td>C</td><td></td><td>Y</td><td></td><td>Z</td></tr></table>
+
+<p>If we look at the correspondence between these two triangles, it turns out that there are 18 pairs of characters that map to each other. For example, G in our triangle corresponds to 5 in the eye chart, and 5 in our triangle corresponds to G in the eye chart.</p>
+<p>If we take our 6×6 grid of answers from earlier and swap the corresponding pairs, the resulting grid still makes valid Braille!</p>
+<table class="ts-grid"><tr><td>BOROUGHS/L</td><td class="hl">PINEAPPLE/M</td><td class="hl">ONE DOLLAR BILL/K</td><td>EXPRESS/ONE</td><td class="hl">TRIAD/EIGHT</td><td>ONE TO ONE/Z</td></tr><tr><td class="hl">SAINT NICK/J</td><td class="hl">TRIPLE LUTZ/I</td><td>HEX NUT/SIX</td><td>SKULL AND CROSSBONES/A</td><td>BUMBLEBEE/ZERO</td><td>CALM/B</td></tr><tr><td>DOCTOR STRANGE/F</td><td class="hl">FERRIS WHEEL/R</td><td>PAPER PLANE/P</td><td>BEAUTY/Q</td><td class="hl">MISO SOUP/C</td><td>TOP-RATED/Y</td></tr><tr><td class="hl">BUTTERFLIES/H</td><td>MACBETH/FOUR</td><td class="hl">HI HAT/NINE</td><td>MUSTARD/FIVE</td><td class="hl">LIFE RAFT/SEVEN</td><td class="hl">DOMAIN/V</td></tr><tr><td>UNPEOPLE/G</td><td class="hl">TULIP/THREE</td><td>ONLY CONNECT/T</td><td>CROSS EYED/E</td><td class="hl">HORRIBLE/U</td><td>EMPTY SET/TWO</td></tr><tr><td>SPEED BAG/N</td><td>TODDLERS/O</td><td class="hl">BABY IMPS/W</td><td class="hl">GALLIFREY/X</td><td class="hl">MINOR/D</td><td>GOOD EATS/S</td></tr></table>
+
+<p>(Note that there are other equivalent ways to make this Braille grid—for example, you could take the letters and digits in the Eye Chart triangle and directly turn them into a 6×6 square using the mapping given by the 36 points.)</p>
+<p>Reading the new Braille gives <strong>WAKE UP</strong>, the final answer.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Like the other metas, this puzzle was written and testsolved back in 2019, when Jon had the main idea of "is there a set of 36 points in space that looks like a square from one angle and a triangle from another?" Unlike some other metas, this puzzle was not as well-documented, so when we revisited it this year, we spent quite a while reconstructing how exactly it worked. Luckily, Jon still had the code he wrote to generate the sets of points and projections!</p>
+<p>We had quite a wild ride with this puzzle, largely because we had a false sense of security that the puzzle was mostly fine due to the 2019 testsolve. The first realistic test, in our big test solve a week before the hunt, was a bit of a disaster: we ended up making like 3 or 4 changes in presentation due to testers getting stuck, and even more changes afterwards. We then solicited as many unspoiled people as we could to do an "emergency" testsolve of the newest version the Tuesday before hunt, and then made even more changes and had to get people for one final "miracle" testsolve on Wednesday. Luckily, we were able to get enough people (thanks to all the testers who responded to our last-minute requests!) and finalized the puzzle after Wednesday.</p>
+<p>The biggest change we made a week before the hunt was in the final step: originally, we had a direct cryptogram that turned ICHART into WAKEUP (we were a little disappointed that most of the eye chart went unused, but couldn't easily come up with a nicer idea). When the testsolving group immediately tried redoing Braille on the Eye Chart meta, we decided that extraction was a lot more elegant (and about as natural) and rewrote the puzzle to use it.</p>
+<figure><img src="telescope/amogus.png" alt="Screenshot of a spreadsheet with several pictures of the green Among Us crewmate next to several grids with some cells colored green and several triangles with cells colored red and green" style="max-width: 100%"><figcaption>When the “emergency” testsolve group tried redoing Braille after swaps, they saw something else suspicious in the result…</figcaption></figure>
+
+<p>We were extremely lucky that ICHART and WAKEUP have the same number of Braille dots! That was a total coincidence. 🤯</p>
+<p>The biggest change in presentation was adding the blanks in the 6x6 grid to enumerate the puzzle answers. Before this, two testsolving groups had a lot of trouble with the "letters that contain Is" aha because they assumed they were done with the answers after doing the anagrams. We think the 2019 testsolve didn't run into this because when you test a metameta in isolation, you are given the answers and really want to use them, but in the context of a whole hunt, it's much easier to feel that the answers have already been used and thus are no longer relevant. So, I guess this is one lesson for anyone out there writing puzzlehunt metametas! This change also had the additional effect of confirming that solvers did the initial projection correctly, which was a big plus.</p>
+<p>Given all the last-minute changes, we were definitely a little worried about how real teams would approach it, but thankfully, all 8 teams who unlocked the puzzle before Monday were able to finish in a reasonable amount of time. And all this was certainly much better than in 2018, when we were still implementing the final puzzle on Saturday!</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Patterns</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/patterns" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Patterns
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">BUTTERFLIES</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Mark
+
+    </h2>
+
+
+    <p>
+First, we notice that the dots represent stars, perhaps by recognizing Orion's belt, relating the ice cream cone pictogram to Bootes, or finding the overall presentation reminiscent of a star map.
+</p>
+<p>
+The title, “Patterns”, clues that we are interested in constellations. This is confirmed by the pictograms, which clue constellations in alphabetical order. In fact, most of these clue <i>asterisms</i>, which are patterns used as an aid to identify constellations in the night sky.
+</p>
+<p>
+The question mark is signficantly bigger than the other pictograms and does not directly clue a constellation. This suggests that there is an additional unknown constellation in the star field alphabetically between Sagittarius and Taurus, possibly enlarged.
+</p>
+<table><tr><th>Pictogram</th><th>Constellation</th></tr><tr><td>Ice cream cone</td><td>Bootes</td></tr><tr><td>Dog</td><td>Canis Major</td></tr><tr><td>Dragon's head</td><td>Draco</td></tr><tr><td>Belt</td><td>Orion</td></tr><tr><td>Teapot</td><td>Sagittarius</td></tr><tr><td>Question mark</td><td>(unknown at this point)</td></tr><tr><td>Bull</td><td>Taurus</td></tr><tr><td>Big dipper</td><td>Ursa Major</td></tr></table>
+<p>
+We then proceed to identify the clued constellations from the star field, with the help of the asterisms or otherwise. Noticing that the orange and blue Greek letters make up the first 10 and 14 letters of the Greek alphabet respectively, we deduce that they provide orderings on the labeled stars. While we are unable to match A and E with anything at this stage, the fact that they are capitalized indicates that they should be treated differently from the other letters in the cluephrase. Taking the first letters of the labeled stars, we get the cluephrases “EXTRA STARS” (orange) and “(?) AND (?) NAMESAKES” (blue).
+</p>
+<p><img src="patterns/patterns-sol.png"></p>
+<table><tr><th>Label</th><th>Star name</th><th>Constellation</th></tr><tr><td>α</td><td>Eltanin</td><td>Draco</td></tr><tr><td>β</td><td>Xuange</td><td>Bootes</td></tr><tr><td>γ</td><td>Tianguan</td><td>Taurus</td></tr><tr><td>δ</td><td>Rigel</td><td>Orion</td></tr><tr><td>ε</td><td>Ascella</td><td>Sagittarius</td></tr><tr><td>ζ</td><td>Sirius</td><td>Canis Major</td></tr><tr><td>η</td><td>Tania Borealis</td><td>Ursa Major</td></tr><tr><td>θ</td><td>Aldebaran</td><td>Taurus</td></tr><tr><td>ι</td><td>Rastaban</td><td>Draco</td></tr><tr><td>κ</td><td>Saiph</td><td>Orion</td></tr></table>
+<table><tr><th>Label</th><th>Star name</th><th>Constellation</th></tr><tr><td>α</td><td>(unknown at this point)</td><td></td></tr><tr><td>β</td><td>Adhara</td><td>Canis Major</td></tr><tr><td>γ</td><td>Nekkar</td><td>Bootes</td></tr><tr><td>δ</td><td>Dubhe</td><td>Ursa Major</td></tr><tr><td>ε</td><td>(unknown at this point)</td><td></td></tr><tr><td>ζ</td><td>Nunki</td><td>Sagittarius</td></tr><tr><td>η</td><td>Aludra</td><td>Canis Major</td></tr><tr><td>θ</td><td>Mintaka</td><td>Orion</td></tr><tr><td>ι</td><td>Edasich</td><td>Draco</td></tr><tr><td>κ</td><td>Seginus</td><td>Bootes</td></tr><tr><td>λ</td><td>Alula Borealis</td><td>Ursa Major</td></tr><tr><td>μ</td><td>Kaus Australis</td><td>Sagittarius</td></tr><tr><td>ν</td><td>Elnath</td><td>Taurus</td></tr><tr><td>ξ</td><td>Secunda Hyadum</td><td>Taurus</td></tr></table>
+<p>
+The orange cluephrase points our attention to the extra stars in the image. The IAU star maps featured prominently on Wikipedia prove to be a useful resource, particularly if overlayed on the puzzle image with an image editor. Looking at the constellations alphabetically between Sagittarius and Taurus, we find that the extra stars match the constellation of Scorpius, and that the symbol labeled E matches the Butterfly Cluster. Hiding everything in the puzzle except the extra stars makes this step easier.
+</p>
+<p>
+At this point, we might notice that the symbol used for E is the same as the one used in the IAU star map (assuming that we are using the IAU star maps as our primary reference). Looking up the legend, we find that the symbol used for A denotes a planetary nebula. The most well-known planetary nebula in Scorpius is the Bug or Butterfly Nebula, which is located precisely where A is. The blue cluephrase tells us that we want the namesakes of the Butterfly Cluster and the Butterfly Nebula, giving the answer <strong>BUTTERFLIES</strong>.
+</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>
+This puzzle was constructed using the night sky simulation software Stellarium, instead of any particular star map. Stars were included based on a magnitude (brightness) threshold of 4.30, and all constellations besides Scorpius were made to be the same size relative to each other.
+</p>
+<p>
+The only exception to the brightness threshold is ν Draconis (Kuma), which was added since many maps include it as part of the the dragon's head. In testsolving, excluding it made Draco significantly harder to identify and drew unwanted attention to its absence.
+</p>
+<p>
+There are a few aspects of this puzzle that might trip up first-time stargazers:
+</p>
+<ul><li>Unintuitively, constellations are canonically defined not by their connecting lines (which vary significantly between sources), but by their boundaries. Combined with the fact that constellation lines often include very dim stars beyond the magnitude threshold (e.g. the fourth star in Draco's head), this may give the false impression that there are missing stars in the image.</li><li>The IAU star maps do not differentiate dim stars of different brightnesses very well, leading to a lot of visual noise for solvers using them as their primary reference.</li><li>Despite its fame, the Butterfly Nebula is very visually dim and small and isn't included on the IAU star maps.</li></ul>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

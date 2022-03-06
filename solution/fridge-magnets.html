@@ -1,0 +1,239 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Fridge Magnets</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/fridge-magnets" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Fridge Magnets
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">DOMAIN</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Chris Jones
+
+    </h2>
+
+
+    <p>The title and design of the puzzle are meant to evoke <a href="https://magneticpoetry.com/">magnetic word tiles</a>
+that can be arranged to make funny phrases.</p>
+<p>Which phrases should we make? The white word tiles look like they come from well-known
+clichés/idioms. For example we can make "pride cometh before the fall" using the tiles
+in the left puzzle.</p>
+<p>However, these clichés don't quite fit in the blanks below! We need to add the green words
+in the indicated spaces, thereby modifying the clichés into silly joke versions.
+For example, "history teachers repeat themselves" is a pun on "history repeats itself".</p>
+<table>
+<thead>
+<tr>
+<th>Left side</th>
+<th>Right side</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>don't sweat the small stuff; bigger droplets are more <ins>effective</ins></td>
+<td>when one door closes, <ins>knock</ins></td>
+</tr>
+<tr>
+<td>pride <ins>month</ins> cometh before the fall</td>
+<td><ins>newfoundland</ins> is an island</td>
+</tr>
+<tr>
+<td>a bird in the hand <ins>is</ins> very angry</td>
+<td>take french fries with a grain <ins>of</ins> salt</td>
+</tr>
+<tr>
+<td>life isn't fair; <ins>neither</ins> is monopoly</td>
+<td>tips come to those <ins>who</ins> wait</td>
+</tr>
+<tr>
+<td>laughter is the best medicine if you don't have anything <ins>else</ins></td>
+<td>red <ins>lights</ins> are always greener on the other side</td>
+</tr>
+<tr>
+<td>ask <ins>not</ins> what your country can do for you because countries don't have ears</td>
+<td>all <ins>european</ins> roads lead to rome</td>
+</tr>
+<tr>
+<td>history <ins>teachers</ins> repeat themselves</td>
+<td>shoot for the moon. if you miss, you'll <ins>die</ins> in outer space</td>
+</tr>
+<tr>
+<td></td>
+<td>don't be a party pooper—that's <ins>gross</ins></td>
+</tr>
+<tr>
+<td></td>
+<td>if you can't beat <ins>'em</ins>, use a stand mixer</td>
+</tr>
+</tbody>
+</table>
+<p>There is one extra green word each in the left and right versions (<strong>SOTS</strong> and <strong>GUIDES</strong>).
+These are used in the Binoculars metapuzzle.</p>
+<p>The first letters of the tiles with underlines spell out
+EMINENT/KNOWLEDGE for the left/right versions.
+Between these two words you can put the answer <strong>DOMAIN</strong> in the phrases
+EMINENT DOMAIN/DOMAIN KNOWLEDGE.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Some phrases that didn't get used:</p>
+<ul>
+<li>a man, a plan, a candle: arson</li>
+<li>once in a blue moon I found a dead fly</li>
+<li>sans pain, j'ai faim</li>
+<li>a penny saved is worthless</li>
+<li>the graffiti is on the wall</li>
+<li>a dictionary is worth a thousand words</li>
+<li>if the shoe fits, buy it</li>
+<li>if you can't take the heat, order mild</li>
+<li>crappy diem</li>
+</ul>
+<p>Also, check out these <a href="https://www.peta.org/teachkind/lesson-plans-activities/animal-friendly-idioms/">animal-friendly versions of idioms from PETA</a> e.g. "don't feed a fed horse".</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

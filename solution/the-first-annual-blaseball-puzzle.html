@@ -1,0 +1,309 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: The First Annual Blaseball Puzzle</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/the-first-annual-blaseball-puzzle" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="I7c94Uz3ak4JRqfocv5WVnW093wUZmRi82wV8srMzPPOEcMJFqifI1aIyF6IFrhV">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="the-first-annual-blaseball-puzzle" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: The First Annual Blaseball Puzzle
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TOP-RATED</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Andy Hauge
+
+    </h2>
+
+
+    <p>When we first open the puzzle, we’re greeted with a few different types of information, along with a very unambiguous title: “The First Annual Blaseball Puzzle”. <a href="https://www.blaseball.com">Blaseball</a> is an online sports simulator modeled after baseball, but tilted towards horror and absurdity—on the hour, new games are simulated, for a full 99-game season each week, and the games are filled with events like batting lineup shuffles, attacks by angry mobs of birds, and impromptu incinerations of beloved (and not-so-beloved) players. There’s a lot of information to sort through there, but we’ll come back to the puzzle to figure out what we need.</p>
+<p>The first step can be difficult, because it starts with a very sizeable question of “what are we looking at?” The simplest part to understand is probably the emoji with letters: each team in Blaseball is associated with a specific emoji, and most of the groups of letters refer to different plays in the game of baseball. “BB” is a “base on balls”/a walk, “SO” is a strikeout, etc. “OBS” doesn’t strongly correspond to anything in baseball (it’s very similar to some baseball statistics, but not quite), but everything else seems really good, so we’re definitely on to something.</p>
+<p>We also notice that there’s nine things in the emoji + letters list, and there’s also nine groups in the ticker, which means we can probably match some of these together. Supporting this idea, three of the items in the ticker only have a left-hand letter, and three of the items in the list only have a left-hand emoji. So if we know that specific plays happened between specific teams, we’ll need some other way to narrow it down—like a time that the play happened.</p>
+<p>The ticker and the list together provide coordinates: the list refers to different teams and specific plays, while the numbers in the ticker match very nicely to the season/day/inning of a play. For instance, “4.77 (8🔼)” is a play that happened in Season 4, on Day 77, in the top of the 8th inning. Exploring this hypothesis, we can start to find plays that meet both constraints and cleanly match items from one group to the other, until everything is matched. One example break-in point might be the list item with the logo for the Ohio Worms (🐌), a Blaseball team which didn’t exist in the game until Season 12—and most items in the ticker refer to times before Season 12.</p>
+<p>It’s not easy to locate all these plays, especially given the sparseness of the Blaseball website, but there are some resources at our disposal, including the <a href="https://www.blaseball.wiki/w/Main_Page">Blaseball Wiki</a> and the <a href="https://sibr.dev">Society for Internet Blaseball Research</a>, both of which we can find by digging through search results about Blaseball (and links from sites). In particular, SIBR has produced a tool called <a href="https://reblase.sibr.dev">Reblase</a>, which lets us search for play-by-play recaps of every game played on the Blaseball site.</p>
+<p>We can use that to identify the plays as such:</p>
+<table><tr><th>List Item</th><th>Play Description</th><th>Ticker Group</th></tr><tr><td>🌮SB</td><td><a href="https://reblase.sibr.dev/game/4ca021c6-a933-40ce-98ee-e991a8bd60f3#951a2e83-0077-f785-18b5-fc814ee2169b">Wyatt Pothos steals second base.</a></td><td>A 4.77 (8🔼)</td></tr><tr><td>🚤SO🐅</td><td><a href="https://reblase.sibr.dev/game/ecc612a3-0a48-40bf-b715-76f10fd4ca33#0a3c090e-8982-0123-cf96-f08f3214eb46">Francisca Sasquatch strikes out Peanutiel Duffy.</a></td><td>S 5.78 (4🔼) E</td></tr><tr><td>🚤BB🌮</td><td><a href="https://reblase.sibr.dev/game/2c18eb1d-2c53-46c8-893e-b80858e34e65#36464cdf-0d8c-c755-d26e-c97750774fae">Francisca Sasquatch walks Wyatt Quitter.</a></td><td>S 6.18 (6🔽) A</td></tr><tr><td>🚤BB🌮</td><td><a href="https://reblase.sibr.dev/game/f8b17a98-3cf9-4542-b6d2-75a28f66b451#e64edcb0-b649-4274-a603-b24baa536166">Peanut Bong walks Wyatt Quitter.</a></td><td>L 7.44 (6🔽) A</td></tr><tr><td>🌮BB🐅</td><td><a href="https://reblase.sibr.dev/game/8c970bf0-dcb5-46e9-b2ef-a882281b7a27#b1c8ab30-ccf1-227f-19a9-e480dfa849d2">Alejandro Leaf walks Peanutiel Duffy.</a></td><td>G 7.78 (8🔼) E</td></tr><tr><td>🍬GO🥩</td><td><a href="https://reblase.sibr.dev/game/1bca278c-4f52-4d4c-9a6e-816f198fd205#d10fbd9a-43ae-4f30-97b4-478adb519a9c">Jessica Telephone hits a ground out to Patel Beyonce.</a></td><td>R 11.8 (4🔽) T</td></tr><tr><td>🥩HR</td><td><a href="https://reblase.sibr.dev/game/458b94e1-9ed5-4c66-a929-52d70a43d839#a81fb5aa-474b-97c2-396b-6e2ac9aeb900">Patel Beyonce hits a 2-run home run.</a></td><td>T 11.26 (10🔼)</td></tr><tr><td>🐌1B</td><td><a href="https://reblase.sibr.dev/game/6414fb88-a3fd-4a90-b31d-c27bfa012e3d#3b5518d8-cb07-263a-960d-ad66a1d6d452">Pitching Machine hits a single.</a></td><td>M 13.78 (2🔽)</td></tr><tr><td>🦀OBS📱</td><td><a href="https://reblase.sibr.dev/game/a8787013-e314-4386-9e0d-7ebe945121da#33ca68e2-5688-e3e8-1542-718ad0e991c0">York Silk Observed Peanut Holloway.</a></td><td>H 15.13 (5🔼) S</td></tr></table>
+
+<p>Now that we’ve matched the plays, we’re able to associate the letters from the ticker with specific players:</p>
+<ul><li>Wyatt Pothos: A</li><li>Wyatt Quitter: A</li><li>Peanutiel Duffy: E</li><li>Alejandro Leaf: G</li><li>York Silk: H</li><li>Peanut Bong: L</li><li>Pitching Machine: M</li><li>Jessica Telephone: R</li><li>Francisca Sasquatch: S</li><li>Peanut Holloway: S</li><li>Patel Beyonce: T</li></ul>
+
+<p>This is where we get to the next part of the puzzle: a section labeled “Lineup” with eleven blanks. There’s exactly eleven players who are referenced in these plays, and if we dig a bit through the fan documentation of Blaseball, especially the wiki, we find out that all eleven players formed the batting lineup of a special team called <a href="https://www.blaseball.wiki/w/THE_SHELLED_ONE%27S_PODS">THE SHELLED ONE’S PODS</a>, which appeared at the end of Seasons 9 and 10 to face off against the champions of that season.</p>
+<p>Arranging the players in the order of the lineup, we get the message LAST GAME HRS. This cluephrase takes us straight into the Wrap-Up section, where we have to go looking for the last game that the PODS played together. On Season 10, <a href="https://www.blaseball.wiki/w/Day_X">Day X</a>, the PODS were defeated by the Hall Stars (a team of previously-incinerated players from earlier Blaseball seasons) and dispersed. Using the <a href="https://reblase.sibr.dev/bossfight/9bb560d9-4925-4845-ad03-26012742ee23">record of this final game</a>, we can decode the final part of the puzzle.</p>
+<p>Interestingly, the Shelled Ones hit eleven home runs, and there’s eleven ordinal numbers in the Wrap-Up section. If we compare the innings where home runs were hit, we notice that they match exactly, and that each row matches the home runs hit by a specific player on the Shelled Ones.</p>
+<ul><li>Jessica Telephone hit home runs in the 2nd and 5th innings.</li><li>Peanut Holloway hit a home run in the 7th inning.</li><li>Pitching Machine hit a home run in the 8th inning.</li><li>York Silk hit home runs in the 2nd and 7th innings.</li><li>Francisca Sasquatch hit a home run in the 1st inning.</li><li>Wyatt Pothos hit home runs in the 4th and 8th innings.</li><li>Patel Beyonce hit a home run in the 6th inning.</li><li>Peanutiel Duffy hit a home run in the 2nd inning.</li></ul>
+
+<p>Using the number in parentheses as an index, we get our answer: <strong>TOP-RATED</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>A Blaseball puzzle is something I’ve been wanting to do for about a year at this point. I tried to get one into the Mystery Hunt, but my suggestion was a bit too late to get consideration. It’s a powerfully data-laden rabbit hole that I’ve developed a lot of connection to over the past year. One of the biggest challenges for this puzzle was finding compelling connections between data that was also possible for me to research; I had to run through and discard a lot of ideas that were too difficult to find the raw data for. (Side note, many thanks again to SIBR’s website, and I hope we didn’t set your servers on fire with all those queries…)</p>
+<p>The biggest unexpected challenge I faced was that once I centered the puzzle on The Shelled One’s PODS, I had trouble finding plays that connected members to one another—because half of the team was pitchers before they joined the PODS! (Recommended further reading: <a href="https://www.blaseball.wiki/w/Snackrifice">The Snackrifice</a>) Since in the Blaseball simulation, pitchers don’t interact with each other, this severely limited the games I could search through, and I wound up settling on single-player events (like Pitching Machine’s single with the Worms), which I also think made the play-matching step of the puzzle a bit easier.</p>
+<p>(As an avid Hades Tigers fan, I am compelled to add: RIV Frasier Shmurmgle, believe in the Scrungle, and NEVER LOOK BACK.)</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

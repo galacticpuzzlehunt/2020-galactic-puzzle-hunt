@@ -1,0 +1,718 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Make Your Own Math Quiz</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/make-your-own-math-quiz" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="tZcG57AjSdoB41SIEgJ0NuimiJ3pnWhLTUws9Fs2hI9GRNp37bWjA8w4HlDd31Ho">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="make-your-own-math-quiz" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Make Your Own Math Quiz
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TRIPLE LUTZ</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Jakob Weisblat and Josh Alman
+
+    </h2>
+
+
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Shadows+Into+Light+Two">
+<p>First, we need to write math questions that satisfy the constraints given. As the constraints reveal themselves, we
+    may
+    have to return to previous answers and change them. Eventually, we will come to a solution like this:
+</p>
+<style>
+    .mathanswers td:nth-child(2) {
+        font-family: Shadows Into Light Two;
+        font-size: larger;
+    }
+
+    .results td {
+        font-family: Shadows Into Light Two;
+    }
+</style>
+<table class='mathanswers'>
+    <tbody>
+        <tr>
+            <th>Prompt</th>
+            <th>Question</th>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 6.</td>
+            <td>3232-3232-2+8</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 10.</td>
+            <td>3232-3232+2+8</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 100.</td>
+            <td>3232-3232+2+98</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 9462.</td>
+            <td>3232+3232+2998</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is at least 10 billion.</td>
+            <td>3232*3232*2998</td>
+        </tr>
+        <tr>
+            <td>Write a math question which is at most 12 characters long, and whose answer is at least 10 billion.</td>
+            <td>323232322998</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 73 when read forwards or backwards.</td>
+            <td>22+11+33+2-2+7+1-1</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 45 when read forwards but 34 when read backwards.</td>
+            <td>12-11+33+2+2+7+1-1</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is within 0.01 of pi.</td>
+            <td>-22-11+33+22/7+1-1</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is within 0.00001 of pi.</td>
+            <td>-22-11+33+22/7-1/791</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 3.</td>
+            <td>-22-11+33+22/7-1/7</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 500.</td>
+            <td>781+S*0-A*236-O*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 300 when the value of a letter is the number of symbols in its
+                Morse
+                code representation.</td>
+            <td>781+S*0-A*236-O*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 500.</td>
+            <td>781+S*0-A*236-O*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question where, when you remove everything but letters, you get the name of a moon of
+                Neptune.
+            </td>
+            <td>781+S*0-A*236-O*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question where, when you remove everything but letters, you get the name of a moon of
+                Saturn.
+            </td>
+            <td>781+P*0-A*236-N*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is prime.</td>
+            <td>781+P*0-A*236-N*3</td>
+        </tr>
+        <tr>
+            <td>Write a math question where, when you remove everything but letters, you get an English word, and where
+                the
+                answer is even when the value of a letter is its Scrabble score.</td>
+            <td>10-B-A-D</td>
+        </tr>
+        <tr>
+            <td>Write a math question without * which is worth 1 more when the value of each letter is its Scrabble
+                score
+                compared to when the value of each letter is its default value.</td>
+            <td>10-B-A-D</td>
+        </tr>
+        <tr>
+            <td>Write a math question where, when you remove everything but letters, you get an English word which is an
+                anagram of the word from question 18, and where the answer is odd when the value of a letter is its
+                Scrabble
+                score.</td>
+            <td>9+D+A+B</td>
+        </tr>
+        <tr>
+            <td>Write a math question without * which is worth 1 less when the value of each letter is its Scrabble
+                score
+                compared to when the value of each letter is its default value.</td>
+            <td>9+D+A+B</td>
+        </tr>
+        <tr>
+            <td>Write a math question containing no digits where, when you remove everything but letters, you get the
+                English spelling of its answer.</td>
+            <td>T+H+I-R+T-Y+T-H/(R-E-E)</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is an integer where, when you remove everything but letters, you get
+                an
+                English word which is at least 3 letters long.</td>
+            <td>SIX</td>
+        </tr>
+        <tr>
+            <td>Write a math question which is shorter than the length of its answer.</td>
+            <td>SIX</td>
+        </tr>
+        <tr>
+            <td>Write a math question whose answer is 25, but when you append question 24 to the end of it, the answer
+                is
+                2524.</td>
+            <td>25-2499/4103+2499/4103*A</td>
+        </tr>
+        <tr>
+            <td>Write a math question containing every letter of the alphabet exactly once and not containing any
+                digits.
+            </td>
+            <td>H-K+(W-X)*ABCDEFGIJLMNOPQRSTUVYZ</td>
+        </tr>
+        <tr>
+            <td>Write a math question where, if you plug in A=the answer to (1), B=the answer to (2), etc, you get 42.
+            </td>
+            <td>H-K+(W-X)*ABCDEFGIJLMNOPQRSTUVYZ</td>
+        </tr>
+    </tbody>
+</table>
+<p>Of course, there are many ways to go about this. Once we make a valid quiz, four students take the quiz and we
+    receive their answers. For example:</p>
+
+<p><i>Good job! All four students in the competition have completed your quiz, though they may not have gotten all the
+        answers
+        right. If you're not happy with their performance, you can always change some questions and the students will
+        complete
+        your new quiz. They're very studious and very consistent.</i></p>
+<table class="results">
+    <tbody>
+        <tr>
+            <th>#</th>
+            <th>Question</th>
+            <th>Student 1's Answer</th>
+            <th>Student 2's Answer</th>
+            <th>Student 3's Answer</th>
+            <th>Student 4's Answer</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>What is 3232-3232-2+8?</td>
+            <td>6</td>
+            <td>6</td>
+            <td>6</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>What is 3232-3232+2+8?</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>What is 3232-3232+2+98?</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>What is 3232+3232+2998?</td>
+            <td>9462</td>
+            <td>9462</td>
+            <td>9462</td>
+            <td>9462</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td>What is 3232*3232*2998?</td>
+            <td>31316580352</td>
+            <td>31316580352</td>
+            <td>31316580352</td>
+            <td>31316580352</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <td>What is 323232322998?</td>
+            <td>323232322998</td>
+            <td>323232322998</td>
+            <td>323232322998</td>
+            <td>323232322998</td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <td>What is 22+11+33+2-2+7+1-1?</td>
+            <td>73</td>
+            <td>73</td>
+            <td>73</td>
+            <td>73</td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <td>What is 12-11+33+2+2+7+1-1?</td>
+            <td>45</td>
+            <td>45</td>
+            <td>45</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <th>9</th>
+            <td>What is -22-11+33+22/7+1-1?</td>
+            <td>3.14286</td>
+            <td>3.14286</td>
+            <td>3.14286</td>
+            <td>3.14286</td>
+        </tr>
+        <tr>
+            <th>10</th>
+            <td>What is -22-11+33+22/7-1/791?</td>
+            <td>3.14159</td>
+            <td>3.14159</td>
+            <td>3.14159</td>
+            <td>3.14159</td>
+        </tr>
+        <tr>
+            <th>11</th>
+            <td>What is -22-11+33+22/7-1/7?</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>12</th>
+            <td>What is 781+S*0-A*236-O*3?</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <th>13</th>
+            <td>What is 781+S*0-A*236-O*3?</td>
+            <td>300</td>
+            <td>300</td>
+            <td>300</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <th>14</th>
+            <td>What is 781+S*0-A*236-O*3?</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <th>15</th>
+            <td>What is 781+S*0-A*236-O*3?</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <th>16</th>
+            <td>What is 781+P*0-A*236-N*3?</td>
+            <td>503</td>
+            <td>503</td>
+            <td>503</td>
+            <td>503</td>
+        </tr>
+        <tr>
+            <th>17</th>
+            <td>What is 781+P*0-A*236-N*3?</td>
+            <td>503</td>
+            <td>503</td>
+            <td>503</td>
+            <td>503</td>
+        </tr>
+        <tr>
+            <th>18</th>
+            <td>What is 10-B-A-D?</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>19</th>
+            <td>What is 10-B-A-D?</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>20</th>
+            <td>What is 9+D+A+B?</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <th>21</th>
+            <td>What is 9+D+A+B?</td>
+            <td>16</td>
+            <td>16</td>
+            <td>16</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <th>22</th>
+            <td>What is T+H+I-R+T-Y+T-H/(R-E-E)?</td>
+            <td>33</td>
+            <td>33</td>
+            <td>153</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <th>23</th>
+            <td>What is SIX?</td>
+            <td>4104</td>
+            <td>4104</td>
+            <td>4104</td>
+            <td>4104</td>
+        </tr>
+        <tr>
+            <th>24</th>
+            <td>What is SIX?</td>
+            <td>4104</td>
+            <td>4104</td>
+            <td>4104</td>
+            <td>4104</td>
+        </tr>
+        <tr>
+            <th>25</th>
+            <td>What is 25-2499/4103+2499/4103*A?</td>
+            <td>25</td>
+            <td>25</td>
+            <td>25</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <th>26</th>
+            <td>What is H-K+(W-X)*ABCDEFGIJLMNOPQRSTUVYZ?</td>
+            <td>-24906834308708352000003</td>
+            <td>-24906834308708352000003</td>
+            <td>-24906834308708352000003</td>
+            <td>-24906834308708352000003</td>
+        </tr>
+        <tr>
+            <th>27</th>
+            <td>What is H-K+(W-X)*ABCDEFGIJLMNOPQRSTUVYZ?</td>
+            <td>42</td>
+            <td>42</td>
+            <td>42</td>
+            <td>42</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Some of the students get some of the questions wrong. We notice that all of the questions that are wrong contain
+    letters, and we can deduce that some of the students have incorrect beliefs about the values of certain letters at
+    certain times. In fact, each student has one letter whose value they always think is three times what it should be.
+    These letters can be determined by cycling through different solutions to the questions using letters, such as questions
+    23 through 25.
+
+    For students one, two, three, and four, the tripled letters are L, U, T, and Z respectively. Thus, the answer to this puzzle
+    is <strong>TRIPLE LUTZ</strong>.</p>
+
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Many of the challenges in this puzzle should be familiar to teachers with experience making math quizzes: designing questions to test whether students are making common mistakes, making sure the quiz won't upset students too much, doing extra work to make sure questions have "nice" answers and constants, etc. That said, because of how weird the students' requests are, this is probably the "Make Your Own X" puzzle that least resembles the usual real-life task of making X. It's hard to imagine a student who would get upset if adjacent questions on their math quiz have large edit distance!</p>
+
+
+
+
+    <h2 id="appendix">Appendix</h2>
+    <p>Below is another valid math quiz which demonstrates some slightly different ways of approaching some of the sections:</p>
+<table class='mathanswers'><tbody><tr><th>Prompt</th><th>Question</th></tr><tr><td>Write a math question whose answer is 6.</td><td>2+4+9999-9999</td></tr><tr><td>Write a math question whose answer is 10.</td><td>6+4+9999-9999</td></tr><tr><td>Write a math question whose answer is 100.</td><td>6+94+9999-9999</td></tr><tr><td>Write a math question whose answer is 9462.</td><td>6+9456+9999-9999</td></tr><tr><td>Write a math question whose answer is at least 10 billion.</td><td>6+945699999999</td></tr><tr><td>Write a math question which is at most 12 characters long, and whose answer is at least 10 billion.</td><td>945699999999</td></tr><tr><td>Write a math question whose answer is 73 when read forwards or backwards.</td><td>44+22+7</td></tr><tr><td>Write a math question whose answer is 45 when read forwards but 34 when read backwards.</td><td>44+22-21</td></tr><tr><td>Write a math question whose answer is within 0.01 of pi.</td><td>(44+22)/21</td></tr><tr><td>Write a math question whose answer is within 0.00001 of pi.</td><td>(44+27)/22.6</td></tr><tr><td>Write a math question whose answer is 3.</td><td>(44+22)/22</td></tr><tr><td>Write a math question whose answer is 500.</td><td>T*0-RI*779/87+T*0+O*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question whose answer is 300 when the value of a letter is the number of symbols in its
+                Morse
+                code representation.</td><td>T*0-RI*779/87+T*0+O*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question whose answer is 500.</td><td>T*0-RI*779/87+T*0+O*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question where, when you remove everything but letters, you get the name of a moon of
+                Neptune.
+            </td><td>T*0-RI*779/87+T*0+O*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question where, when you remove everything but letters, you get the name of a moon of
+                Saturn.
+            </td><td>T*0-I*779/87+T*0+A*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question whose answer is prime.</td><td>T*0-I*779/87+T*0+A*3859/29+N*0-1319/29</td></tr><tr><td>Write a math question where, when you remove everything but letters, you get an English word, and where
+                the
+                answer is even when the value of a letter is its Scrabble score.</td><td>CAB/3+1</td></tr><tr><td>Write a math question without * which is worth 1 more when the value of each letter is its Scrabble
+                score
+                compared to when the value of each letter is its default value.</td><td>CAB/3+1</td></tr><tr><td>Write a math question where, when you remove everything but letters, you get an English word which is an
+                anagram of the word from question 18, and where the answer is odd when the value of a letter is its
+                Scrabble
+                score.</td><td>4-ABC/3</td></tr><tr><td>Write a math question without * which is worth 1 less when the value of each letter is its Scrabble
+                score
+                compared to when the value of each letter is its default value.</td><td>4-ABC/3</td></tr><tr><td>Write a math question containing no digits where, when you remove everything but letters, you get the
+                English spelling of its answer.</td><td>E-L+E+V+E-N</td></tr><tr><td>Write a math question whose answer is an integer where, when you remove everything but letters, you get
+                an
+                English word which is at least 3 letters long.</td><td>ZOO</td></tr><tr><td>Write a math question which is shorter than the length of its answer.</td><td>ZOO</td></tr><tr><td>Write a math question whose answer is 25, but when you append question 24 to the end of it, the answer
+                is
+                2524.</td><td>143726/5849+2499/5849*A</td></tr><tr><td>Write a math question containing every letter of the alphabet exactly once and not containing any
+                digits.
+            </td><td>A*(B-K)+(L-N)*CDEFGHIJMOPQRSTUVWXYZ</td></tr><tr><td>Write a math question where, if you plug in A=the answer to (1), B=the answer to (2), etc, you get 42.
+            </td><td>A*(B-K)+(L-N)*CDEFGHIJMOPQRSTUVWXYZ</td></tr></tbody></table>
+
+</main>
+
+
+    </div>
+</body>
+</html>

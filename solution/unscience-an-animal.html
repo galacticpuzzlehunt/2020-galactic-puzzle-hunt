@@ -1,0 +1,177 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: #UnscienceAnAnimal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/unscience-an-animal" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: #UnscienceAnAnimal
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">BEAUTY</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Seth Mulhall and Abigail Caron
+
+    </h2>
+
+
+    <p>Upon opening this puzzle, we are presented with a number of images of animals with nonsensical labels. Each image also has a large number in a corner.</p>
+<p>The labels on each animal indicate the elements of a set with a canonical ordering. Each set is missing two elements. However, one of the two missing elements can be substituted with the animal in the picture.</p>
+<table><tr><th>1</th><th>Blood Pheasant</th><th>Plagues of Egypt</th></tr><tr><td><strong>1</strong></td><td><em>Replaced by Animal</em></td><td>Water into Blood</td></tr><tr><td>2</td><td>Frog Nabbers</td><td>Frogs</td></tr><tr><td>3</td><td>Nit Picker</td><td>Lice or Gnats</td></tr><tr><td>4</td><td>Swarm Spotter</td><td>Wild Animals or Flies</td></tr><tr><td>5</td><td>Other Livestock</td><td>Pestilence of Livestock</td></tr><tr><td>6</td><td><strong>Omitted</strong></td><td>Boils</td></tr><tr><td>7</td><td>Icy Stone</td><td>Hail and Fire</td></tr><tr><td>8</td><td>Crop Devourer</td><td>Locusts</td></tr><tr><td>9</td><td>Sunblock</td><td>Darkness</td></tr><tr><td>10</td><td>Childfree</td><td>Death of Firstborn</td></tr></table>
+<table><tr><th>8</th><th>Empress Brilliant Hummingbird</th><th>Dungeons and Dragons Abilities</th></tr><tr><td>1</td><td>Strong Perch</td><td>Strength</td></tr><tr><td>2</td><td>Dexterous Beak</td><td>Dexterity</td></tr><tr><td>3</td><td><strong>Omitted</strong></td><td>Constitution</td></tr><tr><td><strong>4</strong></td><td><em>Replaced by Animal</em></td><td>Intelligence</td></tr><tr><td>5</td><td>Wise Brain</td><td>Wisdom</td></tr><tr><td>6</td><td>Charming Eyes</td><td>Charisma</td></tr></table>
+<table><tr><th>1</th><th>Indigo Flycatcher</th><th>Colors of the Rainbow</th></tr><tr><td>1</td><td>Angry Eyes</td><td>Red</td></tr><tr><td>2</td><td>Tasty Oranges (eaten)</td><td>Orange</td></tr><tr><td>3</td><td><strong>Omitted</strong></td><td>Yellow</td></tr><tr><td>4</td><td>Verdant Background</td><td>Green</td></tr><tr><td>5</td><td>Sad Brain</td><td>Blue</td></tr><tr><td><strong>6</strong></td><td><em>Replaced by Animal</em></td><td>Indigo</td></tr><tr><td>7</td><td>Royal Cape</td><td>Violet</td></tr></table>
+<table><tr><th>21</th><th>Phoenix Moth</th><th>Harry Potter Books</th></tr><tr><td>1</td><td>Stone Crawlers</td><td>Harry Potter and the Sorcerer's Stone</td></tr><tr><td>2</td><td>Hidden Compartment</td><td>Harry Potter and the Chamber of Secrets</td></tr><tr><td>3</td><td>Prison Escapers</td><td>Harry Potter and the Prisoner of Azkaban</td></tr><tr><td>4</td><td>Cup-shaped Fire-seekers</td><td>Harry Potter and the Goblet of Fire</td></tr><tr><td><strong>5</strong></td><td><em>Replaced by Animal</em></td><td>Harry Potter and the Order of the Phoenix</td></tr><tr><td>6</td><td>Royal Blood Drinker</td><td>Harry Potter and the Half-Blood Prince</td></tr><tr><td>7</td><td><strong>Omitted</strong></td><td>Harry Potter and the Deathly Hallows</td></tr></table>
+<table><tr><th>2</th><th>Venus Clam</th><th>Planets</th></tr><tr><td>1</td><td><strong>Omitted</strong></td><td>Mercury</td></tr><tr><td><strong>2</strong></td><td><em>Replaced by Animal</em></td><td>Venus</td></tr><tr><td>3</td><td>Dirt Scrapers</td><td>Earth</td></tr><tr><td>4</td><td>War Blades</td><td>Mars</td></tr><tr><td>5</td><td>Great Spot</td><td>Jupiter</td></tr><tr><td>6</td><td>Colorful Ring-Bands</td><td>Saturn</td></tr><tr><td>7</td><td>Significant Tilt</td><td>Uranus</td></tr><tr><td>8</td><td>Undersea Wrinkles</td><td>Neptune</td></tr></table>
+<table><tr><th>3</th><th>Wolverine (<em>Gulo Gulo</em>, or the glutton)</th><th>Circles of Hell</th></tr><tr><td>1</td><td>Purgatory</td><td>Limbo</td></tr><tr><td>2</td><td>Naughty Bits</td><td>Lust</td></tr><tr><td><strong>3</strong></td><td><em>Replaced by Animal</em></td><td>Gluttony</td></tr><tr><td>4</td><td>Greedy Grabbers</td><td>Greed</td></tr><tr><td>5</td><td>Angry Stare</td><td>Anger</td></tr><tr><td>6</td><td>Blasphemous Blabber</td><td>Heresy</td></tr><tr><td>7</td><td>Deadly Claws</td><td>Violence</td></tr><tr><td>8</td><td><strong>Omitted</strong></td><td>Fraud</td></tr><tr><td>9</td><td>Betrayal Conceiver</td><td>Treachery</td></tr></table>
+<p>The elements replaced by the animals are uniquely in positions 1 through 6 in their sets. If we index into the omitted element using the number given on the picture and order by the element replaced by the animal, we get <strong>BEAUTY</strong>, the answer to this puzzle.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p><a href="https://twitter.com/lifewithnora/status/1090736065823100933?s=19">This tweet</a> was the inspiration for the puzzle, which was originally simply titled “what”. Hallucigenia was originally used as part of a matching step before extraction, but it proved to be unnecessarily difficult. This image will simply live on in these notes and our hearts.</p>
+<p>Unfortunately, the given order of the images (alphabetical by common name), gives the "answer" of <strong>BUY TEA</strong> which is sort of compelling. I ended up with so much tea on the first day of hunt.</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

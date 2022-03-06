@@ -1,0 +1,766 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: The Seasons Change</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/the-seasons-change" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="qoZX7srFHxBJJ8VV7cPgPZoSr1KeufFhQjjJb0jo62mOwUsgA72zCDCAQDk2ak5U">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="the-seasons-change" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: The Seasons Change
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">MISO SOUP</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Nathan Pinsker
+
+    </h2>
+
+
+
+
+<style>
+    .ing-table {
+        display: table;
+        border: 1px solid #ccc;
+        margin: auto;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+    }
+
+    .ing-table-row {
+        display: table-row;
+    }
+
+    .ing-table-cell:nth-child(2n + 1) {
+        font-weight: bold;
+    }
+
+    .ing-table-cell:nth-child(2n) {
+        border-right: 1px solid #ccc;
+    }
+
+    .ing-table-cell {
+        display: table-cell;
+        text-align: center;
+        padding: 3px 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .soln-table {
+        display: table;
+        border: 1px solid #ccc;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .soln-table-row {
+        display: table-row;
+    }
+
+    .soln-table-cell {
+        display: table-cell;
+        text-align: center;
+        padding: 10px;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        max-width: 150px;
+    }
+
+    #show-hide-btn {
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+</style>
+
+<p>The puzzle provides us with 36 Japanese courses corresponding to four different restaurants and asks that we order them. The title and flavor text heavily reference seasonality, or <i><a href="https://savoryjapan.com/learn/culture/shun.html">shun</a></i>, and a little research may uncover <i><a href="https://www.japan-guide.com/e/e2348.html">kaiseki ryori</a></i>, an "ultra-seasonal" style of Japanese cuisine most strongly associated with Kyoto. This yields the insight that all four restaurants are kaiseki restaurants.</p>
+
+<p>Since 36 is divisible by 4, this suggests grouping the courses into four groups of nine. The puzzle now becomes one of determining which courses are served, which order they were served in, and the course that each dish corresponds to.</p>
+
+<p>Some dishes have explicit clues as to their position or season, but it seems like we don't have enough information to solve the puzzle. However, the ingredients themselves serve as clues: because they're served "at their very best" &mdash; that is, during the season that they are at their peak &mdash; this greatly restricts which meals they can belong to. For example, ginkgo nuts and persimmons are traditionally autumn foods. Here is a table of all lesser-known ingredients and the seasons they're most commonly associated with.</p>
+
+<script type="text/javascript">
+    function f() {
+        var shb = document.getElementById("show-hide-btn");
+        var hs = document.getElementById("ing-table-wrap");
+        hs.style.display = (hs.style.display === 'none' ? 'block' : 'none');
+        shb.innerHTML = (hs.style.display === 'none' ? '<i>(show table)</i>' : '<i>(hide table)</i>');
+    }
+</script>
+
+<div id="show-hide-btn" onclick="f()">
+    <i>(show table)</i>
+</div>
+
+<div id="ing-table-wrap" style="display: none;">
+    <div class="ing-table">
+        <div class="ing-table-row">
+            <div class="ing-table-cell">abalone</div>
+            <div class="ing-table-cell">summer</div>
+            <div class="ing-table-cell">ginger</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">ozoni</div>
+            <div class="ing-table-cell">winter</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">amberjack</div>
+            <div class="ing-table-cell">summer, autumn, winter</div>
+            <div class="ing-table-cell">ginkgo nut</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">pacific saury</div>
+            <div class="ing-table-cell">autumn</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">anglerfish</div>
+            <div class="ing-table-cell">winter</div>
+            <div class="ing-table-cell">gizzard shad</div>
+            <div class="ing-table-cell">autumn, winter</div>
+            <div class="ing-table-cell">peach</div>
+            <div class="ing-table-cell">summer</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">ayu</div>
+            <div class="ing-table-cell">summer</div>
+            <div class="ing-table-cell">hotaru ika</div>
+            <div class="ing-table-cell">spring, summer</div>
+            <div class="ing-table-cell">persimmon</div>
+            <div class="ing-table-cell">autumn</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">bamboo shoots</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">Japanese pear</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">ponzu</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">bonito</div>
+            <div class="ing-table-cell">spring, autumn</div>
+            <div class="ing-table-cell">jidori chicken</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">radish</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">bracken</div>
+            <div class="ing-table-cell">spring, summer</div>
+            <div class="ing-table-cell">kabocha squash</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">sea bream</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">butterbur</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">kabosu</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">seaweed</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">carrot</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">kumquat</div>
+            <div class="ing-table-cell">autumn, winter</div>
+            <div class="ing-table-cell">stripejack</div>
+            <div class="ing-table-cell">summer</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">chawanmushi</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">matsutake</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">sweet pepper</div>
+            <div class="ing-table-cell">summer</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">cherry</div>
+            <div class="ing-table-cell">summer</div>
+            <div class="ing-table-cell">mizuna</div>
+            <div class="ing-table-cell">spring, autumn</div>
+            <div class="ing-table-cell">taro</div>
+            <div class="ing-table-cell">autumn, winter</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">cherry blossom</div>
+            <div class="ing-table-cell">spring, summer</div>
+            <div class="ing-table-cell">mountain asparagus</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">turnip</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">chestnut</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">mugwort</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">ume</div>
+            <div class="ing-table-cell">summer</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">chrysanthemum</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">nanohana</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">wagyu</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">conger eel</div>
+            <div class="ing-table-cell">summer</div>
+            <div class="ing-table-cell">new rice</div>
+            <div class="ing-table-cell">autumn</div>
+            <div class="ing-table-cell">wakame</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">dandelion</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">octopus</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">warabi</div>
+            <div class="ing-table-cell">spring, summer</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">duck</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">okra</div>
+            <div class="ing-table-cell">summer</div>
+            <div class="ing-table-cell">wasabi</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">eggplant</div>
+            <div class="ing-table-cell">summer, autumn</div>
+            <div class="ing-table-cell">oshinko</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">yuba</div>
+            <div class="ing-table-cell">all seasons</div>
+        </div>
+        <div class="ing-table-row">
+            <div class="ing-table-cell">fatty tuna</div>
+            <div class="ing-table-cell">all seasons</div>
+            <div class="ing-table-cell">ostrich fern</div>
+            <div class="ing-table-cell">spring</div>
+            <div class="ing-table-cell">yuzu</div>
+            <div class="ing-table-cell">fall, winter</div>
+        </div>
+    </div>
+</div>
+
+<p>There's inherently some ambiguity to this table, and it is unlikely that solvers' research will agree with the table in every entry. To help with the puzzle's inherent ambiguity, there is substantial additional cross-checking in the food descriptions. We present one possible path to the solution now that uses a minority of the table's information; note there are numerous other potential paths that make use of different parts of the table.</p>
+
+<p>The kaiseki course list varies by restaurant, but virtually all include <i>sakizuke</i> (appetizer) at the beginning and <i>mizumono</i> (dessert) at the end. Additionally, one dish mentions the <i>hassun</i> (sushi + small seasonal side) is the second course, so we can start by filling in as many dishes as we can for the first, second, and final courses:</p>
+
+<div>
+<div class="soln-table">
+    <div class="soln-table-row">
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell">Spring</div>
+        <div class="soln-table-cell">Summer</div>
+        <div class="soln-table-cell">Autumn</div>
+        <div class="soln-table-cell">Winter</div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>sakizuke</i></div>
+        <div class="soln-table-cell">crispy seaweed</div>
+        <div class="soln-table-cell">simmered abalone</div>
+        <div class="soln-table-cell">bento of snacks</div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>hassun</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell">hotaru ika sushi</div>
+        <div class="soln-table-cell">ebi sushi, persimmon</div>
+        <div class="soln-table-cell">octopus sushi</div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>?</i></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+        <div class="soln-table-cell"></div>
+    </div>
+    <div class="soln-table-row">
+        <div class="soln-table-cell"><i>mizumono</i></div>
+        <div class="soln-table-cell">a yomogimochi</div>
+        <div class="soln-table-cell">young peach and cherries</div>
+        <div class="soln-table-cell">egg cake, sorbet</div>
+        <div class="soln-table-cell">the final dish &mdash; candied kumquats</div>
+    </div>
+</div>
+</div>
+
+<p>The missing <i>sakizuke</i> and <i>hassun</i> dishes can be determined by process of elimination, which reveals that the restaurant in spring is the one that serves completely vegetarian fare.</p>
+
+<p>Determining the remaining courses is a bit trickier. One dish mentions a "soup course" and one dish explicitly mentions the <i>yakimono</i> course, although we can't pin down either's position in the meal yet. Two explicit mentions of sashimi (and two additional sashimi dishes) suggest a <i>mukozuke</i> (sashimi) course. One of the sashimi dishes mentions a plate "nowhere near as pretty", contrasting it against the ebi sushi "served on a beautiful plate", suggesting that sashimi is the third course. An "onigiri of sea bream" dish is served directly before dessert, which suggests that the penultimate course is <i>gohan</i> (rice and seasonal ingredients).</p>
+
+<p>Filling in the grid with this additional information:</p>
+
+<div>
+    <div class="soln-table">
+        <div class="soln-table-row">
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell">Spring</div>
+            <div class="soln-table-cell">Summer</div>
+            <div class="soln-table-cell">Autumn</div>
+            <div class="soln-table-cell">Winter</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>sakizuke</i></div>
+            <div class="soln-table-cell">crispy seaweed</div>
+            <div class="soln-table-cell">simmered abalone</div>
+            <div class="soln-table-cell">bento of snacks</div>
+            <div class="soln-table-cell">tiny chawanmushi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>hassun</i></div>
+            <div class="soln-table-cell">oshinko roll</div>
+            <div class="soln-table-cell">hotaru ika sushi</div>
+            <div class="soln-table-cell">ebi sushi, persimmon</div>
+            <div class="soln-table-cell">octopus sushi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>mukozuke</i></div>
+            <div class="soln-table-cell">my least favorite, yuba sashimi</div>
+            <div class="soln-table-cell">"ichiban" stripejack</div>
+            <div class="soln-table-cell">a slice of raw bonito</div>
+            <div class="soln-table-cell">gizzard shad sashimi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>?</i></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>?</i></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>?</i></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>?</i></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell"></div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>gohan</i></div>
+            <div class="soln-table-cell">dandelion chazuke</div>
+            <div class="soln-table-cell">onigiri of sea bream</div>
+            <div class="soln-table-cell">thin pacific saury, first rice</div>
+            <div class="soln-table-cell">amberjack over rice</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>mizumono</i></div>
+            <div class="soln-table-cell">a yomogimochi</div>
+            <div class="soln-table-cell">young peach and cherries</div>
+            <div class="soln-table-cell">egg cake, sorbet</div>
+            <div class="soln-table-cell">the final dish &mdash; candied kumquats</div>
+        </div>
+    </div>
+    </div>
+
+<p>Since the dandelion and cherry blossom chazuke was "following the soup course", it follows that the third-to-last course is a soup course such as <i>suimono</i>. The dish of "bracken and ostrich fern, simmered and served alongside tofu" comes immediately after another tofu dish, which by process of elimination means directly after the yuba sashimi in spring. Another mention of "simmered" and one of "braised" also suggest that this course is the <i>takiawase</i> (simmered) course. Finally, one course of diced ginger and ume mentions that the course "is usually vegetables", suggesting the final unknown course is <i>su-zakana</i> (acidic vegetable palate cleanser).</p>
+
+<p>This enables us to fill in the rest of the grid:</p>
+
+
+<div>
+    <div class="soln-table">
+        <div class="soln-table-row">
+            <div class="soln-table-cell"></div>
+            <div class="soln-table-cell">Spring</div>
+            <div class="soln-table-cell">Summer</div>
+            <div class="soln-table-cell">Autumn</div>
+            <div class="soln-table-cell">Winter</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>sakizuke</i></div>
+            <div class="soln-table-cell">crispy seaweed</div>
+            <div class="soln-table-cell">simmered abalone</div>
+            <div class="soln-table-cell">bento of snacks</div>
+            <div class="soln-table-cell">tiny chawanmushi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>hassun</i></div>
+            <div class="soln-table-cell">oshinko roll</div>
+            <div class="soln-table-cell">hotaru ika sushi</div>
+            <div class="soln-table-cell">ebi sushi, persimmon</div>
+            <div class="soln-table-cell">octopus sushi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>mukozuke</i></div>
+            <div class="soln-table-cell">my least favorite, yuba sashimi</div>
+            <div class="soln-table-cell">"ichiban" stripejack</div>
+            <div class="soln-table-cell">a slice of raw bonito</div>
+            <div class="soln-table-cell">gizzard shad sashimi</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>takiawase</i></div>
+            <div class="soln-table-cell">bracken and ostrich fern</div>
+            <div class="soln-table-cell">ayu, eggplant and okra</div>
+            <div class="soln-table-cell">new jidori chicken, squash</div>
+            <div class="soln-table-cell">ebi-imo, turnip, taro, duck</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>yakimono</i></div>
+            <div class="soln-table-cell">izakaya-style bamboo shoots</div>
+            <div class="soln-table-cell">northern Kyushu conger eel</div>
+            <div class="soln-table-cell">pepper-crusted otoro</div>
+            <div class="soln-table-cell">tokyo wagyu</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>su-zakana</i></div>
+            <div class="soln-table-cell">new butterbur shoot salad</div>
+            <div class="soln-table-cell">diced ginger and ume</div>
+            <div class="soln-table-cell">a tart mizuna salad</div>
+            <div class="soln-table-cell">wakame and radish salad</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>suimono</i></div>
+            <div class="soln-table-cell">enoki and shiitake soup</div>
+            <div class="soln-table-cell">shrimp soup, eggplant</div>
+            <div class="soln-table-cell">soup of white miso, tofu, chestnut</div>
+            <div class="soln-table-cell">hot ozoni soup</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>gohan</i></div>
+            <div class="soln-table-cell">dandelion chazuke</div>
+            <div class="soln-table-cell">onigiri of sea bream</div>
+            <div class="soln-table-cell">thin pacific saury, first rice</div>
+            <div class="soln-table-cell">amberjack over rice</div>
+        </div>
+        <div class="soln-table-row">
+            <div class="soln-table-cell"><i>mizumono</i></div>
+            <div class="soln-table-cell">a yomogimochi</div>
+            <div class="soln-table-cell">young peach and cherries</div>
+            <div class="soln-table-cell">egg cake, sorbet</div>
+            <div class="soln-table-cell">the final dish &mdash; candied kumquats</div>
+        </div>
+    </div>
+    </div>
+
+<p>Reading the first letters of all 36 dishes (in order of when the narrator ate them) gives the message COMBINE DASHI AND SOYBEAN PASTE TO GET WHAT. "Soybean paste" refers to miso, a seasoning core to Japanese cuisine; combining it with dashi gives <strong>MISO SOUP</strong>, the answer to the puzzle.</p>
+
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I wrote this puzzle back in 2019, before we won the Mystery Hunt and subsequently shifted our attention towards preparing that. I've often tended towards interactive puzzles with a focus on production and humor, so this was a good opportunity to try a more "traditional" puzzle type with more tightly integrated theming.</p>
+<p>Thanks to the book <a href="https://www.goodreads.com/book/show/248342.Kaiseki">Kaiseki: The Exquisite Cuisine of Kyoto's Kikunoi Restaurant</a> for assistance with dish ideas. I definitely had to shove an inappropriate dish in here and there for the sake of the extraction, but hopefully the courses ended up mostly believable.</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

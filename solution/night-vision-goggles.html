@@ -1,0 +1,341 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Night Vision Goggles</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/night-vision-goggles" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="3LUdYMOp9ZcREI3egAEbzXx8nNs39KVptGeZ2kG8yuXWruAzJvRumBLQMp2RPPl2">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="night-vision-goggles" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Night Vision Goggles
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">LIGHT A TORCH</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Brian Chen, Patrick Xia, Colin Lu, Ben Yang, Jon Schneider, Anderson Wang
+
+    </h2>
+
+
+    <style>
+table.nv-grid {
+    table-layout: fixed;
+    margin: 0 auto 2em;
+}
+table.nv-grid td {
+    font-size: 85%;
+    text-align: center;
+    width: 5em;
+    height: 5em;
+    padding: 0.5em;
+    border: 1px solid black;
+}
+</style>
+
+<p>Puzzle titles and answers in alphabetical order:</p>
+<table><tr><th>Puzzle</th><th>Answer</th></tr><tr><td>Dropcrypt</td><td>CROSS EYED</td></tr><tr><td>Word Salad</td><td>GOOD EATS</td></tr><tr><td>Virtual Family</td><td>HEX NUT</td></tr><tr><td>Entropy</td><td>HI HAT</td></tr><tr><td>Action Adventure</td><td>LIFE RAFT</td></tr><tr><td>Not to Scale</td><td>SAINT NICK</td></tr><tr><td>Make Your Own Math Quiz</td><td>TRIPLE LUTZ</td></tr></table>
+
+<p>Each answer is a two word phrase. The second word in each phrase can be prefixed with a K to get a word for which there’s a synonym in the grid:</p>
+<table><tr><th>Answer word</th><th>Grid synonym</th><th>Explanation</th></tr><tr><td>K LUTZ</td><td>Oaf</td><td></td></tr><tr><td>K EYED</td><td>Scratched</td><td>(as, a car)</td></tr><tr><td>K NICK</td><td>Basketballer</td><td>(New York Knicks)</td></tr><tr><td>K EATS</td><td>Poet</td><td></td></tr><tr><td>K RAFT</td><td>Brand</td><td></td></tr><tr><td>K HAT</td><td>Drug</td><td></td></tr><tr><td>K NUT</td><td>Currency</td><td>(Harry Potter)</td></tr></table>
+
+<p>Applying the same mechanic to the title, K-Night Vision, combined with the fact that we have squares on a board, suggests the next step: making a <a href="https://en.wikipedia.org/wiki/Knight%27s_tour">knight’s tour</a>. In particular, the above correspondence links each puzzle to a square, and the circle around the board provides a cyclic order that the tour must go through.</p>
+<p>The total number of letters in the first words of the answers is 5+4+3+2+4+5+6=29, which is equal to the number of squares on the board without words (36&minus;7=29). This confirms that we’re on the right track and suggests that we’ll spell out these words on the board with knight’s moves, separated by the 7 synonym squares.</p>
+<p>In cycle order, the words that we’ll write in the grid are:</p>
+<table><tr><th>Puzzle</th><th>First word</th><th>Second word / square</th></tr><tr><td>Make Your Own Math Quiz</td><td>TRIPLE</td><td>Oaf (LUTZ)</td></tr><tr><td>Virtual Family</td><td>HEX</td><td>Currency (NUT)</td></tr><tr><td>Entropy</td><td>HI</td><td>Drug (HAT)</td></tr><tr><td>Action Adventure</td><td>LIFE</td><td>Brand (RAFT)</td></tr><tr><td>Word Salad</td><td>GOOD</td><td>Poet (EATS)</td></tr><tr><td>Not to Scale</td><td>SAINT</td><td>Basketballer (NICK)</td></tr><tr><td>Dropcrypt</td><td>CROSS</td><td>Scratched (EYED)</td></tr></table>
+
+<p>We want to find a knight’s tour that visits exactly 3 squares (the length of HEX) in between “Oaf” and “Currency”, exactly 2 squares (the length of HI) between “Currency” and “Drug”, exactly 4 squares (the length of LIFE) between “Drug” and “Brand”, etc. So, if we label the squares of the knight’s tour in order from 1–36, then the following numbers below are fixed:</p>
+<table class="nv-grid"><tr><td></td><td></td><td>13 (Brand)</td><td>30 (Scratched)</td><td></td><td></td></tr><tr><td></td><td></td><td>8 (Drug)</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>1 (Oaf)</td><td></td><td></td><td>24 (Basketballer)</td><td></td></tr><tr><td></td><td>18 (Poet)</td><td></td><td></td><td>5 (Currency)</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+<p>We could also have put TRIPLE between “Oaf” and “Currency” instead of HEX, then HEX between “Currency” and “Drug”, etc. but this is actually impossible because of parity: if you color the squares alternating black and white like a chessboard, then a knight’s move always connects squares of different colors. “Oaf” and “Currency” are on same-colored squares, so the path must visit an odd number of squares between them, which means it must spell out HEX and not TRIPLE.</p>
+<p>This now turns into a sort of logic puzzle where we have to find a knight’s tour that visits the 7 given squares at specific points. There are several strategies that help with this:</p>
+<ul>
+<li>(probably the most important!) It’s very useful to draw lines between squares that you know are adjacent in the tour—it’s very difficult to keep track of all the constraints otherwise.</li>
+<li>If a square ever has two lines coming into it, it is “done” and no other lines can use that square.</li>
+<li>Whenever there’s a square that a knight’s move away from only 2 other un-”done” squares, we can draw in those two lines.</li>
+<li>In particular, we can immediately draw two lines coming out from each of the 4 corners. </li>
+<li>The paths between numbers that are closer together (especially 1–5 and 5–8) often have fairly limited possibilities.</li>
+</ul>
+<p>The completed grid with lines drawn looks as follows:</p>
+<div style="text-align: center"><img src="night-vision-goggles/knights-tour.png" alt="Knight's tour" style="max-width: 100%;"></div>
+
+<p>The corresponding grid of numbers 1–36 is:</p>
+<table class="nv-grid"><tr><td>9</td><td>16</td><td>13 (Brand)</td><td>30 (Scratched)</td><td>7</td><td>22</td></tr><tr><td>14</td><td>29</td><td>8 (Drug)</td><td>23</td><td>12</td><td>31</td></tr><tr><td>17</td><td>10</td><td>15</td><td>32</td><td>21</td><td>6</td></tr><tr><td>28</td><td>1 (Oaf)</td><td>4</td><td>11</td><td>24 (Basketballer)</td><td>33</td></tr><tr><td>3</td><td>18 (Poet)</td><td>35</td><td>26</td><td>5 (Currency)</td><td>20</td></tr><tr><td>36</td><td>27</td><td>2</td><td>19</td><td>34</td><td>25</td></tr></table>
+
+<p>This lets us write in the letters as follows:</p>
+<table class="nv-grid"><tr><td>L</td><td>O</td><td>RAFT (Brand)</td><td>EYED (Scratched)</td><td>I</td><td>N</td></tr><tr><td>G</td><td>S</td><td>HAT (Drug)</td><td>T</td><td>E</td><td>T</td></tr><tr><td>D</td><td>I</td><td>O</td><td>R</td><td>I</td><td>H</td></tr><tr><td>S</td><td>LUTZ (Oaf)</td><td>X</td><td>F</td><td>NICK (Basketballer)</td><td>I</td></tr><tr><td>E</td><td>EATS (Poet)</td><td>L</td><td>R</td><td>NUT (Currency)</td><td>A</td></tr><tr><td>E</td><td>O</td><td>H</td><td>S</td><td>P</td><td>C</td></tr></table>
+
+<p>(Technically, we could have reversed the order of each word, but this way is a little more natural because e.g. you spell out the word HEX and then reach the NUT square, then you spell out the word HI and reach the HAT square, etc.)</p>
+<p>Reading the letters corresponding to the numbers 1 through 11 on the original grid gives the answer, <strong>LIGHT A TORCH</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p><strong>(Spoiler warning: there are spoilers for a Puzzle Boat 7 meta ahead)</strong></p>
+<p>This meta, like all the other metas, was originally written way back in 2019. The first version was written by Jon and also had a knight’s tour, but the mapping of answers to squares used a different knight-inspired mechanic: the answers were phrases like PENT UP, where the first word could be phoentically prefixed with SIR, becoming SIR PENT → SERPENT, and could then be corresponded to a profession in the grid, such as “Zoologist” (our favorite was the answer VALENCE BAND, which would correspond to a spy).</p>
+<p>We were quite happy with this mechanic, but unfortunately, while we put our entire hunt on ice due to Mystery Hunt, the intervening <a href="https://pandamagazine.com/island7/">Puzzle Boat</a> included a meta with the same prefix-phoentic-”Sir” step; not only that, it was also chess flavored. We debated for a long time what to do with this meta and considered keeping it anyway, but after a lot of discussion about the advantages/disadvantages and brainstorming alternatives, we rewrote it into the current form. We thought this was unfortunately a little less interesting, but in the end was the best option.</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

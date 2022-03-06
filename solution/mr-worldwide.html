@@ -1,0 +1,318 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Mr. Worldwide</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/mr-worldwide" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="uP8kjBU7C81QWP6vHV93waXO5YeIWasIUKs6n9MQ1DMVJBDQaQmmjObwuAOwCfSl">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="mr-worldwide" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Mr. Worldwide
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">ONE TO ONE</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Max Murin, Kevin Matthew Li, Maddie Dawson
+
+    </h2>
+
+
+    <p>The puzzle consists of 13 song clips and 13 blurbs. The clips are presented in alphabetical order by song title, and the blurbs are presented in alphabetical order. Each song’s lyrics contain a city-to-city pair: for example, Ke$ha’s “Butterscotch” contains the words “Memphis to Bangkok.” The city-to-city pairs form a path:</p>
+<table><tr><th>Original order</th><th>Song</th><th>City-to-city pair</th></tr><tr><td>10</td><td>“Lake Zurich” by Gorillaz</td><td>“Zürich to New York”</td></tr><tr><td>1</td><td>“1000 Nights” by Ed Sheeran</td><td>“New York to London”</td></tr><tr><td>7</td><td>“Holy Water” by Lecrae &amp; Zaytoven</td><td>“London to Dubai”</td></tr><tr><td>8</td><td>“Houston, Dubai” by Vampire Weekend</td><td>“Dubai to Houston”</td></tr><tr><td>13</td><td>“Video Phone” by Beyoncé</td><td>“Houston to New Orleans”</td></tr><tr><td>2</td><td>“Blind Willie McTell” by Bob Dylan</td><td>“New Orleans to Jerusalem”</td></tr><tr><td>12</td><td>“Olana” by Marc Cohn</td><td>“Jerusalem to Rome”</td></tr><tr><td>11</td><td>“London Nights” by London Boys</td><td>“Rome to L.A.”</td></tr><tr><td>5</td><td>“Drag Queen” by the Strokes</td><td>“L.A. to Chicago”</td></tr><tr><td>6</td><td>“Girl on the Billboard” by Del Reeves</td><td>“Chicago to St. Louis”</td></tr><tr><td>4</td><td>“Country Grammar (Hot Shit)” by Nelly</td><td>“St. Louis to Memphis”</td></tr><tr><td>3</td><td>“Butterscotch” by Ke$ha</td><td>“Memphis to Bangkok”</td></tr><tr><td>9</td><td>“I Will Follow You into the Dark” by Death Cab for Cutie</td><td>“Bangkok to Calgary”</td></tr></table>
+
+<p>Each blurb clues a physical location. In the same order in which the blurbs appear:</p>
+<ul>
+<li>Goosenecks State Park</li>
+<li>TABASCO® Visitor's Center</li>
+<li>Chaumette Vineyards &amp; Winery</li>
+<li>The House of the Seven Gables</li>
+<li>Zion Evangelical Lutheran Church in Gillespie, IL</li>
+<li>Columbia Point in Boston, MA</li>
+<li>St. Mark's Square in Venice, Italy</li>
+<li>The Matterhorn</li>
+<li>Xingyun Lake</li>
+<li>The tomb of Arthur Schopenhauer in the Frankfurt Main Cemetery</li>
+<li>Mount Wutai</li>
+<li>The Temple of Poseidon</li>
+<li>Vilnius International Airport</li>
+</ul>
+<p>Each location lies along one of the city-to-city lines (drawn as the shortest distance on the surface of the earth, possibly done in Google Earth) from the songs:</p>
+<table><tr><th>City-to-city pair</th><th>Location</th></tr><tr><td>“Zürich to New York”</td><td>Columbia Point in Boston, MA</td></tr><tr><td>“New York to London”</td><td>The House of the Seven Gables</td></tr><tr><td>“London to Dubai”</td><td>The tomb of Arthur Schopenhauer in the Frankfurt Main Cemetery</td></tr><tr><td>“Dubai to Houston”</td><td>Vilnius International Airport</td></tr><tr><td>“Houston to New Orleans”</td><td>TABASCO® Visitor's Center</td></tr><tr><td>“New Orleans to Jerusalem”</td><td>St. Mark's Square</td></tr><tr><td>“Jerusalem to Rome”</td><td>The Temple of Poseidon</td></tr><tr><td>“Rome to L.A.”</td><td>The Matterhorn</td></tr><tr><td>“L.A. to Chicago”</td><td>Goosenecks State Park</td></tr><tr><td>“Chicago to St. Louis”</td><td>Zion Evangelical Lutheran Church in Gillespie, IL</td></tr><tr><td>“St. Louis to Memphis”</td><td>Chaumette Vineyards & Winery</td></tr><tr><td>“Memphis to Bangkok”</td><td>Xingyun Lake</td></tr><tr><td>“Bangkok to Calgary”</td><td>Mount Wutai</td></tr></table>
+
+<p>Reordering the blurbs so that their clued locations appear in the order of the path, the first letters of the blurbs spell out “LISTENTOCLIPS.”</p>
+<p>The lengths of the clips vary and are proportional to the distance of the city-to-city pair in their lyrics. We used a ratio of 66.67 miles per second and rounded clip lengths to the nearest second (approximately). For example, measuring by the location of city pins on Google Maps, Chicago and St. Louis are 262.3 miles apart, and the clip length of “Girl on the Billboard” is 4 seconds. New York and London are 3461.25 miles apart, and the clip length of “1000 Nights” is 52 seconds.</p>
+<p>For each A-to-B city pair and the location along its line, take the ratio of the distance from A to the location to the distance from A to B. Using this ratio, find the corresponding point in the song clip, and take the word at that point. For example, the distance from New York to the House of the Seven Gables is 204.1 miles, and the distance from New York to London is 3461.25 miles, giving us a ratio of approximately 0.59. 0.59 × 52 seconds gives us 3.066; 3.066 seconds into the “1000 Nights” clip is the word “nights.”</p>
+<table class="very-small"><tr><th>Original clip order</th><th>Song</th><th>Clip length (s)</th><th>City-to-city pair</th><th>Location</th><th>Distance from A to location (miles)</th><th>Distance from A to B (miles)</th><th>Distance ratio</th><th>Position in clip to look at (s)</th><th>Word at position</th></tr><tr><td>10</td><td>“Lake Zurich” by Gorillaz</td><td>59</td><td>“Zürich to New York”</td><td>Columbia Point in Boston, MA</td><td>3740.26</td><td>3929.83</td><td>0.9518</td><td>56.1539</td><td>After</td></tr><tr><td>1</td><td>“1000 Nights” by Ed Sheeran</td><td>52</td><td>“New York to London”</td><td>The House of the Seven Gables</td><td>204.09</td><td>3461.25</td><td>0.0590</td><td>3.0661</td><td>Nights</td></tr><tr><td>7</td><td>“Holy Water” by Lecrae & Zaytoven</td><td>51</td><td>“London to Dubai”</td><td>The tomb of Arthur Schopenhauer in the Frankfurt Main Cemetery</td><td>395.93</td><td>3401.02</td><td>0.1164</td><td>5.9372</td><td>Sprinkle</td></tr><tr><td>8</td><td>“Houston, Dubai” by Vampire Weekend</td><td>123</td><td>“Dubai to Houston”</td><td>Vilnius International Airport</td><td>2541.8</td><td>8169.73</td><td>0.3111</td><td>38.2683</td><td>I</td></tr><tr><td>13</td><td>“Video Phone” by Beyoncé</td><td>5</td><td>“Houston to New Orleans”</td><td>TABASCO® Visitor's Center</td><td>208.2</td><td>317.71</td><td>0.6553</td><td>3.2766</td><td>Swagger</td></tr><tr><td>2</td><td>“Blind Willie McTell” by Bob Dylan</td><td>103</td><td>“New Orleans to Jerusalem”</td><td>St. Mark's Square</td><td>5319.88</td><td>6865.25</td><td>0.7749</td><td>79.8147</td><td>Of</td></tr><tr><td>12</td><td>“Olana” by Marc Cohn</td><td>21</td><td>“Jerusalem to Rome”</td><td>The Temple of Poseidon</td><td>753.5</td><td>1431.77</td><td>0.5263</td><td>11.0517</td><td>Niagara</td></tr><tr><td>11</td><td>“London Nights” by London Boys</td><td>95</td><td>“Rome to L.A.”</td><td>The Matterhorn</td><td>370.22</td><td>6331.16</td><td>0.0585</td><td>5.5552</td><td>Everybody</td></tr><tr><td>5</td><td>“Drag Queen” by the Strokes</td><td>26</td><td>“L.A. to Chicago”</td><td>Goosenecks State Park</td><td>514.3</td><td>1742.35</td><td>0.2952</td><td>7.6746</td><td>Thanks</td></tr><tr><td>6</td><td>“Girl on the Billboard” by Del Reeves</td><td>4</td><td>“Chicago to St. Louis”</td><td>Zion Evangelical Lutheran Church in Gillespie, IL</td><td>222.01</td><td>262.3</td><td>0.8464</td><td>3.3856</td><td>Old</td></tr><tr><td>4</td><td>“Country Grammar (Hot Shit)” by Nelly</td><td>4</td><td>“St. Louis to Memphis”</td><td>Chaumette Vineyards & Winery</td><td>59.71</td><td>240.41</td><td>0.2484</td><td>0.9935</td><td>Onyx</td></tr><tr><td>3</td><td>“Butterscotch” by Ke$ha</td><td>135</td><td>“Memphis to Bangkok”</td><td>Xingyun Lake</td><td>8242</td><td>8987.76</td><td>0.9170</td><td>123.7984</td><td>Notch</td></tr><tr><td>9</td><td>“I Will Follow You into the Dark” by Death Cab for Cutie</td><td>113</td><td>“Bangkok to Calgary”</td><td>Mount Wutai</td><td>1918.5</td><td>7499.17</td><td>0.2558</td><td>28.9086</td><td>Embarks</td></tr></table>
+
+<p>In path order, the first letters of the words spell “ANSISONETOONE”; the answer is <strong>ONE-TO-ONE</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p><img src="mr-worldwide/mr-worldwide.jpg" alt="A globe in front of Pitbull with text saying Mr. Worldwide" style="max-width: 100%;"></p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Microscope</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/skeleton.b7b20ef7c204.css">
+    <link rel="stylesheet" href="../static/css/base.079f433df08e.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92192633-1');
+</script>
+
+
+</head>
+<body>
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/home_small_icon.4d43f3858ff0.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/home_small_icon_hover.6c8436711233.png)"></span>
+                    Home
+                </a>
+                <a href="../rules.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/rules_small_icon.cf639cb0d6f8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
+                    Rules
+                </a>
+
+                <a href="../story.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="../puzzles.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="../teams.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/faq_small_icon.e3d1c39056bd.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="../errata.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="../wrapup.html">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="https://galacticpuzzlehunt.com/archive">
+                    <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/microscope" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+
+        </div>
+    </nav>
+
+    <script>
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Microscope
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TINY JERK</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Rahul Sridhar, Lewis Chen, Colin Lu, Anderson Wang
+
+    </h2>
+
+
+    <p>The six puzzle answers in the round are:</p>
+<ul>
+<li>MUSTARD</li>
+<li>PAPER PLANE</li>
+<li>SKULL AND CROSSBONES</li>
+<li>PINEAPPLE</li>
+<li>BUTTERFLIES</li>
+<li>TULIP</li>
+</ul>
+<p>Like all the puzzles in the round, the additional shell for the Microscope meta
+is also contained in the 1000x1000 pixel image on the round page. It&rsquo;s the
+final portion to unlock on the left side of the image:</p>
+<p><img style="max-width: 30%" src="microscope/microscopemetashell.png" /></p>
+<p>We have six (rather ambiguous) crossword clues. The answer to each can be found
+as a substring of one of the puzzle answers. The parenthesized number after each
+clue can then be treated as an index into the substring answer to the clue to
+obtain a letter for each.</p>
+<table>
+<thead>
+<tr>
+<th>Meta clue</th>
+<th>Clue answer (substring)</th>
+<th>Contained in puzzle answer</th>
+<th>Index</th>
+<th>Extracted letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lead</td>
+<td>STAR</td>
+<td>MUSTARD</td>
+<td>(4)</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Tide</td>
+<td>NEAP</td>
+<td>PINEAPPLE</td>
+<td>(4)</td>
+<td>P</td>
+</tr>
+<tr>
+<td>Body part</td>
+<td>LIP</td>
+<td>TULIP</td>
+<td>(1)</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>PLAN</td>
+<td>PAPER PLANE</td>
+<td>(3)</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Angry</td>
+<td>CROSS</td>
+<td>SKULL AND CROSSBONES</td>
+<td>(1)</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Absolute</td>
+<td>UTTER</td>
+<td>BUTTERFLIES</td>
+<td>(4)</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<p>When these six letters are written into the first set of blanks, we get
+<em>R/PLACE</em> , which we recognize as the name of a Reddit April Fools&rsquo; Day
+experiment from 2017 in which users collaboratively edited an image canvas by
+placing pixels one at a time. Each of this round&rsquo;s puzzle answers
+describes an object that exists somewhere in the final r/place image when the
+experiment ended. We now go on a mini treasure hunt to locate them:</p>
+<p><img style="max-width: 100%" src="microscope/microscopemetaannotated2.png" /></p>
+<p>r/place is a 1000x1000 pixel image, just like the image from the Microscope
+round. This suggests we can overlay the two images. Each highlighted object that
+we found lies inside the region of the Microscope image with the puzzle for that
+answer. In fact, each object overlaps a specific piece or clue of the puzzle,
+and we can revisit the puzzle&rsquo;s mechanic to extract an additional letter
+or letters! The second set of blanks in the meta shell suggest how many letters
+we should expect to find: two letters each from the first two puzzles, and one
+letter from each of the other four.</p>
+<p><img style="max-width: 100%" src="microscope/microscopewithanswerextractionbox.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Letter(s)</th>
+<th>Extraction method/explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MUSTARD</td>
+<td>TI</td>
+<td>The mustard below the Belgian flag overlaps two of the station markers on the chart in Charts depicting the Trans-Siberian Railway. These stations are Taishet and Irkutsk, in order, extracting a TI.</td>
+</tr>
+<tr>
+<td>PINEAPPLE</td>
+<td>NY</td>
+<td>The pineapple in the artwork representing the r/trees community overlaps with a black dot in Links Interconnect that represents the digraph NY.</td>
+</tr>
+<tr>
+<td>TULIP</td>
+<td>J</td>
+<td>The tulip near the Dutch flag overlaps with the letters D T (in a column) in Reencode. Reusing the flag semaphore mechanism on this D T pair, these two semaphore symbols next to each other appear like the letter J.</td>
+</tr>
+<tr>
+<td>PAPER PLANE</td>
+<td>E</td>
+<td>The paper plane (inside the Telegram logo) overlaps with two blanks in Count the Solutions to This Nurikabe. When the correct number is written into all of the blanks, the two digits that overlap are 0 5, which when converted alphanumerically to a letter is an E.</td>
+</tr>
+<tr>
+<td>SKULL AND CROSSBONES</td>
+<td>R</td>
+<td>The skull and crossbones (in the Mugiwara Pirates flag from One Piece) overlap with the blue stripe with sun from the flag of Rwanda, which was used in False Flags to spell the word HEIR. This stripe represents the letter R.</td>
+</tr>
+<tr>
+<td>BUTTERFLIES</td>
+<td>K</td>
+<td>There is a pair of butterflies contained in artwork made by the r/Parahumans (Worm) community, which overlaps with one star in Patterns. This star is Kaus Borealis from Sagittarius, extracting a K. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>The extracted letters spell out the meta answer, <strong>TINY JERK</strong>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>There is also a single blue butterfly made by r/LifeIsStrange somewhat
+nearby. However, we are looking for plural “butterflies”, and it also doesn’t
+overlap with any puzzle content.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+    <h2 id="appendix">Appendix</h2>
+    <p>Here is a GIF of the round as it unlocks.</p>
+<div style="text-align:center"><img style="max-width: 70%" src="microscope/microscope-unlock.gif" /></div>
+
+</main>
+
+
+    </div>
+</body>
+</html>

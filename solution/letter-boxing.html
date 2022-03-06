@@ -1,0 +1,408 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Letter Boxing</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/letter-boxing" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="HOnOa8mN1HtHHUf5ZAvkMmvzaibOPwvR7JHAeGewqceMuGMqsvIDz0JhzULCvBVu">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="letter-boxing" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Letter Boxing
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">SPEED BAG</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Leon "ycz6" Zhou
+
+    </h2>
+
+
+    <p>This puzzle, as indicated in the flavor text, is an anagram-based take on the famous masterpiece online arithmetic arcade puzzle game <a href="https://en.gamesaien.com/game/fruit_box/">Fruit Box</a>. </p>
+<p>In the game, you select letters in a rectangular subregion of the grid, then enter an anagram of those letters. If the anagram is a valid word of at least three letters, those letters are removed from the grid. Once you remove all the letters from the grid, you can move on to the next level.</p>
+<p>Some general strategies for clearing the grids are:</p>
+<ul>
+<li>Identify uncommon letters, which will be tricky to use, and figure out how you’re going to clear them in advance</li>
+<li>Keep vowels and consonants relatively balanced when possible</li>
+<li>Use three letter words liberally</li>
+<li>Notice the secret patterns 🙂</li>
+</ul>
+<p>Once you reach the ninth grid, the title changes to “Final Exam” and you receive the following message:</p>
+<blockquote>
+<p>You've gone through your training regimen, but it seemed like there was something missing from each set, and this final qualification exam is harder than you expected…</p>
+</blockquote>
+<p>The ninth grid doesn’t seem to work on the same rules as the first eight, as almost all words that you attempt to enter will be judged invalid. To solve the final grid, you need to notice that the first eight grids can each be solved by entering members of a set, as clued by the above text, with one missing from each:</p>
+<h4>Exercise #1: NATO Phonetic Alphabet (A through F)</h4>
+<p><img alt="1" src="letter-boxing/letter-boxing-1.jpg" /></p>
+<ul>
+<li>ALFA</li>
+<li>DELTA</li>
+<li>CHARLIE</li>
+<li>BRAVO</li>
+<li>FOXTROT</li>
+</ul>
+<p>Missing: <strong>ECHO</strong></p>
+<h4>Exercise #2: Player characters in Clue</h4>
+<p><img alt="2" src="letter-boxing/letter-boxing-2.jpg" /></p>
+<ul>
+<li>PLUM</li>
+<li>GREEN</li>
+<li>WHITE</li>
+<li>PEACOCK</li>
+<li>MUSTARD</li>
+</ul>
+<p>Missing: <strong>SCARLET</strong></p>
+<h4>Exercise #3: Eeveelutions</h4>
+<p><img alt="3" src="letter-boxing/letter-boxing-3.jpg" /></p>
+<p>This one can be a bit tricky, because it’s possible to enter some of the words in the wrong location and mess up future entries. Careful use of the undo button and some lookahead can avoid this, or you can just skip solving the puzzle once you know the missing word.</p>
+<ul>
+<li>VAPOREON</li>
+<li>LEAFEON</li>
+<li>SYLVEON</li>
+<li>UMBREON</li>
+<li>GLACEON</li>
+<li>JOLTEON</li>
+<li>FLAREON</li>
+</ul>
+<p>Missing: <strong>ESPEON</strong></p>
+<h4>Exercise #4: Taxonomic ranks</h4>
+<p><img alt="4" src="letter-boxing/letter-boxing-4.jpg" /></p>
+<ul>
+<li>FAMILY</li>
+<li>GENUS</li>
+<li>KINGDOM</li>
+<li>CLASS</li>
+<li>ORDER</li>
+<li>SPECIES</li>
+</ul>
+<p>Missing: <strong>PHYLUM</strong></p>
+<h4>Exercise #5: Noble gases</h4>
+<p><img alt="5" src="letter-boxing/letter-boxing-5.jpg" /></p>
+<ul>
+<li>OGANESSON</li>
+<li>RADON</li>
+<li>KRYPTON</li>
+<li>NEON</li>
+<li>HELIUM</li>
+<li>XENON</li>
+</ul>
+<p>Missing: <strong>ARGON</strong></p>
+<h4>Exercise #6: Hogwarts Houses</h4>
+<p><img alt="6" src="letter-boxing/letter-boxing-6.jpg" /></p>
+<ul>
+<li>RAVENCLAW</li>
+<li>HUFFLEPUFF</li>
+<li>SLYTHERIN</li>
+</ul>
+<p>Missing: <strong>GRYFFINDOR</strong></p>
+<h4>Exercise #7: Santa’s pre-Rudolph reindeer</h4>
+<p><img alt="7" src="letter-boxing/letter-boxing-7.jpg" /></p>
+<ul>
+<li>VIXEN</li>
+<li>COMET</li>
+<li>DASHER</li>
+<li>DANCER</li>
+<li>CUPID</li>
+<li>DONNER</li>
+<li>PRANCER</li>
+</ul>
+<p>Missing: <strong>BLITZEN</strong></p>
+<h4>Exercise #8: The Seven Dwarfs</h4>
+<p><img alt="8" src="letter-boxing/letter-boxing-8.jpg" /></p>
+<ul>
+<li>GRUMPY</li>
+<li>BASHFUL</li>
+<li>DOPEY</li>
+<li>SNEEZY</li>
+<li>HAPPY</li>
+<li>SLEEPY</li>
+</ul>
+<p>Missing: <strong>DOC</strong></p>
+<hr />
+<p>Once you’ve found all (or perhaps only some) of the missing words, you notice that these words, when entered into the final grid, are accepted! You can clear the grid in the following order:</p>
+<p><img alt="meta" src="letter-boxing/letter-boxing-meta.jpg" /></p>
+<ul>
+<li>SCARLET</li>
+<li>PHYLUM</li>
+<li>ECHO</li>
+<li>ESPEON</li>
+<li>DOC</li>
+<li>BLITZEN</li>
+<li>ARGON</li>
+<li>GRYFFINDOR</li>
+</ul>
+<p>Reading out the first letters gives the final answer, <strong>SPEED BAG</strong> (which is a piece of equipment used in boxing training).</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I (Leon) and a good chunk of ✈✈✈ Galactic Trendsetters ✈✈✈ were introduced to Fruit Box on April 14th of 2021. A brief but furious high score race then ensued, which ended on May 7th when Colin "clue" Lu posted a monster score of 142. If you manage to beat this score, please take a screenshot and tweet at @galacticpuzzles for a chance to win a lifetime supply of apples.</p>
+<p>I first had the idea for this puzzle when I requested an answer and was assigned a "boxing"-related one. The first concept was to have grids that could only be cleared in very specific ways and sort of functioned as logic puzzles; <a href="https://leon.place/boxing?letters=AAZZZZIIIZZZPPZZZZ&amp;width=6">this</a> was one example. We decided to use the current "find the missing element" mechanic just to playtest whether solving the grids would be fun at all, but ended up going with it in the final version after a few successful testsolves.</p>
+<p>The first version of the puzzle had easier categories - originally, the first grid contained the numbers ONE through SEVEN aside from SIX spelled out, and both the testsolving groups identified it within five minutes of opening the puzzle.
+There also wasn't a final exam - the answer was just spelled out by the first letters of the missing words in order. We added the final exam to make it harder to get the answer without all the sets identified; it ended up working even better than I expected, as solving with partial information requires reverse engineering the missing words from the structure of the final grid, which is an interesting task in itself.</p>
+<p>If you enjoyed the music in this puzzle, check out <a href="https://soundcloud.com/yczmusic/fruitdrop">my Soundcloud</a>!</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,1362 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Word Salad</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/word-salad" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="xhQRRmmYme1drt41wq8nRZmC3KrgCMvYXcaDVUeHLJMiefBmZllGEDAksm14iRVB">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="word-salad" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Word Salad
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">GOOD EATS</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Charles Tam
+
+    </h2>
+
+
+    <style>
+h3 {
+    font-size: 2.25rem;
+}
+.aside {
+    font-style: italic;
+    font-size: 85%;
+}
+</style>
+
+<p>This is a puzzle about etymology! The puzzle starts with 28 dictionary entries
+written in Puflantu, for which eight of them are missing the word being defined.
+In addition to the guide provided, translations of every word obtainable by
+pronoun infixing and pluralization from the 2019 Puflantu dictionary are
+automatically given.</p>
+<p>Solvers must determine the meanings of the words from context and similar known
+words, as well as the identities of the things being described in the eight
+"wordless" entries. Each of those entries concludes in a sentence describing the
+Puflantu etymology of the word, which must be pieced together from those
+instructions and the provision of the relevant morphemes in other clues. The
+entire list is presented in alphabetical order by Puflantu spelling, which can
+help with translation.</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Puflantu</th>
+<th>Morphemes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOFU</td>
+<td><code>apoTofu</code></td>
+<td><code>apo</code> "white" + <code>tofu</code> imported; note Puflantu singular nouns can't end in <code>-w</code></td>
+</tr>
+<tr>
+<td>VINEGAR</td>
+<td><code>faSibwmi tini</code></td>
+<td><code>fasib</code> "to decay" from TOFU clue + <code>-wmi</code> past participle marker + <code>tini</code> "wine"</td>
+</tr>
+<tr>
+<td>CITRIC ACID</td>
+<td><code>gevaxegOmu zixo</code></td>
+<td><code>gevaxe</code> "sour" from VINEGAR clue + <code>-gomu</code> "fruit" + <code>zixo</code> "acid" from VINEGAR clue</td>
+</tr>
+<tr>
+<td>SANDWICH</td>
+<td><code>kolarvubEna</code></td>
+<td><code>kolarvu</code> "bread" + <code>-bena</code> "side" or "-gon" (as in "hexagon")</td>
+</tr>
+<tr>
+<td>ROCK LOBSTER</td>
+<td><code>losmoDafqeyune</code></td>
+<td><code>losmodafe</code> "claw" or "crusher" + <code>-qeyuna</code> "-less" or "-lacking" from VINEGAR clue</td>
+</tr>
+<tr>
+<td>TAPIOCA</td>
+<td><code>mAlorbili</code></td>
+<td><code>malo</code> "starch" from SANDWICH clue + <code>orbili</code> "jelly"</td>
+</tr>
+<tr>
+<td>HORSERADISH</td>
+<td><code>sarOdarvaxe</code></td>
+<td><code>saro</code> "spicy" from VINEGAR clue + <code>darvaxe</code> "root" from TAPIOCA clue</td>
+</tr>
+<tr>
+<td>CAFFEINE</td>
+<td><code>teiGia</code></td>
+<td><code>tei</code> "tea" from TAPIOCA clue + <code>-gia</code> chemical from VINEGAR and CITRIC ACID clues</td>
+</tr>
+</tbody>
+</table>
+<p>Extracting the indicated letters from the Puflantu targets, and sorting them by
+their English translations, yields the answer <strong>GOOD EATS</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Puflantu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAFFEINE</td>
+<td><code>tei[G]ia</code></td>
+</tr>
+<tr>
+<td>CITRIC ACID</td>
+<td><code>gevaxeg[O]mu zixo</code></td>
+</tr>
+<tr>
+<td>HORSERADISH</td>
+<td><code>sar[O]darvaxe</code></td>
+</tr>
+<tr>
+<td>ROCK LOBSTER</td>
+<td><code>losmo[D]afqeyune</code></td>
+</tr>
+<tr>
+<td>SANDWICH</td>
+<td><code>kolarvub[E]na</code></td>
+</tr>
+<tr>
+<td>TAPIOCA</td>
+<td><code>m[A]lorbili</code></td>
+</tr>
+<tr>
+<td>TOFU</td>
+<td><code>apo[T]ofu</code></td>
+</tr>
+<tr>
+<td>VINEGAR</td>
+<td><code>fa[S]ibwmi tini</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Nathwe sinqera-li atimbwris cuafwe nathwe jifeyeda, avroxes ovekqayu zat.
+Nagutaqo esaora imosgaq merwmin-dis vogoconotuma im orcwmal. Eywe nathwe,
+yadafe-li yadwmi dokfes odelemida tidul piwyeywv. Eqa 13203-tis im twyotol-lis,
+nathuduremo voxifa ovekqayu zat-ka av patem.</p>
+<p>Sivega gaq jatif-ka orcwmal, solavafwe onnatho-fws aratodus-ka. 13202-ro "Wepu
+Puflantu Noma-Ji'saga" jok imgaq nagwmotut-dis, solavafwe ombu Puflantu genwho
+mida exadin-ka im twmol. Ogi'fwe nathoviqwe biadodala tizov ogfatel-ka im
+orcwmal.</p>
+<p>Albwr eta pazulu im nagwyut-kas, nagtaqo zovgire piwva exwyin-ka im mwyap.
+13203-rwe ampazulwe, nathuduremo-li tacwlzove-li swmwe ejwe-bes zad. Aldul eta
+nathwe hengorwe-bes nagwyut. Vosivegwmi iglextu pazulu aqes gaq zat-ka
+orcwyeyal. Podhe ayegos, tizov utarai Puflantu pazulu etfel nagwyut, Puflantu
+pazulu aza exatin-ka et calpwyem.</p>
+<p>Axwe ✈'✈'✈' Puflantu Pazulnagutwe '✈'✈'✈ ewswmodig, eta pazulu-ro ovekqayu'fwe
+rojdwe im utarsoladav-ka. Chris Jones-li Alex Pei-li Patrick Xia-fws anuv'we
+ewsigwe pwmog, tidul agyoxukwe nagutodwe im gaden. Ogwe zepaxwe im biadal, albwr
+agagwri Puflantu-fws imos agmwmid-ka amqos.</p>
+<h2>Per-word Solve Rates</h2>
+<table>
+<thead>
+<tr>
+<th>Puflantu</th>
+<th>Solves</th>
+<th>Avg tries (solved)</th>
+<th>Avg tries (unsolved)</th>
+<th>First solve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APOTOFU</td>
+<td>88</td>
+<td>14.43</td>
+<td>28.38</td>
+<td>44</td>
+</tr>
+<tr>
+<td>FASIBWMI TINI</td>
+<td>37</td>
+<td>20.35</td>
+<td>16.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>GEVAXEGOMU ZIXO</td>
+<td>29</td>
+<td>21.10</td>
+<td>17.01</td>
+<td>2</td>
+</tr>
+<tr>
+<td>KOLARVUBENA</td>
+<td>74</td>
+<td>19.66</td>
+<td>12.37</td>
+<td>11</td>
+</tr>
+<tr>
+<td>LOSMODAFQEYUNE</td>
+<td>30</td>
+<td>20.10</td>
+<td>22.04</td>
+<td>4</td>
+</tr>
+<tr>
+<td>MALORBILI</td>
+<td>70</td>
+<td>13.10</td>
+<td>08.90</td>
+<td>7</td>
+</tr>
+<tr>
+<td>SARODARVAXE</td>
+<td>81</td>
+<td>8.62</td>
+<td>08.50</td>
+<td>22</td>
+</tr>
+<tr>
+<td>TEIGIA</td>
+<td>70</td>
+<td>47.33</td>
+<td>35.33</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p><center><a href="word-salad/APOTOFU.png"><img src="word-salad/APOTOFU.png" style="max-width: 49%;"></a><a href="word-salad/FASIBWMI TINI.png"><img src="word-salad/FASIBWMI TINI.png" style="max-width: 49%;"></a><a href="word-salad/GEVAXEGOMU ZIXO.png"><img src="word-salad/GEVAXEGOMU ZIXO.png" style="max-width: 49%;"></a><a href="word-salad/KOLARVUBENA.png"><img src="word-salad/KOLARVUBENA.png" style="max-width: 49%;"></a><a href="word-salad/LOSMODAFQEYUNE.png"><img src="word-salad/LOSMODAFQEYUNE.png" style="max-width: 49%;"></a><a href="word-salad/MALORBILI.png"><img src="word-salad/MALORBILI.png" style="max-width: 49%;"></a><a href="word-salad/SARODARVAXE.png"><img src="word-salad/SARODARVAXE.png" style="max-width: 49%;"></a><a href="word-salad/TEIGIA.png"><img src="word-salad/TEIGIA.png" style="max-width: 49%;"></a></center></p>
+
+
+
+
+    <h2 id="appendix">
+Full Walkthrough
+</h2>
+    <p>Though it does help to be familiar with Puflantu from its 2019 appearance, it is
+intended that all the important information from that hunt is provided either in
+the "Crash Course" or in the dictionary. A few other things can help in guessing
+the meanings of the words:</p>
+<ul>
+<li>Keep in mind that nouns and adjectives always end with vowels, and verbs
+    (and the occasional adverb) always end in consonants.</li>
+<li>Many words are obtained from pieces of other Puflantu words &#x2013; use the
+    dictionary search at the bottom of the puzzle page to see if pieces of an
+    unknown word appear anywhere else. Clicking on a word also shows dictionary
+    entries that are very close in Levenshtein distance, but for more than
+    three results the widget at the bottom of the page must be used.</li>
+<li>Verbs are conjugated by infixing against a pronoun table that solvers
+    probably don't have memorized. It can be helpful to pull these pronouns out
+    in a partial translation so that you don't have to think about them anymore.
+    Knowing that verbs always end in consonants can save solvers from doing this
+    unnecessarily.</li>
+<li>Writing out the sentences in English word order (or other more familiar
+    language of your choice) can help clarify the relationships of the words to
+    each other.</li>
+</ul>
+<p>In addition to the morphemes provided in the Crash Course, solvers should find
+the following ones from given words and context:</p>
+<ul>
+<li><strong>hen- and am-:</strong> Roughly "in-" and "out-/ex-". <code>henqos</code> "inside" is used
+    constantly throughout the puzzle, contrasting with a couple instances of
+    <code>amqos</code> "outside" and <code>defiqos</code> "left-side". In addition, the <code>dare</code>
+    definition block gives <code>henhiaden</code> "they-inhale" and <code>amhiaden</code>
+    "they-exhale".</li>
+<li><strong>-gia:</strong> Roughly "-ine" or "-ide" or "-ate", denoting a chemical compound.
+    The definition blocks for target words 1 and 3 contain references to
+    chemical reactions with sodium compounds, and the <code>dare</code> block mentions
+    "carbon <code>fe'avugia</code>".</li>
+<li><strong>-enx-:</strong> "Water", notably in given words <code>enxura</code> "water+R" and
+    <code>enxaq</code> "to submerge". A few other relatives appear in places where a
+    water-thing makes sense.</li>
+<li><strong>zam-:</strong> Roughly "salt", appearing in given words <code>zampaliso</code> "cheese"
+    and <code>zamgomu</code> "tomato", from <code>zalma</code> "salt".</li>
+<li><strong>og-:</strong> Denotes many of something, from <code>ogi</code> "many". Among the given
+    words are <code>oghie</code> "popular" (many people) and <code>ogviqe</code> "majority" (many
+    part).</li>
+<li><strong>-tu:</strong> Roughly "-ish", as in the language suffix. The word onto which
+    <code>-tu</code> is appended is the phonetically imported name of the language in that
+    language; for example <code>iglextu</code> from "English", or <code>jogwuntu</code> from "zhong1
+    wen2".</li>
+<li><strong>-quna and -qeyuna:</strong> Literal words for "-having" and "-not-having". The
+    latter is described explicitly in the <code>ityeriqeyuna</code> definition block.</li>
+</ul>
+<p>We also make frequent use of the fluid noun class, which is employed whenever
+the head of a noun phrase is a fluid. In the annotations below, we denote this
+as "+R".</p>
+<h1>Known Words</h1>
+<p>We start by trying to figure out the definition blocks for the non-target words.
+These blocks can all be resolved mostly independently of one another assuming
+very strong intuition on solvers' part; in practice some cross-referencing and
+grammatical trial and error is required.</p>
+<p>We present these below with the full Puflantu text first; followed by that text
+with all known words replaced and inflections separated out; followed by a
+rereading of that text with a roughly correct English word ordering.</p>
+<h2>amwen (to surround, to envelop)</h2>
+<pre><code>Albwr swma, rai swma amwaten-kas, utaru swma feru-ro axwe benwe amqos zatif-li,
+feru utaru henqos zatif.
+</code></pre>
+<p>When thing, other thing it-<code>amwen</code>s, first thing second's all sides outside
+it-is-located and, second first inside it-is-located.</p>
+<p>When a thing <code>amwen</code>s another thing, the first thing is outside all the
+second's sides, and the second is inside the first.</p>
+<h3>Solve Path</h3>
+<p>The intended translation of the unknown word is "to surround" or "to envelop" or
+"to wrap". ("To cover" is a reasonable try but it already exists in the
+dictionary as <code>urmez</code>.)</p>
+<h2>besolafe (singer)</h2>
+<pre><code>Uta besolafe, pelipa zoves tacalwl-ka hie zat. Edo Xiranu-li Teilo Swifu-li
+Sa-naseksu, oghiwe lahrogbwe besolafwe zad.
+</code></pre>
+<p>One <code>besolafe</code>, specific way that-speaks person it-is. <code>Edo Xiranu</code>-and
+<code>Teilo Swifu</code>-and <code>Sa-Naseksu</code>, popular Earth <code>besolafwe</code> they-are.</p>
+<p>A <code>besolafe</code> is a person that speaks in a specific way. Ed Sheeran and Taylor
+Swift and Diminutive Nas X are popular Earth <code>besolafwe</code>.</p>
+<h3>Solve Path</h3>
+<p>The celebrity names are mostly phonetically imported, including an abuse of the
+diminutive <code>sa-</code> prefix seen in various places and described in the Crash
+Course. The <code>-afe</code> suffix suggests that this is a kind of person that does
+something; the particular celebrities chosen suggests that this is a singer (and
+by extension, <code>besol</code> "to sing").</p>
+<h2>casu (dust, powder)</h2>
+<pre><code>Albwr swma, ageywe viqwe eg mohotur-li losmotod-kas, iqwe viqwe &quot;casu&quot; zad.
+Tizov casu rizwe tamwe-tis fel jatif, mida fel merizeyin.
+</code></pre>
+<p>When thing, very-small parts resultingly it-is-flattened-and it-is-<code>losmod</code>ed,
+those parts "<code>casu</code>" they-are. This-way <code>casu</code> your eyes-at it-might-exist,
+seeing you-might-not-be-able.</p>
+<p>When a thing is flattened and <code>losmod</code>ed into small pieces, those parts are
+<code>casu</code>. If <code>casu</code> is on your eyes, you might not be able to see.</p>
+<h3>Solve Path</h3>
+<p>There are a variety of options for verb <code>losmod</code> here &#x2013; "to grind", "to
+crush", "to break" and so forth. (Existing word <code>losmodafe</code> "claw" doesn't
+really narrow things down here.) However <code>casu</code> is reasonably guessed as "sand",
+"powder", "dust", or something similar, based on its description as an eye
+irritant made of very small parts.</p>
+<h2>dare (plant, flora)</h2>
+<pre><code>Uta dare, wrisa swma zat. Lahrogbi-tis, colbawe pahilamwe ogwris qadun, alzov
+utqunxe-ro ittiha wladoc. Wrifuli fe'avugia henhiaden-li e'avuli amhiaden. Ratwe darvaxwe-cws
+enxura ratiq.
+</code></pre>
+<p>One <code>dare</code>, living thing it-is. Earth-at, green <code>pahilamwe</code> commonly
+they-have, that-way sun+T's light+T they-eat. Carbon <code>fe'avugia</code>
+they-inhale-and oxygen they-exhale. Its <code>darvax*</code>s-from water+R it-drinks.</p>
+<p>A <code>dare</code> is (a) living thing. On Earth, they often have green <code>pahilam*</code>s, in
+order to eat sunlight. They inhale carbon <code>fe'avugia</code>, and exhale oxygen. It
+drinks water from their <code>darvax*</code>s.</p>
+<h3>Solve Path</h3>
+<p>From context it is reasonable to infer <code>dare</code> as "plant", "tree", "grass",
+"algae", or some other kind of flora. <code>Pahilam*</code> looks like it should be
+"leaf" unless "green <code>pahilam*</code>" is "chlorophyll". <code>Fe'avugia</code> is clearly
+"dioxide" from context, and a careful dissection of the word shows <code>fe</code> "two"
+and <code>e'avu(li)</code> "oxygen". At this point it may still be unclear what <code>-gia</code>
+is. <code>Darvax*</code> should be "root", also from context; solvers may be able to see
+<code>dare</code> "plant" and <code>vax-</code> "below, under, bottom".</p>
+<h2>eyozzove (flavor, taste)</h2>
+<pre><code>Locho-ro eyozzove, zove motap, albwr eqa locho wlotoc-kas. Zalma-vo twipe-vo
+zamkuraxwe ogwris piodwv, tizov eyozzovwe omafadodil-kas.
+</code></pre>
+<p>Food's <code>eyozzove</code>, way it-is-felt, when that food it-is-eaten. Salt-or
+sugar-or <code>zamkuraxwe</code> commonly they-are-used, this-way <code>eyozzove</code>s
+they-<code>omafil</code>-them.</p>
+<p>A food's <code>eyozzove</code> is how it feels when that food is eaten. Salt, sugar, or
+<code>zamkurax*</code>s are commonly used because they <code>omafil</code> <code>eyozzove</code>s.</p>
+<h3>Solve Path</h3>
+<p>From the first sentence this should be "taste" or "flavor". Finding given word
+<code>eyos</code> "to taste" is a decent confirmation that this is in the right directly;
+some solvers may notice <code>eyos</code> "to taste" + <code>zove</code> "way, manner". It might
+not be clear what <code>zamkurax*</code> is. Knowing <code>eyozzove</code> is "flavor",
+<code>omafil</code> looks like "to improve" or "to enhance", which can be confirmed as a
+verbification of given word <code>oma'fi</code> "better".</p>
+<h2>hengoro (source, origin)</h2>
+<pre><code>Swma-ro &quot;hengoro&quot;, hanu-fo bwri-fo rai zat, utaru swma ol-cws capatil-ka.
+Puflantu-ro hengoro 13202 pazulu-li 13203 pazulliqexu zat.
+</code></pre>
+<p>Thing's <code>hengoro</code>, place-or time-or other it-is, first thing that-from
+it-comes. Puflantu's <code>hengoro</code> 2018 puzzle-and 2019 puzzlehunt it-is.</p>
+<p>A thing's <code>hengoro</code> is a place or time or other thing from which the first
+thing comes. Puflantu's <code>hengoro</code> is a 2018 puzzle and a 2019 puzzlehunt.</p>
+<h3>Solve Path</h3>
+<p>Reasonable guesses here are things like "birth(place/time)", "origin", or
+"source". Exact interpretation of the second sentence requires knowledge that
+Puflantu communicates in base 6, but just knowing that it's a construct from a
+previous year is good enough to check the sense of <code>hengoro</code>.</p>
+<h2>ityerqeyuni (colorless)</h2>
+<pre><code>Swma &quot;ityerqeyuni&quot; zat, tidul ityeri qateyun-kas (o.c. ityeri qeyuna zat).
+Swtabxaywe swmwe, &quot;apo&quot;-fo &quot;wre&quot; jok gamas ogviqes sinqwyoder.
+</code></pre>
+<p>Thing <code>ityerqeyuni</code> it-is, this-reason color it-does-not-possess (<code>o.c.</code>
+color not-having it-is). Not-transparent things, "white"-or "black" as instead
+mostly we-describe-them.</p>
+<p>A thing is <code>ityerqeyuni</code> if it doesn't have color (<code>o.c.</code> it is
+color-lacking). We mostly describe non-transparent things as being white or
+black instead.</p>
+<h3>Solve Path</h3>
+<p>The text pretty much spells out the etymology here for "colorless". In
+particular we take note of the <code>-qeyuna</code> suffix as being a thing, and might
+guess that the corresponding <code>-quna</code> suffix also works to indicate that
+something is present (perhaps like English "-less" and "-ful" respectively).</p>
+<h2>jwntatimoru (counterpart, partner)</h2>
+<pre><code>Swma rato &quot;jwntatimoru&quot; atimator, rai hanu-fo rai bwri henqos. Albwr swmw jwntu
+henqos jabif, ab urarai-ro &quot;jwntatimorw&quot; zab.
+</code></pre>
+<p>Thing its <code>jwntatimoru</code> it-matches, other place-or other time within. When
+two-things pair within they-exist, they-two each-other's <code>jwntatimoru</code>s
+they-are.</p>
+<p>A thing matches its <code>jwntatimoru</code> in another place or time. When two things are
+paired, they are each other's <code>jwntatimoru</code>.</p>
+<h3>Solve Path</h3>
+<p>The text suggests "partner" or "counterpart". Some solvers may notice <code>jwntu</code>
+"pair" and <code>atimor</code> "to match" in the dictionary.</p>
+<h2>kaxo (fluid, liquid)</h2>
+<pre><code>Swma &quot;kaxo&quot; zat, tidul rato velbena binpateyan (r.c. radokodqeyuna zat) -li
+ovekqus esator-kas. Albwr orvuro kaxro-bes tacwywl-kas, &quot;r&quot; feru awbe defiqos
+kwyar.
+</code></pre>
+<p>Thing <code>kaxo</code> it-is, this-reason its shape it-does-not-continue (r.c.
+<code>radokodqeyuna</code> it-is) -and easily <code>esator</code>. When some <code>kaxo</code>-<code>bes</code> we-speak,
+"r" second <code>awbe</code> <code>defiqos</code> we-add.</p>
+<p>A thing is <code>kaxo</code> if its shape does not stay (<code>r.c.</code> it is <code>radokodqeyuna</code>) and
+it easily <code>esor</code>s (or <code>esaor</code>s). When we speak <code>bes</code> some <code>kaxo</code>, we add "r" <code>defiqos</code> second
+<code>awbe</code>.</p>
+<h3>Solve Path</h3>
+<p>If you have the suffix <code>-qeyuna</code> "-less" from <code>ityerqeyuni</code> "colorless", you can
+translate <code>radokodqeyuna</code> as "formless" or "shapeless". (See Target 5 about the
+vowels.)</p>
+<p>The second sentence strongly recalls instructions about the -r- infix described
+in the Crash Course (or maybe you just remembered it from 2019). That and the
+first sentence confirm <code>kaxo</code> "liquid" or "fluid", <code>esor</code> "to change" or maybe
+"to deform", and <code>awbe</code> as "vowel". <code>Bes</code> is written like one of our small
+prepositions and from context can only really be "about". <code>Defiqos</code> matches with
+given word <code>defisa</code> "left-side" and <code>henqos</code> "within/inward" as "leftward".</p>
+<h2>kombwqa (kombucha)</h2>
+<pre><code>Ita sazixro teri riqhuro zat. Aguyri e'ranxagia qatun. Twripe teri-li
+sazwmswe-li laksalfa rulfoba-cws qotuk. Orvwe hiwe, uglube zat-ka tixmadap.
+(Zikpe: Tizov nihogotu tacwlafe eta-bes fel tizwk-kas, odrelesa riqhuro ez-fws
+et patog.)
+</code></pre>
+<p>This <code>sazixro</code> <code>teri</code> beverage+R it-is. Very-little+R <code>e'ranxagia</code> it-has.
+Sugar+R <code>teri</code>-and <code>sazwms*</code>s-and yeast combining-from it-is-made. Some people,
+medicine it-is they-think. (Danger: This-way <code>nihogotu</code> speaker this-<code>bes</code>
+you-might-ask, difference+R beverage you-toward it-will-give.)</p>
+<p>This is a <code>sazixro</code> <code>teri</code> beverage. It has very little <code>e'ranxagia</code>. It is made
+from combining sugary <code>teri</code> and <code>sazwms*</code>s and yeast. Some people think that
+it is medicine. (Danger: If you ask a <code>nihogotu</code> speaker this-<code>bes</code>, they will
+give to you a different beverage.)</p>
+<h3>Solve Path</h3>
+<p>Pronouncing the word out loud should put solvers in mind of the drink
+"kombucha", whose word is imported directly. The list of ingredients for
+kombucha includes a "symbiotic culture of bacteria and yeast" (so commonly
+worded in this fashion that its acronym is understood), so <code>sazwmswe</code> must be
+"bacteria" and the sweet liquid must be <code>tei</code> "tea" (after taking out the +R
+transformation). Etymologically "kombucha" is noted for being an incorrectly
+imported word from <code>nihogotu</code> "Japanese" (via "nihongo"), wherein it refers to a
+non-fermented kelp tea. <code>Bes</code> could be "for" or "about", or some other object
+indicator.</p>
+<p>Of the remaining words we have <code>sazixro</code> or slightly <code>zixo</code>+R as a
+characteristic of kombucha; and <code>e'anxagia</code>+R which is present in some small
+quantity. Other characteristics of kombucha that might come to mind are
+"probiotic", "fizzy", "acidic", "antioxidant", and maybe "healthy" (depending on
+what blogs you read). Solvers might be able to get <code>e'anxagia</code> "alcohol" as
+<code>e'a</code> "fire" + <code>enxa</code> "water" + <code>-gia</code> "chemical".</p>
+<p><span class="aside"><code>Sazwmsi</code> "bacterium", lit. "diminutive fish", was chosen in
+parallel with "bacterium", lit. "diminutive staff/rod", the idea being that one
+names them after whatever they look like when they're spotted under a microscope
+for the first time. <code>Tei</code> "tea" was chosen based on human languages picking "t<em>"
+or "ch</em>" ("q*") depending on whether their first exposure traces back to Britian
+faster than to China.</span></p>
+<h2>lwgoro (substance, material)</h2>
+<pre><code>Uta lwgoro swma eji zat. Rawe ot-cws qukwmi aza meradin. Nagtice-li enxura-li
+alvite, lwgorwe zad. Gica-li hie-li zagtivo, lwgorwe zadey.
+</code></pre>
+<p>One <code>lwgoro</code> thing type it-is. Others it-from produced being they-can.
+<code>Nagtice</code>-and water-and silver, <code>lwgoro</code>s they-are. Shoe-and person-and
+asteroid, <code>lwgoro</code>s they-are-not.</p>
+<p>A <code>lwgoro</code> is a type of thing. Other things can be produced from it.
+<code>Nagtice</code> and water and silver are <code>lwgoro</code>s; shoe and person and asteroid
+are not.</p>
+<h3>Solve Path</h3>
+<p>From the description we can guess something like "element", "material",
+"matter", "substance", or "resource" for <code>lwgoro</code>. We can't really infer
+anything about <code>nagtice</code> here but it has its own definition block later.</p>
+<h2>mapoca</h2>
+<p>We'll skip this one for now.</p>
+<h2>nagtice (paper)</h2>
+<pre><code>Nagtice, pahilame lwgoro zat, nathwe ol-bedfis ajena merizin-ka. Ogwe nagticwe
+jiay xifwmi aza meradin, kude eg.
+</code></pre>
+<p><code>Nagtice</code>, <code>pahilame</code> <code>lwgoro</code> it-is, words it-atop putting you-can. Many
+<code>nagtice</code>s together <code>xifwmi</code> being they-can-be, book resultingly.</p>
+<p><code>Nagtice</code> is a <code>pahilame</code> <code>lwgoro</code>, which you can put words on. Many
+<code>nagtice</code>s can be together <code>xifwmi</code> resulting in a book.</p>
+<h3>Solve Path</h3>
+<p>This doesn't give much to work with for the other words, but assuming that we're
+talking about a physical thing the second sentence implies <code>nagtice</code> is
+"paper", even if we're not sure what <code>xifwmi</code> is. A dictionary search yields
+<code>xifafe</code> "knot", so a reasonable guess is <code>xif</code> as "bind" or "tie" and
+<code>xifwmi</code> as "bound" or "tied". (<code>xif</code> "twist" might also be a candidate but
+there aren't many things that can be said to make a book after being twisted
+together.)</p>
+<h2>ogerok (to shred)</h2>
+<pre><code>Albwr swma ogerotok-kas, ogwe viqwe etataz. Zampaliso-li nagtice ogerokwmi aza
+meradin.
+</code></pre>
+<p>When thing it-is-<code>ogerok</code>ed, many parts it-becomes. Cheese-and <code>nagtice</code>
+<code>ogerok</code>ed being they-can.</p>
+<p>When a thing is <code>ogerok</code>ed, it turns into many parts. Cheese and <code>nagtice</code>
+can be <code>ogerok</code>ed.</p>
+<h3>Solve Path</h3>
+<p>There are a lot of transformative words that can fit here, but if we restrict
+ourselves to ones that can be applied to cheese we have mostly culinary ones
+like "to slice", "to grind", "to blend", "to grate", and so forth (as opposed to
+"to shatter" or "to disassemble"). If we have <code>nagtice</code> "paper" this is
+narrowed down to options like "to pulp" (as for papier mache) or "to shred".</p>
+<h2>ogviqe (majority, most (proportion))</h2>
+<pre><code>Swma-ro &quot;ogviqe&quot;, rato agi' viqe zat. Iqa natho, uta tola zove karkas nagtatal,
+orvwe amrwtiwe piadolwv-ka.
+</code></pre>
+<p>Thing's "majority", its biggest part it-is. That word, one choosing way also
+it-names, some societies they-use-that.</p>
+<p>A thing's majority is its biggest part. That word also names a selection method
+which some societies use.</p>
+<h3>Solve Path</h3>
+<p>This block is already translated in its entirety, but it does give solvers an
+extra way to check their grammar. In addition it shows the words <code>viqe</code> "part"
+and <code>nagtal</code> "to name", which solvers will encounter other conjugations for in
+the rest of the puzzle. None of the other conjugations of "to name" are
+automatically translated, so solvers will have to enter in <code>nagtwyotal</code>
+"we-name-it" or <code>nagtotal</code> "it-is-named" as they are encountered.</p>
+<h2>ovekqipiwvu (convenient)</h2>
+<pre><code>Albwr piotwv-kas, ovekqipiwvu swma, ovekqipiwvayu swma jifated-sos, uyi'fi bahu
+jifated. Albwr hie forovwe dokfe natib-kas, qacepo ovekqipiwvu'fi zat, zagtivo
+zat-sos.
+</code></pre>
+<p>When it-is-used, <code>ovekqipiwvu</code> thing, not-<code>ovekqipiwvu</code> thing it-<code>jifed</code>s-than,
+less trouble it-<code>jifed</code>s. When person planets between it-moves, spaceship
+more-<code>ovekqipiwvu</code> it-is, asteroid it-is-than.</p>
+<p>When it is used, a thing that is <code>ovekqipiwvu</code> <code>jifed</code>s less trouble than one
+that is not. When a person moves between planets, a spaceship is more
+<code>ovekqipiwvu</code> than an asteroid.</p>
+<h3>Solve Path</h3>
+<p>The second sentence and the similarity to <code>ovekqu</code> "easy" suggests options
+like "expedient", "efficient", or "comfortable" (the latter helping to rule out
+things like "reliable", "safe", "legal", or "acceptable"). Context gives us
+<code>jifed</code> as "to incur", "to encounter", or "to create".</p>
+<h2>twipelame (candy)</h2>
+<pre><code>Ogwe hiwe somalodun-ka twipe locho eji zat. Ogwe twipelamwe, rotwipe-vo gomu
+eyozzove mwadoten.
+</code></pre>
+<p>Many people that-pleases-them sugar food type it-is. Many <code>twipelame</code>s,
+chocolate-or fruit <code>eyozzove</code> they-hold-it.</p>
+<p>It is a sweet food type that many people like. Many <code>twipelame</code>s have
+chocolate or fruit <code>eyozzove</code>.</p>
+<h3>Solve Path</h3>
+<p>The cluing gives us <code>twipelame</code> candidates like "confection", "dessert",
+"cake", "pastry", "candy", and so forth.</p>
+<h2>vaxtipu (bedrock, foundation)</h2>
+<pre><code>Onamgenas, &quot;vaxtipu&quot; atipu eji zat, ol zoan niba agovekqayu zat. Vaxtipu,
+exuri'fwe swmwe vaxfis zatif. Cobargenes, ot bedfis, rawe swmwe amrodad.
+</code></pre>
+<p><code>Onamgenas</code>, <code>vaxtipu</code> rock type it-is, that through moving very-not-easy
+it-is. <code>Vaxtipu</code>, softer things below it-is-located. <code>Cobargenes</code>, it atop,
+other things they-are-<code>amrad</code>ed.</p>
+<p><code>Onamgenas</code>, <code>vaxtipu</code> is a rock type that is difficult to move through. It
+is located below softer things. <code>Cobargenes</code>, other things are <code>amrad</code>ed on
+top of it.</p>
+<h3>Solve Path</h3>
+<p>From <code>vax-</code> "bottom" and <code>atipu</code> "rock" we guess <code>vaxtipu</code> as "bedrock", though
+the rest of the definition is a bit awkward. <code>Amrad</code> is likely some kind of
+placement verb, and a dictionary search yields <code>amradoda</code> "building", so <code>amrad</code>
+is probably "to build" or "to construct".</p>
+<p><code>Onamgenas</code> and <code>cobargenes</code> should be interpreted as two contrasting senses for
+a word; in particular, <code>onamgenas</code> appears frequently elsewhere in the puzzle in
+the context of a word indicating something. A dictionary search gives <code>onama</code>
+"equal", <code>cobare</code> "poem", and <code>gen</code> "to read"; solvers are intended to infer
+<code>onamgenas</code> "literally" and <code>cobargenes</code> "metaphorically" or "figuratively".</p>
+<h2>yirwhanu (subject, topic)</h2>
+<pre><code>Uta yirwhanu, yirwho wndatolak-ka swma zat. (Iqa yirwho eqa yirwhanu-bes zat.)
+Yirwhanu karkas zat, lifanice-tis ol-bes yizel-ka-fos uta kude ol-bes
+nagotut-kas.
+</code></pre>
+<p>One <code>yirwhanu</code>, idea it-refers-to-that thing it-is. (That idea that
+<code>yirwhanu</code>-<code>bes</code> it-is.) <code>Yirwhanu</code> also it-is, school-at that-<code>bes</code>
+you-learn-or books that-<code>bes</code> they-are-written.</p>
+<p>A <code>yirwhanu</code> is a thing that an idea refers to. (That idea is <code>yirwhanu</code>-<code>bes</code>.)
+It is also a thing-<code>bes</code> you learn at school or a thing-<code>bes</code> books are written.</p>
+<h3>Solve Path</h3>
+<p>The first sentence suggests something abstract like "concept", "knowledge",
+"subject", "topic", "information", which is somehow learnable and writable. If we
+didn't already have it from the single example in the <code>kaxo</code> definition block,
+the use of <code>bes</code> here also cues "about".</p>
+<h2>zovgire (science)</h2>
+<pre><code>Zovgire, puflantu lifwyan-ka durema zove zat. Swmwe mida-li zovgire dokfe
+odelesa, im moryid-ka swmwe-bes naguta zat. Amjuyunwe karkas zoxuras qatuk.
+</code></pre>
+<p><code>Zovgire</code>, Puflantu we-learn sequence way it-is. <code>Zovgire</code>-and random things
+doing between difference, (past) that-are-seen things-<code>bes</code> writing it-is.
+<code>Amjuyunwe</code> also sometimes it-makes.</p>
+<p><code>Zovgire</code> is a sequential way that we study Puflantu. The difference between
+<code>zovgire</code> and doing random things is writing things that-were-seen-<code>bes</code>. It
+also sometimes makes <code>amjuyunwe</code>.</p>
+<h3>Solve Path</h3>
+<p>The first sentence requires a reading of "Puflantu" as also meaning "galaxy" (or
+"galactic"); thus <code>zovgire</code> might be some field of study like "astronomy". The
+second sentence doesn't work with any particular subject, but it recalls an Adam
+Savage quote about the difference between "science" and screwing around.
+<code>Amjuyun*</code> could be a variety of things even if we identify its components as
+<code>am-</code> "outward" and <code>juyun(a?)</code> "break(ing?)" &#x2013; "discovery", "mistake",
+and "explosion" among them.</p>
+<h1>Target Words</h1>
+<p>Up to this point none of the entries depend particularly much on one another.
+The most effective thing a solver can do is to carefully parse the grammar. We
+still have one given word &#x2013; <code>mapoca</code> &#x2013; and the eight targets for
+actually solving the puzzle.</p>
+<p>In general, solvers should notice after a few successful translations that each
+of these blocks ends in a statement or two about a human etymology for the item,
+and a statement about the Puflantu etymology for the item. The morphemes
+required by the Puflantu etymology can only be found in other target blocks.</p>
+<p>To resolve many of the unknown words, a lookup of an Earth etymology for the
+target is very helpful. The intended flow is that the first sentence or two
+allow solvers to identify the item being described; the etymology of that item's
+name then helps identify words that get used by other targets.</p>
+<h2>Target 1</h2>
+<pre><code>Ita ajorgia hengoro zat. Orvwe hiwe fwmta wladeyoc, aldul eta fel wladoc. Ogwris
+saqvurwe-fo jalwe-fo pahilamwe jok sivoteg. Rato nagta &quot;qovo fasiba&quot; jogwuntu
+henqos veaton. Ogviqwe nagutaqwe, rato natho aqes henfadaz. Rato nagta karkas
+henfwyaz-dis, albwr cwyotub-kas, rato ityeri utarus wndwyak.
+</code></pre>
+<p>This <code>ajorgia</code> origin(?) it-is. Some persons <code>fwmta</code> they-do-not-eat,
+that-reason this they-might-eat. Commonly cubes-or strips-or <code>pahilamwe</code> as
+it-is-shown. Its <code>nagta</code> "<code>qovo</code> <code>fasiba</code>" <code>jogwuntu</code> within
+it-indicates. Majorities <code>nagutaqwe</code>, its word simply they-<code>henfaz</code>. Its
+<code>nagta</code> also we-<code>henfaz</code>-but, when we-say-it, its color firstly we-refer-to.</p>
+<p>This is (a) <code>ajorgia</code> origin(?). Some people do not eat <code>fwmta</code>, so they
+might eat this. It is commonly shown as cubes or strips or <code>pahilam*</code>s. Its
+<code>nagta</code> indicates "<code>qovo</code> <code>fasiba</code>" in <code>jogwuntu</code>. Most <code>nagutaq*</code>s
+simply <code>henfaz</code> its word. We also <code>henfaz</code> its <code>nagta</code>, but when we say
+it, we refer to its color first.</p>
+<h3>Solve Path</h3>
+<p>Solvers are intended to guess <code>fwmta</code> as "meat", the most common human dietary
+restriction. This also gives the first sentence of <code>mapoca</code>'s definition as
+"This is where you keep your thinker <strong>meat</strong>.", which is a colorful way to say
+"brain". Many of the things people specifically add to their diets to compensate
+for the lack of meat are <code>hengoro</code> "source"s of <code>ajorgia</code> "protein", choosing to
+finally resolve <code>hengoro</code> as "source" among our various choices for "a thing
+that something else comes from".</p>
+<p>The popular candidates for the thing we're describing &#x2013; seitan, tempeh,
+and tofu &#x2013; can all be found in cube or strip form. (If there were
+powder-based protein supplements in contention, like whey, they should be
+eliminated by this statement about form factor.) A <code>pahilam*</code> is something
+such that a plant has green <code>pahilam*</code> and paper is a <code>pahilam*</code> thing
+(element, material, resource, etc.) so it may be reasonable to now infer that
+<code>pahilam*</code> refers to any flat thing, like a leaf or a sheet. This weighs our
+choice somewhat in favor of "tofu", as seitan and tempeh are not often sold in
+that shape (based on a cursory Google search).</p>
+<p>Putting that aside, we have that its <code>nagta</code> indicates ("means") something in
+<code>jogwuntu</code>. If we haven't already figured out <code>nagta</code>, we can see from this
+paragraph that it is something that can be <code>henfaz</code>ed by a <code>nagutaq*</code> and
+also by whatever group the writer is affiliated with, and is a synonym for
+"word". This context points to <code>nagta</code> "name". Pattern matching to other
+paragraphs or just saying things out loud will also lead solvers to <code>jogwuntu</code>
+"Chinese" (via "zhong1 wen2"). "Seitan" is of Japanese origin, and "tempeh" is
+from Indonesian, so this paragraph is probably talking about "tofu", whose name
+comes from the Chinese for <code>qovo</code> "bean" <code>fasiba</code> "decaying" (lit. "rot").
+(Word order may be questionable here but one of the two words looks like a verb
+with -a on the end, and there isn't really an obvious verb associated with
+"bean".)</p>
+<p><code>Henfaz</code> is something that can be done to a word, and in fact has been done to
+"tofu" by a majority of <code>nagutaq*</code>s. Solvers must deduce that this is <code>hen-</code>
+"inward" + <code>faz</code> "to take", i.e. "to take in" or "to import"; in context this
+makes <code>nagutaq*</code> "language", a thing that imports words. Puflantu also imports
+the word but names its color first. Tofu is commonly <code>apo</code> "white", so the
+Puflantu word is APO[T]OFU. (The W sound is more accurate to the source but
+Puflantu has a rule against ending nouns with -w because it uses that for its
+dual number.)</p>
+<h2>mapoca (head)</h2>
+<pre><code>Rizo tixmapafe fwmta tihan mwizen. Rizo ajore-ro bedfis zifa ogfatel-li uta-li
+saqe dokfe tamwe qatun. (Tidul lahrogbi hie ziz, fe tamwe qatun-ka ogfatel.)
+</code></pre>
+<p>Your believer/thinker meat here you-hold. Your <code>ajore</code>'s top being-located
+it-probably-is-and one-and six between eyes it-has. (This-reason earth person
+you-are, two eyes it-has-DEP it-is-likely.)</p>
+<p>You hold your thinker meat here. It is probably on top of your <code>ajore</code> and has
+between one and six eyes. (If you are human, that it has two eyes is likely.)</p>
+<h3>Solve Path</h3>
+<p>"Thinker meat" is just a weird way to say "brain", so this paragraph clues a
+<code>mapoca</code> "head" (lit. feel-box). <code>Ajore</code> could be "neck", "torso", or
+"body"; if we have <code>ajorgia</code> "protein" from Target 1 we can infer "body", with
+<code>ajorgia</code> indicating a chemical that a body is made of.</p>
+<h2>Target 2</h2>
+<pre><code>Swtrabxi ityurerqeyuni kaxro zat. Sarrwe zamkuraxwe-li realwmi darrwe
+zamkuraxwe, vaxtipu jok piadotwv. Tizov zixo zat-kas, zalmeri fewlifugia-wli
+ji'satag. Alzov uta ovekqu zovgire sivega henqos piotwv, e'adendi amjuyuna
+ywrmidi eg. Furansetu henqos, rato nagta gevaxe os etalaz-ka pelipa e'anxagia
+eji wndatak. Eqa e'anxagia eji karkas wndwyak-dis, it &quot;sazwmswe vak
+vorulfolob&quot;-ka jok sinqwyer.
+</code></pre>
+<p>Clear+R colorless+R fluid+R it-is. Spices+R <code>zamkuraxwe</code>-and mixed plants+R
+<code>zamkuraxwe</code>, bedrock as they-use-it. This-way <code>zixo</code> it-is, sodium
+<code>fewlifugia</code>-with it-fights. That-way one easy science showing within
+it-is-used, <code>e'adendi</code> <code>amjuyuna</code> <code>ywrmidi</code> resultingly. <code>Furansetu</code>
+within, its <code>nagta</code> <code>gevaxe</code> that-has-become specific <code>e'anxagia</code> type
+it-refers-to. That <code>e'anxagia</code> type also we-refer-to-but, it "bacteria by
+that-is-<code>vorulfob</code>ed" as we-describe.</p>
+<p>It is a clear, colorless fluid. Spice <code>zamkurax*</code>s and mixed plants
+<code>zamkurax*</code> use it as bedrock. Because it is <code>zixo</code>, it fights with sodium
+<code>fewlifugia</code>. Thus it is used in one easy science showing, which results in
+<code>e'adendi</code> <code>amjuyuna</code> <code>ywrmidi</code>. In <code>furansetu</code>, its <code>nagta</code> refers to
+a specific <code>e'anxagia</code> type that has become <code>gevaxe</code>. We refer to the same
+alcohol type, but we describe it as "<code>vorulfob</code>ed by bacteria".</p>
+<h3>Solve Path</h3>
+<p>It is necessary to first observe that many of the words in the first couple
+sentences (marked with <code>+R</code>) are in the r-adding fluid noun class, which is why
+we have <code>ityurerqeyuni</code> instead of the <code>ityerqeyuni</code> we already translated
+as "colorless". With that in mind, looking at the declined and pluralized
+versions of <code>saro</code> "spice" and <code>dare</code> "plant", we conclude that the first
+unknown word here is actually <code>zamkaxo</code>. We also know from the <code>eyozzove</code>
+definition block that this is a food additive like salt or sugar that does
+something to flavor. We can pick a fluid in this category like "oil" or "gravy".
+Realizing that "mixed plants" refers to "salad" also suggests "dressing".</p>
+<p>Whatever this is has a property <code>zixo</code>, which causes it to fight (more likely
+"react") with a sodium compound, and this reaction is used in a science showing
+(more likely "demonstration"). Translating these sentences requires one to take
+apart the unknown words; getting either of the first two helps a lot with the
+others.</p>
+<ul>
+<li>Recalling <code>fe'avugia</code> "dioxide" from the <code>dare</code> definition block, we see
+  <code>fewlifugia</code> as <code>fe</code> "two" plus <code>wlif(uli)</code> "carbon" plus <code>-gia</code> "chemical".
+  Along with "sodium" this suggests <code>fewlifugia</code> as "bicarbonate".</li>
+<li><code>e'a</code> and <code>dendi</code> appear directly in the dictionary as "fire" and "mountain"
+  respectively, giving <code>e'adendi</code> "volcano".</li>
+<li>We saw <code>amjuyuna</code> in the <code>zovgire</code> definition block. Its presence in the
+  context of a science demonstration means that it's something that can happen
+  intentionally, so probably "bursting" or "explosion" and less likely
+  "discovery". (If we got "volcano" then "explosion" as a close synonym of
+  "eruption" seems like the pick.)</li>
+<li><code>ywrmidi</code> is intended as "illusion" or "simulation", after <code>ywri</code> "false" and
+  <code>mida</code> "seeing/sight".</li>
+</ul>
+<p>The unnamed compound in this reaction is "vinegar", which is a clear, colorless
+fluid that can be used as a <code>vaxtipu</code> "bedrock (foundation)" for <code>zamkaro</code>s
+"dressings/sauces". It reacts with sodium bicarbonate because it is <code>zixo</code>
+"acid(ic)". We can also cross reference this with the list of properties that
+might be <code>sazixro</code> "slightly <code>zixo</code>"+R in <code>kombwqa</code>; a thing that vinegar is
+that kombucha slightly is, is acidic.</p>
+<p><code>Furansetu</code> is something that has vinegar's <code>nagta</code> in it. Saying the word
+out loud, and perhaps cross-referencing with the structure of other clues,
+suggests <code>furansetu</code> "French" (from import of "francais"). Having <code>nagtal</code>
+"to name" from the <code>ogviqe</code> definition block (and the repetition of <code>nagta</code>
+and <code>nagtal</code> in other definition blocks) gives <code>nagta</code> "name".</p>
+<p>French <code>vinaigre</code>, which is also the source of the English word, means "sour
+wine", so wine is our specific <code>e'anxagia</code> type with <code>e'anxagia</code> as
+fire-water-chemical or "alcohol", and it has become <code>gevaxe</code> "sour".</p>
+<p>The Puflantu etymology requires something meaning <code>vorulfob</code>. This is <code>vo-</code>
+"inverted" and <code>rulfob</code> "combine", so this word is something like "(very)
+disassembled". It is done by <code>sazwmswe</code> "bacteria", which we got from the
+<code>kombwqa</code> clue. As with the process referred to by French's "acrid wine", this
+is referring to allowing wine to ferment further. Finding <code>fasib</code> "to decay" in
+the descriptions of Target 1 or Target 8 suggests the word for vinegar is
+FA[S]IBWMI TINI, lit. "decayed wine".</p>
+<h2>Target 3</h2>
+<pre><code>Tizov ita lwgoro enxotal-li palriso-fws kotar-kas, eqra palriso zampaliso eg
+vokarotur. Rato casu-vo velbenatipu radokoda orvwe twipelamwe urmatodez. Enxura
+henqos, ita-li zalmeri fewlifugia, zalmeri gevaxegia-li zezwe qaduk. Rato casu,
+zalma eji jok zoxuras vokanotwj. Ogviqwe nagutaqwe, pelipa gomu-vo gomu
+qawhi-cws nagtadotal. Iqa wndwyolak-ka gomu, rato eyozzove tizov nagtotal.
+</code></pre>
+<p>This-way this <code>lwgoro</code> it-is-<code>enxal</code>ed-and milk+R-toward it-is-added, that+R
+milk+R cheese resultingly it-is-<code>vokarur</code>ed. Its sand(?)-or <code>velbenatipu</code>
+configuration some desserts(?) it-covers-them. Water+R within, this-and sodium
+<code>fewlifugia</code>, sodium <code>gevaxegia</code>-and bubbles they-make. Its sand(?), salt
+type as something it-is-<code>vokanwj</code>ed. Majorities <code>nagutaq*</code>s, specific
+fruit-or fruit family-from they-name-it. That we-refer-to-that fruit, its flavor
+this-way it-is-named.</p>
+<p>When this <code>lwgoro</code> is <code>enxal</code>ed and added to milk, that milk <code>vokarur</code>s
+into cheese. Its sand(?) or <code>velbenatipu</code> form covers some desserts(?). In
+water, this and sodium <code>fewlifugia</code> make sodium <code>gevaxegia</code> and bubbles. Its
+sand(?) is sometimes <code>vokanwj</code>ed as a type of salt. Most <code>nagutaq*</code>s name
+it from a specific fruit or family of fruits. The fruit we refer to is named for
+its flavor.</p>
+<h3>Solve Path</h3>
+<p>We first decipher <code>vokarur</code> as the inverse (<code>vo-</code>) of <code>karur</code> "to melt", i.e.
+<code>vokarur</code> "to solidify". There are a variety of things that can be said to
+produce this reaction: acids, various bacteria/mold cultures, and rennet.
+Whatever it is, it first has to be <code>enxal</code>-ed "hydrated, dissolved in water"
+(from <code>enxa</code> "water"), which rules out the ingredients that are inherently
+liquid. It can also go directly onto some sweet foods in powder form, which
+rules out the cultures and rennet. <code>Velbenatipu</code> "crystal" (lit. shape-rock)
+doesn't really give us any new information but might be helpful if we didn't
+land on a solid translation for <code>casu</code> "sand/dust/powder". We expect that
+solvers have at this time narrowed the field of choices to an acid of some kind;
+the common ones used in cheesemaking are vinegar, lemon juice, and citric acid.</p>
+<p>The decomposition of <code>fewlifugia</code> "bicarbonate" is described in the walkthrough
+for Target 1, which can be done here independent of having identified that item.
+Unfortunately this doesn't really rule out any acid. Choosing vinegar leads us
+to <code>gevaxegia</code> as "acetate", while lemon juice or citric acid lead us to
+<code>gevaxegia</code> as "citrate".</p>
+<p><code>Vokanwj</code> is the inverse (<code>vo-</code>) of <code>kanwj</code> "to buy", so it means "to sell". As
+before, vinegar doesn't really have a powder form. Between lemon juice and
+citric acid, citric acid is sold as "sour salt".</p>
+<p><code>Nagutaq*</code> from this clue is something that can name something else. This
+doesn't really give an identification on its own but might help in conjunction
+with the context provided by some of the other clues. Once you know that it is
+"language", we can check that Earth's major languages all name citric acid after
+the citrus family, or the citron itself, or the lemon. Puflantu names it in the
+same way, referring to a fruit that is named for its taste. A search of the
+dictionary shows that Puflantu fruits all end in <code>-gomu</code>, which is also the word
+for "fruit" on its own; so we are looking for GEVAXEG[O]MU ZIXO, with <code>gevaxe</code>
+"sour" and <code>zixo</code> acid both coming from Target 1.</p>
+<p>If we still believe that this paragraph describes lemon juice (because
+admittedly it is very hard to subtly distinguish between the two), we get
+GEVAXEG[O]MU GEZE instead, which extracts the same letter (but won't be accepted
+by the checker). <code>Geze</code> "juice" is given in the dictionary.</p>
+<h2>Target 4</h2>
+<pre><code>Locho dubqajena eji, alhan malo orvwe lochwe amwatoden-ka, ita zat. Iqa malo,
+bedfi-li vaxfi-tis zatif. Tidul malo orvwe benwe-tis fel jatif-kas, iqa locho
+ihex fel qawhatil na? Oghie ji'satacwla yirwhanu zat. Ita locho eji, tizov
+ovekqipiwvu zat-kas, uta lahrogbi espuyi im somatotun. Ogwe lahrogbwe nagutaqwe,
+eqa espuyi-ro usonba-cws, eta nagtadotal. Rwyo ot-ziyu natho, &quot;uta ogwri
+malo-cws qukwmi velbena&quot; onamgenas veaton.
+</code></pre>
+<p>Food <code>dubqajena</code> type, where <code>malo</code> some foods it-surrounds(?), this is.
+That <code>malo</code> top-and bottom-at it-is-located. This-reason <code>malo</code> other
+sides-at it-may-exist, that food still it-may-belong ? Popular <code>ji'satacwla</code>
+concept(?) it-is. This food type, this-way comfortable(?) it-is, one earth royal
+it-pleased-it. Many earth <code>nagutaq*</code>s that royal's land-from, this
+they-name-it. Our it-for word, "one common <code>malo</code>-from made shape" onamgenas
+veaton.</p>
+<p>This is a food <code>dubqajena</code> type where <code>malo</code> surrounds(?) some foods. That
+<code>malo</code> is on the top and bottom. If <code>malo</code> exists on other sides, does that
+food still belong? It is a popular <code>ji'satacwla</code> concept. This food type,
+because it is comfortable(?), was liked by an Earth noble. Many Earth
+<code>nagutaq*</code>s name this from that royal's land. Our word for it <code>onamgenas</code>
+indicates "a shape made from a common <code>malo</code>".</p>
+<h3>Solve Path</h3>
+<p>A dictionary search gives <code>dubqa</code> "intentional" + <code>ajena</code> "placement" for
+<code>dubqajena</code> "arrangement".</p>
+<p>The next few sentences are about some <code>malo</code> thing and its placement in the
+food arrangement. The question of <code>malo</code> being on varying sides of a thing,
+but always on the top and bottom, recalls the ever-popular "Is it a sandwich?"
+question. This suggests <code>ji'sagtacwla</code> "debate" or "argument" from <code>ji'sag</code>
+"fight" and <code>tacwl</code> "speak", and <code>malo</code> as "dough" or "starch" (the
+dictionary already has <code>kolarvu</code> "bread").</p>
+<p>The next couple sentences refer to this thing being named from the lands owned
+by an Earth noble, referring to the Earl of Sandwich, who is attested as the
+source of the word. If we are still unsure about <code>ovekqipiwvu</code> from its
+paragraph we can guess "convenient" or something similar from this context.</p>
+<p>The final sentence says that the Puflantu word is like a shape made from a
+common <code>malo</code> for this food type. Looking through some shapes in the
+dictionary suggests <code>-bena</code> as their common suffix. The most common substance
+that occurs on the sides of a sandwich is <code>kolarvu</code> "bread", which gives the
+translation KOLARVUB[E]NA for "sandwich".</p>
+<h2>Target 5</h2>
+<pre><code>Uta besola-ro yirwhanu zad. Tizov gatoz: rato besolafe liqexa-ti zatif-li axwe
+atimorwe ofrwdwe qadun-li orvo-ro oniglame vaxuso-fws ratek. Uta oghie wabu
+balotno henqos, &quot;Jwnterokafu Eqmeyossa&quot; nagtoryal-ka rolwlwe tafatodit-dis
+&quot;Nagtice Jalqunu&quot; nagtalwmi rolwlwe vak tafotit. Orvwe iglextwe rojdwe henqo
+rato natho, rai rolwla wndatak-dis, uta qawhi henqos qawhadeyil. Agi' urarai
+dokfe odelesa, uta rolwla agwe mwnwe qatun-li rai qateyodun-ka zat. Iqa ot-ziyu
+puflantu natho, etwe ajorwe viqwe jadeyif-ka wndatak.
+</code></pre>
+<p>One singing's concept(?) it-is. This-way it-starts: its singer partying-at
+it-is-located-and all matching towels they-have-and some(one/thing)'s <code>oniglame</code>
+<code>vaxuso</code>-toward it-<code>rek</code>s. One popular card game within, "<code>Jwnterokafu</code>
+<code>Eqmeyossa</code>" those-are-<code>nagtal</code>ed creatures it-wins-them-but "Paper <code>Jalqunu</code>"
+<code>nagtal</code>ed creatures by it-is-won. Some <code>iglextwe</code> versions within its word,
+other creature it-refers-to-but, one family within they-do-not-belong. Biggest
+each-other between difference, one creature big hands it-has-and other
+it-does-not-have-them it-is. That it-for Puflantu word, these <code>ajorwe</code> parts
+they-don't-exist it-refers-to.</p>
+<p>It is one song's concept(?). It starts like this: The singer is at a party and
+everyone has matching towels and someone's <code>oniglame</code> <code>rek</code>s toward <code>vaxuso</code>. In
+a popular card game, it beats creatures that are <code>nagtal</code>ed "<code>Jwnterokafu</code>
+<code>Eqmeyossa</code>" but is beaten by creatures <code>nagtal</code>ed "Paper <code>Jalqunu</code>". Its word
+in some <code>iglextwe</code> versions refers to another creature, but they do not belong
+in the same family. The biggest difference between them is that one creature has
+big hands that the other lacks. The Puflantu word for it refers to (the fact
+that) these <code>ajorwe</code> parts don't exist.</p>
+<h3>Solve Path</h3>
+<p>The first couple sentences reference the opening of GPH theme song Rock Lobster,
+so we pick up:</p>
+<ul>
+<li>We are probably looking for the word for "rock lobster".</li>
+<li><code>yirwhanu</code> now has to be something that the "rock lobster" is for the song
+    "Rock Lobster", so it's probably "subject" or "topic" rather than
+    "information" or "knowledge".</li>
+<li>There are a few lines which can match up with the end of the second
+    sentence. It doesn't contain two verbs for "to reach" and "to grab", and it
+    doesn't contain the known words for "to go" or "to see", so it should
+    be "someone's earlobe fell in the deep". So we have <code>oniglame</code> "earlobe",
+    <code>vaxuso</code> "deep" (noting <code>vax-</code> "bottom"), and <code>rek</code> "to fall".</li>
+</ul>
+<p>A search for "rock lobster card game" finds that Magic: The Gathering has such a
+card that participates in a rock-paper-scissors cycle with two others, so:</p>
+<ul>
+<li><code>nagtal</code> is probably "to call" or "to name", taking a cue from the Magic
+    phrasing which specifies things about "creatures named X".</li>
+<li>The word after Paper is <code>jalqunu</code> "tiger"; a dictionary search finds <code>jalu</code>
+    "strip" and <code>qun</code> "to possess", so tiger is "strip-having", with the suffix
+    in contrast with <code>ityerqeyuni</code> "color-lacking".</li>
+<li><code>jwnterokafu eqmeyossa</code> is likely "Scissors Lizard", and a dictionary search
+    confirms this with <code>jwntu</code> "pair" (cf. <code>jwntatimoru</code>), <code>erok(afe)</code>
+    "cut(ter)", <code>eqme</code> "leg" and <code>yossa</code> "snake".</li>
+</ul>
+<p><code>Iglextwe</code> requires a bit of a jump along with some pronunciation, but can be
+guessed as "English (language)". Looking up the biology of rock lobsters shows
+that they are not, in fact, lobsters, and are lacking their namesake's large
+claws ("hands"). The last sentence tells us that the Puflantu word refers to
+these claws being missing. We can find <code>losmodafe</code> "claw" in the dictionary, and
+combine it with the -lacking suffix to get <code>LOSMO[D]AFQEYUNE</code>. In addition
+<code>ajor*</code> must be defined such that a claw is an <code>ajor*</code> part, so we can
+think about an adjective like "grabby" or "front", or just "body".</p>
+<p>There is an unspecified rule here, which affects any two-part word whose first
+part is noun- or adjective-like and whose second part is verb-derived: The last
+vowel of the first word moves to the end of the second and replaces any vowel
+there. If the vowel movement results in a three-consonant cluster in the middle
+of the word, a copy of the first vowel of the second word is inserted before the
+second word; thus <code>ityeri-qeyuna</code> --&gt; <code>ityer-qeyuni</code>. This also affects
+<code>cobargene(s)</code>, <code>jalqunu</code>, <code>jwntatimoru</code>, <code>onamgena(s)</code>, <code>ovekqipiwvu</code>,
+<code>zovgire</code>, and the construction of <code>losmodafqeyune</code>. It is not necessary to
+determine this rule to solve the puzzle, since the resulting morphemes still
+bear a lot of resemblance to their sources. One must only know that a vowel is
+being omitted in the middle somehow, and the ending vowel for this word can be
+brute-forced.</p>
+<h2>Target 6</h2>
+<pre><code>Albwr oku kasava darvaxe-cws qotuk-kas, ita lwgoro, fevi qukoda zat. Utra
+oghurie riqhuro, eywe eta-cws qukwmi rwtxovurwe, teri henqos enxatodaq-li,
+palriso-vo gomu zoxuras kodar. Rato nagta twpikwaranitu nathwe-cws capatil,
+&quot;topexwmi&quot;-li &quot;mohuroda&quot; vearyon-ka. Wndwyotak tizov: rato wrifenxagia eji
+(twipe zatey) -li rato enxalwmi radokoda, toka hompaliso-ro jwntatimoru
+gagalaz-ka.
+</code></pre>
+<p>That-time flour <code>kasava</code> <code>darvaxe</code>-from it-is-made, this element(?), secondary
+product it-is. One+R popular+R beverage+R, smalls this-from made <code>rwtxovur*</code>s,
+<code>teri</code> within it-submerges-them-and, milk+R-or fruit sometimes they-are-added.
+Its <code>nagta</code> <code>twpikwaranitu</code> words-from it-comes, "left-behind"-li
+"flatten-result" that-indicate. We-refer-to-it this-way: its <code>wrifenxagia</code> type
+(sugar it-is-not) -and its <code>enxalwmi</code> configuration, peanut butter's partner(?)
+that-<code>gagaz</code>s.</p>
+<p>When flour is made from <code>kasava</code> <code>darvaxe</code>, this element(?) is a secondary
+product. One popular beverage submerges small <code>rwtxovur*</code>s made from this in
+<code>teri</code>, and sometimes milk or fruit is added. Its <code>nagta</code> comes from
+<code>twpikwaranitu</code> words that indicate "left behind" and "flattening result". We
+refer to it thus: Its <code>wrifenxagia</code> type (which is not sugar) and its <code>enxalwmi</code>
+form, which <code>gagaz</code>s peanut butter's partner(?).</p>
+<h3>Solve Path</h3>
+<p>Solvers may recognize that cassava is a flour source and that <code>kasava</code> is a
+likely import word as a result. The part of the cassava plant used for this is
+the root, which matches well with <code>dare</code> "plant" + <code>vax-</code> "below, underneath",
+so we can guess <code>darvaxe</code> as root. The material that is a by-product of cassava
+flour production is tapioca.</p>
+<p>The next sense describes a popular beverage that contains small <code>rwtxovur*</code>s of
+the thing we're talking about. A search of the dictionary shows that <code>-vura</code> is
+a common suffix for three dimensional shapes, e.g. <code>saqvura</code> "six-solid", which
+is also used in Target 2. <code>Rwtxo</code> is circle, so we surmise <code>rwtxovura</code> "sphere".
+A popular drink that contains small spheres and sometimes milk or fruit is
+bubble tea (helped along if we got <code>tei</code>/<code>teri</code> from the <code>kombwqa</code> clue); the
+boba are made from tapioca.</p>
+<p>Checking the human etymology of "tapioca" shows that it is from Tupi-Guarani
+words meaning "dregs" and "squeezed out", which matches with the next sentence.
+The language name has been imported and gives credence to the idea of <code>-tu</code> as a
+language-naming suffix. <code>Nagta</code>, as before, seems like a synonym of "word".</p>
+<p>The final sentence explains the Puflantu etymology:</p>
+<ul>
+<li><code>wrifenxagia</code> "carbohydrate", from <code>wrifuli</code> "carbon" + <code>enxa</code> "water" +
+  <code>-gia</code> "chemical". To give a bit of an extra nudge, we specify that it is not
+  sugar, so if we don't get it immediately we at least know that sugar is an
+  <code>wrifenxagia</code> but it's not the one we're looking for.</li>
+<li><code>enxalwmi</code> "hydrated" is the past participle of <code>enxal</code>, which itself is a
+  verbification of "water". This word also appears at the beginning of Target 3.</li>
+<li><code>gagaz</code> is something that hydrated tapioca can be relative to peanut butter's
+  partner, cluing "jelly". We can find <code>gaga</code> "same, similar" in the dictionary;
+  <code>gagaz</code> "resemble" is the word intended.</li>
+</ul>
+<p>A carbohydrate that is not sugar is <code>malo</code> "starch" from Target 4, and jelly is
+<code>orbili</code>. Putting them together gives M[A]LORBILI.</p>
+<h2>Target 7</h2>
+<pre><code>Ogerokwmi-vo orbilis kepzitwmi, at fwmtwe jufodwe twlatix. At uta gaga
+satwlixafe ogwris gatam, jeyoluf-ka zwmsi-wlis wloloc-ka. Rato nihogotu natho,
+eqa satwlixafe-ro no jwntatimoru zat-ka veaton. Orvwe italianatwe rojdwe henqos,
+rato natho &quot;vole ipro&quot; onamgenas veaton. Rato eyozzove-li zal-ka dare viqe tizov
+nagtwyotal.
+</code></pre>
+<p>Shredded(?)-or jelly-ly prepared, it <code>fwmt*</code>s cook-results it-accompanies. It
+one similar <code>satwlixafe</code> commonly it-replaces, that-is-not-cooked fish-with
+that-is-eaten. Its <code>nihogotu</code> word, that <code>satwlixafe</code>'s west partner(?)
+it-is it-indicates. Some <code>italianatwe</code> versions within, its word "strong
+beard" <code>onamgenas</code> it-indicates. Its flavor(?)-and that-it-is plant part
+this-way we-refer-to-it.</p>
+<p>Shredded or jellied, it accommpanies <code>fwmt*</code> dishes. It commonly
+replaces one similar <code>satwlixafe</code>, which is eaten with fish that is not
+cooked. Its <code>nihogotu</code> word indicates that it is that <code>satwlixafe</code>'s western
+partner(?). In some <code>italianatwe</code> versions, its word <code>onamgenas</code> indicates
+"strong beard". We refer to it by its flavor(?) and the plant part that it is.</p>
+<h3>Solve Path</h3>
+<p>The word <code>satwlixafe</code> is <code>sa-</code> "diminutive" + <code>twlix</code> "to accompany" + <code>-afe</code>
+"agent", so <code>satwlixafe</code> is a small accompaniment, presumably to food.
+Reasonable candidates are "garnish", "condiment", or "side dish". Whatever it
+is, our target replaces it in going with uncooked fish -- this could be sushi,
+ceviche, some kind of tartare, or maybe oysters.</p>
+<p>The two language clues are for <code>nihogotu</code> "Japanese" (from nihongo) and
+<code>italianatwe</code> "Italian" (from italiana). The latter is probably easier to get
+but will hopefully put solvers in the mind of looking for language names.</p>
+<p>The Japanese clue refers to the same accompaniment being referred to in the
+previous sentence, so we should consider things that go with sushi. Wasabi is a
+small accompaniment that goes with sushi, which in many cases is replaced with
+horseradish (at least, in the US). Indeed, the Japanese word for horseradish
+means "western wasabi".</p>
+<p>The Italian clue requires a translation of "strong beard" into Italian;
+"barbaforte" is another name for horseradish.</p>
+<p>The flavor of horseradish can be characterized by "sharp", "pungent", or
+"spicy"; the closest thing we can find in the puzzle text is <code>saro</code> "spice" in
+Target 2, used in the context of "spice sauces". The part of the horseradish
+plant that gets eaten is the <code>darvaxe</code> root, given by Target 6 and the <code>dare</code>
+definition block. Therefore we are looking for SAR[O]DARVAXE.</p>
+<h2>Target 8</h2>
+<pre><code>Ita lwgoro, ogrwe oghuriwe lahrurogbwe riqhurwe henqos jatif. Iqrwe riqhurwe,
+zumuza orcala-vo mapoca dwhoka tadeyag. At rai lwgoro gagataz, rotwipe ukge-ro
+yuriqo aza palem-ka. Axwe lahrogbwe nagutaqwe henqos, eqa losmodwmi qovwe-cws
+qukrwmi riqhuro-cws nagtotal. Rato puflantu nagta, lahrogbwe nagutaqwe-ro
+nagtwe-ro radokodwe gagataz-dis, eqra safasibwmwe darwe pahilamwe-cws qukrwmi
+riqhuro natho gamas piwywv.
+</code></pre>
+<p>This material(?), many+R popular+R earth+R beverages+R within it-exists. Those+R
+beverages, sleeping wanting-or head(?) <code>dwhoka</code> they-do-not-allow. It other
+material(?) it-<code>gagaz</code>, chocolate dog's <code>yuriqo</code> being that-causes. All
+earth <code>nagutaqwe</code> within, that <code>losmod</code>ed <code>qov*</code>s-from made+R
+beverage+R-from it-is-<code>nagtal</code>ed. Its puflantu <code>nagta</code>, earth
+<code>nagutaqo</code>s's <code>nagta</code>s's configurations it-<code>gagaz</code>-but that+R
+<code>safasib</code>ed plant sheets(?)-from made+R beverage+R word replacingly we-use.</p>
+<p>This material is in many popular earth beverages. Those beverages prevent desire
+for sleep or head(?) <code>dwhok</code>ing(?). It <code>gagaz</code> another material(?) that
+causes chocolate to be dog's <code>yuriqo</code>. In all earth <code>nagutaq*</code>s, it is
+<code>nagtal</code>ed from that beverage made from <code>losmod</code>ed <code>qov*</code>s. Its puflantu
+<code>nagta</code> <code>gagaz</code> earth <code>nagutaqo</code>s's <code>nagta</code>s's configurations, but we
+use the beverage made from <code>safasib</code>ed plant sheets instead.</p>
+<h3>Solve Path</h3>
+<p>A compound in many beverages that prevents desire for sleep is caffeine, which
+is also used to prevent headaches, hence <code>dwhoka</code> "pain" or "ache".</p>
+<p>The thing in chocolate that defines its relationship to dogs is theobromine,
+which is very similar to caffeine (it's missing a methyl group). This can help
+us get <code>gagaz</code> "to resemble" and <code>yuriqo</code> "toxin" or "poison".</p>
+<p>The common etymology for caffeine on Earth is that it gets named for coffee.
+This helps confirm <code>qovo</code> "bean" against Target 1 if we didn't already have it,
+and clues <code>losmod</code> as "crush" or "grind" if we recall it from Target 6 or its
+use in the <code>casu</code> definition block.</p>
+<p>The Puflantu etymology is of the same form (it "resembles earth languages'
+words' configurations"), but they use a different beverage: tea, which is made
+from leaves (see use of "sheets" in the <code>dare</code> definition block) that have been
+<code>safasib</code> "slightly rotted", i.e. slightly fermented. <code>Tei</code> "tea" is provided by
+Target 6 in the context of bubble tea, and by the <code>kombwqa</code> definition block. In
+both those contexts it is referred to as a drink, so we have to remember to take
+the +R transformation out instead of using <code>teri</code>. (In contrast, "tea leaf" is
+<code>tei pahilame</code> because the leaf is not a fluid.) We add to this the common
+this-is-a-chemical suffix <code>-gia</code> to get TEI[G]IA.</p>
+<h2>Extraction</h2>
+<p>The words are provided in alphabetical order by Puflantu word; we use the
+alphabetical ordering of their English translations instead to extract.</p>
+<table>
+<thead>
+<tr>
+<th>English</th>
+<th>Puflantu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAFFEINE</td>
+<td><code>tei[G]ia</code></td>
+</tr>
+<tr>
+<td>CITRIC ACID</td>
+<td><code>gevaxeg[O]mu zixo</code></td>
+</tr>
+<tr>
+<td>HORSERADISH</td>
+<td><code>sar[O]darvaxe</code></td>
+</tr>
+<tr>
+<td>ROCK LOBSTER</td>
+<td><code>losmo[D]afqeyune</code></td>
+</tr>
+<tr>
+<td>SANDWICH</td>
+<td><code>kolarvub[E]na</code></td>
+</tr>
+<tr>
+<td>TAPIOCA</td>
+<td><code>m[A]lorbili</code></td>
+</tr>
+<tr>
+<td>TOFU</td>
+<td><code>apo[T]ofu</code></td>
+</tr>
+<tr>
+<td>VINEGAR</td>
+<td><code>fa[S]ibwmi tini</code></td>
+</tr>
+</tbody>
+</table>
+
+</main>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,992 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<title>Solution: Crosswerd</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta property="og:title" content="Galactic Puzzle Hunt | 20/20 Vision">
+    <meta property="og:description" content="The Galactic Puzzle Hunt has now come to a close. We hope to see you again!">
+    <meta property="og:image" content="http://localhost:8000/static/images/hero.min.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="/static/js/sorttable.js"></script>
+    <script src="/static/js/tray.js"></script>
+    <script src="/static/js/notify.js"></script>
+    <script src="/static/js/time.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/static/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+</head>
+<body>
+
+    <input id="shortcuts" type="checkbox">
+
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="/">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/home_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/home_small_icon_hover.png)"></span>
+                    Home
+                </a>
+                <a href="/rules">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/rules_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/rules_small_icon_hover.png)"></span>
+                    Rules
+                </a>
+
+                <a href="/story">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/story_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/story_small_icon_hover.png)"></span>
+                    Story
+                </a>
+
+
+                <a class="selected-tab" href="/puzzles">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/puzzles_small_icon.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/puzzles_small_icon_hover.png); background-size: 1.3em; transform: translateX(-3px)"></span>
+                    Puzzles
+                </a>
+
+                <a href="/teams">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/teams_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/teams_small_icon_hover.png)"></span>
+                    Teams
+                </a>
+                <a href="/faq">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/faq_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/faq_small_icon_hover.png)"></span>
+                    FAQ
+                </a>
+
+                <a href="/errata">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/errata_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/errata_small_icon_hover.png)"></span>
+                    Updates
+                </a>
+
+
+                <a href="/wrapup">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/wrapup_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/wrapup_small_icon_hover.png)"></span>
+                    Wrap-Up
+                </a>
+
+                <a href="/archive">
+                    <span class="top-tab-icon" style="background-image: url(/static/images/small_icons/archive_small_icon.png)"></span>
+                    <span class="top-tab-hover" style="background-image: url(/static/images/small_icons/archive_small_icon_hover.png)"></span>
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+
+<a href="/puzzle/crosswerd" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+<div class="top-right-actions"></div>
+    </nav>
+
+    <main class="shortcuts">
+        <form method="post" action="/shortcuts" target="dummy">
+            <input type="hidden" name="csrfmiddlewaretoken" value="udqFHVyX00rWBIXFYwIqG8llHbJJXhfZU8KrLtqGpvc1ouu0rrVJtMz36NjxDmFC">
+
+
+            <button class="btn" type="submit" name="action" value="prerelease_testsolver">Toggle testsolver</button>
+
+
+
+            <div>Hints (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="hint_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_hints">Reset</button>
+
+
+
+            <div>Free answers (my team)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_free_answers">Reset</button>
+
+
+
+            <div>This puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_answer">Show answer</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="show_order">Show order</button>
+
+
+
+            <div>Solve this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="solve">Solve</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="free_answer">Free</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="unsolve">Unsolve</button>
+
+
+
+            <div>Request hint on this puzzle</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="unanswered_hint">Unanswered</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="answered_hint">Answered</button>
+
+
+
+            <div>Guesses (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_1">+1</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_5">+5</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="guess_0">=0</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="reset_guesses">Reset</button>
+
+
+
+            <div>Delete all my (on this puzzle)</div>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_hints">Hints</button>
+
+
+
+            <button class="btn" type="submit" name="action" value="delete_guesses">Guesses</button>
+
+
+            <div>Download logs</div>
+            <a class="btn" href="/bridge/guess.csv">Guess</button></a>
+            <a class="btn" href="/bridge/hint.csv">Hint</button></a>
+            <a class="btn" href="/bridge/puzzle.log">Puzzle</button></a>
+
+            <input name="puzzle" value="crosswerd" type="hidden">
+
+            <iframe src="about:blank" name="dummy" style="display: none"></iframe>
+        </form>
+    </main>
+
+    <script>
+
+        openSocket('/ws/team', showNotify);
+
+
+    </script>
+    <div class="content">
+
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+
+    Solution: Crosswerd
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">HORRIBLE</span></div>
+
+</h1>
+
+<main>
+    <h2>
+        Written by
+
+Jakob Weisblat
+
+    </h2>
+
+
+    <style>
+    .centerer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<p>We're presented with a crossword whose clues are badly misspelled. If we try solving some of the clues, a lot of them don't seem to fit in the grid, but the misspelled clues suggest that we can also try misspelling answers before entering them. This presents a challenge, because it means we can't be sure of most of the crosses. Generally, the misspellings we must enter in the grid are approximately phonetically correct, which can help with crosses even if we're not exactly sure of some letters. Eventually, with some effort,
+we can be sure enough of most of the letters in the grid. The answers to the clues are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Across</th>
+<th>Clue</th>
+<th>Misspelling</th>
+<th>Answer</th>
+<th>Grid Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Frost might be found therr on a snowy evening</td>
+<td>therr &rightarrow; there</td>
+<td>WOODS</td>
+<td>WODS</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Site of a majer summer festival</td>
+<td>majer &rightarrow; major</td>
+<td>CANNES</td>
+<td>CAN</td>
+</tr>
+<tr>
+<td>8</td>
+<td>One of 204 in this grid</td>
+<td></td>
+<td>LETTER</td>
+<td>LETTER</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Certain ol boat</td>
+<td>ol &rightarrow; old</td>
+<td>ARK</td>
+<td>ARRK</td>
+</tr>
+<tr>
+<td>15</td>
+<td>There's a formula for it involving eight</td>
+<td>eight &rightarrow; height</td>
+<td>AREA</td>
+<td>ARIA</td>
+</tr>
+<tr>
+<td>17</td>
+<td>It can be used to make an ebrasive powder</td>
+<td>ebrasive &rightarrow; abrasive</td>
+<td>EMERY</td>
+<td>EMERIE</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Heating ergs is usually done with these metal implements</td>
+<td>ergs &rightarrow; eggs</td>
+<td>FRYING PANS</td>
+<td>FRYINPANS</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Mood sometimes confused with the impeative</td>
+<td>impeative &rightarrow; imperative</td>
+<td>JUSSIVE</td>
+<td>JUSIVE</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Some jines</td>
+<td>jines &rightarrow; jeans</td>
+<td>LEVIS</td>
+<td>LEVIES</td>
+</tr>
+<tr>
+<td>22</td>
+<td>None or the other</td>
+<td>none &rightarrow; one</td>
+<td>EITHER</td>
+<td>ETHER</td>
+</tr>
+<tr>
+<td>24</td>
+<td>___ off (started to colf)</td>
+<td>colf &rightarrow; golf</td>
+<td>TEED</td>
+<td>TED</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Where awl animals live</td>
+<td>awl &rightarrow; all</td>
+<td>EARTH</td>
+<td>ERTHE</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Something to measure before a weeding</td>
+<td>weeding &rightarrow; wedding</td>
+<td>RING SIZE</td>
+<td>RINGSISE</td>
+</tr>
+<tr>
+<td>29</td>
+<td>___ Koch</td>
+<td>Coke &rightarrow; Koch</td>
+<td>DIET</td>
+<td>DIT</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Its a brand of athletic wear and basketball shoes</td>
+<td>Its &rightarrow; It's</td>
+<td>AIR JORDAN</td>
+<td>AIRJORDEN</td>
+</tr>
+<tr>
+<td>33</td>
+<td>8-Across before high</td>
+<td>high &rightarrow; I</td>
+<td>AITCH (H)</td>
+<td>ACHE</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Gas that gloze red-orange</td>
+<td>gloze &rightarrow; glows</td>
+<td>NEON</td>
+<td>NION</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Moves with stelf</td>
+<td>stelf &rightarrow; stealth</td>
+<td>SNEAKS</td>
+<td>SNEKES</td>
+</tr>
+<tr>
+<td>40</td>
+<td>People sometimes remember their first ones, but almost never remember their last ones</td>
+<td></td>
+<td>WORDS</td>
+<td>WORDS</td>
+</tr>
+<tr>
+<td>42</td>
+<td>___-boded</td>
+<td>boded &rightarrow; bodied</td>
+<td>ABLE</td>
+<td>EBOL</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Stooped, in a way</td>
+<td>stooped &rightarrow; stopped</td>
+<td>CEASED</td>
+<td>CEAST</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Mawaki athlete</td>
+<td>Mawaki &rightarrow; Milwaukee</td>
+<td>BREWER</td>
+<td>BRUIER</td>
+</tr>
+<tr>
+<td>47</td>
+<td>What one might do on a beak</td>
+<td>beak &rightarrow; break</td>
+<td>SMOKE</td>
+<td>SMOK</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Make a mean phase (at)</td>
+<td>phase &rightarrow; face</td>
+<td>SNEER</td>
+<td>SNER</td>
+</tr>
+<tr>
+<td>50</td>
+<td>When compressed in an engine, this agricultural produce ignites</td>
+<td>produce &rightarrow; product</td>
+<td>BIODIESEL</td>
+<td>BIODIESLE</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Open sauce inventory management and accounting suite</td>
+<td>sauce &rightarrow; source</td>
+<td>ODOO</td>
+<td>ODU</td>
+</tr>
+<tr>
+<td>54</td>
+<td>You have to be bad at it to solve this crosswerd</td>
+<td>crosswerd &rightarrow; crossword</td>
+<td>SPELLING</td>
+<td>SBELLING</td>
+</tr>
+<tr>
+<td>57</td>
+<td>___ de leach</td>
+<td>leach &rightarrow; leche</td>
+<td>DULCE</td>
+<td>DOLCE</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Word before creme or box</td>
+<td>creme &rightarrow; cream</td>
+<td>ICE</td>
+<td>EIS</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Where a Roman might socialeyes</td>
+<td>socialize &rightarrow; socialeyes</td>
+<td>BATHS</td>
+<td>BATHZ</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Clime near the ground</td>
+<td>clime &rightarrow; climb</td>
+<td>BOULDER</td>
+<td>BOLDER</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Relating to the sekind-deepest parts of the ocean</td>
+<td>sekind &rightarrow; second</td>
+<td>ABYSSAL</td>
+<td>ABISOL</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Salad that is usually made with ballger and herbs</td>
+<td>ballger &rightarrow; bulgur</td>
+<td>TABBOULEH</td>
+<td>TABBOULEA</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Emit chloroflourocarbons, perhaps</td>
+<td>flouro &rightarrow; fluoro</td>
+<td>POLLUTE</td>
+<td>POLUTE</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Shopping or crime even</td>
+<td>even &rightarrow; event</td>
+<td>SPREE</td>
+<td>SPRE</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Elephant ___ (circus trets)</td>
+<td>trets &rightarrow; treats</td>
+<td>EARS</td>
+<td>EERS</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Hero drest in red and blue, familiarly</td>
+<td>drest &rightarrow; dressed</td>
+<td>SPIDEY</td>
+<td>SPITEY</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Play in many different sitees</td>
+<td>sitees &rightarrow; cities</td>
+<td>TOUR</td>
+<td>TUR</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Eye problem that's usually a staff infection</td>
+<td>staff &rightarrow; staph</td>
+<td>STYE</td>
+<td>SDYE</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Down</th>
+<th>Clue</th>
+<th>Misspelling</th>
+<th>Answer</th>
+<th>Grid Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breakfast food that's also inaction</td>
+<td>inaction &rightarrow; an action</td>
+<td>WAFFLE</td>
+<td>WAFL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>All-time great Bobbie</td>
+<td>Bobbie &rightarrow; Bobby</td>
+<td>ORR</td>
+<td>ORRE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>You go here before you eat inn your car</td>
+<td>inn &rightarrow; in</td>
+<td>DRIVE-THRU</td>
+<td>DRYVETHRU</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Icelandic go yurt product</td>
+<td>go yurt &rightarrow; yogurt</td>
+<td>SKYR</td>
+<td>SKIIR</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Lable on a picture</td>
+<td>lable &rightarrow; label</td>
+<td>CAPTION</td>
+<td>CAPSHIN</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Word after common or push</td>
+<td>push &rightarrow; Bush</td>
+<td>ERA</td>
+<td>ARA</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The cell with this number in it is an E</td>
+<td></td>
+<td>NINE</td>
+<td>NINE</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Some tails</td>
+<td>tails &rightarrow; tales</td>
+<td>LEGENDS</td>
+<td>LEJENDS</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Vitamin supplement that supposedly helps with a could</td>
+<td>could &rightarrow; cold</td>
+<td>EMERGEN-C</td>
+<td>EMURGENC</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Gopher's supply</td>
+<td>gopher &rightarrow; golfer</td>
+<td>TEES</td>
+<td>TES</td>
+</tr>
+<tr>
+<td>11</td>
+<td>One of nine or so at versi, e.g.</td>
+<td>versi &rightarrow; Versailles</td>
+<td>TREATY</td>
+<td>TRITI</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Where I cycles form</td>
+<td>I cycles &rightarrow; icicles</td>
+<td>EAVES</td>
+<td>EIVES</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Oboe, egg</td>
+<td>egg &rightarrow; e.g.</td>
+<td>REED</td>
+<td>REEDE</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Pictures appear in this signs with rather complex math</td>
+<td>signs &rightarrow; science</td>
+<td>ASTRONOMY</td>
+<td>ASTRONOME</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Mononymous singer in Eurovision 2019</td>
+<td>2019 &rightarrow; 2018</td>
+<td>NETTA</td>
+<td>NETA</td>
+</tr>
+<tr>
+<td>23</td>
+<td>He/___ pronouns</td>
+<td>he &rightarrow; she</td>
+<td>HER</td>
+<td>HIR</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Like a coast town</td>
+<td>coast &rightarrow; ghost</td>
+<td>EERIE</td>
+<td>ERIE</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Make a certain sudden loud nose from one's nose</td>
+<td>nose &rightarrow; noise</td>
+<td>SNEEZE</td>
+<td>SNEES</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Smear, as width cream</td>
+<td>width &rightarrow; with</td>
+<td>DAUB</td>
+<td>DAWB</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Blood of the goods</td>
+<td>goods &rightarrow; gods</td>
+<td>ICHOR</td>
+<td>ICOR</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Physical places four construction or virtual places with postings</td>
+<td>four &rightarrow; for</td>
+<td>JOB SITES</td>
+<td>JOBSIGHTS</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Pot off food?</td>
+<td>off &rightarrow; of</td>
+<td>EDIBLE</td>
+<td>EDIBL</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Went further than houlding hands out in public, maybe</td>
+<td>houlding &rightarrow; holding</td>
+<td>CANOODLED</td>
+<td>KANOEDLED</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Let balk on</td>
+<td>balk &rightarrow; back</td>
+<td>EASED</td>
+<td>ESED</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Scatter abowt disorganizedly</td>
+<td>abowt &rightarrow; about</td>
+<td>STREW</td>
+<td>STRU</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Vessel in a ricotta</td>
+<td>ricotta &rightarrow; regatta</td>
+<td>SAILBOAT</td>
+<td>SEILBOTE</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Without knowledge of one's vocation</td>
+<td>vocation &rightarrow; location</td>
+<td>LOST</td>
+<td>LOSD</td>
+</tr>
+<tr>
+<td>46</td>
+<td>In the manner of kings and quenes</td>
+<td>quenes &rightarrow; queens</td>
+<td>ROYALLY</td>
+<td>ROIALEY</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Beat with a beat, or defeat</td>
+<td>beat &rightarrow; bat</td>
+<td>CLOBBER</td>
+<td>KLOBBER</td>
+</tr>
+<tr>
+<td>51</td>
+<td>By ___ of (on a count of)</td>
+<td>a count &rightarrow; account</td>
+<td>DINT</td>
+<td>DNT</td>
+</tr>
+<tr>
+<td>52</td>
+<td>___ go bee (vegetarian entree)</td>
+<td>go bee &rightarrow; gobi</td>
+<td>ALOO</td>
+<td>ELOO</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Leeks, perhaps very slowly</td>
+<td>leeks &rightarrow; leaks</td>
+<td>SEEPS</td>
+<td>SEAPS</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Cowboy named for a johnra of music</td>
+<td>johnra &rightarrow; genre</td>
+<td>BEBOP</td>
+<td>BIBOP</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Without much difficalltea</td>
+<td>difficalltea &rightarrow; difficulty</td>
+<td>EASILY</td>
+<td>ESILI</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Approximately half of them are down</td>
+<td></td>
+<td>CLUES</td>
+<td>CLUES</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Heated with electromagentic radiation, familiarly</td>
+<td>magentic &rightarrow; magnetic</td>
+<td>ZAPPED</td>
+<td>ZAPT</td>
+</tr>
+<tr>
+<td>63</td>
+<td>(The same as 26-Don)</td>
+<td>Don &rightarrow; Down</td>
+<td>EERIE</td>
+<td>EERY</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Born to the ground</td>
+<td>born &rightarrow; burn</td>
+<td>RAZE</td>
+<td>RASE</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Legal case, or, metonymically, layer</td>
+<td>layer &rightarrow; lawyer</td>
+<td>SUIT</td>
+<td>SUT</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Something made by a 46-Across</td>
+<td>46 &rightarrow; 45</td>
+<td>BREW</td>
+<td>BRU</td>
+</tr>
+</tbody>
+</table>
+<p>If we try to use the letters of the misspellings in the clues, we can spell RED HERRING using the letters added or removed from the first ten misspelled across clues, telling us that the clues are not where we should be looking next.</p>
+<p>The completed grid looks like this:</p>
+<div class="centerer"><img src="crosswerd/crosswerd.png"></div>
+<p><br>
+Four entries are spelled correctly, and their clues are spelled correctly as well. They are: <strong>NINE LETTER WORDS
+CLUES</strong>.</p>
+<p>The nine letter entries, and their clues, are:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Clue</th>
+<th>Word</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18-Across</td>
+<td>Heating ergs is usually done with these metal implements</td>
+<td>FRYINPANS</td>
+</tr>
+<tr>
+<td>31-Across</td>
+<td>Its a brand of athletic wear and basketball shoes</td>
+<td>AIRJORDEN</td>
+</tr>
+<tr>
+<td>50-Across</td>
+<td>When compressed in an engine, this agricultural produce ignites</td>
+<td>BIODIESLE</td>
+</tr>
+<tr>
+<td>67-Across</td>
+<td>Salad that is usually made with ballger and herbs</td>
+<td>TABBOULEA</td>
+</tr>
+<tr>
+<td>3-Down</td>
+<td>You go here before you eat inn your car</td>
+<td>DRYVETHRU</td>
+</tr>
+<tr>
+<td>16-Down</td>
+<td>Pictures appear in this signs with rather complex math</td>
+<td>ASTRONOME</td>
+</tr>
+<tr>
+<td>32-Down</td>
+<td>Physical places four construction or virtual places with postings</td>
+<td>JOBSIGHTS</td>
+</tr>
+<tr>
+<td>37-Down</td>
+<td>Went further than houlding hands out in public, maybe</td>
+<td>KANOEDLED</td>
+</tr>
+</tbody>
+</table>
+<p>We notice that each clue has nine words, exactly one of which is misspelled. Take the corresponding letter of each
+answer, and order (as indicated by the row of &lt; signs at the bottom of the puzzle) by clue number.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Word</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3-Down</td>
+<td>DRYVETHRU</td>
+<td>H</td>
+</tr>
+<tr>
+<td>16-Down</td>
+<td>ASTRONOME</td>
+<td>O</td>
+</tr>
+<tr>
+<td>18-Across</td>
+<td>FRYINPANS</td>
+<td>R</td>
+</tr>
+<tr>
+<td>31-Across</td>
+<td>AIRJORDEN</td>
+<td>A</td>
+</tr>
+<tr>
+<td>32-Down</td>
+<td>JOBSIGHTS</td>
+<td>B</td>
+</tr>
+<tr>
+<td>37-Down</td>
+<td>KANOEDLED</td>
+<td>O</td>
+</tr>
+<tr>
+<td>50-Across</td>
+<td>BIODIESLE</td>
+<td>L</td>
+</tr>
+<tr>
+<td>67-Across</td>
+<td>TABBOULEA</td>
+<td>L</td>
+</tr>
+</tbody>
+</table>
+<p>These letters spell HORABOLL, which is a horrible spelling of the answer to this puzzle is <strong>HORRIBLE</strong>.</p>
+
+
+
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This whole puzzle was spawned from a post DD made in the #bad-ideas channel in our discord server. Maybe it wasn't so
+bad after all!</p>
+
+
+
+
+</main>
+
+
+    </div>
+</body>
+</html>
