@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    
+
 <title>Call in: The First Annual Blaseball Puzzle</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
@@ -28,7 +28,7 @@
     <script src="../static/js/notify.7898a6be1e40.js"></script>
     <script src="../static/js/time.4f918ead85cd.js"></script>
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.9936c02d5d47.ico" type="image/vnd.microsoft.icon">
-    
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92192633-1"></script>
 <script>
@@ -39,10 +39,10 @@
   gtag('config', 'UA-92192633-1');
 </script>
 
-    
+
 </head>
 <body>
-    
+
     <nav>
         <span class="tray">
             <div class="top-tabs">
@@ -56,20 +56,20 @@
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/rules_small_icon_hover.ed667d6e312a.png)"></span>
                     Rules
                 </a>
-                
+
                 <a href="../story.html">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/story_small_icon.f493b7c42114.png)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/story_small_icon_hover.dc0f6729e801.png)"></span>
                     Story
                 </a>
-                
-                
+
+
                 <a class="selected-tab" href="../puzzles.html">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/puzzles_small_icon.167a0bd8ef08.png); background-size: 1.3em; transform: translateX(-3px)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/puzzles_small_icon_hover.87c667d84046.png); background-size: 1.3em; transform: translateX(-3px)"></span>
                     Puzzles
                 </a>
-                
+
                 <a href="../teams.html">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/teams_small_icon.ccd9aedd37a8.png)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/teams_small_icon_hover.b9d0896895b1.png)"></span>
@@ -80,20 +80,20 @@
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/faq_small_icon_hover.f6045c3fc475.png)"></span>
                     FAQ
                 </a>
-                
+
                 <a href="../errata.html">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/errata_small_icon.cf68a4a2a669.png)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/errata_small_icon_hover.8b76a20f6fbf.png)"></span>
                     Updates
                 </a>
-                
-                
+
+
                 <a href="../wrapup.html">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/wrapup_small_icon.17eed92dc9fc.png)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/wrapup_small_icon_hover.fc72c96feec4.png)"></span>
                     Wrap-Up
                 </a>
-                
+
                 <a href="https://galacticpuzzlehunt.com/archive">
                     <span class="top-tab-icon" style="background-image: url(../static/images/small_icons/archive_small_icon.fcd4097c93e3.png)"></span>
                     <span class="top-tab-hover" style="background-image: url(../static/images/small_icons/archive_small_icon_hover.8d4bebd544bd.png)"></span>
@@ -101,45 +101,81 @@
                 </a>
             </div>
             <div class="top-left-actions">
-                
+
 <a href="../puzzle/the-first-annual-blaseball-puzzle.html" class="btn">Back to the puzzle</a>
 
             </div>
         </span>
         <div class="top-right-actions">
-        
+
         </div>
     </nav>
-    
+
     <script>
-    
-    
+
+
     </script>
     <div class="content">
-        
+
 
 <h1>Check your answer for The First Annual Blaseball Puzzle</h1>
 
 <main>
-    
 
-    
 
-    <form class="call-in-answer-panel">
-        
+
+
+    <script id="check_answer">
+    window.onload=function() {
+      form = document.getElementsByClassName('call-in-answer-panel')[0]
+      form.onsubmit=function() {
+        right_answer = 'TOP-RATED'
+        answer = document.getElementById('id_answer').value
+        answer = normalize_puzzle_answer(answer)
+
+        // Remove solved panel if it exists
+        if (document.contains(document.getElementById('solved-panel'))) {
+          document.getElementById("solved-panel").remove();
+        }
+
+        // Create new solved panel
+        node = document.createElement('div')
+        node.setAttribute('id', 'solved-panel')
+        if (answer == normalize_puzzle_answer(right_answer)) {
+          node.setAttribute('class', 'solved-panel')
+          node.innerHTML = "<h4>Solved!</h4><p>The answer was <b>" + right_answer + "</b>.</p>"
+        } else {
+          node.setAttribute('class', 'unsolved-panel')
+          node.innerHTML = "<h4>Incorrect!</h4>"
+        }
+
+        // Inject it
+        form.parentNode.insertBefore(node, form)
+
+        // Return false to prevent GET request from executing
+        return false;
+      }
+    }
+
+    function normalize_puzzle_answer(answer) {
+      return answer.toUpperCase().replace(/[^A-Z]/g, '')
+    }
+  </script>
+<form class="call-in-answer-panel">
+
         <div class="row">
             <div class="four columns">
                 <label for="id_answer">Enter your guess:</label>
             </div>
             <div class="four columns">
                 <input type="text" name="answer" maxlength="500" required id="id_answer">
-                
+
             </div>
             <div class="four columns">
                 <button class="btn" type="submit">Submit</button>
             </div>
         </div>
-        
+
     </form>
 </main>
 
