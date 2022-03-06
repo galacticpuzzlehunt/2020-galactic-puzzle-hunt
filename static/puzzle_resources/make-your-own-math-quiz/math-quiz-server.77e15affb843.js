@@ -85,6 +85,10 @@ var at_least_10b = ge(10000000000);
 var withinpi = function (n) { return function (x) { return Math.abs(x - Math.PI) <= n; }; };
 var alwaysTrue = function (x) { return true; };
 function is_prime(n) {
+    if (!is_integer(n)) {
+        return false;
+    }
+    n = Math.round(n);
     if (n === 2 || n === 3)
         return true;
     if (n % 2 === 0 || n < 2)
