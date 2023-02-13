@@ -1,0 +1,5 @@
+/*! @license pzpr.js v (c) 2009-2021 sabo2, MIT license
+ *   https://github.com/sabo2/pzprv3 */
+
+ui.debug.addDebugData("simpleloop",{url:"5/5/sg020",failcheck:[["lnBranch","pzprv3/simpleloop/5/5/* * * . . /* . . . . /. . . . . /. . . * . /. . . . . /0 0 0 0 /0 0 1 1 /0 0 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 0 0 /0 0 0 1 0 /0 0 0 0 0 /0 0 0 0 0 /"],["lnCross","pzprv3/simpleloop/5/5/* * * . . /* . . . . /. . . . . /. . . * . /. . . . . /0 0 0 0 /0 0 1 1 /0 0 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 1 0 /0 0 0 1 0 /0 0 0 0 0 /0 0 0 0 0 /"],["lnDeadEnd","pzprv3/simpleloop/5/5/* * * . . /* . . . . /. . . . . /. . . * . /. . . . . /0 0 0 0 /0 0 1 0 /0 1 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 0 0 /0 0 1 0 0 /0 0 0 0 0 /0 0 0 0 0 /"],["ceNoLine","pzprv3/simpleloop/5/5/* * * . . /* . . . . /. . . . . /. . . * . /. . . . . /0 0 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 0 /0 0 0 0 0 /0 0 0 0 0 /0 0 0 0 0 /0 0 0 0 0 /"],[null,"pzprv3/simpleloop/5/5/* * * . . /* . . . . /. . . . . /. . . * . /. . . . . /0 0 0 1 /0 1 0 0 /1 0 1 0 /0 1 0 0 /1 0 1 1 /0 0 0 1 1 /0 1 1 1 1 /1 0 0 0 1 /1 1 1 0 1 /"]]});
+//# sourceMappingURL=simpleloop.js.map

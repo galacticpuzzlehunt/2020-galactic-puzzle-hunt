@@ -1,0 +1,5 @@
+/*! @license pzpr.js v (c) 2009-2021 sabo2, MIT license
+ *   https://github.com/sabo2/pzprv3 */
+
+ui.debug.addDebugData("tasquare",{url:"6/6/1g.i4j1i3j5i5j.i2g1",failcheck:[["brNoShade","pzprv3/tasquare/6/6"],["csNotSquare","pzprv3/tasquare/6/6/1 # - . . . /4 # # . . 1 /. . . 3 . . /. . 5 . . . /5 . . . . - /. . . 2 . 1 /"],["cuDivide","pzprv3/tasquare/6/6/1 . - # . . /4 . # . . 1 /. # . 3 . . /# . 5 . . . /5 . . . . - /. . . 2 . 1 /"],["nmSumSizeNe","pzprv3/tasquare/6/6/1 # - . . . /4 . . . . 1 /# # . 3 . . /# # 5 . . . /5 . . . . - /. . . 2 . 1 /"],["nmNoSideShade","pzprv3/tasquare/6/6/1 # - . . # /4 . . # . 1 /# # . 3 # . /# # 5 # . . /5 . . . . - /# . # 2 # 1 /"],[null,"pzprv3/tasquare/6/6/1 # - + + # /4 + + # + 1 /# # + 3 # + /# # 5 # + # /5 . + + + - /# . # 2 # 1 /"]],inputs:[]});
+//# sourceMappingURL=tasquare.js.map
