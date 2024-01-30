@@ -82,7 +82,7 @@ text = '''<meta property="og:image" content="http://localhost:8000/static/images
                 </a>
             </div>
             <div class="top-left-actions">'''
-replacement = '''<meta property="og:image" content="https://galacticpuzzlehunt.com/static/images/hero.min.f2764f55466c.png">
+replacement = '''<meta property="og:image" content="https://2020.galacticpuzzlehunt.com/static/images/hero.min.png">
     <meta property="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
