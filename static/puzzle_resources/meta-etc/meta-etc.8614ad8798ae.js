@@ -383,8 +383,11 @@ function make_meta(meta_id) {
 	let rng = new MyRandom(meta_id);
 
 	let fm = null;
-	if (meta_id.length === 1) {
-		fm = find_answers(rng, answer, meta_id, initial_extractions[meta_id-1]);
+	if (meta_id.length === 1) { // 1st-level sub-meta
+		let id = meta_id;
+		if (meta_id === "a") id = 10;
+		if (meta_id === "b") id = 11;
+		fm = find_answers(rng, answer, meta_id, initial_extractions[id-1]);
 	} else {
 		fm = find_answers(rng, answer, meta_id);
 	}
