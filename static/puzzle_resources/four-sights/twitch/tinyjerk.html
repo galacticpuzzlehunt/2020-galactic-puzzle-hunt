@@ -251,6 +251,7 @@
       };
 
       const USERNAME = "PuzzleLover2020";
+      const BOTNAME = "tinyjerk"
       const CHAT_DELAY_MS = 500;
       const NEXT_QUESTION_MS = 60 * 1000; // 1 min per question, for testing use 10*1000
 
@@ -294,7 +295,7 @@
         msg.classList.add("message", "bot");
         if (highlight) msg.classList.add("highlight");
 
-        msg.innerHTML = '<span class="name bot">tinyjerkbot</span>: ' + text;
+        msg.innerHTML = `<span class="name bot">${BOTNAME}</span>: ` + text;
 
         setTimeout(() => {
           parser.appendChild(msg);
