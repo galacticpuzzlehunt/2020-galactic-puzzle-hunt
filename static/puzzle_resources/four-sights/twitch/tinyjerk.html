@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tinyjerk - Twitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        scrollbar-gutter: stable;
+      }
+
+      html {
+        background: #0e0e10;
+        height: 95%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      body {
+        height: 100%;
+        font-family: "Inter", "Roobert", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        font-weight: 400;
+      }
+
+      .play {
+        margin: auto;
+        height: 90%;
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        /* font-size: 100%; */
+        background: #0e0e10;
+        color: #efeff1;
+
+        hyphens: auto;
+        word-break: break-word;
+        padding: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #bf94ff;
+        hyphens: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        color: #a970ff;
+      }
+
+      .channel-name {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      .instructions {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        padding: 1rem 0;
+      }
+
+      .chat {
+        border: 1px solid rgba(83, 83, 95, 0.48);
+        background-color: #18181b;
+        max-width: 600px;
+      }
+
+      .chat-title {
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: #dedee3;
+
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(83, 83, 95, 0.48);
+      }
+
+      #parser {
+        min-height: 40vh;
+        max-height: 60vh;
+        hyphens: auto;
+        overflow-y: auto;
+        padding: 1rem 0;
+        line-height: 1.4rem;
+      }
+      .message {
+        max-width: 100%;
+        padding: 0.5rem 1rem;
+      }
+
+      .highlight {
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+
+      .system {
+        color: #adadb8;
+        padding: 0 1rem 0.5rem;
+      }
+
+      .name {
+        font-weight: 700;
+      }
+
+      .name.user {
+        color: rgb(255, 105, 180);
+      }
+
+      .name.bot {
+        color: rgb(180, 84, 255);
+      }
+
+      .mention {
+        font-weight: 700;
+      }
+
+      .emote {
+        vertical-align: middle;
+      }
+
+      #typer {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.7rem;
+        gap: 0.5rem;
+      }
+
+      #typer input {
+        flex: auto;
+
+        cursor: text;
+        background: inherit;
+        color: inherit;
+        font-family: inherit;
+        letter-spacing: inherit;
+        font-size: inherit;
+        padding: 0.7rem 1rem;
+
+        border: none;
+        border-radius: 0.3rem;
+
+        box-shadow: inset 0 0 0 1px rgba(222, 222, 227, 0.4);
+      }
+
+      #typer input:hover {
+        box-shadow: inset 0 0 0 2px rgba(222, 222, 227, 0.4);
+      }
+
+      #typer input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #a970ff, inset 0 0 0 2px #a970ff;
+      }
+
+      #typer input::placeholder {
+        color: #adadb8;
+      }
+
+      #typer button {
+        flex: 0 0 auto;
+
+        background: #9147ff;
+        color: #ffffff;
+        padding: 0.5rem 0.7rem;
+        border: none;
+        border-radius: 0.3rem;
+        cursor: pointer;
+
+        font-family: "Inter", "Roobert", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      #typer button:hover {
+        background: #772ce8;
+      }
+
+      #typer button:active {
+        background: #5c16c5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="play">
+      <div class="channel">
+        <div class="channel-name">tinyjerk</div>
+        <div class="instructions">
+          The !answer you seek is in chat, for a modest fee of 100 !points
+        </div>
+      </div>
+      <div class="chat">
+        <div class="chat-title">Stream Chat</div>
+
+        <div id="parser">
+          <div class="system">Welcome to the chat room!</div>
+        </div>
+        <div
+          id="typer"
+          onclick="document.getElementById('typer-input').focus()"
+        >
+          <input
+            id="typer-input"
+            class="command"
+            type="text"
+            autofocus
+            autocomplete="off"
+            maxlength="256"
+            placeholder="Send a message"
+          />
+          <button onclick="chat()">Chat</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="emotes-map.js"></script>
+    <script>
+      const questions = {
+        "Which emote features the face of Conan Liu, former StarCraft II player?":
+          "DAESuppy",
+        "Which emote is both a Greek letter and a grey face (with no space)?":
+          "Kappa",
+        "Which double-facepalming emote’s name comes from the movie The Matrix?":
+          "NotLikeThis",
+        "If you can see this emote - AYAYA - you probably have an add-on installed named for what canine emote?":
+          "FrankerZ",
+        "Which emote with a fitting symbol is often used when the cameraperson in a live stream misses the action in the shot?":
+          "TTours",
+        "Which emote often follows sarcastic advice, such as “just solve the puzzle”?":
+          "4Head",
+        "Which emote depicts the Eye of Providence?": "TheIlluminati",
+        "Which emote evolved out of this requesting kaomoji, popularly used in “༼ つ ◕_◕ ༽つ Give DIRETIDE”?":
+          "GivePLZ",
+        "Which emote has a green face, and often encourages streamers to “GO FACE”?":
+          "SMOrc",
+        "Which emote celebrates the Helix Fossil from Twitch Plays Pokemon?":
+          "PraiseIt",
+      };
+
+      const USERNAME = "PuzzleLover2020";
+      const CHAT_DELAY_MS = 500;
+      const NEXT_QUESTION_MS = 60 * 1000; // 1 min per question, for testing use 10*1000
+
+      let parser = document.getElementById("parser");
+      let typerInput = document.getElementById("typer-input");
+
+      let points = 0;
+      let questionIndex = Math.floor(
+        Math.random() * Object.keys(questions).length
+      );
+      let { question, answer, nextQuestionIndex } = newQuestion(questionIndex);
+
+      let autoNextQuestion = setInterval(() => {
+        ({ question, answer, nextQuestionIndex } =
+          newQuestion(nextQuestionIndex));
+      }, NEXT_QUESTION_MS);
+
+      function resetAutoNextQuestion() {
+        clearInterval(autoNextQuestion);
+        autoNextQuestion = setInterval(() => {
+          ({ question, answer, nextQuestionIndex } =
+            newQuestion(nextQuestionIndex));
+        }, NEXT_QUESTION_MS);
+      }
+
+      function newQuestion(i, delay = CHAT_DELAY_MS) {
+        const question = Object.keys(questions)[i];
+        const answer = questions[question];
+
+        botChat(question, delay);
+
+        return {
+          question,
+          answer,
+          nextQuestionIndex: (i + 1) % Object.keys(questions).length,
+        };
+      }
+
+      function botChat(text, delay = CHAT_DELAY_MS, highlight = false) {
+        let msg = document.createElement("div");
+        msg.classList.add("message", "bot");
+        if (highlight) msg.classList.add("highlight");
+
+        msg.innerHTML = '<span class="name bot">tinyjerkbot</span>: ' + text;
+
+        setTimeout(() => {
+          parser.appendChild(msg);
+          setTimeout(() => {
+            parser.scrollTop = parser.scrollHeight;
+          }, 10);
+        }, delay);
+      }
+
+      // given string, return Element with emotes as images
+      function replaceEmotes(text) {
+        const el = document.createElement("span");
+        const words = text.split(" ");
+        for (const [i, word] of words.entries()) {
+          if (emotes[word]) {
+            const img = document.createElement("img");
+            img.src = `img/${emotes[word]}.png`;
+            img.alt = word;
+            img.className = "emote";
+            el.appendChild(img);
+          } else {
+            el.appendChild(document.createTextNode(word));
+          }
+          if (i < words.length - 1)
+            el.appendChild(document.createTextNode(" "));
+        }
+        return el;
+      }
+
+      function chat() {
+        const typerInput = document.getElementById("typer-input");
+
+        let text = typerInput.value;
+        if (text.trim() === "") return;
+
+        let output = document.createElement("div");
+        output.classList.add("message");
+        output.innerHTML = `<span class="name user">${USERNAME}</span>: <span class="text user"></span>`;
+
+        //
+        output.querySelector(".text.user").appendChild(replaceEmotes(text));
+
+        // cleanup
+        typerInput.value = "";
+        parser.appendChild(output);
+
+        // response
+        if (text.trim() === answer) {
+          points += 25;
+          botChat(
+            `Correct! <span class="mention">@${USERNAME}</span> has ${points} points.`
+          );
+          questionIndex = nextQuestionIndex;
+          ({ question, answer, nextQuestionIndex } = newQuestion(
+            questionIndex,
+            CHAT_DELAY_MS * 4 // extra delay for immediate next question
+          ));
+          resetAutoNextQuestion();
+        } else if (text.trim() === "!points") {
+          botChat(
+            `<span class="mention">@${USERNAME}</span> has ${points} points.`
+          );
+        } else if (text.trim() === "!answer") {
+          if (points < 100) {
+            botChat(`Make sure you have 100 !points.`);
+          } else {
+            botChat(
+              `Visit <a href="https://2020.galacticpuzzlehunt.com/homeearthquakedetectionalarm" target="_blank" rel="noopener noreferrer">https://2020.galacticpuzzlehunt.com/homeearthquakedetectionalarm</a>.`,
+              CHAT_DELAY_MS,
+              true
+            );
+          }
+        }
+        // let f = find(text);
+        // let response = document.createElement("div");
+        // response.classList.add("response");
+
+        // parser.appendChild(response);
+        setTimeout(() => {
+          parser.scrollTop = parser.scrollHeight;
+        }, 10);
+      }
+
+      typerInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          chat();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bird melodies (@BirdMelodies) / Twitter</title>
+    <link rel="stylesheet" href="fonts/stylesheet.css" />
+    <style>
+      * {
+        scrollbar-gutter: stable;
+      }
+
+      html {
+        display: flex;
+        justify-content: center;
+      }
+
+      body {
+        flex: 1;
+
+        background-color: black;
+        color: rgb(231, 233, 234);
+        font-family: "Twitter Chirp", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 20px;
+        margin: 0;
+
+        max-width: 600px;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(12px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        gap: 25px;
+      }
+
+      .round-button {
+        height: 36px;
+        width: 36px;
+        border-radius: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        transition: fill, background-color 0.2s;
+      }
+
+      .round-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .round-button svg {
+        height: 20px;
+        fill: rgb(113, 118, 123);
+      }
+
+      .round-button.disabled svg {
+        filter: brightness(0.4);
+        fill: rgb(113, 118, 123);
+      }
+
+      .round-button.white svg {
+        fill: rgb(239, 243, 244);
+      }
+
+      .round-button.blue:hover {
+        background-color: rgba(29, 155, 240, 0.1);
+      }
+
+      .round-button.blue:hover svg {
+        fill: rgb(29, 155, 240);
+      }
+
+      .round-button.green:hover {
+        background-color: rgba(0, 186, 124, 0.1);
+      }
+
+      .round-button.green:hover svg {
+        fill: rgb(0, 186, 124);
+      }
+
+      .round-button.red:hover {
+        background-color: rgba(249, 24, 128, 0.1);
+      }
+
+      .round-button.red:hover svg {
+        fill: rgb(249, 24, 128);
+      }
+
+      .header .username {
+        font-weight: 700;
+        line-height: 24px;
+        font-size: 20px;
+      }
+
+      .header .handle,
+      .stat-tweets,
+      .stat-following {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .nav-button {
+        flex: 1;
+
+        display: flex;
+        justify-content: center;
+
+        text-align: center;
+        padding: 16px 0;
+        cursor: pointer;
+
+        color: rgb(113, 118, 123);
+        font-weight: 500;
+
+        transition: 0.2s background-color;
+      }
+
+      .nav-button.selected {
+        color: inherit;
+        font-weight: 700;
+      }
+
+      .nav-button.selected::after {
+        content: "";
+        display: inline-flex;
+        align-self: center;
+        background-color: rgb(29, 155, 240);
+
+        position: absolute;
+        bottom: 0px;
+
+        width: 65px;
+        height: 4px;
+        border-radius: 2px;
+      }
+
+      .nav-button:hover {
+        background-color: rgba(231, 233, 234, 0.1);
+      }
+
+      .header,
+      .following,
+      .tweets {
+        max-width: 600px;
+      }
+      .user,
+      .post {
+        display: flex;
+        padding: 12px 16px;
+        gap: 8px;
+      }
+
+      .user-left,
+      .post-left {
+        width: 40px;
+        cursor: pointer;
+      }
+
+      .user-left img,
+      .post-left img {
+        width: 40px;
+        border-radius: 50%;
+        transition: filter 0.2s;
+      }
+
+      .user-left:hover img,
+      .post-left:hover img {
+        filter: brightness(0.87);
+      }
+
+      .user-right,
+      .post-right {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .user-sub,
+      .post-sub {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .post-sub-left {
+        display: flex;
+        gap: 4px;
+      }
+
+      .post-sub-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .user-sub-left {
+        flex: 0 1 auto;
+        min-width: 0;
+      }
+
+      .user-sub-left .displayname,
+      .user-sub-left .handle {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .displayname {
+        font-weight: 700;
+        line-height: 19px;
+        cursor: pointer;
+        margin-bottom: 2px;
+      }
+
+      .displayname:hover {
+        text-decoration: underline;
+      }
+
+      .verified {
+        margin-left: 2px;
+      }
+
+      .verified svg {
+        height: 20px;
+        fill: rgb(29, 155, 240);
+        vertical-align: bottom;
+      }
+
+      .handle,
+      .stat-tweets,
+      .stat-following,
+      .sep,
+      .date {
+        color: rgb(113, 118, 123);
+      }
+
+      .date:hover {
+        text-decoration: underline;
+      }
+
+      .follow {
+        flex: 0 0 auto;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(239, 243, 244);
+        cursor: pointer;
+
+        font-family: "Twitter Chirp", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+
+        min-width: 77px;
+        height: 32px;
+        padding: 0 16px;
+        margin-left: 12px;
+
+        transition: 0.2s background-color;
+      }
+
+      .follow:hover {
+        background-color: rgb(215, 219, 220);
+      }
+
+      .bio {
+        margin-top: 4px;
+      }
+
+      .twemoji {
+        margin: 0 0.075em;
+        height: 18px;
+        vertical-align: -20%;
+      }
+
+      .link {
+        color: rgb(29, 155, 240);
+        cursor: pointer;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+
+      .post-img {
+        margin-top: 12px;
+        border: 1px solid rgb(47, 51, 54);
+        border-radius: 16px;
+
+        width: 100%;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+      }
+    </style>
+    <script>
+      function tab(tab) {
+        document.querySelector(".tweets").style.display =
+          tab === "tweets" ? "block" : "none";
+        document.querySelector(".following").style.display =
+          tab === "following" ? "block" : "none";
+
+        document.querySelector(".stat-tweets").style.display =
+          tab === "tweets" ? "block" : "none";
+        document.querySelector(".stat-following").style.display =
+          tab === "following" ? "block" : "none";
+
+        document
+          .querySelector(".nav-button.tab-tweets")
+          .classList.toggle("selected", tab === "tweets");
+        document
+          .querySelector(".nav-button.tab-following")
+          .classList.toggle("selected", tab === "following");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-inner">
+        <div class="round-button back-button white">
+          <!-- prettier-ignore --><svg viewBox="0 0 24 24"><g><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"></path></g></svg>
+        </div>
+        <div class="header-inner-right">
+          <div class="username">bird melodies</div>
+          <div class="handle">@BirdMelodies</div>
+          <div class="stat-tweets">1 tweet</div>
+          <div class="stat-following" style="display: none">28 following</div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="nav-button tab-tweets selected" onclick="tab('tweets')">
+          Tweets
+        </div>
+        <div class="nav-button tab-following" onclick="tab('following')">
+          Following
+        </div>
+      </div>
+    </div>
+    <div class="tweets">
+      <div class="post">
+        <div class="post-left">
+          <img src="img/profile.png" />
+        </div>
+        <div class="post-right">
+          <div class="post-sub">
+            <div class="post-sub-left">
+              <div class="displayname">bird melodies</div>
+              <div class="handle">@BirdMelodies</div>
+              <span class="sep">·</span>
+              <div class="date">Jul 18, 2021</div>
+            </div>
+            <div class="post-sub-right">
+              <div class="round-button more-button blue">
+                <!-- prettier-ignore --><svg viewBox="0 0 24 24"><g><path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path></g></svg>
+              </div>
+            </div>
+          </div>
+          <img
+            class="post-img"
+            src="img/tweet.png"
+            alt="Seven lines of blanks. Each line has one red blank. Enumeration of blanks and position of red blanks:
+(7) (2);
+(5) (4);
+(8 7) (14);
+(4 5) (2);
+(8 4 7) (9);
+(4) (1);
+(22) (16).
+Text below blanks: 2020.galacticpuzzlehunt.com/_"
+          />
+          <div class="actions">
+            <div class="round-button reply-button disabled blue">
+              <!-- prettier-ignore --><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1xvli5t r-1hdv0qi r-12c3ph5"><g><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"></path></g></svg>
+            </div>
+            <div class="round-button retweet-button green">
+              <!-- prettier-ignore --><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1xvli5t r-1hdv0qi"><g><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"></path></g></svg>
+            </div>
+            <div class="round-button like-button red">
+              <!-- prettier-ignore --><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1xvli5t r-1hdv0qi"><g><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"></path></g></svg>
+            </div>
+            <div class="round-button share-button blue">
+              <!-- prettier-ignore --><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1xvli5t r-1hdv0qi"><g><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"></path></g></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="following" style="display: none">
+      <div class="user">
+        <div class="user-left">
+          <img src="img/BrownUniversity.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Brown University</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@BrownUniversity</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            <span>Official Twitter feed for Brown University. </span
+            ><img
+              alt="🐻"
+              draggable="false"
+              src="img/1f43b.svg"
+              class="twemoji"
+              title="Bear face"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/CanadaUN.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Canada Mission UN</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@CanadaUN</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            <span>Permanent Mission of </span
+            ><img
+              alt="🇨🇦"
+              draggable="false"
+              src="img/1f1e8-1f1e6.svg"
+              class="twemoji"
+              title="Flag of Canada"
+            /><span> to the UN </span
+            ><img
+              alt="🇺🇳"
+              draggable="false"
+              src="img/1f1fa-1f1f3.svg"
+              class="twemoji"
+              title="Flag of United Nations"
+            /><span>
+              FR: <span class="link">@CanadaONU</span> | PR:
+              <span class="link">@BobRae48</span> | DPR:
+              <span class="link">@ArbeiterRichard</span></span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Columbia.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Columbia University</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Columbia</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            The official twitter feed of Columbia University in the City of New
+            York.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/CourteneyCox.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Courteney Cox</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@CourteneyCox</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio"></div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/dartmouth.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Dartmouth</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@dartmouth</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            The official Twitter account of Dartmouth College!
+            <span class="link">#Dartmouth</span> |
+            <span class="link">#GoBigGreen</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/DavidSchwimmer.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>schwim</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@DavidSchwimmer</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio"></div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/DeloitteUS.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Deloitte US</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@DeloitteUS</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            We’re coming together to make an impact that matters.
+            <span class="link">#ImpactEveryDay</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/EY_US.png" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>EY US</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@EY_US</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Official US Ernst & Young LLP account. Join us as we ask
+            <span class="link">#BetterQuestions</span> and discuss topics that
+            matter to you, the workplace, and the future of business.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/franceonu.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>La France à l'ONU</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@franceonu</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Mission permanente de la France auprès de l'ONU / French Mission to
+            the United Nations | Follow Ambassador
+            <span class="link">@NdeRiviere</span>
+            <img
+              alt="🇫🇷"
+              draggable="false"
+              src="img/1f1eb-1f1f7.svg"
+              class="twemoji"
+              title="Flag of France"
+            /><img
+              alt="🇺🇳"
+              draggable="false"
+              src="img/1f1fa-1f1f3.svg"
+              class="twemoji"
+              title="Flag of United Nations"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/GermanyUN.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>German Mission to UN</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@GermanyUN</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Official account of the Permanent Mission of Germany to the United
+            Nations.
+            <span class="link">#MultilateralismMatters</span>
+            <span class="link">#strongerUNited</span> Instagram:
+            <span class="link">http://instagram.com/germany_un/</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Harvard.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Harvard University</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Harvard</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Devoted to excellence in teaching, learning, and research, and to
+            developing leaders who make a difference globally.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/JapanMissionUN.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Japanese Mission UN</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@JapanMissionUN</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Official account of the Mission of Japan to the
+            <span class="link">@UN</span>. RTs ≠ endorsements. FB:
+            <span class="link">http://bit.ly/2AodPix</span> Instagram:
+            <span class="link">http://bit.ly/2hndVTN</span>
+            <span class="link">#JapanUNSC</span>
+            <img
+              alt="🌸"
+              draggable="false"
+              src="img/1f338.svg"
+              class="twemoji"
+              title="Cherry Blossom"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/joejonas.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>J O E J O N A S</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@joejonas</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            <img
+              alt="☕"
+              draggable="false"
+              src="img/2615.svg"
+              class="twemoji"
+              title="Hot Beverage"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/kevinjonas.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>kevin jonas</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@kevinjonas</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            <span class="link">#GirlDad</span>, Husband, Brother, and Guitarist.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/KPMG_US.png" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>KPMG US</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@KPMG_US</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            KPMG LLP, the U.S. audit, tax and advisory services firm, operates
+            from 106 offices with more than 35,000 employees and partners
+            throughout the U.S.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/LisaKudrow.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Lisa Kudrow</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@LisaKudrow</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Lisa Kudrow's company usually tweets on her behalf. But sometimes
+            not.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Matt_LeBlanc.png" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Matt LeBlanc</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Matt_LeBlanc</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">Hey there. It's me.</div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/MatthewPerry.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>matthew perry</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@MatthewPerry</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Extremely skilled poet and dancer with a seemingly endless sense of
+            longing. Hi!
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/MrTeller.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Teller</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@MrTeller</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio"></div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/nuggets.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Denver Nuggets</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@nuggets</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Tweets from a mile up. <span class="link">#MileHighBasketball</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Penn.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Penn</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Penn</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Official profile for news, events and interesting updates from the
+            University of Pennsylvania. Account managed by University
+            Communications.
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Princeton.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Princeton University</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Princeton</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            The official Twitter account of Princeton University. In the
+            nation's service and the service of humanity. |
+            <span class="link">#PrincetonU</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Timberwolves.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Minnesota Timberwolves</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Timberwolves</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">Official Twitter of the Minnesota Timberwolves</div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/trailblazers.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Portland Trail Blazers</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@trailblazers</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">PNW hoops since 1970.</div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/UKUN_NewYork.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span
+                  >UK at the UN
+                  <img
+                    alt="🇬🇧"
+                    draggable="false"
+                    src="img/1f1ec-1f1e7.svg"
+                    class="twemoji"
+                    title="Flag of United Kingdom" /></span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@UKUN_NewYork</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            British diplomacy, *280* characters at a time. Official feed of
+            <img
+              alt="🇬🇧"
+              draggable="false"
+              src="img/1f1ec-1f1e7.svg"
+              class="twemoji"
+              title="Flag of United Kingdom"
+            />
+            at the <span class="link">@UN</span>. See also:
+            <span class="link">@BWoodward_UN</span>
+            <span class="link">@AmbassadorAllen</span>
+            <span class="link">@FCDOGovUK</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/USUN.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>U.S. Mission to the UN</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@USUN</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            Helping keep Americans safe and the U.S. prosperous through our work
+            at the United Nations and with UN member states. Additional updates:
+            <span class="link">@USAmbUN</span> and
+            <span class="link">@USUNSpox</span>
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/utahjazz.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>utahjazz</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@utahjazz</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">
+            <img
+              alt="❤️"
+              draggable="false"
+              src="img/2764.svg"
+              class="twemoji"
+              title="Heart"
+            />
+            #TakeNote
+          </div>
+        </div>
+      </div>
+      <div class="user">
+        <div class="user-left">
+          <img src="img/Yale.jpg" />
+        </div>
+        <div class="user-right">
+          <div class="user-sub">
+            <div class="user-sub-left">
+              <div class="displayname">
+                <span>Yale University</span
+                ><span class="verified"
+                  ><!-- prettier-ignore --><svg viewBox="0 0 22 22" aria-label="Verified account" role="img"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+                </span>
+              </div>
+              <div class="handle">@Yale</div>
+            </div>
+            <button class="follow">Follow</button>
+          </div>
+          <div class="bio">News, events and updates from Yale University.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

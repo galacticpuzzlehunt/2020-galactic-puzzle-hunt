@@ -38,8 +38,17 @@
 
   gtag('config', 'UA-92192633-1');
 </script>
-
-    
+<style>
+.sim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+iframe {
+    width: 80%;
+    height: 720px;
+}
+</style>
 </head>
 <body>
     
@@ -149,16 +158,80 @@
 
     
     
-    <div class="puzzle-erratum">
-  The solution to this puzzle is not an English word or phrase. When you believe it is complete, simply move on to Telescope.
-</div>
+
 <p>You’ve retrieved the clues you left for yourself at the four sights, but what now? Sounds like there are other sights you haven&rsquo;t taken into account&hellip;
 </p>
+<div class="note">
+    <div class="puzzle-erratum">
+        <p>
+            The solution to this puzzle is not an English word or phrase. When you believe it is complete, simply move on to Telescope.
+        </p>
+        <p>
+            Some parts of this puzzle are no longer accessible. Archival versions are provided using the simulator below.
+        </p>
+        <form onsubmit="nav(event)">
+            <input type="text" name="bar" id="bar" placeholder="Simulator" />
+        </form>
+        <div class="sim"></div>
+    </div>
+</div>
     
 </main>
 
 <script src="../static/js/copyjack.1dbad08982a3.js"></script>
+<script>
+    const isValidUrl = (url) => {
+      url = url
+        .trim()
+        .toLowerCase()
+        .replace(/^(https?:\/\/)?(www\.)?/, "")
+        .replace(/\/$/, "");
 
+      return (
+        {
+          "tinder.com/lightatorch": ["tinder", "lightatorch"],
+          "tinder.com/@lightatorch": ["tinder", "lightatorch"],
+          "twitch.tv/tinyjerk": ["twitch", "tinyjerk"],
+          "twitter.com/birdmelodies": ["twitter", "birdmelodies"],
+          "x.com/birdmelodies": ["twitter", "birdmelodies"],
+          "youtube.com/bentpipes": ["youtube", "bentpipes"],
+          "youtube.com/c/bentpipes": ["youtube", "bentpipes"],
+        }[url] || false
+      );
+    };
+
+    const showIframe = (platform, username) => {
+      const iframe = document.createElement("iframe");
+      iframe.id = platform;
+      iframe.src = `../static/puzzle_resources/four-sights/${platform}/${username}.html`;
+      iframe.frameBorder = "0";
+      document.querySelector(".sim").appendChild(iframe);
+    };
+
+    function nav(event) {
+      event.preventDefault();
+
+      // remove existing frames
+      const iframes = document.querySelectorAll("iframe");
+      iframes.forEach((iframe) => iframe.remove());
+
+      const formData = new FormData(event.target);
+      const urlInput = formData.get("bar").toLowerCase();
+
+      if (urlInput) {
+        const match = isValidUrl(urlInput);
+        if (match) {
+          const [platform, username] = match;
+          showIframe(platform, username);
+        } else {
+          // clear and focus input
+          document.getElementById("bar").value = "";
+          document.getElementById("bar").focus();
+        }
+        return;
+      }
+    }
+  </script>
 
     </div>
 </body>
