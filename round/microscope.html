@@ -150,7 +150,7 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    background-image: url(microscope/image);
+    background-image: url(microscope/image.png);
     background-size: 100%;
 }
 </style>
@@ -201,7 +201,7 @@ wrapper.addEventListener('mousedown', evt => {
 window.addEventListener('mouseup', evt => {
     if (evt.button) return;
     if (mouse == 'maybe')
-        canvas.toBlob(blob => window.open(URL.createObjectURL(blob), '_blank'));
+        window.open('microscope/image.png', '_blank');
     mouse = 'no';
     evt.preventDefault();
 });
